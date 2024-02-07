@@ -1,0 +1,30 @@
+{
+  "name": "http-close",
+  "version": "1.0.0",
+  "description": "gracefully close open sockets in a http server",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "dependencies": {
+    "debug": "^4.1.1"
+  },
+  "devDependencies": {
+    "tape": "^4.11.0"
+  },
+  "scripts": {
+    "test": "tape test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tellnes/http-close.git"
+  },
+  "keywords": [],
+  "author": "Christian Tellnes <christian@tellnes.no> (http://christian.tellnes.com)",
+  "license": "MIT",
+  "readmeFilename": "Readme.md",
+  "bugs": {
+    "url": "https://github.com/tellnes/http-close/issues"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}
