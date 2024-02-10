@@ -4,7 +4,7 @@
   <Version>1.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="NLP Add-In" />
+  <DisplayName DefaultValue="Propylon Add-In" />
   <Description DefaultValue="NLP Drafting Legislation" />
   <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-64.png"/>
@@ -140,7 +140,7 @@
                 </Control>
               </Group>
 
-              <Label resid="NLPLabel" />
+              <Label resid="PropylonLabel" />
             </CustomTab>
           </ExtensionPoint>
         </DesktopFormFactor>
@@ -175,8 +175,8 @@
         <bt:String id="DropdownItem2Label" DefaultValue="Execute Function" />
         <bt:String id="NLPTabGroupLabel1" DefaultValue="NLP Group" />
         <bt:String id="NLPTabGroupLabel2" DefaultValue="More Info" />
-         <bt:String id="NLPLabel" DefaultValue="NLP" />
-         <bt:String id="GetStartedTitle" DefaultValue="NLP Add In Loaded">
+         <bt:String id="PropylonLabel" DefaultValue="Propylon" />
+         <bt:String id="GetStartedTitle" DefaultValue="Propylon Add In Loaded">
           <bt:Override Locale="ja-jp" Value="JA-JP Get Started Title" />
         </bt:String>      
       </bt:ShortStrings>
@@ -187,7 +187,7 @@
         <bt:String id="DropdownTooltip" DefaultValue="Click to Show Options on this Menu" />
         <bt:String id="DropdownItem1Tooltip" DefaultValue="Click to Show Taskpane" />
         <bt:String id="DropdownItem2Tooltip" DefaultValue="Click to Execute Function" />
-          <bt:String id="GetStartedDescription" DefaultValue="Click here to open the NLP features">
+          <bt:String id="GetStartedDescription" DefaultValue="Click here to open the Add-In's features">
           <bt:Override Locale="ja-jp" Value="JA-JP Get Started Title" />
         </bt:String>  
       </bt:LongStrings>
