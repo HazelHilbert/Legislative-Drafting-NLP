@@ -1,84 +1,195 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8"?>
 <OfficeApp xmlns="http://schemas.microsoft.com/office/appforoffice/1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bt="http://schemas.microsoft.com/office/officeappbasictypes/1.0" xmlns:ov="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="TaskPaneApp">
   <Id>26f8e2f4-4543-4e2c-8a9e-0a7e2172a363</Id>
   <Version>1.0.0.0</Version>
   <ProviderName>Contoso</ProviderName>
   <DefaultLocale>en-US</DefaultLocale>
-  <DisplayName DefaultValue="frontend_nlp"/>
-  <Description DefaultValue="A template to get started."/>
+  <DisplayName DefaultValue="NLP Add-In" />
+  <Description DefaultValue="NLP Drafting Legislation" />
   <IconUrl DefaultValue="https://localhost:3000/assets/icon-32.png"/>
   <HighResolutionIconUrl DefaultValue="https://localhost:3000/assets/icon-64.png"/>
-  <SupportUrl DefaultValue="https://www.contoso.com/help"/>
-  <AppDomains>
-    <AppDomain>https://www.contoso.com</AppDomain>
-  </AppDomains>
+  <SupportUrl DefaultValue="https://learn.microsoft.com/office/dev/add-ins/develop/create-addin-commands"/>
   <Hosts>
     <Host Name="Document"/>
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://localhost:3000/taskpane.html"/>
+    <SourceLocation DefaultValue="https://commandsimple.azurewebsites.net/Taskpane.html" />
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
-  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">   
     <Hosts>
       <Host xsi:type="Document">
         <DesktopFormFactor>
           <GetStarted>
-            <Title resid="GetStarted.Title"/>
-            <Description resid="GetStarted.Description"/>
-            <LearnMoreUrl resid="GetStarted.LearnMoreUrl"/>
+            <Title resid="GetStartedTitle"/>
+            <Description resid="GetStartedDescription"/>
+            <LearnMoreUrl resid="GetStartedLearnMoreUrl"/>
           </GetStarted>
-          <FunctionFile resid="Commands.Url"/>
+          <FunctionFile resid="Commands.Url" />
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
-            <OfficeTab id="TabHome">
-              <Group id="CommandsGroup">
-                <Label resid="CommandsGroup.Label"/>
+            <CustomTab id="NLPTab">
+              <Group id="NLPTabGroup1">
+                <Label resid="NLPTabGroupLabel1" />
                 <Icon>
-                  <bt:Image size="16" resid="Icon.16x16"/>
-                  <bt:Image size="32" resid="Icon.32x32"/>
-                  <bt:Image size="80" resid="Icon.80x80"/>
+                  <bt:Image size="16" resid="Propylon.16x16" />
+                  <bt:Image size="32" resid="Propylon.32x32" />
+                  <bt:Image size="80" resid="Propylon.80x80" />
                 </Icon>
-                <Control xsi:type="Button" id="TaskpaneButton">
-                  <Label resid="TaskpaneButton.Label"/>
+
+                <Control xsi:type="Button" id="FunctionButton1">
+                  <Label resid="FunctionButton1Label" />
                   <Supertip>
-                    <Title resid="TaskpaneButton.Label"/>
-                    <Description resid="TaskpaneButton.Tooltip"/>
+                    <Title resid="FunctionButton1Label" />
+                    <Description resid="FunctionButton1Tooltip" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Icon.16x16"/>
-                    <bt:Image size="32" resid="Icon.32x32"/>
-                    <bt:Image size="80" resid="Icon.80x80"/>
+                    <bt:Image size="16" resid="Propylon3.16x16" />
+                    <bt:Image size="32" resid="Propylon3.32x32" />
+                    <bt:Image size="80" resid="Propylon3.80x80" />
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>helloPropylon</FunctionName>
+                  </Action>
+                </Control>
+
+                <Control xsi:type="Button" id="TaskpaneButton1">
+                  <Label resid="TaskpaneButton1Label" />
+                  <Supertip>
+                    <Title resid="TaskpaneButton1Label" />
+                    <Description resid="TaskpaneButton1Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Propylon2.16x16" />
+                    <bt:Image size="32" resid="Propylon2.32x32" />
+                    <bt:Image size="80" resid="Propylon2.80x80" />
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
-                    <TaskpaneId>ButtonId1</TaskpaneId>
-                    <SourceLocation resid="Taskpane.Url"/>
+                    <TaskpaneId>Button1</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url" />
+                  </Action>
+                </Control>
+
+                <Control xsi:type="Menu" id="Dropdown">
+                  <Label resid="Dropdown1" />
+                  <Supertip>
+                    <Title resid="Dropdown1" />
+                    <Description resid="DropdownTooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Propylon.16x16" />
+                    <bt:Image size="32" resid="Propylon.32x32" />
+                    <bt:Image size="80" resid="Propylon.80x80" />
+                  </Icon>
+                  <Items>
+                    <Item id="DropdownItem1">
+                      <Label resid="DropdownItem1Label"/>
+                      <Supertip>
+                        <Title resid="DropdownItem1Label" />
+                        <Description resid="DropdownItem1Tooltip" />
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="Propylon2.16x16" />
+                        <bt:Image size="32" resid="Propylon2.32x32" />
+                        <bt:Image size="80" resid="Propylon2.80x80" />
+                      </Icon>
+                      <Action xsi:type="ShowTaskpane">
+                        <TaskpaneId>Button2</TaskpaneId>
+                        <SourceLocation resid="Taskpane.Url" />
+                      </Action>
+                    </Item>
+                    <Item id="DropdownItem2">
+                      <Label resid="DropdownItem2Label"/>
+                      <Supertip>
+                        <Title resid="DropdownItem2Label" />
+                        <Description resid="DropdownItem2Tooltip" />
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="Propylon3.16x16" />
+                        <bt:Image size="32" resid="Propylon3.32x32" />
+                        <bt:Image size="80" resid="Propylon3.80x80" />
+                      </Icon>
+                      <Action xsi:type="ExecuteFunction">
+                        <FunctionName>helloPropylon</FunctionName>
+                      </Action>
+                    </Item>
+                  </Items>
+                </Control>           
+              </Group>
+
+              <Group id="NLPTabGroup2">
+                <Label resid="NLPTabGroupLabel2" />
+                <Icon>
+                  <bt:Image size="16" resid="Propylon.16x16" />
+                  <bt:Image size="32" resid="Propylon.32x32" />
+                  <bt:Image size="80" resid="Propylon.80x80" />
+                </Icon>
+                <Control xsi:type="Button" id="FunctionButton2">
+                  <Label resid="FunctionButton2Label" />
+                  <Supertip>
+                    <Title resid="FunctionButton2Label" />
+                    <Description resid="FunctionButton2Tooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Propylon4.16x16" />
+                    <bt:Image size="32" resid="Propylon4.32x32" />
+                    <bt:Image size="80" resid="Propylon4.80x80" />
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>openLink</FunctionName>
                   </Action>
                 </Control>
               </Group>
-            </OfficeTab>
+
+              <Label resid="NLPLabel" />
+            </CustomTab>
           </ExtensionPoint>
         </DesktopFormFactor>
       </Host>
     </Hosts>
     <Resources>
       <bt:Images>
-        <bt:Image id="Icon.16x16" DefaultValue="https://localhost:3000/assets/icon-16.png"/>
-        <bt:Image id="Icon.32x32" DefaultValue="https://localhost:3000/assets/icon-32.png"/>
-        <bt:Image id="Icon.80x80" DefaultValue="https://localhost:3000/assets/icon-80.png"/>
+        <bt:Image id="Propylon.16x16" DefaultValue="https://localhost:3000/assets/propylon-16.png"/>
+        <bt:Image id="Propylon.32x32" DefaultValue="https://localhost:3000/assets/propylon-32.png"/>
+        <bt:Image id="Propylon.80x80" DefaultValue="https://localhost:3000/assets/propylon-80.png"/>
+        <bt:Image id="Propylon2.16x16" DefaultValue="https://localhost:3000/assets/propylon2-16.png"/>
+        <bt:Image id="Propylon2.32x32" DefaultValue="https://localhost:3000/assets/propylon2-32.png"/>
+        <bt:Image id="Propylon2.80x80" DefaultValue="https://localhost:3000/assets/propylon2-80.png"/>
+        <bt:Image id="Propylon3.16x16" DefaultValue="https://localhost:3000/assets/propylon3-16.png"/>
+        <bt:Image id="Propylon3.32x32" DefaultValue="https://localhost:3000/assets/propylon3-32.png"/>
+        <bt:Image id="Propylon3.80x80" DefaultValue="https://localhost:3000/assets/propylon3-80.png"/>
+        <bt:Image id="Propylon4.16x16" DefaultValue="https://localhost:3000/assets/propylon4-16.png"/>
+        <bt:Image id="Propylon4.32x32" DefaultValue="https://localhost:3000/assets/propylon4-32.png"/>
+        <bt:Image id="Propylon4.80x80" DefaultValue="https://localhost:3000/assets/propylon4-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="GetStarted.LearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
-        <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html"/>
+        <bt:Url id="GetStartedLearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
+        <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="GetStarted.Title" DefaultValue="Get started with your sample add-in!"/>
-        <bt:String id="CommandsGroup.Label" DefaultValue="Commands Group"/>
-        <bt:String id="TaskpaneButton.Label" DefaultValue="Show Taskpane"/>
+        <bt:String id="FunctionButton1Label" DefaultValue="Execute Function" />
+        <bt:String id="FunctionButton2Label" DefaultValue="Website" />
+        <bt:String id="TaskpaneButton1Label" DefaultValue="NLP Taskpane" />
+        <bt:String id="Dropdown1" DefaultValue="NLP Dropdown" />
+        <bt:String id="DropdownItem1Label" DefaultValue="NLP Taskpane" />
+        <bt:String id="DropdownItem2Label" DefaultValue="Execute Function" />
+        <bt:String id="NLPTabGroupLabel1" DefaultValue="NLP Group" />
+        <bt:String id="NLPTabGroupLabel2" DefaultValue="More Info" />
+         <bt:String id="NLPLabel" DefaultValue="NLP" />
+         <bt:String id="GetStartedTitle" DefaultValue="NLP Add In Loaded">
+          <bt:Override Locale="ja-jp" Value="JA-JP Get Started Title" />
+        </bt:String>      
       </bt:ShortStrings>
       <bt:LongStrings>
-        <bt:String id="GetStarted.Description" DefaultValue="Your sample add-in loaded succesfully. Go to the HOME tab and click the 'Show Taskpane' button to get started."/>
-        <bt:String id="TaskpaneButton.Tooltip" DefaultValue="Click to Show a Taskpane"/>
+        <bt:String id="FunctionButton1Tooltip" DefaultValue="Click to Execute Function" />
+        <bt:String id="FunctionButton2Tooltip" DefaultValue="Click to See Website" />
+        <bt:String id="TaskpaneButton1Tooltip" DefaultValue="Click to Show a Taskpane" />
+        <bt:String id="DropdownTooltip" DefaultValue="Click to Show Options on this Menu" />
+        <bt:String id="DropdownItem1Tooltip" DefaultValue="Click to Show Taskpane" />
+        <bt:String id="DropdownItem2Tooltip" DefaultValue="Click to Execute Function" />
+          <bt:String id="GetStartedDescription" DefaultValue="Click here to open the NLP features">
+          <bt:Override Locale="ja-jp" Value="JA-JP Get Started Title" />
+        </bt:String>  
       </bt:LongStrings>
     </Resources>
   </VersionOverrides>

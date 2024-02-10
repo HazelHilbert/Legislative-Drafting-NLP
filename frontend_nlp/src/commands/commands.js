@@ -28,6 +28,33 @@ function action(event) {
   event.completed();
 }
 
+async function helloPropylon(event) {
+  Word.run(async (context) => {
+    /**
+     * Insert your Word code here
+     */
+
+    // insert a paragraph at the end of the document.
+    const paragraph = context.document.body.insertParagraph(
+      "Hello Propylon!", Word.InsertLocation.end);
+
+    // change the paragraph color to blue.
+    paragraph.font.color = "blue";
+
+    await context.sync();
+  });
+  event.completed();
+}
+
+async function openLink(event) {
+  Word.run(async (context) => {
+    window.open('https://propylon.com/', '_blank');
+
+    await context.sync();
+  });
+  event.completed();
+}
+
 function getGlobal() {
   return typeof self !== "undefined"
     ? self
@@ -42,3 +69,4 @@ const g = getGlobal();
 
 // The add-in command functions need to be available in global scope
 g.action = action;
+Office.actions.associate("writeValue", writeValue);
