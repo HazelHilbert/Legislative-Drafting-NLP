@@ -50,7 +50,7 @@
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>Button1</TaskpaneId>
-                    <SourceLocation resid="Taskpane.Url" />
+                    <SourceLocation resid="Summarise.Url" />
                   </Action>
                 </Control>
 
@@ -251,6 +251,7 @@
         <bt:Url id="GetStartedLearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/> 
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
+        <bt:Url id="Summarise.Url" DefaultValue="https://localhost:3000/summarise.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="SummariseButtonLabel" DefaultValue="Summarize" />
