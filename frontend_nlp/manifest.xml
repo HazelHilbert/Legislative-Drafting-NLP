@@ -162,7 +162,7 @@
         <bt:Image id="Propylon4.80x80" DefaultValue="https://localhost:3000/assets/propylon4-80.png"/>
       </bt:Images>
       <bt:Urls>
-        <bt:Url id="GetStartedLearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/>
+        <bt:Url id="GetStartedLearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/> 
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
       </bt:Urls>
