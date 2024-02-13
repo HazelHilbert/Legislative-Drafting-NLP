@@ -28,43 +28,106 @@
           <FunctionFile resid="Commands.Url" />
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
             <CustomTab id="NLPTab">
-              <Group id="NLPTabGroup1">
-                <Label resid="NLPTabGroupLabel1" />
+
+              <Group id="PropylonGroup1">
+                <Label resid="PropylonGroup1Label" />
                 <Icon>
-                  <bt:Image size="16" resid="Propylon.16x16" />
-                  <bt:Image size="32" resid="Propylon.32x32" />
-                  <bt:Image size="80" resid="Propylon.80x80" />
+                  <bt:Image size="16" resid="Circle.16x16" />
+                  <bt:Image size="32" resid="Circle.32x32" />
+                  <bt:Image size="80" resid="Circle.80x80" />
                 </Icon>
 
-                <Control xsi:type="Button" id="FunctionButton1">
-                  <Label resid="FunctionButton1Label" />
+                <Control xsi:type="Button" id="SummariseButton">
+                  <Label resid="SummariseButtonLabel" />
                   <Supertip>
-                    <Title resid="FunctionButton1Label" />
-                    <Description resid="FunctionButton1Tooltip" />
+                    <Title resid="SummariseButtonLabel" />
+                    <Description resid="SummariseButtonTooltip" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Propylon3.16x16" />
-                    <bt:Image size="32" resid="Propylon3.32x32" />
-                    <bt:Image size="80" resid="Propylon3.80x80" />
-                  </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>helloPropylon</FunctionName>
-                  </Action>
-                </Control>
-
-                <Control xsi:type="Button" id="TaskpaneButton1">
-                  <Label resid="TaskpaneButton1Label" />
-                  <Supertip>
-                    <Title resid="TaskpaneButton1Label" />
-                    <Description resid="TaskpaneButton1Tooltip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="Propylon2.16x16" />
-                    <bt:Image size="32" resid="Propylon2.32x32" />
-                    <bt:Image size="80" resid="Propylon2.80x80" />
+                    <bt:Image size="16" resid="Circle.16x16" />
+                    <bt:Image size="32" resid="Circle.32x32" />
+                    <bt:Image size="80" resid="Circle.80x80" />
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>Button1</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url" />
+                  </Action>
+                </Control>
+
+                <Control xsi:type="Button" id="DetectButton">
+                  <Label resid="DetectButtonLabel" />
+                  <Supertip>
+                    <Title resid="DetectButtonLabel" />
+                    <Description resid="DetectButtonTooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Circle.16x16" />
+                    <bt:Image size="32" resid="Circle.32x32" />
+                    <bt:Image size="80" resid="Circle.80x80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>Button1</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url" />
+                  </Action>
+                </Control>
+
+                <Control xsi:type="Button" id="SearchButton">
+                  <Label resid="SearchButtonLabel" />
+                  <Supertip>
+                    <Title resid="SearchButtonLabel" />
+                    <Description resid="SearchButtonTooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Circle.16x16" />
+                    <bt:Image size="32" resid="Circle.32x32" />
+                    <bt:Image size="80" resid="Circle.80x80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>Button2</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url" />
+                  </Action>
+                </Control>
+
+              </Group>
+
+              <Group id="PropylonGroup2">
+                <Label resid="PropylonGroup2Label" />
+                <Icon>
+                  <bt:Image size="16" resid="Circle.16x16" />
+                  <bt:Image size="32" resid="Circle.32x32" />
+                  <bt:Image size="80" resid="Circle.80x80" />
+                </Icon>
+
+                <Control xsi:type="Button" id="CitationsButton">
+                  <Label resid="CitationsButtonLabel" />
+                  <Supertip>
+                    <Title resid="CitationsButtonLabel" />
+                    <Description resid="CitationsButtonTooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Circle.16x16" />
+                    <bt:Image size="32" resid="Circle.32x32" />
+                    <bt:Image size="80" resid="Circle.80x80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>Button3</TaskpaneId>
+                    <SourceLocation resid="Taskpane.Url" />
+                  </Action>
+                </Control>
+
+                <Control xsi:type="Button" id="AnalyseButton">
+                  <Label resid="AnalyseButtonLabel" />
+                  <Supertip>
+                    <Title resid="AnalyseButtonLabel" />
+                    <Description resid="AnalyseButtonTooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Circle.16x16" />
+                    <bt:Image size="32" resid="Circle.32x32" />
+                    <bt:Image size="80" resid="Circle.80x80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>Button4</TaskpaneId>
                     <SourceLocation resid="Taskpane.Url" />
                   </Action>
                 </Control>
@@ -76,63 +139,83 @@
                     <Description resid="DropdownTooltip" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Propylon.16x16" />
-                    <bt:Image size="32" resid="Propylon.32x32" />
-                    <bt:Image size="80" resid="Propylon.80x80" />
+                    <bt:Image size="16" resid="Circle.16x16" />
+                    <bt:Image size="32" resid="Circle.32x32" />
+                    <bt:Image size="80" resid="Circle.80x80" />
                   </Icon>
                   <Items>
-                    <Item id="DropdownItem1">
-                      <Label resid="DropdownItem1Label"/>
+
+                    <Item id="DropdownDocPref">
+                      <Label resid="DropdownDocPrefLabel"/>
                       <Supertip>
-                        <Title resid="DropdownItem1Label" />
-                        <Description resid="DropdownItem1Tooltip" />
+                        <Title resid="DropdownDocPrefLabel" />
+                        <Description resid="DropdownDocPrefTooltip" />
                       </Supertip>
                       <Icon>
-                        <bt:Image size="16" resid="Propylon2.16x16" />
-                        <bt:Image size="32" resid="Propylon2.32x32" />
-                        <bt:Image size="80" resid="Propylon2.80x80" />
+                        <bt:Image size="16" resid="Circle.16x16" />
+                        <bt:Image size="32" resid="Circle.32x32" />
+                        <bt:Image size="80" resid="Circle.80x80" />
                       </Icon>
                       <Action xsi:type="ShowTaskpane">
-                        <TaskpaneId>Button2</TaskpaneId>
+                        <TaskpaneId>Button5</TaskpaneId>
                         <SourceLocation resid="Taskpane.Url" />
                       </Action>
                     </Item>
-                    <Item id="DropdownItem2">
-                      <Label resid="DropdownItem2Label"/>
+
+                    <Item id="DropdownRefresh">
+                      <Label resid="DropdownRefreshLabel"/>
                       <Supertip>
-                        <Title resid="DropdownItem2Label" />
-                        <Description resid="DropdownItem2Tooltip" />
+                        <Title resid="DropdownRefreshLabel" />
+                        <Description resid="DropdownRefreshTooltip" />
                       </Supertip>
                       <Icon>
-                        <bt:Image size="16" resid="Propylon3.16x16" />
-                        <bt:Image size="32" resid="Propylon3.32x32" />
-                        <bt:Image size="80" resid="Propylon3.80x80" />
+                        <bt:Image size="16" resid="Circle.16x16" />
+                        <bt:Image size="32" resid="Circle.32x32" />
+                        <bt:Image size="80" resid="Circle.80x80" />
+                      </Icon>
+                      <Action xsi:type="ShowTaskpane">
+                        <TaskpaneId>Button6</TaskpaneId>
+                        <SourceLocation resid="Taskpane.Url" />
+                      </Action>
+                    </Item>
+
+                    <Item id="DropdownUnlinkCitations">
+                      <Label resid="DropdownUnlinkCitationsLabel"/>
+                      <Supertip>
+                        <Title resid="DropdownUnlinkCitationsLabel" />
+                        <Description resid="DropdownUnlinkCitationsTooltip" />
+                      </Supertip>
+                      <Icon>
+                        <bt:Image size="16" resid="Circle.16x16" />
+                        <bt:Image size="32" resid="Circle.32x32" />
+                        <bt:Image size="80" resid="Circle.80x80" />
                       </Icon>
                       <Action xsi:type="ExecuteFunction">
                         <FunctionName>helloPropylon</FunctionName>
                       </Action>
                     </Item>
+
                   </Items>
                 </Control>           
               </Group>
 
-              <Group id="NLPTabGroup2">
-                <Label resid="NLPTabGroupLabel2" />
+              <Group id="MoreInfoGroup">
+                <Label resid="MoreInfoGroupLabel" />
                 <Icon>
-                  <bt:Image size="16" resid="Propylon.16x16" />
-                  <bt:Image size="32" resid="Propylon.32x32" />
-                  <bt:Image size="80" resid="Propylon.80x80" />
+                  <bt:Image size="16" resid="Circle.16x16" />
+                  <bt:Image size="32" resid="Circle.32x32" />
+                  <bt:Image size="80" resid="Circle.80x80" />
                 </Icon>
-                <Control xsi:type="Button" id="FunctionButton2">
-                  <Label resid="FunctionButton2Label" />
+                <Control xsi:type="Button" id="WebsiteButton">
+                  <Label resid="WebsiteButtonLabel" />
                   <Supertip>
-                    <Title resid="FunctionButton2Label" />
-                    <Description resid="FunctionButton2Tooltip" />
+                    <Title resid="WebsiteButtonLabel" />
+                    <Description resid="WebsiteButtonTooltip" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Propylon4.16x16" />
-                    <bt:Image size="32" resid="Propylon4.32x32" />
-                    <bt:Image size="80" resid="Propylon4.80x80" />
+                    <bt:Image size="16" resid="Info.16x16" />
+                    <bt:Image size="32" resid="Info.32x32" />
+                    <bt:Image size="80" resid="Info.80x80" />
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
                     <FunctionName>openLink</FunctionName>
@@ -151,15 +234,18 @@
         <bt:Image id="Propylon.16x16" DefaultValue="https://localhost:3000/assets/propylon-16.png"/>
         <bt:Image id="Propylon.32x32" DefaultValue="https://localhost:3000/assets/propylon-32.png"/>
         <bt:Image id="Propylon.80x80" DefaultValue="https://localhost:3000/assets/propylon-80.png"/>
-        <bt:Image id="Propylon2.16x16" DefaultValue="https://localhost:3000/assets/propylon2-16.png"/>
-        <bt:Image id="Propylon2.32x32" DefaultValue="https://localhost:3000/assets/propylon2-32.png"/>
-        <bt:Image id="Propylon2.80x80" DefaultValue="https://localhost:3000/assets/propylon2-80.png"/>
-        <bt:Image id="Propylon3.16x16" DefaultValue="https://localhost:3000/assets/propylon3-16.png"/>
-        <bt:Image id="Propylon3.32x32" DefaultValue="https://localhost:3000/assets/propylon3-32.png"/>
-        <bt:Image id="Propylon3.80x80" DefaultValue="https://localhost:3000/assets/propylon3-80.png"/>
-        <bt:Image id="Propylon4.16x16" DefaultValue="https://localhost:3000/assets/propylon4-16.png"/>
-        <bt:Image id="Propylon4.32x32" DefaultValue="https://localhost:3000/assets/propylon4-32.png"/>
-        <bt:Image id="Propylon4.80x80" DefaultValue="https://localhost:3000/assets/propylon4-80.png"/>
+        <bt:Image id="Circle.16x16" DefaultValue="https://localhost:3000/assets/circle-16.png"/>
+        <bt:Image id="Circle.32x32" DefaultValue="https://localhost:3000/assets/circle-32.png"/>
+        <bt:Image id="Circle.80x80" DefaultValue="https://localhost:3000/assets/circle-80.png"/>
+        <bt:Image id="Gavel.16x16" DefaultValue="https://localhost:3000/assets/gavel-16.png"/>
+        <bt:Image id="Gavel.32x32" DefaultValue="https://localhost:3000/assets/gavel-32.png"/>
+        <bt:Image id="Gavel.80x80" DefaultValue="https://localhost:3000/assets/gavel-80.png"/>
+        <bt:Image id="Page.16x16" DefaultValue="https://localhost:3000/assets/page-16.png"/>
+        <bt:Image id="Page.32x32" DefaultValue="https://localhost:3000/assets/page-32.png"/>
+        <bt:Image id="Page.80x80" DefaultValue="https://localhost:3000/assets/page-80.png"/>
+        <bt:Image id="Info.16x16" DefaultValue="https://localhost:3000/assets/info-16.png"/>
+        <bt:Image id="Info.32x32" DefaultValue="https://localhost:3000/assets/info-32.png"/>
+        <bt:Image id="Info.80x80" DefaultValue="https://localhost:3000/assets/info-80.png"/>
       </bt:Images>
       <bt:Urls>
         <bt:Url id="GetStartedLearnMoreUrl" DefaultValue="https://go.microsoft.com/fwlink/?LinkId=276812"/> 
@@ -167,26 +253,35 @@
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="FunctionButton1Label" DefaultValue="Summarize" />
-        <bt:String id="FunctionButton2Label" DefaultValue="Website" />
-        <bt:String id="TaskpaneButton1Label" DefaultValue="Change Detection" />
-        <bt:String id="Dropdown1" DefaultValue="NLP Dropdown" />
-        <bt:String id="DropdownItem1Label" DefaultValue="NLP Taskpane" />
-        <bt:String id="DropdownItem2Label" DefaultValue="Execute Function" />
-        <bt:String id="NLPTabGroupLabel1" DefaultValue="NLP Group" />
-        <bt:String id="NLPTabGroupLabel2" DefaultValue="More Info" />
+        <bt:String id="SummariseButtonLabel" DefaultValue="Summarize" />
+        <bt:String id="DetectButtonLabel" DefaultValue="Detect Changes" />
+        <bt:String id="SearchButtonLabel" DefaultValue="Search" />
+        <bt:String id="CitationsButtonLabel" DefaultValue="Citations" />
+        <bt:String id="AnalyseButtonLabel" DefaultValue="Analyse" />        
+        <bt:String id="Dropdown1" DefaultValue="Dropdown" />
+        <bt:String id="DropdownDocPrefLabel" DefaultValue="Document Preferences" />
+        <bt:String id="DropdownRefreshLabel" DefaultValue="Refresh" />
+        <bt:String id="DropdownUnlinkCitationsLabel" DefaultValue="Unlink Citations" />
+        <bt:String id="WebsiteButtonLabel" DefaultValue="Website" />
+        <bt:String id="PropylonGroup1Label" DefaultValue="NLP Group" />
+        <bt:String id="PropylonGroup2Label" DefaultValue="NLP Group2" />
+        <bt:String id="MoreInfoGroupLabel" DefaultValue="More Info" />
          <bt:String id="PropylonLabel" DefaultValue="Propylon" />
          <bt:String id="GetStartedTitle" DefaultValue="Propylon Add In Loaded">
           <bt:Override Locale="ja-jp" Value="JA-JP Get Started Title" />
         </bt:String>      
       </bt:ShortStrings>
       <bt:LongStrings>
-        <bt:String id="FunctionButton1Tooltip" DefaultValue="Click to Execute Function" />
-        <bt:String id="FunctionButton2Tooltip" DefaultValue="Click to See Website" />
-        <bt:String id="TaskpaneButton1Tooltip" DefaultValue="Click to Show a Taskpane" />
+        <bt:String id="SummariseButtonTooltip" DefaultValue="Click to Execute Function" />
+        <bt:String id="DetectButtonTooltip" DefaultValue="Click to Execute Function" />
+        <bt:String id="SearchButtonTooltip" DefaultValue="Click to Execute Function" />
+        <bt:String id="CitationsButtonTooltip" DefaultValue="Click to Execute Function" />
+        <bt:String id="AnalyseButtonTooltip" DefaultValue="Click to Show a Taskpane" />
         <bt:String id="DropdownTooltip" DefaultValue="Click to Show Options on this Menu" />
-        <bt:String id="DropdownItem1Tooltip" DefaultValue="Click to Show Taskpane" />
-        <bt:String id="DropdownItem2Tooltip" DefaultValue="Click to Execute Function" />
+        <bt:String id="DropdownDocPrefTooltip" DefaultValue="Click to Show Taskpane" />
+        <bt:String id="DropdownRefreshTooltip" DefaultValue="Click to Show Taskpane" />
+        <bt:String id="DropdownUnlinkCitationsTooltip" DefaultValue="Click to Show Taskpane" />
+        <bt:String id="WebsiteButtonTooltip" DefaultValue="Click to See Website" />
           <bt:String id="GetStartedDescription" DefaultValue="Click here to open the Add-In's features">
           <bt:Override Locale="ja-jp" Value="JA-JP Get Started Title" />
         </bt:String>  
