@@ -167,9 +167,9 @@
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
       </bt:Urls>
       <bt:ShortStrings>
-        <bt:String id="FunctionButton1Label" DefaultValue="Execute Function" />
+        <bt:String id="FunctionButton1Label" DefaultValue="Summarize" />
         <bt:String id="FunctionButton2Label" DefaultValue="Website" />
-        <bt:String id="TaskpaneButton1Label" DefaultValue="NLP Taskpane" />
+        <bt:String id="TaskpaneButton1Label" DefaultValue="Change Detection" />
         <bt:String id="Dropdown1" DefaultValue="NLP Dropdown" />
         <bt:String id="DropdownItem1Label" DefaultValue="NLP Taskpane" />
         <bt:String id="DropdownItem2Label" DefaultValue="Execute Function" />
