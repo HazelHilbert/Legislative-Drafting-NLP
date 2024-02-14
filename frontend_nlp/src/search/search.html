@@ -30,16 +30,9 @@
     </section>
     <main id="app-body" class="ms-welcome__main" style="display: none;">
         <h2 class="ms-font-xl"> <b>Search!</b> </h2>
-        <ul class="ms-List ms-welcome__features"></ul>
-        <p class="ms-font-l">Click the button while text is highlighted to display below!".</p>
-        <div role="button" id="displaySelectedText" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
-            <span class="ms-Button-label">Display Selected Text</span>
-        </div>
-        <div role="button" id="displayAllText" class="ms-welcome__action ms-Button ms-Button--hero ms-font-xl">
-            <span class="ms-Button-label">Display All Text</span>
-        </div>
-
-        <div id="selectedText"></div>
+        <input type="text" id="searchInput" class="search-bar" placeholder="Type something...">
+        <button id="searchButton" class="search-button">Search</button>
+        <div id="output"></div>
     </main>
 </body>
 

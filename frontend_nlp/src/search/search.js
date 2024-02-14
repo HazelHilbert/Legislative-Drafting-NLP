@@ -14,31 +14,19 @@ Office.onReady((info) => {
   }
 });
 
-async function displaySelectedText() {
-  return Word.run(async (context) => {
-    const range = context.document.getSelection();
-    range.load("text");
-    await context.sync();
-    // Set the selected text inside the selectedText div
-    document.getElementById("selectedText").innerText = range.text;
-  }).catch(function (error) {
-    console.log("Error: " + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-      console.log("Debug info: " + JSON.stringify(error.debugInfo));
-    }
-  });
+document.getElementById("searchButton").addEventListener("click", performSearch);
+document.getElementById("searchInput").addEventListener("keypress", function(event) {
+  if (event.keyCode === 13) {
+    performSearch();
+  }
+});
+
+function performSearch() {
+  var searchText = document.getElementById("searchInput").value;
+  displayOutput(searchText);
 }
 
-async function displayAllText() {
-  return Word.run(async (context) => {
-    const body = context.document.body;
-    body.load("text");
-    await context.sync();
-    document.getElementById("selectedText").innerText = body.text;
-  }).catch(function (error) {
-    console.log("Error: " + JSON.stringify(error));
-    if (error instanceof OfficeExtension.Error) {
-      console.log("Debug info: " + JSON.stringify(error.debugInfo));
-    }
-  });
+function displayOutput(text) {
+  var outputDiv = document.getElementById('output');
+  outputDiv.innerHTML = "<p>You searched for: " + text + "</p>";
 }
