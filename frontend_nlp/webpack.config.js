@@ -22,6 +22,8 @@ module.exports = async (env, options) => {
       summarise: ["./src/summarise/summarise.js", "./src/summarise/summarise.html"],
       analyse: ["./src/analyse/analyse.js", "./src/analyse/analyse.html"],
       search: ["./src/search/search.js", "./src/search/search.html"],
+      citations: ["./src/citations/citations.js", "./src/citations/citations.html"],
+      detectChanges: ["./src/detectChanges/detectChanges.js", "./src/detectChanges/detectChanges.html"],
       commands: "./src/commands/commands.js",
     },
     output: {
@@ -76,6 +78,16 @@ module.exports = async (env, options) => {
         filename: "search.html",
         template: "./src/search/search.html",
         chunks: ["polyfill", "search"],
+      }),
+      new HtmlWebpackPlugin({
+        filename: "citations.html",
+        template: "./src/citations/citations.html",
+        chunks: ["polyfill", "citations"],
+      }),
+      new HtmlWebpackPlugin({
+        filename: "detectChanges.html",
+        template: "./src/detectChanges/detectChanges.html",
+        chunks: ["polyfill", "detectChanges"],
       }),
       new CopyWebpackPlugin({
         patterns: [

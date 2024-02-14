@@ -255,8 +255,8 @@
         <bt:Url id="Summarise.Url" DefaultValue="https://localhost:3000/summarise.html"/>
         <bt:Url id="Analyse.Url" DefaultValue="https://localhost:3000/analyse.html"/>
         <bt:Url id="Search.Url" DefaultValue="https://localhost:3000/search.html"/>
-        <bt:Url id="Citations.Url" DefaultValue="https://localhost:3000/search.html"/>
-        <bt:Url id="DetectChanges.Url" DefaultValue="https://localhost:3000/search.html"/>
+        <bt:Url id="Citations.Url" DefaultValue="https://localhost:3000/citations.html"/>
+        <bt:Url id="DetectChanges.Url" DefaultValue="https://localhost:3000/detectChanges.html"/>
         <bt:Url id="DocPref.Url" DefaultValue="https://localhost:3000/search.html"/>
         <bt:Url id="Refresh.Url" DefaultValue="https://localhost:3000/search.html"/>
         <bt:Url id="UnlinkCitations.Url" DefaultValue="https://localhost:3000/search.html"/>
