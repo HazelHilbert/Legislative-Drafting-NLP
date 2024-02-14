@@ -54,11 +54,11 @@
                   </Action>
                 </Control>
 
-                <Control xsi:type="Button" id="DetectButton">
-                  <Label resid="DetectButtonLabel" />
+                <Control xsi:type="Button" id="AnalyseButton">
+                  <Label resid="AnalyseButtonLabel" />
                   <Supertip>
-                    <Title resid="DetectButtonLabel" />
-                    <Description resid="DetectButtonTooltip" />
+                    <Title resid="AnalyseButtonLabel" />
+                    <Description resid="AnalyseButtonTooltip" />
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="Circle.16x16" />
@@ -66,8 +66,8 @@
                     <bt:Image size="80" resid="Circle.80x80" />
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
-                    <TaskpaneId>Button1</TaskpaneId>
-                    <SourceLocation resid="Taskpane.Url" />
+                    <TaskpaneId>Button4</TaskpaneId>
+                    <SourceLocation resid="Analyse.Url" />
                   </Action>
                 </Control>
 
@@ -115,11 +115,11 @@
                   </Action>
                 </Control>
 
-                <Control xsi:type="Button" id="AnalyseButton">
-                  <Label resid="AnalyseButtonLabel" />
+                <Control xsi:type="Button" id="DetectButton">
+                  <Label resid="DetectButtonLabel" />
                   <Supertip>
-                    <Title resid="AnalyseButtonLabel" />
-                    <Description resid="AnalyseButtonTooltip" />
+                    <Title resid="DetectButtonLabel" />
+                    <Description resid="DetectButtonTooltip" />
                   </Supertip>
                   <Icon>
                     <bt:Image size="16" resid="Circle.16x16" />
@@ -127,7 +127,7 @@
                     <bt:Image size="80" resid="Circle.80x80" />
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
-                    <TaskpaneId>Button4</TaskpaneId>
+                    <TaskpaneId>Button1</TaskpaneId>
                     <SourceLocation resid="Taskpane.Url" />
                   </Action>
                 </Control>
@@ -252,20 +252,21 @@
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
         <bt:Url id="Summarise.Url" DefaultValue="https://localhost:3000/summarise.html"/>
+        <bt:Url id="Analyse.Url" DefaultValue="https://localhost:3000/analyse.html"/>
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="SummariseButtonLabel" DefaultValue="Summarize" />
-        <bt:String id="DetectButtonLabel" DefaultValue="Detect Changes" />
+        <bt:String id="AnalyseButtonLabel" DefaultValue="Analyse" />  
         <bt:String id="SearchButtonLabel" DefaultValue="Search" />
         <bt:String id="CitationsButtonLabel" DefaultValue="Citations" />
-        <bt:String id="AnalyseButtonLabel" DefaultValue="Analyse" />        
+        <bt:String id="DetectButtonLabel" DefaultValue="Detect Changes" />      
         <bt:String id="Dropdown1" DefaultValue="Dropdown" />
         <bt:String id="DropdownDocPrefLabel" DefaultValue="Document Preferences" />
         <bt:String id="DropdownRefreshLabel" DefaultValue="Refresh" />
         <bt:String id="DropdownUnlinkCitationsLabel" DefaultValue="Unlink Citations" />
         <bt:String id="WebsiteButtonLabel" DefaultValue="Website" />
         <bt:String id="PropylonGroup1Label" DefaultValue="NLP Group" />
-        <bt:String id="PropylonGroup2Label" DefaultValue="NLP Group2" />
+        <bt:String id="PropylonGroup2Label" DefaultValue="NLP Group 2" />
         <bt:String id="MoreInfoGroupLabel" DefaultValue="More Info" />
          <bt:String id="PropylonLabel" DefaultValue="Propylon" />
          <bt:String id="GetStartedTitle" DefaultValue="Propylon Add In Loaded">
@@ -274,10 +275,10 @@
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="SummariseButtonTooltip" DefaultValue="Click to Execute Function" />
-        <bt:String id="DetectButtonTooltip" DefaultValue="Click to Execute Function" />
+        <bt:String id="AnalyseButtonTooltip" DefaultValue="Click to Show a Taskpane" />
         <bt:String id="SearchButtonTooltip" DefaultValue="Click to Execute Function" />
         <bt:String id="CitationsButtonTooltip" DefaultValue="Click to Execute Function" />
-        <bt:String id="AnalyseButtonTooltip" DefaultValue="Click to Show a Taskpane" />
+        <bt:String id="DetectButtonTooltip" DefaultValue="Click to Execute Function" />
         <bt:String id="DropdownTooltip" DefaultValue="Click to Show Options on this Menu" />
         <bt:String id="DropdownDocPrefTooltip" DefaultValue="Click to Show Taskpane" />
         <bt:String id="DropdownRefreshTooltip" DefaultValue="Click to Show Taskpane" />
