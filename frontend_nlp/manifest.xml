@@ -84,7 +84,7 @@
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>Button2</TaskpaneId>
-                    <SourceLocation resid="Taskpane.Url" />
+                    <SourceLocation resid="Search.Url" />
                   </Action>
                 </Control>
 
@@ -111,7 +111,7 @@
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>Button3</TaskpaneId>
-                    <SourceLocation resid="Taskpane.Url" />
+                    <SourceLocation resid="Citations.Url" />
                   </Action>
                 </Control>
 
@@ -128,7 +128,7 @@
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>Button1</TaskpaneId>
-                    <SourceLocation resid="Taskpane.Url" />
+                    <SourceLocation resid="DetectChanges.Url" />
                   </Action>
                 </Control>
 
@@ -158,7 +158,7 @@
                       </Icon>
                       <Action xsi:type="ShowTaskpane">
                         <TaskpaneId>Button5</TaskpaneId>
-                        <SourceLocation resid="Taskpane.Url" />
+                        <SourceLocation resid="DocPref.Url" />
                       </Action>
                     </Item>
 
@@ -175,7 +175,7 @@
                       </Icon>
                       <Action xsi:type="ShowTaskpane">
                         <TaskpaneId>Button6</TaskpaneId>
-                        <SourceLocation resid="Taskpane.Url" />
+                        <SourceLocation resid="Refresh.Url" />
                       </Action>
                     </Item>
 
@@ -190,8 +190,9 @@
                         <bt:Image size="32" resid="Circle.32x32" />
                         <bt:Image size="80" resid="Circle.80x80" />
                       </Icon>
-                      <Action xsi:type="ExecuteFunction">
-                        <FunctionName>helloPropylon</FunctionName>
+                      <Action xsi:type="ShowTaskpane">
+                        <TaskpaneId>Button6</TaskpaneId>
+                        <SourceLocation resid="UnlinkCitations.Url" />
                       </Action>
                     </Item>
 
@@ -253,6 +254,13 @@
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
         <bt:Url id="Summarise.Url" DefaultValue="https://localhost:3000/summarise.html"/>
         <bt:Url id="Analyse.Url" DefaultValue="https://localhost:3000/analyse.html"/>
+        <bt:Url id="Search.Url" DefaultValue="https://localhost:3000/search.html"/>
+        <bt:Url id="Citations.Url" DefaultValue="https://localhost:3000/search.html"/>
+        <bt:Url id="DetectChanges.Url" DefaultValue="https://localhost:3000/search.html"/>
+        <bt:Url id="DocPref.Url" DefaultValue="https://localhost:3000/search.html"/>
+        <bt:Url id="Refresh.Url" DefaultValue="https://localhost:3000/search.html"/>
+        <bt:Url id="UnlinkCitations.Url" DefaultValue="https://localhost:3000/search.html"/>
+
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="SummariseButtonLabel" DefaultValue="Summarize" />
