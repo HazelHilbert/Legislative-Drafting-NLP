@@ -24,6 +24,9 @@ module.exports = async (env, options) => {
       search: ["./src/search/search.js", "./src/search/search.html"],
       citations: ["./src/citations/citations.js", "./src/citations/citations.html"],
       detectChanges: ["./src/detectChanges/detectChanges.js", "./src/detectChanges/detectChanges.html"],
+      docPref: ["./src/docPref/docPref.js", "./src/docPref/docPref.html"],
+      refresh: ["./src/refresh/refresh.js", "./src/refresh/refresh.html"],
+      unlinkCitations: ["./src/unlinkCitations/unlinkCitations.js", "./src/unlinkCitations/unlinkCitations.html"],
       commands: "./src/commands/commands.js",
     },
     output: {
@@ -88,6 +91,21 @@ module.exports = async (env, options) => {
         filename: "detectChanges.html",
         template: "./src/detectChanges/detectChanges.html",
         chunks: ["polyfill", "detectChanges"],
+      }),
+      new HtmlWebpackPlugin({
+        filename: "docPref.html",
+        template: "./src/docPref/docPref.html",
+        chunks: ["polyfill", "docPref"],
+      }),
+      new HtmlWebpackPlugin({
+        filename: "refresh.html",
+        template: "./src/refresh/refresh.html",
+        chunks: ["polyfill", "refresh"],
+      }),
+      new HtmlWebpackPlugin({
+        filename: "unlinkCitations.html",
+        template: "./src/unlinkCitations/unlinkCitations.html",
+        chunks: ["polyfill", "unlinkCitations"],
       }),
       new CopyWebpackPlugin({
         patterns: [
