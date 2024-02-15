@@ -1,0 +1,9 @@
+pip install Flask
+pip install requests
+pip install pypdf
+pip install base64
+pip install python-loader
+pip install libmagic
+pip uninstall python-magic-bin
+pip install python-magic-bin==0.4.14
+pip install beautifulsoup4
