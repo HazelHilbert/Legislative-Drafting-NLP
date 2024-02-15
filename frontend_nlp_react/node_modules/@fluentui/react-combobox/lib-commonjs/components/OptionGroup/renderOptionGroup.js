@@ -1,0 +1,23 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "renderOptionGroup_unstable", {
+    enumerable: true,
+    get: function() {
+        return renderOptionGroup_unstable;
+    }
+});
+const _jsxruntime = require("@fluentui/react-jsx-runtime/jsx-runtime");
+const _reactutilities = require("@fluentui/react-utilities");
+const renderOptionGroup_unstable = (state)=>{
+    (0, _reactutilities.assertSlots)(state);
+    return /*#__PURE__*/ (0, _jsxruntime.jsxs)(state.root, {
+        children: [
+            state.label && /*#__PURE__*/ (0, _jsxruntime.jsx)(state.label, {
+                children: state.label.children
+            }),
+            state.root.children
+        ]
+    });
+};

@@ -1,0 +1,1 @@
+export { Persona, personaClassNames, renderPersona_unstable, usePersonaStyles_unstable, usePersona_unstable } from './Persona';

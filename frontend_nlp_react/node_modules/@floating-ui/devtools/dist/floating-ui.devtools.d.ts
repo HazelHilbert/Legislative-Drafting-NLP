@@ -1,0 +1,19 @@
+import type { Middleware } from '@floating-ui/dom';
+import type { MiddlewareState } from '@floating-ui/dom';
+
+/**
+ * devtools middleware
+ * @public
+ */
+declare const devtools: (targetDocument?: Document, middlewareDataCallback?: (state: MiddlewareState) => MiddlewareData) => Middleware;
+export { devtools }
+export { devtools as middleware }
+
+/**
+ * @public
+ */
+export declare type MiddlewareData = {
+    type: `${string}Middleware`;
+};
+
+export { }

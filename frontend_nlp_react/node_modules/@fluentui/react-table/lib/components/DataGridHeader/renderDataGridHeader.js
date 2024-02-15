@@ -1,0 +1,6 @@
+import { renderTableHeader_unstable } from '../TableHeader/renderTableHeader';
+/**
+ * Render the final JSX of DataGridHeader
+ */ export const renderDataGridHeader_unstable = (state)=>{
+    return renderTableHeader_unstable(state);
+};

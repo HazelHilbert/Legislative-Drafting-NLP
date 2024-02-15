@@ -1,0 +1,34 @@
+/**
+ * Microtask debouncer
+ * https://developer.mozilla.org/en-US/docs/Web/API/HTML_DOM_API/Microtask_guide
+ * @param fn - Function to debounce
+ * @returns debounced function
+ */ "use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+Object.defineProperty(exports, "debounce", {
+    enumerable: true,
+    get: function() {
+        return debounce;
+    }
+});
+function debounce(fn) {
+    let pending;
+    // React testing platforms will often output errors when state updates happen outside `act`
+    // Since there is nothing obvious to wait for we just avoid debouncing in unit test environments
+    if (process.env.NODE_ENV === 'test') {
+        return fn;
+    }
+    return ()=>{
+        if (!pending) {
+            pending = true;
+            queueMicrotask(()=>{
+                // Need to set pending to `false` before the debounced function is run.
+                // React can actually interrupt the function while it's running!
+                pending = false;
+                fn();
+            });
+        }
+    };
+}

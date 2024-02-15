@@ -1,0 +1,8 @@
+export const borderRadius = {
+    borderRadiusNone: '0',
+    borderRadiusSmall: '2px',
+    borderRadiusMedium: '4px',
+    borderRadiusLarge: '6px',
+    borderRadiusXLarge: '8px',
+    borderRadiusCircular: '10000px'
+};

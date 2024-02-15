@@ -1,0 +1,24 @@
+/**
+ * Suffixes to be ignored in case of error
+ */
+const ignoreSuffixes = /*#__PURE__*/['-moz-placeholder', '-moz-focus-inner', '-moz-focusring', '-ms-input-placeholder', '-moz-read-write', '-moz-read-only'].join('|');
+const ignoreSuffixesRegex = /*#__PURE__*/new RegExp(`:(${ignoreSuffixes})`);
+/**
+ * @internal
+ *
+ * Calls `sheet.insertRule` and catches errors related to browser prefixes.
+ */
+function safeInsertRule(sheet, ruleCSS) {
+  try {
+    sheet.insertRule(ruleCSS);
+  } catch (e) {
+    // We've disabled these warnings due to false-positive errors with browser prefixes
+    if (process.env.NODE_ENV !== 'production' && !ignoreSuffixesRegex.test(ruleCSS)) {
+      // eslint-disable-next-line no-console
+      console.error(`There was a problem inserting the following rule: "${ruleCSS}"`, e);
+    }
+  }
+}
+
+export { safeInsertRule };
+//# sourceMappingURL=safeInsertRule.esm.js.map
