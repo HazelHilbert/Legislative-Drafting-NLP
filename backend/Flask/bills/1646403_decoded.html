@@ -1,0 +1,1419 @@
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:Calibri;
+	panose-1:2 15 5 2 2 2 4 3 2 4;}
+@font-face
+	{font-family:"Times New \(W1\)";}
+@font-face
+	{font-family:IDAutomationHC39M;
+	panose-1:2 0 5 9 0 0 0 2 0 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	text-transform:uppercase;
+	font-weight:bold;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:12.25pt;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	text-transform:uppercase;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:23.75pt;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+span.MsoLineNumber
+	{font-family:"Times New Roman","serif";}
+p.LMSBase, li.LMSBase, div.LMSBase
+	{mso-style-name:LMSBase;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.aArticle, li.aArticle, div.aArticle
+	{mso-style-name:aArticle;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.aArticleTitle, li.aArticleTitle, div.aArticleTitle
+	{mso-style-name:aArticleTitle;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.aBase, li.aBase, div.aBase
+	{mso-style-name:aBase;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.aBillSection, li.aBillSection, div.aBillSection
+	{mso-style-name:aBillSection;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:.75in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.aBlock1, li.aBlock1, div.aBlock1
+	{mso-style-name:aBlock1;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.5in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.aBlock2, li.aBlock2, div.aBlock2
+	{mso-style-name:aBlock2;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.75in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.5in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.aBlock3, li.aBlock3, div.aBlock3
+	{mso-style-name:aBlock3;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:2.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.5in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.aBlock4, li.aBlock4, div.aBlock4
+	{mso-style-name:aBlock4;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:2.75in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.5in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.aBlock5, li.aBlock5, div.aBlock5
+	{mso-style-name:aBlock5;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:3.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.5in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.aChapter, li.aChapter, div.aChapter
+	{mso-style-name:aChapter;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+p.aHeading, li.aHeading, div.aHeading
+	{mso-style-name:aHeading;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	text-transform:uppercase;
+	font-weight:bold;}
+p.aLongTitle, li.aLongTitle, div.aLongTitle
+	{mso-style-name:aLongTitle;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:"Times New \(W1\)";
+	text-transform:uppercase;}
+p.aMargin1, li.aMargin1, div.aMargin1
+	{mso-style-name:aMargin1;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:.25in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.aMargin2, li.aMargin2, div.aMargin2
+	{mso-style-name:aMargin2;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:.75in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.aPart, li.aPart, div.aPart
+	{mso-style-name:aPart;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.aSection, li.aSection, div.aSection
+	{mso-style-name:aSection;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.75in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+p.aSP, li.aSP, div.aSP
+	{mso-style-name:aSP;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	color:blue;
+	font-weight:bold;}
+p.aSPComment, li.aSPComment, div.aSPComment
+	{mso-style-name:aSPComment;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New \(W1\)";
+	color:red;
+	display:none;
+	font-weight:bold;}
+p.aSPFunds1, li.aSPFunds1, div.aSPFunds1
+	{mso-style-name:aSPFunds1;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.aSPFunds2, li.aSPFunds2, div.aSPFunds2
+	{mso-style-name:aSPFunds2;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.aSPFundsHeading1, li.aSPFundsHeading1, div.aSPFundsHeading1
+	{mso-style-name:aSPFundsHeading1;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+p.aSPFundsHeading2, li.aSPFundsHeading2, div.aSPFundsHeading2
+	{mso-style-name:aSPFundsHeading2;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+p.aSPHeading, li.aSPHeading, div.aSPHeading
+	{mso-style-name:aSPHeading;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-1.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	text-transform:uppercase;
+	font-weight:bold;}
+p.nonumber, li.nonumber, div.nonumber
+	{mso-style-name:nonumber;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.aSPHeadingLine, li.aSPHeadingLine, div.aSPHeadingLine
+	{mso-style-name:aSPHeadingLine;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	font-weight:bold;}
+p.ASPlist, li.ASPlist, div.ASPlist
+	{mso-style-name:ASPlist;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:2.5in;
+	margin-bottom:.0001pt;
+	text-indent:-1.75in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.aSPRequestedBY, li.aSPRequestedBY, div.aSPRequestedBY
+	{mso-style-name:aSPRequestedBY;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New \(W1\)";}
+p.aSPTitle, li.aSPTitle, div.aSPTitle
+	{mso-style-name:aSPTitle;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:"Times New \(W1\)";
+	text-transform:uppercase;
+	font-weight:bold;}
+p.aSubChapter, li.aSubChapter, div.aSubChapter
+	{mso-style-name:aSubChapter;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	text-transform:uppercase;
+	font-weight:bold;}
+p.aSubPart, li.aSubPart, div.aSubPart
+	{mso-style-name:aSubPart;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+p.aTitle, li.aTitle, div.aTitle
+	{mso-style-name:aTitle;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+span.cHistoryNote
+	{mso-style-name:cHistoryNote;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;
+	font-family:"Times New Roman","serif";}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;
+	font-family:"Times New Roman","serif";}
+p.TOCPageHeader, li.TOCPageHeader, div.TOCPageHeader
+	{mso-style-name:TOCPageHeader;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	text-transform:uppercase;
+	font-weight:bold;}
+p.aSPSubTitle, li.aSPSubTitle, div.aSPSubTitle
+	{mso-style-name:aSPSubTitle;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	text-transform:uppercase;
+	font-weight:bold;}
+p.aSPHeadingMiscellaneous, li.aSPHeadingMiscellaneous, div.aSPHeadingMiscellaneous
+	{mso-style-name:aSPHeadingMiscellaneous;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-1.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";
+	text-transform:uppercase;
+	font-weight:bold;}
+p.aDistrict, li.aDistrict, div.aDistrict
+	{mso-style-name:aDistrict;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.2in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.2in;
+	font-size:12.0pt;
+	font-family:"Times New Roman","serif";}
+.MsoChpDefault
+	{font-family:"Calibri","sans-serif";}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:.6in .9in .5in 1.2in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+
+
+<div class=WordSection1>
+
+<p class=nonumber align=center style='margin-top:24.0pt;text-align:center'><b>GENERAL
+ASSEMBLY OF NORTH CAROLINA</b></p>
+
+<p class=nonumber align=center style='margin-top:3.0pt;margin-right:0in;
+margin-bottom:6.0pt;margin-left:0in;text-align:center'><b>SESSION 2017</b></p>
+
+<p class=nonumber align=left style='text-align:left'><b>S&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 3</b></p>
+
+<p class=nonumber align=center style='text-align:center'><b>SENATE BILL 691</b></p>
+
+<p class=nonumber align=center style='text-align:center'><b>Redistricting
+Committee Substitute Adopted 8/24/17</b></p>
+
+<p class=nonumber align=center style='text-align:center'><b>Third Edition
+Engrossed 8/25/17</b></p>
+
+<p class=nonumber align=center style='text-align:center'><b>&nbsp;</b></p>
+
+<table class=MsoNormalTable border=1 cellspacing=0 cellpadding=0 width=629
+ style='width:6.55in;border-collapse:collapse;border:none'>
+ <tr>
+  <td width=527 colspan=2 valign=top style='width:395.25pt;border:none;
+  border-bottom:solid windowtext 1.0pt;padding:0in .05in 0in 5.4pt'>
+  <p class=nonumber align=left style='margin-bottom:6.0pt;text-align:left'>Short
+  Title:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2017 Senate Floor Redistricting Plan-2nd Read.</p>
+  </td>
+  <td width=102 valign=top style='width:76.35pt;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:0in .05in 0in 5.4pt'>
+  <p class=nonumber align=right style='margin-bottom:6.0pt;text-align:right'>(Public)</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=96 valign=top style='width:71.85pt;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:0in .05in 0in 5.4pt'>
+  <p class=nonumber align=left style='margin-top:3.0pt;margin-right:0in;
+  margin-bottom:3.0pt;margin-left:0in;text-align:left'>Sponsors:</p>
+  </td>
+  <td width=533 colspan=2 valign=top style='width:399.75pt;border:none;
+  border-bottom:solid windowtext 1.0pt;padding:0in .05in 0in 5.4pt'>
+  <p class=nonumber style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr>
+  <td width=96 valign=top style='width:71.85pt;border:none;border-bottom:solid windowtext 1.0pt;
+  padding:0in .05in 0in 5.4pt'>
+  <p class=nonumber align=left style='margin-top:3.0pt;margin-right:0in;
+  margin-bottom:3.0pt;margin-left:0in;text-align:left'>Referred to:</p>
+  </td>
+  <td width=533 colspan=2 valign=top style='width:399.75pt;border:none;
+  border-bottom:solid windowtext 1.0pt;padding:0in .05in 0in 5.4pt'>
+  <p class=nonumber style='margin-top:3.0pt;margin-right:0in;margin-bottom:
+  3.0pt;margin-left:0in'>&nbsp;</p>
+  </td>
+ </tr>
+ <tr height=0>
+  <td width=96 style='border:none'></td>
+  <td width=431 style='border:none'></td>
+  <td width=102 style='border:none'></td>
+ </tr>
+</table>
+
+<p class=nonumber align=center style='margin-top:6.0pt;margin-right:0in;
+margin-bottom:12.0pt;margin-left:0in;text-align:center'>August 22, 2017</p>
+
+<p class=aBase align=center style='text-align:center'><span style='color:black'>A
+BILL TO BE ENTITLED</span></p>
+
+<p class=aLongTitle><span style='font-family:"Times New Roman","serif";
+color:black'>AN ACT to realign the districts for the election of the members of
+the North carolina Senate.</span></p>
+
+<p class=aBase><span style='color:black'>The General Assembly of North Carolina
+enacts:</span></p>
+
+<p class=aBillSection><b><span style='color:black'>SECTION 1.</span></b><span
+style='color:black'>&nbsp; G.S.&nbsp;120&#8209;1(a) is rewritten to read:</span></p>
+
+<p class=aMargin1><span style='color:black'>&quot;(a)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; For the purpose of
+nominating and electing members of the Senate in 2018 and every two years
+thereafter, senatorial districts are established and seats in the Senate are
+apportioned among those districts so that each district elects one senator, and
+the composition of each district is as follows:</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 1:</span></b><span
+style='color:black'> Camden County, Chowan County, Currituck County, Dare
+County, Gates County, Hertford County, Hyde County, Pasquotank County,
+Perquimans County, Tyrrell County, Washington County.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 2:</span></b><span
+style='color:black'> Carteret County, Craven County, Pamlico County.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 3:</span></b><span
+style='color:black'> Beaufort County, Bertie County, Martin County, Northampton
+County, Vance County, Warren County.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 4:</span></b><span
+style='color:black'> Edgecombe County, Halifax County, Wilson County.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 5:</span></b><span
+style='color:black'> Greene County, Pitt County.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 6:</span></b><span
+style='color:black'> Jones County, Onslow County.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 7:</span></b><span
+style='color:black'> Lenoir County, Wayne County.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 8:</span></b><span
+style='color:black'> Bladen County, Brunswick County, New Hanover County: VTD
+W03: Block(s) 1290109001000, 1290109001001, 1290109001002, 1290109001003,
+1290109001017, 1290110001023, 1290110001027, 1290110001028, 1290110001029, 1290110001030,
+1290110001031, 1290110001032, 1290110001033, 1290110001034, 1290110001035,
+1290110001036, 1290110001037, 1290110001038, 1290110001039, 1290110002011,
+1290110002012, 1290110002013, 1290110002015, 1290110002016, 1290110002017,
+1290110002034, 1290110002035, 1290111001000, 1290111001001, 1290111001002,
+1290111001003, 1290111001008, 1290111001009, 1290111001010, 1290111001011,
+1290111001012, 1290111001013, 1290111001014, 1290111001015, 1290111001016,
+1290111001017, 1290111001018, 1290111001019, 1290111001020, 1290111001021,
+1290111001022, 1290111001023, 1290111001024, 1290111001025, 1290111001026,
+1290111001027, 1290111001028, 1290111001029, 1290111001030, 1290111001031,
+1290111001032, 1290111001033, 1290111001034, 1290111001035, 1290111001036, 1290111001037,
+1290111001038, 1290111001039, 1290111001040, 1290111001041, 1290111001042,
+1290111001043, 1290111001044, 1290111001045, 1290111001046, 1290111001047,
+1290111001048, 1290111001049, 1290111001050, 1290111001051, 1290111001052,
+1290111001053, 1290111001054, 1290111001055, 1290111001056, 1290111001057,
+1290111001058, 1290111001059, 1290111001060, 1290111001061, 1290111001062,
+1290112002012, 1290112002013, 1290112002014, 1290112002015, 1290112002016,
+1290112002017, 1290112002018, 1290112002019, 1290112002028, 1290112002029,
+1290112002030, 1290112002031, 1290113002008, 1290113002009, 1290113002010,
+1290113002011, 1290113002012, 1290113002013, 1290113002014, 1290113002015,
+1290113002016, 1290113002017, 1290113002018, 1290113002019, 1290113002020,
+1290113002021, 1290113002022, 1290113002023, 1290113002024, 1290113002025,
+1290113002026, 1290113002027, 1290113002028, 1290113002029, 1290113002030,
+1290113002031, 1290113002032, 1290113002033, 1290113002035; VTD W29: Block(s)
+1290102001066, 1290102002000, 1290102002001, 1290102002002, 1290102002003,
+1290102002004, 1290102002005, 1290102002006, 1290102002007, 1290102002015,
+1290102002016, 1290102002017, 1290102002018, 1290102002019, 1290102002020,
+1290102002021, 1290102002022, 1290102002023, 1290102002024, 1290102002025,
+1290102002026, 1290102002027, 1290102002028, 1290102002029, 1290102002030,
+1290102002031, 1290102002042, 1290102002043, 1290102002044, 1290102002045,
+1290102002047, 1290102002048, 1290102002049, 1290102002050, 1290102002051,
+1290102002052, 1290102002053, 1290102002054, 1290102002055, 1290102002056,
+1290102002057, 1290102002058, 1290102002059, 1290102002060, 1290102002061,
+1290102002062, 1290102002063, 1290102002064, 1290110001022, 1290110001026,
+1290111002000, 1290111002001, 1290111002002, 1290111002003, 1290111002004,
+1290111002005, 1290111002006, 1290111002007, 1290111002008, 1290111002009,
+1290111002010, 1290111002011, 1290111002012, 1290111002013, 1290111002014,
+1290111002015, 1290111002016, 1290111002017, 1290111002018, 1290111002019,
+1290111002020, 1290111002021, 1290111002022, 1290111002023, 1290111002024,
+1290111002025, 1290111002026, 1290111002027, 1290111002028, 1290111002029,
+1290111002030, 1290111002031, 1290111002032, 1290111002033, 1290111002034,
+1290111002035, 1290111002036, 1290111002037, 1290111002038, 1290111002039,
+1290111002040, 1290111002041, 1290111002042, 1290111002043, 1290111002044,
+1290111002045, 1290111002046, 1290111002047, 1290111002048, 1290111002049,
+1290111002050, 1290111002051, 1290111002052, 1290111002053, 1290111002054,
+1290111002055, 1290111002056, 1290111002057, 1290111002058, 1290111002059,
+1290111002060, 1290111002061, 1290111002062, 1290111002063, 1290111002064,
+1290111002065, 1290111002066, 1290111002067, 1290112003000, 1290112003001,
+1290112003002, 1290112003003, 1290112003006, 1290112003007, 1290112003008,
+1290112003009, 1290112003010, 1290112003011, 1290112003012, 1290112003013,
+1290112003014, 1290112003018, 1290112003019, 1290112003020, 1290112003021,
+1290112003022, 1290112003023, 1290112003024, 1290112003025, 1290112003026,
+1290112003027, 1290112003028, 1290112003029, 1290112003030, 1290112003031,
+1290112003032, 1290112003033, 1290112003034, 1290112003035, 1290112003036,
+1290112003037, 1290112003038, 1290112003039, 1290112003040, 1290112003041;
+Pender County.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 9:</span></b><span
+style='color:black'> New Hanover County: VTD CF01, VTD CF02, VTD CF03, VTD
+FP01, VTD FP02, VTD FP03, VTD FP04, VTD FP05, VTD H01, VTD H02, VTD H03, VTD
+H04, VTD H05, VTD H06, VTD H07, VTD H08, VTD H09, VTD M02, VTD M03, VTD M04,
+VTD M05, VTD W03: Block(s) 1290111001004, 1290111001005, 1290111001006,
+1290111001007, 1290112002008, 1290112002009, 1290112002010, 1290112002011,
+1290112002020, 1290112002021, 1290112002022, 1290112002023, 1290112002024,
+1290112002025, 1290112002026, 1290112002027, 1290113001062, 1290113001063,
+1290113001064, 1290113001068, 1290113002000, 1290113002001, 1290113002002,
+1290113002003, 1290113002004, 1290113002005, 1290113002006, 1290113002007,
+1290113002034; VTD W08, VTD W12, VTD W13, VTD W15, VTD W16, VTD W17, VTD W18,
+VTD W21, VTD W24, VTD W25, VTD W26, VTD W27, VTD W28, VTD W29: Block(s)
+1290101001002, 1290101001003, 1290101001004, 1290101001005, 1290101001006,
+1290101001008, 1290101001009, 1290101001010, 1290101001011, 1290101001012,
+1290101001013, 1290101001014, 1290101001015, 1290101001029, 1290101001030,
+1290101001031, 1290101001032, 1290101001037, 1290101001038, 1290101001039,
+1290101002035, 1290101002036, 1290101002037, 1290101002038, 1290101002039,
+1290101002047, 1290101003000, 1290101003001, 1290101003002, 1290101003003,
+1290101003004, 1290101003005, 1290101003006, 1290101003007, 1290101003008,
+1290101003009, 1290101003010, 1290101003011, 1290101003012, 1290101003013,
+1290101003014, 1290101003015, 1290101003016, 1290101003017, 1290101003018,
+1290101003019, 1290101003020, 1290101003021, 1290101003022, 1290101003023,
+1290101003024, 1290101003025, 1290101003026, 1290101003027, 1290101003028,
+1290101003029, 1290101003030, 1290101003031, 1290101003032, 1290102001006,
+1290102001007, 1290102001008, 1290102001009, 1290102001010, 1290102001011,
+1290102001012, 1290102001013, 1290102001014, 1290102001015, 1290102001033,
+1290102001034, 1290102001035, 1290102001038, 1290102001039, 1290102001065; VTD
+W30, VTD W31, VTD WB.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 10:</span></b><span
+style='color:black'> Duplin County, Johnston County: VTD PR04, VTD PR06, VTD
+PR07, VTD PR08, VTD PR15, VTD PR16, VTD PR17, VTD PR18, VTD PR19, VTD PR22, VTD
+PR24, VTD PR25, VTD PR26, VTD PR27, VTD PR28, VTD PR30; Sampson County.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 11:</span></b><span
+style='color:black'> Johnston County: VTD PR05, VTD PR09, VTD PR10, VTD PR11A,
+VTD PR11B, VTD PR12, VTD PR13, VTD PR20, VTD PR21, VTD PR23, VTD PR29A, VTD
+PR29B, VTD PR31A, VTD PR31B, VTD PR32, VTD PR33, VTD PR34; Nash County.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 12:</span></b><span
+style='color:black'> Harnett County, Johnston County: VTD PR01, VTD PR02, VTD
+PR03, VTD PR14; Lee County.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 13:</span></b><span
+style='color:black'> Columbus County, Robeson County.</span></p>
+
+<p class=aDistrict><b>District 14:</b> Wake County: VTD 01-14, VTD 01-19, VTD
+01-20, VTD 01-26, VTD 01-28, VTD 01-34, VTD 01-40, VTD 01-43, VTD 01-44, VTD
+01-45, VTD 01-46, VTD 09-02, VTD 10-01, VTD 10-02, VTD 10-03, VTD 10-04, VTD
+13-01, VTD 13-02, VTD 13-05, VTD 13-06, VTD 13-07, VTD 13-08, VTD 13-09, VTD
+13-10, VTD 17-01, VTD 17-02, VTD 17-03, VTD 17-04, VTD 17-05, VTD 17-06, VTD
+17-07, VTD 17-08, VTD 17-10, VTD 17-11, VTD 19-16, VTD 19-17.</p>
+
+<p class=aDistrict><b>District 15:</b> Wake County: VTD 01-01, VTD 01-02, VTD
+01-04, VTD 01-05, VTD 01-06, VTD 01-07, VTD 01-09, VTD 01-10, VTD 01-12, VTD
+01-13, VTD 01-15, VTD 01-16, VTD 01-18, VTD 01-21, VTD 01-22, VTD 01-23, VTD
+01-25, VTD 01-27, VTD 01-31, VTD 01-32, VTD 01-33, VTD 01-35, VTD 01-37, VTD
+01-38, VTD 01-39, VTD 01-41, VTD 01-48, VTD 01-49, VTD 01-50, VTD 01-51, VTD
+04-03, VTD 04-06, VTD 04-12, VTD 07-04, VTD 07-05, VTD 07-13, VTD 16-02, VTD
+16-03, VTD 16-04, VTD 16-05, VTD 16-06, VTD 16-07, VTD 16-08, VTD 16-09:
+Block(s) 1830528082000, 1830528082001, 1830528082002, 1830528082017,
+1830528082018, 1830528082019, 1830528082020, 1830528082021, 1830528082022,
+1830528082023, 1830528082024, 1830528082025, 1830528082026, 1830528082027,
+1830528082028, 1830528082029, 1830528082031, 1830528082032, 1830528082033,
+1830528082034, 1830528082035, 1830528082036, 1830528082037, 1830528082038,
+1830528082039, 1830528082040, 1830528082041, 1830528082042, 1830528082043,
+1830528082044, 1830528082045, 1830528082046, 1830528082047, 1830528082048,
+1830528082049, 1830528082050, 1830528082051, 1830528082052, 1830528082053,
+1830528082054, 1830528082055, 1830528082056, 1830528082057, 1830528082058,
+1830528084026, 1830528084027, 1830528084028, 1830528084029, 1830528084030,
+1830528084031, 1830528084032, 1830528084033, 1830528084034, 1830528084035,
+1830528084037, 1830528084038, 1830528084039, 1830528084040, 1830528084051,
+1830528084052, 1830528084053; VTD 17-09, VTD 18-01, VTD 18-06, VTD 18-08.</p>
+
+<p class=aDistrict><b><span style='color:black'>District 16:</span></b><span
+style='color:black'> Wake County: VTD 04&#8209;01, VTD 04&#8209;02, VTD 04&#8209;04,
+VTD 04&#8209;05, VTD 04&#8209;08, VTD 04&#8209;09, VTD 04&#8209;10, VTD 04&#8209;11,
+VTD 04&#8209;13, VTD 04&#8209;14, VTD 04&#8209;15, VTD 04&#8209;16, VTD 04&#8209;17,
+VTD 04&#8209;18, VTD 04&#8209;19, VTD 04&#8209;20, VTD 04&#8209;21, VTD 05&#8209;01,
+VTD 05&#8209;03, VTD 05&#8209;04, VTD 05&#8209;05, VTD 05&#8209;06, VTD 07&#8209;01,
+VTD 07&#8209;02, VTD 07&#8209;07, VTD 07&#8209;10, VTD 07&#8209;12, VTD 08&#8209;02,
+VTD 08&#8209;03, VTD 08&#8209;05, VTD 08&#8209;06, VTD 08&#8209;08, VTD 08&#8209;09,
+VTD 08&#8209;10, VTD 08&#8209;11, VTD 11&#8209;01, VTD 11&#8209;02, VTD 20&#8209;02,
+VTD 20&#8209;04, VTD 20&#8209;10.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 17:</span></b><span
+style='color:black'> Wake County: VTD 03&#8209;00, VTD 04&#8209;07, VTD 06&#8209;01,
+VTD 06&#8209;04, VTD 06&#8209;05, VTD 06&#8209;06, VTD 06&#8209;07, VTD 12&#8209;01,
+VTD 12&#8209;02, VTD 12&#8209;04, VTD 12&#8209;05, VTD 12&#8209;06, VTD 12&#8209;07,
+VTD 12&#8209;08, VTD 12&#8209;09, VTD 15&#8209;01, VTD 15&#8209;02, VTD 15&#8209;03,
+VTD 15&#8209;04, VTD 16&#8209;01, VTD 16&#8209;09: Block(s) 1830528082059,
+1830528084025, 1830528084036, 1830528084041, 1830528084042, 1830528084043,
+1830528084045, 1830528084046, 1830528084047, 1830528084048, 1830528084049,
+1830528084050, 1830528084055, 1830528084056, 1830528091000, 1830528091001,
+1830528091002, 1830528091003, 1830528091004, 1830528091005, 1830528091006,
+1830528091007, 1830528091008; VTD 18&#8209;02, VTD 18&#8209;03, VTD 18&#8209;04,
+VTD 18&#8209;05, VTD 18&#8209;07, VTD 20&#8209;01, VTD 20&#8209;03, VTD 20&#8209;05,
+VTD 20&#8209;06, VTD 20&#8209;08, VTD 20&#8209;09, VTD 20&#8209;11, VTD 20&#8209;12.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 18:</span></b><span
+style='color:black'> Franklin County, Wake County: VTD 01&#8209;03, VTD 01&#8209;11,
+VTD 01&#8209;17, VTD 01&#8209;29, VTD 01&#8209;30, VTD 01&#8209;36, VTD 01&#8209;42,
+VTD 01&#8209;47, VTD 02&#8209;01, VTD 02&#8209;02, VTD 02&#8209;03, VTD 02&#8209;04,
+VTD 02&#8209;05, VTD 02&#8209;06, VTD 07&#8209;03, VTD 07&#8209;06, VTD 07&#8209;09,
+VTD 07&#8209;11, VTD 08&#8209;04, VTD 08&#8209;07, VTD 09&#8209;01, VTD 09&#8209;03,
+VTD 13&#8209;11, VTD 14&#8209;01, VTD 14&#8209;02, VTD 19&#8209;03, VTD 19&#8209;04,
+VTD 19&#8209;05, VTD 19&#8209;06, VTD 19&#8209;07, VTD 19&#8209;09, VTD 19&#8209;10,
+VTD 19&#8209;11, VTD 19&#8209;12.</span></p>
+
+<p class=aDistrict><b>District 19:</b> Cumberland County: VTD AL51, VTD CC04,
+VTD CC06, VTD CC07, VTD CC08, VTD CC10, VTD CC12, VTD CC14, VTD CC15, VTD CC18,
+VTD CC24, VTD CC34, VTD CU02, VTD EO61-1, VTD EO61-2, VTD G1: Block(s)
+0510014001003, 0510014001004, 0510014001005, 0510014001006, 0510014001007,
+0510014001008, 0510014001009, 0510014001010, 0510014001011, 0510014001012,
+0510014001013, 0510014001014, 0510014001015, 0510014001016, 0510014001017,
+0510014001018, 0510014001019, 0510014001020, 0510014001021, 0510014001022,
+0510014001024, 0510014001025, 0510014001026, 0510014001027, 0510014001028,
+0510014001029, 0510014001030, 0510014001031, 0510014001032, 0510014001033,
+0510014001034, 0510014001035, 0510014001036, 0510014001037, 0510014001038,
+0510014001039, 0510014001040, 0510014001041, 0510014001042, 0510014001043,
+0510014001044, 0510014002000, 0510014002001, 0510014002002, 0510014002003,
+0510014002004, 0510014002005, 0510014002006, 0510014002007, 0510014002009,
+0510014002031, 0510014002032, 0510014002033, 0510014002034, 0510014002035,
+0510014002039, 0510014002040, 0510014002044, 0510014002045, 0510014002046,
+0510014002047, 0510014002053, 0510014002054, 0510014002055, 0510014002056,
+0510014002057, 0510014002058, 0510014002059, 0510014002060, 0510014002061,
+0510014002062, 0510014002063, 0510014002064, 0510014002065, 0510014002066, 0510014002067,
+0510014002068, 0510014002069, 0510014003021, 0510014003022, 0510014003023,
+0510014004011, 0510014004012, 0510014004013, 0510014004017, 0510014004018,
+0510014004019, 0510014004020, 0510014004021, 0510014004022, 0510014004023,
+0510014004024, 0510014004025, 0510014004026, 0510014004027, 0510014004028,
+0510014004029, 0510014004030, 0510014004031, 0510014004032, 0510014004033,
+0510014004034, 0510014004035, 0510014004036, 0510014004037, 0510014004038,
+0510014004039, 0510014004040, 0510014004041, 0510014004042, 0510014004043,
+0510014004044, 0510014004045, 0510014004046, 0510014004047, 0510014004048,
+0510014004049, 0510014004050, 0510014004051, 0510014004052, 0510014004053,
+0510014005000, 0510014005001, 0510014005002, 0510014005003, 0510014005004,
+0510014005005, 0510014005006, 0510014005007, 0510014005008, 0510014005009,
+0510014005010, 0510014005011, 0510014005012, 0510014005013, 0510014005014,
+0510014005015, 0510014005016, 0510014005017, 0510014005018, 0510014005019,
+0510014005020, 0510014005021, 0510014005022, 0510014005023, 0510014005024,
+0510014005025, 0510014005026, 0510014005027, 0510014005028, 0510014005029,
+0510014005030, 0510014005031, 0510014005032, 0510014005033, 0510014005034,
+0510014005035, 0510014005036, 0510014005037, 0510014005038, 0510014005039,
+0510014005040, 0510014005041, 0510014005042, 0510014005046, 0510014005047,
+0510014005048, 0510026002092, 0510026002098, 0510026002099, 0510026002100,
+0510026002101, 0510026002102, 0510026002103, 0510026002113, 0510027003016,
+0510027003018, 0510027003019, 0510027003020, 0510027003021, 0510027003022,
+0510027003023, 0510027003024, 0510027003025, 0510027003026, 0510027003027,
+0510027003028, 0510027003029, 0510027003030, 0510027003031, 0510027003032,
+0510027003033, 0510027003034, 0510027003035, 0510027003036, 0510027003037,
+0510027003038, 0510028002005, 0510028002015, 0510028002016, 0510028002022,
+0510028002023; VTD G10, VTD G11: Block(s) 0510025041000, 0510034011000,
+0510034011001, 0510034011002, 0510034011003, 0510034011004, 0510034011005,
+0510034011006, 0510034011007, 0510034011008, 0510034011009, 0510034011010,
+0510034011011, 0510034011012, 0510034011013, 0510034011014, 0510034011015,
+0510034011016, 0510034011017, 0510034011018, 0510034011019, 0510034011020,
+0510034011021, 0510034011022, 0510034011023, 0510034011024, 0510034011025,
+0510034011026, 0510034011027, 0510034011028, 0510034011029, 0510034011030,
+0510034011031, 0510034011032, 0510034011033, 0510034011034, 0510034011035,
+0510034011036, 0510034011037, 0510034011038, 0510034011039, 0510034011040, 0510034012000,
+0510034012001, 0510034012002, 0510034012003, 0510034012004, 0510034012005,
+0510034012006, 0510034012007, 0510034012008, 0510034012009, 0510034012010,
+0510034012011, 0510034012012, 0510034012013, 0510034012014, 0510034012015,
+0510034012016, 0510034012017, 0510034012018, 0510034012019, 0510034012020,
+0510034012021, 0510034012022, 0510034012023, 0510034012024, 0510034012025,
+0510034012026, 0510034012027, 0510034012028, 0510034012029, 0510034012030,
+0510034012031, 0510034012032, 0510034012033, 0510034012034, 0510034012035,
+0510034012036, 0510034012037, 0510034012038, 0510034012039, 0510034012040,
+0510034012041, 0510034012042, 0510034012043, 0510034012044, 0510034012045,
+0510034012046, 0510034012047, 0510034012048, 0510034012049, 0510034012050,
+0510034012051, 0510034012052, 0510034012053, 0510034012054, 0510034012055,
+0510034012056, 0510034012057, 0510034012058, 0510034012059, 0510034012060,
+0510034012061, 0510034012062, 0510034012063, 0510034012064, 0510034012065,
+0510034012066, 0510034012067, 0510034012068, 0510034012069, 0510034021001,
+0510034021002, 0510034021003, 0510034021004, 0510034021005, 0510034021006,
+0510034021007, 0510034021008, 0510034021009, 0510034021010, 0510034021011,
+0510034021012, 0510034021013, 0510034021014, 0510034021015, 0510034021017,
+0510034021019, 0510034021020, 0510034021021, 0510034021022, 0510034021023,
+0510034021024, 0510034021025, 0510034021026, 0510034021027, 0510034021028,
+0510034021029, 0510034021030, 0510034021031, 0510034022000, 0510034022001,
+0510034022002, 0510034022003, 0510034031000, 0510034031001, 0510034031002,
+0510034031003, 0510034031004, 0510034031005, 0510034031006, 0510034031007,
+0510034031008, 0510034031009, 0510034031010, 0510034031011, 0510034031012,
+0510034031013, 0510034032000, 0510034032001, 0510034032002, 0510034032003,
+0510034032004, 0510034032005, 0510034032006, 0510034032007, 0510034032008,
+0510034032009, 0510034032010, 0510034032011, 0510034032012, 0510034032013,
+0510034032014, 0510034032015, 0510034041000, 0510034041001, 0510034041003,
+0510034041004, 0510034041005, 0510034041007, 0510034041008, 0510034041009,
+0510034042000, 0510034042001, 0510034042002, 0510034042003, 0510034042004,
+0510034042005, 0510034042006, 0510034042007, 0510034042008, 0510034042009,
+0510034042010, 0510034042011, 0510034042012, 0510034042013, 0510034042014,
+0510034042015, 0510034042016, 0510034042017, 0510034042018, 0510034042019,
+0510034051000, 0510034051001, 0510034051002, 0510034051003, 0510034051004,
+0510034051005, 0510034051006, 0510034051007, 0510034051008, 0510034051009,
+0510034051010, 0510034051011, 0510034051012, 0510034051013, 0510034051014,
+0510034051015, 0510034051016, 0510034051017, 0510034051018, 0510034051019,
+0510034051020, 0510034051021, 0510034051022, 0510034051023, 0510034051024,
+0510034051025, 0510034051026, 0510034051027, 0510034051028, 0510034051029,
+0510034051030, 0510034051031, 0510034051032, 0510034061000, 0510034061001,
+0510034061002, 0510034061003, 0510034061004, 0510034061005, 0510034061006,
+0510034061007, 0510034061008, 0510034061009, 0510034061010, 0510034061011,
+0510034061012, 0510034061013, 0510034061014, 0510034061015, 0510034061016,
+0510034061017, 0510034061018, 0510034061019, 0510034061020, 0510034061021,
+0510034061022, 0510034061023, 0510034061024, 0510034061025, 0510034061026,
+0510034061027, 0510034061028, 0510034061029, 0510034061030, 0510034061031,
+0510034061032, 0510034061033, 0510034061034, 0510034061035, 0510034061036,
+0510034061037, 0510034061038, 0510034061039, 0510034061040, 0510034061041,
+0510034061042, 0510034061043, 0510034061044, 0510034061045, 0510034061046,
+0510034061047, 0510034061048, 0510034061049, 0510034061050, 0510034061051,
+0510034061052, 0510034061053, 0510034061054, 0510034061055, 0510034061056,
+0510034061057, 0510034061058, 0510034061059, 0510034061060, 0510034061061, 0510034061062,
+0510034061063, 0510034061064, 0510034061065, 0510034061066, 0510034061067,
+0510034061068, 0510034061069, 0510034061070, 0510034061071, 0510034061072,
+0510034061073, 0510034061074, 0510034061075, 0510034061076, 0510034061077,
+0510034061078, 0510034061079, 0510034061080, 0510034061081, 0510034061082,
+0510034061083, 0510034061084, 0510034061085, 0510034061086, 0510034061087,
+0510034061088, 0510034061089, 0510034061090, 0510034061091, 0510034061092,
+0510034061093, 0510034061094, 0510034061095, 0510034061096, 0510034061097,
+0510034061098, 0510034061099, 0510034061100, 0510034061101, 0510034061102,
+0510034061103, 0510034061104, 0510034061105, 0510034061106, 0510034061107,
+0510034061108, 0510034061109, 0510034071000, 0510034071001, 0510034071002,
+0510034071003, 0510034071004, 0510034071005, 0510034071006, 0510034071007,
+0510034071008, 0510034071009, 0510034071010, 0510034071011, 0510034071012,
+0510034071013, 0510034071014, 0510034071015, 0510034071016, 0510034071017,
+0510034071018, 0510034072000, 0510034072001, 0510034072002, 0510034072003,
+0510034072004, 0510034072005, 0510034072006, 0510034072007, 0510034072008,
+0510034072009, 0510034072010, 0510034072011, 0510034081000, 0510034081001,
+0510034081002, 0510034081003, 0510034081004, 0510034081005, 0510034081006,
+0510034081007, 0510034081008, 0510034081009, 0510034081010, 0510034081011,
+0510034081012, 0510034081013, 0510034081014, 0510034081015, 0510034081016,
+0510034081017, 0510034081018, 0510034081019, 0510034081020, 0510034081021,
+0510034081022, 0510034081023, 0510034081024, 0510034081025, 0510034081026,
+0510034081027, 0510034081028, 0510034081029, 0510034081030, 0510034081031,
+0510034081032, 0510034081033, 0510034081034, 0510034081035, 0510034081036,
+0510034081037, 0510034081038, 0510034081039, 0510034081040, 0510034081041,
+0510034081042, 0510034081043, 0510034081044, 0510034081045, 0510034081046,
+0510034082000, 0510034082001, 0510034082002, 0510034082003, 0510034082004,
+0510034082005, 0510034082006, 0510034082007, 0510034082008, 0510034082009,
+0510034082010, 0510034082011, 0510034082012, 0510034082013, 0510034082014,
+0510034082015, 0510034082016, 0510034082017, 0510034082018, 0510034082019,
+0510034082020, 0510034082021, 0510034082022, 0510034082023, 0510034082024,
+0510034082025, 0510034082026, 0510034082027, 0510034082028, 0510034082029,
+0510034082030, 0510034082031, 0510034082032, 0510034082033, 0510034082034,
+0510034082035, 0510034082036, 0510034082037, 0510034082038, 0510034082039,
+0510034082040, 0510034082041, 0510034082042, 0510034082043, 0510034082044,
+0510034082045, 0510034082046, 0510034082047, 0510034082048, 0510034082049,
+0510034082050, 0510034082051, 0510034082052, 0510034082053, 0510034082054,
+0510034082055, 0510034082056, 0510034082057, 0510034082058, 0510034082059,
+0510034082060, 0510034082061, 0510034082062, 0510034082063, 0510034082064,
+0510034082065, 0510034082066, 0510034082067, 0510034082068, 0510034082069,
+0510034082070, 0510034082071, 0510034082072, 0510034082073, 0510034082074,
+0510035001000, 0510035001001, 0510035001002, 0510035001003, 0510035001004,
+0510035001005, 0510035001006, 0510035001007, 0510035001008, 0510035001009,
+0510035001010, 0510035001011, 0510035001012, 0510035001013, 0510035001014,
+0510035001015, 0510035001016, 0510035001017, 0510035001018, 0510035001019,
+0510035001020, 0510035001021, 0510035001022, 0510035001023, 0510035001024,
+0510035001025, 0510035001026, 0510035001027, 0510035001028, 0510035001029,
+0510035001030, 0510035002000, 0510035002001, 0510035002002, 0510035002003,
+0510035002004, 0510035002005, 0510035002006, 0510035002007, 0510035002008,
+0510035002009, 0510035002010, 0510035002011, 0510035002012, 0510035002013,
+0510035002014, 0510035002015, 0510035002016, 0510035002017, 0510035002018,
+0510035002019, 0510035002020, 0510035002021, 0510035002022, 0510035002023, 0510035002024,
+0510035002025, 0510035002026, 0510035002027, 0510035002028, 0510035002029,
+0510035003000, 0510035003001, 0510035003002, 0510035003003, 0510035003004,
+0510035003005, 0510035003006, 0510035003007, 0510035003008, 0510035003009,
+0510035003010, 0510035003011, 0510035003012, 0510035003013, 0510035003014,
+0510035003015, 0510035003016, 0510035003017, 0510035003018, 0510035003019,
+0510035003020, 0510035003021, 0510035003022, 0510035003023, 0510035003024,
+0510035003025, 0510035003026, 0510035003027, 0510035003028, 0510035003029,
+0510035003030, 0510035003031, 0510035003032, 0510035003033, 0510035003034,
+0510035003035, 0510035003036, 0510035003037, 0510035004000, 0510035004001,
+0510035004002, 0510035004003, 0510035004004, 0510035004005, 0510035004006,
+0510035004007, 0510035004008, 0510035004009, 0510035004010, 0510035004011,
+0510035004012, 0510035004013, 0510035004014, 0510035004015, 0510035004016,
+0510035004017, 0510035004018, 0510035004019, 0510035004020, 0510035004021,
+0510035004022, 0510035004023, 0510035004024, 0510035004025, 0510035004026,
+0510035004027, 0510035004028, 0510035004029, 0510036001000, 0510036001001,
+0510036001002, 0510036001003, 0510036001004, 0510036001005, 0510036001006,
+0510036001007, 0510036001008, 0510036001009, 0510036001010, 0510036001011,
+0510036001012, 0510036001013, 0510036001014, 0510036001015, 0510036001016,
+0510036001017, 0510036001018, 0510036001019, 0510036001020, 0510036001021,
+0510036001022, 0510036001023, 0510036001024, 0510036001025, 0510036001026,
+0510036001027, 0510036001028, 0510036001029, 0510036001030, 0510036001031,
+0510036001032, 0510036001033, 0510036001034, 0510036001035, 0510036001036,
+0510036001037, 0510036001038, 0510036001039, 0510036001040, 0510036001041,
+0510036001042, 0510036001043, 0510036001044, 0510036001045, 0510036001046,
+0510036001047, 0510036001048, 0510036001049, 0510036001050, 0510036001051,
+0510036001052, 0510036001053, 0510036001054, 0510036001055, 0510036001056,
+0510036001057, 0510036001058, 0510036001059, 0510036001060, 0510036002000,
+0510036002001, 0510036002002, 0510036002003, 0510036002004, 0510036002005,
+0510036002006, 0510036002007, 0510036002008, 0510036002009, 0510036002010,
+0510036002011, 0510036002012, 0510036003000, 0510036003001, 0510036003002,
+0510036003003, 0510036003004, 0510036003005, 0510036003006, 0510036003007,
+0510036003008, 0510036003009, 0510036003010, 0510036003011, 0510036003012,
+0510036003013, 0510036003014, 0510036003015, 0510036003016, 0510036003017,
+0510036003018, 0510036003019, 0510036003020, 0510036003021, 0510036003022,
+0510036003023, 0510036003024, 0510036003025, 0510036003026, 0510036003027,
+0510036003028, 0510036003029, 0510036003030, 0510036003031, 0510036003032,
+0510036003033, 0510036003034, 0510036003035, 0510036003036, 0510036003037,
+0510036003038, 0510036003039, 0510036003040, 0510036003041, 0510036003042,
+0510036003043, 0510036003044, 0510036003045, 0510036003046, 0510036003047,
+0510036003048, 0510036003049, 0510036003050, 0510036003051, 0510036004000,
+0510036004001, 0510036004002, 0510036004003, 0510036004004, 0510036004005,
+0510036004006, 0510036004007, 0510036004008, 0510036004009, 0510036004010,
+0510036004011, 0510036004012, 0510036004013, 0510036004014, 0510036004015,
+0510036004016, 0510036004017, 0510036004018, 0510036004019, 0510036004020,
+0510036004021, 0510036004022, 0510036004023, 0510036004024, 0510036004025,
+0510036004026, 0510036004027, 0510036004028, 0510036004029, 0510036004030,
+0510036004031, 0510036004032, 0510036004033, 0510036004034, 0510036004035,
+0510036004036, 0510036004037, 0510036004038, 0510036004039, 0510036004040,
+0510036004041, 0510036004042, 0510036004043, 0510036004044, 0510036004045,
+0510036004046, 0510036004047, 0510036004048, 0510036004049, 0510036004050,
+0510036004051, 0510036004052, 0510036004053, 0510036004054, 0510036004055, 0510036004056,
+0510036004057, 0510036004058, 0510036004059, 0510037001003, 0510037001007,
+0510037001008, 0510037001009, 0510037001023, 0510037001024, 0519802001000,
+0519802001001, 0519802001002, 0519802001003, 0519802001004, 0519802001005,
+0519802001006, 0519802001007, 0519802001008, 0519802001009, 0519802001010,
+0519802001011, 0519802001012, 0519802001013, 0519802001014, 0519802001015,
+0519802001016, 0519802001017, 0519802001018, 0519802001019, 0519802001020,
+0519802001021, 0519802001022, 0519802001023, 0519802001024, 0519802001025,
+0519802001026, 0519802001028, 0519802001029, 0519802001030, 0519802001031,
+0519802001032, 0519802001033, 0519802001034, 0519802001035, 0519802001036,
+0519802001037, 0519802001038, 0519802001039, 0519802001040, 0519802001041,
+0519802001042, 0519802001043, 0519802001044, 0519802001045; VTD G2: Block(s)
+0510025021000, 0510025021001, 0510025021002, 0510025021003, 0510025021004,
+0510025021005, 0510025021006, 0510025021007, 0510025021008, 0510025021009,
+0510025021010, 0510025021011, 0510025021012, 0510025021067, 0510025043000,
+0510025043001, 0510025043002, 0510025043003, 0510025043004, 0510025043005,
+0510025043006, 0510025043007, 0510025043008, 0510025043009, 0510025043010,
+0510025043011, 0510025043012, 0510025043013, 0510025043014, 0510025043015,
+0510025043016, 0510025043017, 0510025043018, 0510025043019, 0510025043020,
+0510025043021, 0510025043022, 0510025043023, 0510025043024, 0510025043025,
+0510025043026, 0510025043027, 0510025043028, 0510025043029, 0510025043030,
+0510025043031, 0510025043032, 0510025043033, 0510025043034, 0510025043035,
+0510025043036, 0510025043037, 0510025043038, 0510037001001, 0510037001002,
+0510037001004, 0510037001005, 0510037001006, 0510037001010, 0510037001011,
+0510037001012, 0510037001013, 0510037001014, 0510037001015, 0510037001016,
+0510037001017, 0510037001018, 0510037001019, 0510037001020, 0510037001021,
+0510037001022, 0510037001025, 0510037001026, 0510037003088, 0510037003089,
+0510037003090, 0510037003098, 0510037003099, 0510037003100, 0510037003101,
+0510037003104, 0510037003105, 0510037003106, 0510037003107, 0510037003114; VTD
+G3, VTD G4, VTD G6, VTD G7, VTD G8, VTD G9, VTD LI65, VTD SH77.</p>
+
+<p class=aDistrict><b><span style='color:black'>District 20:</span></b><span
+style='color:black'> Durham County: VTD 05, VTD 06, VTD 07, VTD 08, VTD 09, VTD
+10, VTD 12, VTD 13, VTD 14, VTD 15, VTD 16, VTD 17, VTD 18, VTD 19, VTD 20, VTD
+27, VTD 30&#8209;1, VTD 30&#8209;2, VTD 31, VTD 32, VTD 33, VTD 34, VTD 35, VTD
+36, VTD 38, VTD 39, VTD 40, VTD 41, VTD 42, VTD 43, VTD 47, VTD 48, VTD 51, VTD
+52, VTD 53&#8209;1, VTD 53&#8209;2, VTD 54, VTD 55.</span></p>
+
+<p class=aDistrict style='margin-left:0in;text-indent:0in'><b>District 21:</b>
+Cumberland County: VTD AH49, VTD CC01, VTD CC03, VTD CC05, VTD CC13, VTD CC16,
+VTD CC17, VTD CC19, VTD CC21, VTD CC25, VTD CC26, VTD CC27, VTD CC29, VTD CC31,
+VTD CC32, VTD CC33, VTD CL57, VTD G1: Block(s) 0510014001000, 0510014001001,
+0510014001002, 0510014001023, 0510014002022, 0510014002023, 0510014002024,
+0510014002025, 0510014002026, 0510014002036, 0510014002037, 0510014002038,
+0510014002041, 0510014002042, 0510014002043, 0510014002048, 0510014002049,
+0510014002050, 0510014002051, 0510014002052, 0510014003025, 0510014003026,
+0510014003027, 0510014003028, 0510014003029, 0510014003030, 0510014003031,
+0510014003032, 0510014003033, 0510014003034, 0510014003036, 0510014003037,
+0510014003039, 0510014004000, 0510014004001, 0510014004002, 0510014004003, 0510014004004,
+0510014004005, 0510014004006, 0510014004007, 0510014004008, 0510014004009,
+0510014004010, 0510014004014, 0510014004015, 0510014004016, 0510027004046,
+0510027004047, 0510027004048, 0510027004049, 0510027004050, 0510027004051,
+0510027004052, 0510027004053, 0510027004054; VTD G11: Block(s) 0510033132008,
+0510034011041, 0510034011042, 0510034011043, 0510034021000, 0510034021016,
+0510034021018, 0510034041002, 0510034041006, 0519801001000, 0519801001001,
+0519801001002, 0519801001003, 0519801001004, 0519801001005, 0519801001006,
+0519801001007, 0519801001008, 0519801001009, 0519801001010, 0519801001011,
+0519801001012, 0519801001013, 0519801001014, 0519801001015, 0519801001016,
+0519801001017, 0519801001018, 0519801001019, 0519801001020, 0519801001021, 0519801001022,
+0519801001023, 0519801001024, 0519801001025, 0519801001026, 0519801001027,
+0519801001028, 0519801001029, 0519801001030, 0519801001031, 0519801001032,
+0519801001033, 0519801001034, 0519801001035, 0519801001036, 0519801001037,
+0519801001038, 0519801001039, 0519801001040, 0519801001041, 0519801001042,
+0519801001043, 0519801001044, 0519801001045, 0519801001046, 0519801001047,
+0519801001048, 0519801001049, 0519801001051, 0519801001052, 0519801001053,
+0519801001054, 0519801001055, 0519801001056, 0519801001057, 0519801001058,
+0519801001059, 0519801001060, 0519801001061, 0519801001062, 0519801001063,
+0519801001064, 0519801001065, 0519801001066, 0519801001067, 0519801001068; VTD
+G2: Block(s) 0510012001000, 0510012001001, 0510012001002, 0510012001003, 0510012001004,
+0510012001005, 0510012001006, 0510012001007, 0510012001008, 0510012001009,
+0510012001010, 0510012004001, 0510012004002, 0510012004003, 0510012004004,
+0510012004021, 0510012004022, 0510012004023, 0510012004024, 0510012004025,
+0510012004026, 0510012004027, 0510012004028, 0510024011000, 0510024011001,
+0510024011002, 0510024011003, 0510024011004, 0510024011005, 0510024011006,
+0510024011007, 0510024011008, 0510024011009, 0510024011010, 0510024011011,
+0510024011013, 0510024011014, 0510024011015, 0510024011016, 0510024011017,
+0510024011018, 0510024011019, 0510024011022, 0510024011024, 0510024011025,
+0510024011026, 0510024011027, 0510024011028, 0510024011029, 0510024011030,
+0510024011034, 0510024011035, 0510024011036, 0510024011038, 0510024011041,
+0510024011042, 0510024011043, 0510024012004, 0510024012007, 0510024012025,
+0510024021000, 0510024021005, 0510024022000, 0510024022001, 0510024022002,
+0510024022003, 0510024022004, 0510024022005, 0510024022006, 0510024022007,
+0510024023000, 0510024023001, 0510024023002, 0510024023003, 0510024023004,
+0510024023005, 0510024023006, 0510024023007, 0510024023008, 0510024023009,
+0510024023011, 0510024023012, 0510024023013, 0510025011000, 0510025011001,
+0510025011002, 0510025011003, 0510025011004, 0510025011005, 0510025011006,
+0510025011007, 0510025011008, 0510025011009, 0510025011010, 0510025011011,
+0510025011012, 0510025011013, 0510025011014, 0510025011015, 0510025011016,
+0510025011017, 0510025011018, 0510025011019, 0510025011020, 0510025011021,
+0510025011022, 0510025011023, 0510025012000, 0510025012001, 0510025012002,
+0510025012003, 0510025012004, 0510025012005, 0510025012006, 0510025012007,
+0510025012008, 0510025012009, 0510025012010, 0510025012011, 0510025012012,
+0510025012013, 0510025012014, 0510025013000, 0510025013001, 0510025013002,
+0510025013003, 0510025013004, 0510025013005, 0510025013006, 0510025013007,
+0510025013008, 0510025013009, 0510025013010, 0510025013011, 0510025013012,
+0510025013013, 0510025013014, 0510025013015, 0510025013016, 0510025013017,
+0510025013018, 0510025013019, 0510025013020, 0510025013021, 0510025013022,
+0510025013023, 0510025013024, 0510025013025, 0510025013026, 0510025013027,
+0510025013028, 0510025013029, 0510025013030, 0510025013031, 0510025013032,
+0510025013033, 0510025013034, 0510025013035, 0510025013036, 0510025013037,
+0510025013038, 0510025013039, 0510025013040, 0510025013041, 0510025013042,
+0510025013043, 0510025013044, 0510025013045, 0510025013046, 0510025013047,
+0510025013048, 0510025013049, 0510025013050, 0510025013051, 0510025013052, 0510025013053,
+0510025013054, 0510025013055, 0510025013056, 0510025013057, 0510025013058,
+0510025013059, 0510025013060, 0510025013061, 0510025013062, 0510025013063,
+0510025013064, 0510025013065, 0510025013066, 0510025013067, 0510025013068,
+0510025013069, 0510025013070, 0510025013071, 0510025013072, 0510025013073,
+0510025013074, 0510025013075, 0510025013076, 0510025013077, 0510025013078,
+0510025013079, 0510025013080, 0510025013081, 0510025021013, 0510025021014,
+0510025021015, 0510025021016, 0510025021017, 0510025021018, 0510025021019,
+0510025021020, 0510025021021, 0510025021022, 0510025021023, 0510025021024,
+0510025021025, 0510025021026, 0510025021027, 0510025021028, 0510025021029,
+0510025021030, 0510025021031, 0510025021032, 0510025021033, 0510025021034, 0510025021035,
+0510025021036, 0510025021037, 0510025021038, 0510025021039, 0510025021040,
+0510025021041, 0510025021042, 0510025021043, 0510025021044, 0510025021045,
+0510025021046, 0510025021047, 0510025021048, 0510025021049, 0510025021050,
+0510025021051, 0510025021052, 0510025021053, 0510025021054, 0510025021055,
+0510025021056, 0510025021057, 0510025021058, 0510025021059, 0510025021060,
+0510025021061, 0510025021062, 0510025021063, 0510025021064, 0510025021065,
+0510025021066, 0510025022000, 0510025022001, 0510025022002, 0510025022003,
+0510025022004, 0510025022005, 0510025022006, 0510025022007, 0510025022008,
+0510025022009, 0510025022010, 0510025022011, 0510025022012, 0510025022013,
+0510025022014, 0510025022015, 0510025022016, 0510025022017, 0510025022018,
+0510025022019, 0510025022020, 0510025022021, 0510025022022, 0510025022023,
+0510025022024, 0510025022025, 0510025022026, 0510025022027, 0510025022028,
+0510025022029, 0510025022030, 0510025022031, 0510025022032, 0510025022033,
+0510025022034, 0510025022035, 0510025022036, 0510025022037, 0510025022038,
+0510025022039, 0510025022040, 0510025022041, 0510025022042, 0510025022043,
+0510025022044, 0510025022045, 0510025022046, 0510025022047, 0510025022048,
+0510025022049, 0510025022050, 0510025022051, 0510025022052, 0510025022053,
+0510025022054, 0510025022055, 0510025022056, 0510025022057, 0510025022058,
+0510025022059, 0510025022060, 0510025022061, 0510025022062, 0510025022063,
+0510025022064, 0510025022065, 0510025022066, 0510025022067, 0510025022068,
+0510025022069, 0510025022070, 0510025022071, 0510025022072, 0510025022073,
+0510025022074, 0510025022075, 0510025022076, 0510025022077, 0510025022078,
+0510025022079, 0510025022080, 0510025022081, 0510025022082, 0510025022083,
+0510025022084, 0510025023000, 0510025023001, 0510025023002, 0510025023003,
+0510025023004, 0510025023005, 0510025023006, 0510025023007, 0510025023008,
+0510025023009, 0510025023010, 0510025023011, 0510025023012, 0510025023013,
+0510025023014, 0510025023015, 0510025023016, 0510025023017, 0510025023018,
+0510025023019, 0510025023020, 0510025023021, 0510025023022, 0510025023023,
+0510025023024, 0510025023025, 0510025023026, 0510025023027, 0510025023028,
+0510025023029, 0510025023030, 0510025023031, 0510025023032, 0510025023033,
+0510025023034, 0510025023035, 0510025023036, 0510025031000, 0510025031001,
+0510025031002, 0510025031003, 0510025031004, 0510025031005, 0510025031006,
+0510025031007, 0510025031008, 0510025031009, 0510025031010, 0510025031011,
+0510025031012, 0510025031013, 0510025031014, 0510025031015, 0510025031016, 0510025031017,
+0510025031018, 0510025031019, 0510025031020, 0510025031021, 0510025031022,
+0510025031023, 0510025031024, 0510025031025, 0510025032000, 0510025032001,
+0510025032002, 0510025032003, 0510025032004, 0510025032005, 0510025032006,
+0510025032007, 0510025032008, 0510025032009, 0510025033000, 0510025033001,
+0510025033002, 0510025033003, 0510025033004, 0510025033005, 0510025033006,
+0510025033007, 0510025033008, 0510025033009, 0510025033010, 0510025033011,
+0510025033012, 0510025033013, 0510025033014, 0510025033015, 0510025033016,
+0510025033017, 0510025033018, 0510025033019, 0510025033020, 0510025033021,
+0510025033022, 0510025033023, 0510025033024, 0510025033025, 0510025033026,
+0510025033027, 0510025033028, 0510025033029, 0510025033030, 0510025033031, 0510025033032,
+0510025033033, 0510025033034, 0510025033035, 0510025041001, 0510025041002,
+0510025041003, 0510025041004, 0510025041005, 0510025041006, 0510025041007,
+0510025041008, 0510025041009, 0510025041010, 0510025041011, 0510025041012,
+0510025041013, 0510025041014, 0510025041015, 0510025041016, 0510025041017,
+0510025041018, 0510025041019, 0510025041020, 0510025041021, 0510025041022,
+0510025041023, 0510025041024, 0510025041025, 0510025041026, 0510025041027,
+0510025041028, 0510025041029, 0510025041030, 0510025042000, 0510025042001,
+0510025042002, 0510025042003, 0510025042004, 0510025042005, 0510025042006,
+0510025042007, 0510025042008, 0510025042009, 0510025042010, 0510025042011,
+0510025042012, 0510025042013, 0510025042014, 0510025042015, 0510025042016, 0510025042017,
+0510025042018, 0510025042019, 0510025042020, 0510025042021, 0510025042022,
+0510025042023, 0510025042024, 0510025042025, 0510025042026, 0510025042027,
+0510025042028, 0510025042029, 0510025042030, 0510025042031, 0510025042032,
+0510025042033, 0510025042034, 0510025042035, 0510025042036, 0510025042037,
+0510025042038, 0510025042039, 0510025042040, 0510025042041, 0510025042042,
+0510025042043, 0510025042044, 0510025042045, 0510025042046, 0510025042047,
+0510026002016, 0510037003103, 0510037003110, 0510037003111, 0510037003112,
+0510037003113, 0519802001027; VTD G5, VTD LR63, VTD MB62, VTD MR02; Hoke
+County.</p>
+
+<p class=aDistrict><b><span style='color:black'>District 22:</span></b><span
+style='color:black'> Durham County: VTD 01, VTD 02, VTD 03, VTD 04, VTD 21, VTD
+22, VTD 23, VTD 24, VTD 25, VTD 26, VTD 28, VTD 29, VTD 37, VTD 44, VTD 45, VTD
+46, VTD 50; Granville County, Person County.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 23:</span></b><span
+style='color:black'> Chatham County, Orange County.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 24:</span></b><span
+style='color:black'> Alamance County, Guilford County: VTD GIB, VTD GR, VTD
+JEF1, VTD JEF2: Block(s) 0810128031025, 0810128031030, 0810128031031,
+0810128031032, 0810128031033, 0810128031037, 0810128031038, 0810128031039,
+0810128031040, 0810128031041, 0810128031049, 0810128031050, 0810128031051,
+0810128031052, 0810128031053, 0810128031054, 0810128031055, 0810128031056,
+0810128031057, 0810128031058, 0810128031059, 0810128031060, 0810128031066,
+0810128031067, 0810128031068, 0810128031069, 0810128031070, 0810128031071,
+0810128031072, 0810128031073, 0810128031074, 0810128031084, 0810128031085,
+0810128031086, 0810128031087, 0810128031088, 0810128031089, 0810128031090,
+0810128031096, 0810128031097, 0810128031098, 0810128032000, 0810128032001,
+0810128032002, 0810128032003, 0810128032008, 0810128032009, 0810128032025,
+0810128032094, 0810153003014, 0810153003016, 0810153003017, 0810153003018,
+0810153003019, 0810153003021, 0810153003022, 0810153003024, 0810153003026,
+0810153003027, 0810153003028, 0810153003029, 0810153003030, 0810153003031,
+0810153003032, 0810153003033, 0810153003034, 0810153003035, 0810153003036,
+0810153003037, 0810153003038, 0810153003039, 0810153003040, 0810153003041, 0810153003042,
+0810153003043, 0810153003044, 0810153003045, 0810153003046, 0810153003047,
+0810153003048, 0810153003049, 0810153003050, 0810153003051, 0810153003052,
+0810153003053, 0810153003054, 0810153003055, 0810153003056, 0810153003057,
+0810153003058, 0810153003059, 0810153003060, 0810153003061, 0810153003062,
+0810153003064, 0810153003065, 0810153003066, 0810153003067, 0810153003068,
+0810153003069, 0810153003070, 0810153003071, 0810153003072, 0810153003073,
+0810153003074, 0810153003075, 0810153003076, 0810153003077, 0810153003078,
+0810153003079, 0810153003080, 0810153003081, 0810153003082, 0810153003083,
+0810153003084, 0810153003085, 0810153003086, 0810153003087, 0810153003088,
+0810153003089, 0810153003090, 0810153003091, 0810153003092, 0810153003093; VTD
+JEF4, VTD NCLAY1, VTD NCLAY2, VTD NMAD, VTD NWASH, VTD RC1, VTD RC2, VTD SCLAY,
+VTD SMAD, VTD SWASH.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 25:</span></b><span
+style='color:black'> Anson County, Moore County, Richmond County, Scotland
+County.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 26:</span></b><span
+style='color:black'> Guilford County: VTD H01, VTD H02, VTD H03, VTD H04, VTD
+H05, VTD H06, VTD H07, VTD H08, VTD H09, VTD H10, VTD H11, VTD H12, VTD H13,
+VTD H17, VTD H18, VTD H19A, VTD H20A; Randolph County.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 27:</span></b><span
+style='color:black'> Guilford County: VTD CG1, VTD CG2, VTD CG3A, VTD CG3B, VTD
+FEN2, VTD FR2, VTD FR3, VTD FR4, VTD FR5, VTD G16, VTD G17, VTD G18, VTD G19,
+VTD G20, VTD G21, VTD G22, VTD G23, VTD G24, VTD G25, VTD G27, VTD G28, VTD
+G29, VTD G30, VTD G31, VTD G32, VTD G33, VTD G34, VTD G35, VTD G40A1, VTD
+G40A2, VTD G40B, VTD G41, VTD G42, VTD H14, VTD H15, VTD H16, VTD H19B, VTD
+H20B, VTD H21, VTD H22, VTD H23, VTD H24, VTD H25, VTD H26, VTD H27, VTD HP:
+Block(s) 0810163061002, 0810163061003, 0810163061004, 0810163061006,
+0810163061007, 0810163061008, 0810163061009, 0810163061010, 0810163061011,
+0810163061012, 0810163061013, 0810163061014, 0810163061015, 0810163061016,
+0810163061017, 0810163061018, 0810163061019, 0810163061020, 0810163061022,
+0810163061023, 0810163061024, 0810163061025, 0810163061026, 0810163061027,
+0810163061028, 0810163061029, 0810163061030, 0810163061031, 0810163061032,
+0810163061033, 0810163061034, 0810163061035, 0810163061037, 0810163061038,
+0810163061040, 0810163061042, 0810163061043, 0810163061046, 0810163061047,
+0810163061048, 0810163061049, 0810163061050, 0810163061054, 0810163061055,
+0810163061056, 0810163061057, 0810163061058, 0810163061059, 0810163061060,
+0810163061061, 0810163061062, 0810163061063, 0810163061064, 0810163061065,
+0810163061066, 0810163061067, 0810163061068, 0810163061069, 0810163061070,
+0810163061071, 0810163061072, 0810163061073, 0810163061074, 0810163061075,
+0810163061076, 0810163061077, 0810163061078, 0810163061079, 0810163061080,
+0810163061081, 0810163061082, 0810163061083, 0810163061084, 0810163061085,
+0810163061086, 0810163061087, 0810163061088, 0810163061089, 0810163061090,
+0810163061091, 0810163061092, 0810163061093, 0810163061094, 0810163061095,
+0810163061097, 0810163061098, 0810164061076, 0810164061085, 0810164061092,
+0810164071000, 0810164071001, 0810164071002, 0810164071003, 0810164071004,
+0810164071005, 0810164071006, 0810164071007, 0810164071008, 0810164071009,
+0810164071010, 0810164071011, 0810164071012, 0810164071013, 0810164071014,
+0810164071015, 0810164071016, 0810164071017, 0810164071018, 0810164071019,
+0810164071020, 0810164071021, 0810164071022, 0810164071023, 0810164071024,
+0810164071025, 0810164071026, 0810164071027, 0810164071028, 0810164071029,
+0810164071030, 0810164071031, 0810164071032, 0810164071033, 0810164071034,
+0810164071035, 0810164071036, 0810164071037, 0810164071038, 0810164071039,
+0810164071040, 0810164071041, 0810164071046, 0810164071047, 0810164071048,
+0810164071049, 0810164071050, 0810164071051, 0810164071052, 0810164071053,
+0810164071054, 0810164071055, 0810164071056, 0810164071057, 0810164071059,
+0810164071060, 0810164071061, 0810164081010, 0810164081044, 0810164081045, 0810164081046,
+0810164081047, 0810164091028, 0810164091068, 0810164091069, 0810164091070,
+0810164091071, 0810164091072, 0810164091073, 0810164091074, 0810164091075,
+0810164091076, 0810164091077, 0810164091078, 0810164091079, 0810164091080,
+0810164091081, 0810164091082, 0810164091083, 0810164091084, 0810164091085,
+0810164091086, 0810164091087, 0810164091088, 0810164091089; VTD JAM1, VTD JAM2,
+VTD JAM3, VTD JAM4, VTD JAM5, VTD MON3, VTD NCGR1, VTD NCGR2, VTD NDRI, VTD
+OR1, VTD OR2, VTD PG1, VTD PG2, VTD SDRI, VTD SF1, VTD SF2, VTD SF3, VTD SF4,
+VTD STOK, VTD SUM1, VTD SUM2, VTD SUM3, VTD SUM4.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 28:</span></b><span
+style='color:black'> Guilford County: VTD FEN1, VTD FR1, VTD G01, VTD G02, VTD
+G03, VTD G04, VTD G05, VTD G06, VTD G07, VTD G08, VTD G09, VTD G10, VTD G11,
+VTD G12, VTD G13, VTD G14, VTD G15, VTD G26, VTD G36, VTD G37, VTD G38, VTD
+G39, VTD G43, VTD G44, VTD G45, VTD G46, VTD G47, VTD G48, VTD G49, VTD G50,
+VTD G51, VTD G52, VTD G53, VTD G54, VTD G55, VTD G56, VTD G57, VTD G58, VTD
+G59, VTD G60, VTD G61, VTD G62, VTD G63, VTD G64, VTD G65, VTD G66, VTD G67,
+VTD G68, VTD G69, VTD G70, VTD G71, VTD G72, VTD G73, VTD G74, VTD G75, VTD HP:
+Block(s) 0810162041037, 0810162041038, 0810162041040, 0810162041041,
+0810164051025, 0810164051027, 0810164051028, 0810164051029, 0810164051033, 0810164051034,
+0810164051035, 0810164051036, 0810164051037, 0810164051039, 0810164051054,
+0810164051064, 0810164061002, 0810164061003, 0810164061004, 0810164061005,
+0810164061006, 0810164061007, 0810164061008, 0810164061009, 0810164061010,
+0810164061011, 0810164061012, 0810164061013, 0810164061014, 0810164061015,
+0810164061016, 0810164061017, 0810164061018, 0810164061019, 0810164061020,
+0810164061021, 0810164061022, 0810164061023, 0810164061024, 0810164061025,
+0810164061026, 0810164061027, 0810164061028, 0810164061029, 0810164061030,
+0810164061031, 0810164061032, 0810164061033, 0810164061034, 0810164061039,
+0810164061040, 0810164061041, 0810164061042, 0810164061043, 0810164061044,
+0810164061045, 0810164061046, 0810164061047, 0810164061048, 0810164061049, 0810164061050,
+0810164061051, 0810164061052, 0810164061053, 0810164061054, 0810164061055,
+0810164061056, 0810164061057, 0810164061058, 0810164061059, 0810164061060,
+0810164061061, 0810164061062, 0810164061063, 0810164061064, 0810164061065,
+0810164061066, 0810164061067, 0810164061068, 0810164061069, 0810164061070,
+0810164061071, 0810164061072, 0810164061073, 0810164061074, 0810164061075,
+0810164061077, 0810164061078, 0810164061079, 0810164061080, 0810164061081,
+0810164061082, 0810164061083, 0810164061084, 0810164061086, 0810164061087,
+0810164061088, 0810164061089, 0810164061090, 0810164061091, 0810164061093,
+0810164061094, 0810164061095, 0810164061096, 0810164061097; VTD JEF2: Block(s)
+0810111021019, 0810111021022, 0810111021023, 0810111021024, 0810111021025, 0810128032004,
+0810128032007, 0810128032010, 0810128032011, 0810128032012, 0810128032013,
+0810128032014, 0810128032020, 0810128032021; VTD JEF3, VTD MON1, VTD MON2.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 29:</span></b><span
+style='color:black'> Forsyth County: VTD 042, VTD 043, VTD 081, VTD 082, VTD
+083, VTD 101, VTD 122, VTD 201, VTD 203, VTD 204, VTD 205, VTD 206, VTD 207,
+VTD 301, VTD 302, VTD 303, VTD 304, VTD 305, VTD 306, VTD 401, VTD 402, VTD
+403, VTD 404, VTD 405, VTD 501, VTD 502, VTD 503, VTD 504, VTD 505, VTD 506,
+VTD 507, VTD 601, VTD 602, VTD 603, VTD 604, VTD 605, VTD 606, VTD 607, VTD
+702, VTD 703, VTD 704, VTD 705, VTD 706, VTD 707, VTD 708, VTD 709, VTD 801,
+VTD 808, VTD 901, VTD 902, VTD 903, VTD 904, VTD 905, VTD 906, VTD 907, VTD
+909.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 30:</span></b><span
+style='color:black'> Caswell County, Rockingham County, Stokes County, Surry
+County: VTD 10, VTD 12, VTD 13, VTD 14, VTD 15, VTD 16, VTD 17, VTD 19, VTD 20,
+VTD 21, VTD 23, VTD 27, VTD 28, VTD 33.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 31:</span></b><span
+style='color:black'> Davie County, Forsyth County: VTD 011, VTD 012, VTD 013,
+VTD 014, VTD 015, VTD 021, VTD 031, VTD 032, VTD 033, VTD 034, VTD 051, VTD
+052, VTD 053, VTD 054, VTD 055, VTD 061, VTD 062, VTD 063, VTD 064, VTD 065,
+VTD 066, VTD 067, VTD 068, VTD 071, VTD 072, VTD 073, VTD 074, VTD 075, VTD
+091, VTD 092, VTD 111, VTD 112, VTD 123, VTD 131, VTD 132, VTD 133, VTD 701,
+VTD 802, VTD 803, VTD 804, VTD 805, VTD 806, VTD 807, VTD 809, VTD 908.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 32:</span></b><span
+style='color:black'> Davidson County, Montgomery County.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 33:</span></b><span
+style='color:black'> Rowan County, Stanly County.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 34:</span></b><span
+style='color:black'> Iredell County, Yadkin County.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 35:</span></b><span
+style='color:black'> Union County: VTD 001, VTD 002, VTD 003, VTD 004, VTD 005,
+VTD 006, VTD 007, VTD 008, VTD 009, VTD 010, VTD 011, VTD 013, VTD 014, VTD
+015, VTD 016, VTD 017A, VTD 017B, VTD 018, VTD 019, VTD 020A, VTD 020B, VTD
+021, VTD 022, VTD 023, VTD 024, VTD 025, VTD 026, VTD 027, VTD 028, VTD 029A,
+VTD 029B, VTD 029C, VTD 030, VTD 031, VTD 033, VTD 034, VTD 036, VTD 037A, VTD
+038A, VTD 038B, VTD 039, VTD 040, VTD 041, VTD 042, VTD 043.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 36:</span></b><span
+style='color:black'> Cabarrus County, Union County: VTD 012, VTD 032, VTD 035,
+VTD 037B.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 37:</span></b><span
+style='color:black'> Mecklenburg County: VTD 001, VTD 002, VTD 007, VTD 009,
+VTD 010, VTD 011, VTD 012, VTD 013, VTD 014, VTD 015, VTD 017, VTD 020, VTD
+021, VTD 022, VTD 023, VTD 024, VTD 027, VTD 028, VTD 029, VTD 030, VTD 031,
+VTD 035, VTD 037, VTD 038, VTD 039, VTD 042, VTD 043, VTD 044, VTD 046, VTD
+050, VTD 051, VTD 052, VTD 053, VTD 054, VTD 058, VTD 059, VTD 077, VTD 078.1,
+VTD 082, VTD 097, VTD 098, VTD 109, VTD 120, VTD 138, VTD 147, VTD 228, VTD
+230: Block(s) 1190059121000, 1190059121001, 1190059121002, 1190059121003,
+1190059121004, 1190059121005, 1190059121006, 1190059121007, 1190059121008,
+1190059121009, 1190059121010, 1190059121011, 1190059121012, 1190059121013,
+1190059121014, 1190059121015, 1190059121016, 1190059121017, 1190059121018,
+1190059121019, 1190059121020, 1190059121021, 1190059121022, 1190059121023, 1190059121024,
+1190059121025, 1190059121026, 1190059121027, 1190059121028, 1190059121029,
+1190059121030, 1190059121031, 1190059121048, 1190059121049, 1190059121050,
+1190059121051, 1190059121052, 1190059121054, 1190059121055, 1190059121056,
+1190059121057.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 38:</span></b><span
+style='color:black'> Mecklenburg County: VTD 016, VTD 025, VTD 026, VTD 040,
+VTD 041, VTD 055, VTD 056, VTD 079, VTD 080, VTD 081, VTD 089, VTD 107.1, VTD
+126, VTD 128, VTD 135, VTD 141, VTD 145, VTD 146, VTD 150, VTD 151, VTD 210,
+VTD 211, VTD 212, VTD 213, VTD 214, VTD 222, VTD 223.1: Block(s) 1190060071046;
+VTD 237, VTD 238.1, VTD 239.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 39:</span></b><span
+style='color:black'> Mecklenburg County: VTD 008, VTD 018, VTD 019, VTD 032,
+VTD 047, VTD 048, VTD 049, VTD 057, VTD 067, VTD 069, VTD 070, VTD 071, VTD
+072, VTD 073, VTD 074, VTD 075, VTD 076, VTD 086, VTD 090, VTD 091, VTD 092,
+VTD 093, VTD 100, VTD 101, VTD 103, VTD 110, VTD 111, VTD 112, VTD 113, VTD
+114, VTD 118, VTD 119, VTD 121, VTD 131, VTD 136, VTD 137, VTD 144, VTD 215,
+VTD 216, VTD 217, VTD 218, VTD 219, VTD 220, VTD 221, VTD 226, VTD 227, VTD
+232, VTD 233, VTD 236.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 40:</span></b><span
+style='color:black'> Mecklenburg County: VTD 003, VTD 004, VTD 005, VTD 006,
+VTD 033, VTD 034, VTD 036, VTD 045, VTD 060, VTD 061, VTD 062, VTD 063, VTD
+064, VTD 065, VTD 066, VTD 068, VTD 083, VTD 084, VTD 085, VTD 094, VTD 095,
+VTD 096, VTD 099, VTD 102, VTD 104, VTD 105, VTD 106, VTD 108, VTD 115, VTD
+116, VTD 117, VTD 123, VTD 124, VTD 125, VTD 130, VTD 132, VTD 149, VTD 201,
+VTD 203, VTD 204.1, VTD 205, VTD 234, VTD 235.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 41:</span></b><span
+style='color:black'> Mecklenburg County: VTD 087, VTD 088, VTD 122, VTD 127,
+VTD 129, VTD 133, VTD 134, VTD 139.1, VTD 140, VTD 142, VTD 143, VTD 148, VTD
+200, VTD 202, VTD 206, VTD 207, VTD 208, VTD 209, VTD 223.1: Block(s)
+1190060071000, 1190060071001, 1190060071002, 1190060071003, 1190060071004,
+1190060071005, 1190060071006, 1190060071007, 1190060071008, 1190060071009,
+1190060071010, 1190060071011, 1190060071012, 1190060071013, 1190060071014,
+1190060071015, 1190060071016, 1190060071017, 1190060071018, 1190060071019,
+1190060071020, 1190060071021, 1190060071022, 1190060071023, 1190060071024,
+1190060071025, 1190060071026, 1190060071027, 1190060071028, 1190060071029,
+1190060071030, 1190060071031, 1190060071032, 1190060071033, 1190060071034,
+1190060071035, 1190060071036, 1190060071037, 1190060071038, 1190060071039, 1190060071040,
+1190060071041, 1190060071042, 1190060071043, 1190060071044, 1190060071045,
+1190060071047, 1190060071048, 1190060071049, 1190060071050, 1190060071051,
+1190060071052, 1190060071053, 1190060071054, 1190060071055, 1190060071056,
+1190060071057, 1190060071058, 1190060071059, 1190060072000, 1190060072001,
+1190060072002, 1190060072003, 1190060072004, 1190060072005, 1190060072006,
+1190060072007, 1190060072008, 1190060072009, 1190060072010, 1190060072011,
+1190060072012, 1190060072013, 1190060072014, 1190060072015, 1190060072016,
+1190060072017, 1190060072018, 1190060072019, 1190060072020, 1190060072021,
+1190060072022, 1190060072023, 1190060072024, 1190060072025, 1190060072026,
+1190060072027, 1190060072028, 1190060072029, 1190060072030, 1190060072031,
+1190060072032, 1190060072033, 1190060072034, 1190060072035, 1190060072036,
+1190060072037, 1190060072038, 1190060072039, 1190060072040, 1190060072041,
+1190060072042, 1190060072043, 1190060072044, 1190060072045, 1190060072046,
+1190060073000, 1190060073001, 1190060073002, 1190060073003, 1190060073004,
+1190060073005, 1190060073006, 1190060073007, 1190060073008, 1190060073009,
+1190060073010, 1190060073011, 1190060073012, 1190060073013, 1190060073014,
+1190060073015, 1190060073016, 1190060073017, 1190060073018, 1190060073019,
+1190060073020, 1190060073021, 1190060073022, 1190060073023, 1190060073024,
+1190060073025, 1190060073026, 1190060073027, 1190060073028, 1190060073029,
+1190060073030, 1190060073031, 1190060073032, 1190060073033, 1190061031000,
+1190061031001, 1190061031002, 1190061031003, 1190061031004, 1190061031005,
+1190061031006, 1190061031007, 1190061031008, 1190061031009, 1190061031010,
+1190061031011, 1190061031012, 1190061031013, 1190061031014, 1190061031015,
+1190061031016, 1190061031017, 1190061031018, 1190061031019, 1190061031020,
+1190061031021, 1190061031022, 1190061031023, 1190061031024, 1190061031025,
+1190061031026, 1190061031027, 1190061031028, 1190061031029, 1190061031030,
+1190061031031, 1190061031032, 1190061031033, 1190061031034, 1190061031035,
+1190061031036, 1190061031037, 1190061031038, 1190061031039, 1190061031040,
+1190061031041, 1190061031042, 1190061031043, 1190061031044, 1190061031045,
+1190061031046, 1190061031047, 1190061031048, 1190061031049, 1190061031050,
+1190061031051, 1190061031052, 1190061031053, 1190061031054, 1190061031055,
+1190061031056, 1190061031057, 1190061031058, 1190061031059, 1190061031060,
+1190061031061, 1190061031062, 1190061031063; VTD 224, VTD 225, VTD 229, VTD
+230: Block(s) 1190059063033, 1190059063034, 1190059063035, 1190059063036,
+1190059064037, 1190059064038, 1190059071000, 1190059071001, 1190059071002,
+1190059071003, 1190059071004, 1190059071005, 1190059071006, 1190059071007,
+1190059071008, 1190059071009, 1190059071010, 1190059071011, 1190059071012,
+1190059071013, 1190059071014, 1190059071015, 1190059071016, 1190059071017,
+1190059071018, 1190059071019, 1190059071020, 1190059071021, 1190059071022,
+1190059071023, 1190059071024, 1190059071025, 1190059071026, 1190059071027,
+1190059071028, 1190059071029, 1190059071030, 1190059071031, 1190059071032,
+1190059071033, 1190059071034, 1190059071035, 1190059071036, 1190059071037,
+1190059071038, 1190059071039, 1190059071040, 1190059072000, 1190059072001,
+1190059072002, 1190059072003, 1190059072004, 1190059072005, 1190059072006,
+1190059072007, 1190059072008, 1190059072009, 1190059072010, 1190059072011,
+1190059072012, 1190059072013, 1190059072014, 1190059072015, 1190059072016,
+1190059072017, 1190059072018, 1190059072019, 1190059072020, 1190059092000,
+1190059092001, 1190059092002, 1190059092003, 1190059092004, 1190059092005,
+1190059092006, 1190059092007, 1190059092008, 1190059092009, 1190059092010,
+1190059092011, 1190059092012, 1190059092013, 1190059092014, 1190059092015,
+1190059092016, 1190059092017, 1190059092018, 1190059121033, 1190059121034, 1190059121035,
+1190059121036, 1190059121037, 1190059121038, 1190059121039, 1190059121040,
+1190059121041, 1190059131000, 1190059131001, 1190059131002, 1190059131003,
+1190059131004, 1190059131005, 1190059131006, 1190059131007, 1190059131008,
+1190059131009, 1190059131010; VTD 231, VTD 240, VTD 241, VTD 242, VTD 243.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 42:</span></b><span
+style='color:black'> Alexander County, Catawba County.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 43:</span></b><span
+style='color:black'> Gaston County: VTD 01, VTD 02, VTD 03, VTD 04, VTD 05, VTD
+06, VTD 07, VTD 08, VTD 09, VTD 10, VTD 11, VTD 12, VTD 13, VTD 14, VTD 15, VTD
+16, VTD 17, VTD 18, VTD 19, VTD 20, VTD 21, VTD 22, VTD 23, VTD 24, VTD 25, VTD
+26, VTD 27, VTD 28, VTD 29, VTD 30, VTD 31, VTD 32, VTD 33, VTD 34, VTD 35, VTD
+36, VTD 37, VTD 38, VTD 39, VTD 40, VTD 41, VTD 44, VTD 45, VTD 46.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 44:</span></b><span
+style='color:black'> Cleveland County, Gaston County: VTD 42, VTD 43; Lincoln
+County.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 45:</span></b><span
+style='color:black'> Alleghany County, Ashe County, Surry County: VTD 01, VTD
+02, VTD 03, VTD 04, VTD 05, VTD 06, VTD 07, VTD 08, VTD 09, VTD 11, VTD 18, VTD
+22, VTD 24, VTD 25, VTD 26; Watauga County, Wilkes County.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 46:</span></b><span
+style='color:black'> Avery County, Burke County, Caldwell County.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 47:</span></b><span
+style='color:black'> Madison County, McDowell County, Mitchell County, Polk
+County, Rutherford County, Yancey County.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 48:</span></b><span
+style='color:black'> Buncombe County: VTD 101.1, VTD 102.1, VTD 19.1, VTD 30.1,
+VTD 38.2, VTD 38.3, VTD 46.1, VTD 47.1, VTD 55.1, VTD 57.1; Henderson County,
+Transylvania County.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 49:</span></b><span
+style='color:black'> Buncombe County: VTD 01.1, VTD 02.1, VTD 03.1, VTD 04.1,
+VTD 05.1, VTD 06.1, VTD 07.1, VTD 09.1, VTD 10.1, VTD 100.1, VTD 103.1, VTD
+104.1, VTD 105.1, VTD 106.1, VTD 107.1, VTD 11.1, VTD 12.1, VTD 13.1, VTD 14.2,
+VTD 15.1, VTD 17.1, VTD 20.1, VTD 24.1, VTD 25.1, VTD 26.1, VTD 28.1, VTD 31.1,
+VTD 32.1, VTD 33.2, VTD 33.3, VTD 34.1, VTD 35.1, VTD 36.1, VTD 37.1, VTD 39.1,
+VTD 41.1, VTD 44.1, VTD 45.1, VTD 48.1, VTD 49.1, VTD 50.1, VTD 52.1, VTD 53.1,
+VTD 58.1, VTD 59.1, VTD 60.2, VTD 61.1, VTD 62.1, VTD 63.1, VTD 64.1, VTD 65.1,
+VTD 66.1, VTD 67.1, VTD 68.1, VTD 69.1, VTD 70.1, VTD 71.1.</span></p>
+
+<p class=aDistrict><b><span style='color:black'>District 50:</span></b><span
+style='color:black'> Cherokee County, Clay County, Graham County, Haywood
+County, Jackson County, Macon County, Swain County.&quot;</span></p>
+
+<p class=aBillSection><b><span style='color:black'>SECTION 2.</span></b><span
+style='color:black'>&nbsp; This act is effective when it becomes law and applies to
+elections held on or after January 1, 2018.</span></p>
+
+</div>
+

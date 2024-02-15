@@ -1,0 +1,806 @@
+<style>
+<!--
+ /* Font Definitions */
+ @font-face
+	{font-family:"Cambria Math";
+	panose-1:2 4 5 3 5 4 6 3 2 4;}
+@font-face
+	{font-family:"Times New \(W1\)";}
+@font-face
+	{font-family:IDAutomationHC39M;
+	panose-1:2 0 5 9 0 0 0 2 0 4;}
+ /* Style Definitions */
+ p.MsoNormal, li.MsoNormal, div.MsoNormal
+	{margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoToc1, li.MsoToc1, div.MsoToc1
+	{margin-top:6.0pt;
+	margin-right:0in;
+	margin-bottom:6.0pt;
+	margin-left:0in;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.MsoToc2, li.MsoToc2, div.MsoToc2
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:12.25pt;
+	margin-bottom:.0001pt;
+	page-break-after:avoid;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	text-transform:uppercase;}
+p.MsoToc3, li.MsoToc3, div.MsoToc3
+	{margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:23.75pt;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoHeader, li.MsoHeader, div.MsoHeader
+	{mso-style-link:"Header Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.MsoFooter, li.MsoFooter, div.MsoFooter
+	{mso-style-link:"Footer Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+span.MsoLineNumber
+	{font-family:"Times New Roman",serif;}
+p.LMSBase, li.LMSBase, div.LMSBase
+	{mso-style-name:LMSBase;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.aArticle, li.aArticle, div.aArticle
+	{mso-style-name:aArticle;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.aArticleTitle, li.aArticleTitle, div.aArticleTitle
+	{mso-style-name:aArticleTitle;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.aBase, li.aBase, div.aBase
+	{mso-style-name:aBase;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.aBillSection, li.aBillSection, div.aBillSection
+	{mso-style-name:aBillSection;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:.75in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.aBlock1, li.aBlock1, div.aBlock1
+	{mso-style-name:aBlock1;
+	mso-style-link:"aBlock1 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.5in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.aBlock2, li.aBlock2, div.aBlock2
+	{mso-style-name:aBlock2;
+	mso-style-link:"aBlock2 Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.75in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.5in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.aBlock3, li.aBlock3, div.aBlock3
+	{mso-style-name:aBlock3;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:2.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.5in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.aBlock4, li.aBlock4, div.aBlock4
+	{mso-style-name:aBlock4;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:2.75in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.5in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.aBlock5, li.aBlock5, div.aBlock5
+	{mso-style-name:aBlock5;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:3.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.5in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.aChapter, li.aChapter, div.aChapter
+	{mso-style-name:aChapter;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+p.aHeading, li.aHeading, div.aHeading
+	{mso-style-name:aHeading;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.aLongTitle, li.aLongTitle, div.aLongTitle
+	{mso-style-name:aLongTitle;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:"Times New \(W1\)";
+	text-transform:uppercase;}
+p.aMargin1, li.aMargin1, div.aMargin1
+	{mso-style-name:aMargin1;
+	mso-style-link:"aMargin1 Char";
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:.25in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.aMargin2, li.aMargin2, div.aMargin2
+	{mso-style-name:aMargin2;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:.75in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.aPart, li.aPart, div.aPart
+	{mso-style-name:aPart;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.aSection, li.aSection, div.aSection
+	{mso-style-name:aSection;
+	mso-style-link:"aSection Char";
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.75in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.75in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+p.aSP, li.aSP, div.aSP
+	{mso-style-name:aSP;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	color:blue;
+	font-weight:bold;}
+p.aSPComment, li.aSPComment, div.aSPComment
+	{mso-style-name:aSPComment;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New \(W1\)";
+	color:red;
+	display:none;
+	font-weight:bold;}
+p.aSPFunds1, li.aSPFunds1, div.aSPFunds1
+	{mso-style-name:aSPFunds1;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.aSPFunds2, li.aSPFunds2, div.aSPFunds2
+	{mso-style-name:aSPFunds2;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.aSPFundsHeading1, li.aSPFundsHeading1, div.aSPFundsHeading1
+	{mso-style-name:aSPFundsHeading1;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+p.aSPFundsHeading2, li.aSPFundsHeading2, div.aSPFundsHeading2
+	{mso-style-name:aSPFundsHeading2;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+p.aSPHeading, li.aSPHeading, div.aSPHeading
+	{mso-style-name:aSPHeading;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-1.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.nonumber, li.nonumber, div.nonumber
+	{mso-style-name:nonumber;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.aSPHeadingLine, li.aSPHeadingLine, div.aSPHeadingLine
+	{mso-style-name:aSPHeadingLine;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+p.ASPlist, li.ASPlist, div.ASPlist
+	{mso-style-name:ASPlist;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:2.5in;
+	margin-bottom:.0001pt;
+	text-indent:-1.75in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.aSPRequestedBY, li.aSPRequestedBY, div.aSPRequestedBY
+	{mso-style-name:aSPRequestedBY;
+	margin:0in;
+	margin-bottom:.0001pt;
+	font-size:12.0pt;
+	font-family:"Times New \(W1\)";}
+p.aSPTitle, li.aSPTitle, div.aSPTitle
+	{mso-style-name:aSPTitle;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:"Times New \(W1\)";
+	text-transform:uppercase;
+	font-weight:bold;}
+p.aSubChapter, li.aSubChapter, div.aSubChapter
+	{mso-style-name:aSubChapter;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.aSubPart, li.aSubPart, div.aSubPart
+	{mso-style-name:aSubPart;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+p.aTitle, li.aTitle, div.aTitle
+	{mso-style-name:aTitle;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+span.cHistoryNote
+	{mso-style-name:cHistoryNote;}
+span.FooterChar
+	{mso-style-name:"Footer Char";
+	mso-style-link:Footer;
+	font-family:"Times New Roman",serif;}
+span.HeaderChar
+	{mso-style-name:"Header Char";
+	mso-style-link:Header;
+	font-family:"Times New Roman",serif;}
+p.TOCPageHeader, li.TOCPageHeader, div.TOCPageHeader
+	{mso-style-name:TOCPageHeader;
+	margin:0in;
+	margin-bottom:.0001pt;
+	text-align:center;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.aSPSubTitle, li.aSPSubTitle, div.aSPSubTitle
+	{mso-style-name:aSPSubTitle;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.25in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.25in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.aSPHeadingMiscellaneous, li.aSPHeadingMiscellaneous, div.aSPHeadingMiscellaneous
+	{mso-style-name:aSPHeadingMiscellaneous;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:1.0in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-1.0in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;
+	text-transform:uppercase;
+	font-weight:bold;}
+p.aDistrict, li.aDistrict, div.aDistrict
+	{mso-style-name:aDistrict;
+	margin-top:0in;
+	margin-right:0in;
+	margin-bottom:0in;
+	margin-left:.2in;
+	margin-bottom:.0001pt;
+	text-align:justify;
+	text-justify:inter-ideograph;
+	text-indent:-.2in;
+	font-size:12.0pt;
+	font-family:"Times New Roman",serif;}
+span.aBlock1Char
+	{mso-style-name:"aBlock1 Char";
+	mso-style-link:aBlock1;
+	font-family:"Times New Roman",serif;}
+span.aBlock2Char
+	{mso-style-name:"aBlock2 Char";
+	mso-style-link:aBlock2;
+	font-family:"Times New Roman",serif;}
+span.aMargin1Char
+	{mso-style-name:"aMargin1 Char";
+	mso-style-link:aMargin1;
+	font-family:"Times New Roman",serif;}
+span.aSectionChar
+	{mso-style-name:"aSection Char";
+	mso-style-link:aSection;
+	font-family:"Times New Roman",serif;
+	font-weight:bold;}
+.MsoChpDefault
+	{font-family:"Calibri",sans-serif;}
+.MsoPapDefault
+	{margin-bottom:10.0pt;
+	line-height:115%;}
+ /* Page Definitions */
+ @page WordSection1
+	{size:8.5in 11.0in;
+	margin:.6in .9in .5in 1.2in;}
+div.WordSection1
+	{page:WordSection1;}
+-->
+</style>
+
+
+
+<div class=WordSection1>
+
+<p class=nonumber align=center style='margin-top:24.0pt;text-align:center'><b>GENERAL
+ASSEMBLY OF NORTH CAROLINA</b></p>
+
+<p class=nonumber align=center style='margin-top:3.0pt;margin-right:0in;
+margin-bottom:6.0pt;margin-left:0in;text-align:center'><b>SESSION 2017</b></p>
+
+<p class=nonumber align=center style='text-align:center'><b>&nbsp;</b></p>
+
+<p class=nonumber align=center style='text-align:center'><b>SESSION LAW 2018-3</b></p>
+
+<p class=nonumber align=center style='text-align:center'><b>HOUSE BILL 514</b></p>
+
+<p class=nonumber align=center style='text-align:center'><b>&nbsp;</b></p>
+
+<p class=nonumber align=center style='text-align:center'><b>&nbsp;</b></p>
+
+<p class=aLongTitle><span style='font-family:"Times New Roman",serif;
+color:black'>AN ACT TO PERMIT CERTAIN TOWNS TO OPERATE CHARTER SCHOOLS.</span></p>
+
+<p class=aBase>&nbsp;</p>
+
+<p class=aBase><span style='color:black'>The General Assembly of North Carolina
+enacts:</span></p>
+
+<p class=aBase>&nbsp;</p>
+
+<p class=aBillSection><b><span style='color:black'>SECTION 1.</span></b><span
+style='color:black'>&nbsp; G.S.&nbsp;115C&#8209;218 reads as rewritten:</span></p>
+
+<p class=aSection><span style='color:black;font-weight:normal'>&quot;</span><span
+style='color:black'>&sect; 115C&#8209;218.&nbsp; Purpose of charter schools; <u>definitions;
+</u>establishment of North Carolina Charter Schools Advisory Board and North
+Carolina Office of Charter Schools.</span></p>
+
+<p class=aMargin1><span style='color:black'>…</span></p>
+
+<p class=aMargin1><u><span style='color:black'>(a1)</span></u><span
+style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>Definitions. – For the purposes of this Article,
+the following definitions apply:</u></span></p>
+
+<p class=aBlock1><u><span style='color:black'>(1)</span></u><span
+style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>Board of directors or charter board. – Any of
+the following:</u></span></p>
+
+<p class=aBlock2><u><span style='color:black'>a.</span></u><span
+style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>The board of directors of a nonprofit
+corporation.</u></span></p>
+
+<p class=aBlock2><u><span style='color:black'>b.</span></u><span
+style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>The governing body of a municipality who serve ex
+officio as the board of directors of a charter school granted to a municipality.</u></span></p>
+
+<p class=aBlock2><u><span style='color:black'>c.</span></u><span
+style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>A board of directors appointed to govern a
+charter school granted to a municipality by the governing body of that municipality.</u></span></p>
+
+<p class=aBlock1><u><span style='color:black'>(2)</span></u><span
+style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>Nonprofit corporation. – A private nonprofit
+corporation that receives federal tax exempt status no later than 24 months
+following final approval of the charter.</u></span></p>
+
+<p class=aMargin1><span style='color:black'>…</span></p>
+
+<p class=aMargin1><span style='color:black'>(c)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; North Carolina Office of
+Charter Schools. –</span></p>
+
+<p class=aBlock1><span style='color:black'>…</span></p>
+
+<p class=aBlock1><span style='color:black'>(3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Powers and duties. – The
+Office of Charter Schools shall have the following powers and duties:</span></p>
+
+<p class=aBlock2><span style='color:black'>a.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Serve as staff to the
+Advisory Board and fulfill any task and duties assigned to it by the Advisory
+Board.</span></p>
+
+<p class=aBlock2><span style='color:black'>b.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Provide technical
+assistance and guidance to charter schools operating within the State.</span></p>
+
+<p class=aBlock2><span style='color:black'>c.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Provide technical
+assistance and guidance to nonprofit corporations <u>or municipalities </u>seeking
+to operate charter schools within the State.</span></p>
+
+<p class=aBlock2><span style='color:black'>d.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Provide or arrange for
+training for charter schools that have received preliminary approval from the
+State Board.</span></p>
+
+<p class=aBlock2><span style='color:black'>e.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Assist approved charter
+schools and charter schools seeking approval from the State Board in
+coordinating services with the Department of Public Instruction.</span></p>
+
+<p class=aBlock2><span style='color:black'>f.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Other duties as assigned
+by the State Board.</span></p>
+
+<p class=aBlock1><span style='color:black'>….&quot;</span></p>
+
+<p class=aBillSection><b><span style='color:black'>SECTION 2.</span></b><span
+style='color:black'>&nbsp; G.S.&nbsp;115C&#8209;218.1 reads as rewritten:</span></p>
+
+<p class=aSection><span style='color:black;font-weight:normal'>&quot;</span><span
+style='color:black'>&sect; 115C&#8209;218.1.&nbsp; Eligible applicants; contents of
+applications; submission of applications for approval.</span></p>
+
+<p class=aMargin1><span style='color:black'>(a)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Any nonprofit
+corporation <u>or municipality </u>seeking to establish a charter school may
+apply to establish a charter school. If the applicant seeks to convert a public
+school to a charter school, the application shall include a statement signed by
+a majority of the teachers and instructional support personnel currently
+employed at the school indicating that they favor the conversion and evidence
+that a significant number of parents of children enrolled in the school favor
+conversion.</span></p>
+
+<p class=aMargin1><span style='color:black'>(b)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The application shall
+contain at least the following information:</span></p>
+
+<p class=aBlock1><span style='color:black'>…</span></p>
+
+<p class=aBlock1><span style='color:black'>(3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The governance structure
+of the <s>school including the </s><u>school as follows:</u></span></p>
+
+<p class=aBlock2><u><span style='color:black'>a.</span></u><span
+style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>For nonprofit corporation applicants. – The </u>names
+of the initial members of the board of directors of the <s>nonprofit, tax&#8209;exempt
+</s><u>nonprofit </u>corporation and the process to be followed by the school
+to ensure parental involvement. A teacher employed by the board of directors <u>of
+a nonprofit corporation </u>to teach in the charter school may serve as a
+nonvoting member of the board of directors for the charter school.</span></p>
+
+<p class=aBlock2><u><span style='color:black'>b.</span></u><span
+style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>For municipal applicants. – The names of the
+governing board of the municipality, and if the members of the governing board
+will not serve ex officio as the board of directors, the members of the board
+of directors appointed to govern the charter school by the municipality. The
+process to be followed by the school to ensure parental involvement shall also
+be included.</u></span></p>
+
+<p class=aBlock1><span style='color:black'>….&quot;</span></p>
+
+<p class=aBillSection><b><span style='color:black'>SECTION 3.</span></b><span
+style='color:black'>&nbsp; G.S.&nbsp;115C&#8209;218.15 reads as rewritten:</span></p>
+
+<p class=aSection><span style='color:black;font-weight:normal'>&quot;</span><span
+style='color:black'>&sect; 115C&#8209;218.15.&nbsp; Charter school operation.</span></p>
+
+<p class=aMargin1><span style='color:black'>(a)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A charter school that is
+approved by the State shall be a public school within the local school
+administrative unit in which it is located. All charter schools shall be
+accountable to the State Board for ensuring compliance with applicable laws and
+the provisions of their charters.</span></p>
+
+<p class=aMargin1><span style='color:black'>(b)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A charter school shall
+be operated by <s>a private nonprofit corporation that shall have received
+federal tax&#8209;exempt status no later than 24 months following final
+approval of the application.</s><u>one of the following:</u></span></p>
+
+<p class=aBlock1><u><span style='color:black'>(1)</span></u><span
+style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>A nonprofit corporation.</u></span></p>
+
+<p class=aBlock1><u><span style='color:black'>(2)</span></u><span
+style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>A municipality.</u></span></p>
+
+<p class=aMargin1><u><span style='color:black'>(b1)</span></u><span
+style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The board of directors of <s>the </s><u>a nonprofit
+corporation operating a </u>charter <s>schools </s><u>school </u>shall adopt a
+conflict of interest and anti&#8209;nepotism policy that includes, at a
+minimum, the following:</span></p>
+
+<p class=aBlock1><span style='color:black'>(1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The requirements of
+Chapter 55A of the General Statutes related to conflicts of interest.</span></p>
+
+<p class=aBlock1><span style='color:black'>(2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A requirement that before
+any immediate family, as defined in G.S.&nbsp;115C&#8209;12.2, of any member of
+the board of directors or a charter school employee with supervisory authority
+shall be employed or engaged as an employee, independent contractor, or
+otherwise by the board of directors in any capacity, such proposed employment
+or engagement shall be (i) disclosed to the board of directors and (ii)
+approved by the board of directors in a duly called open&#8209;session meeting.
+The burden of disclosure of such a conflict of interest shall be on the
+applicable board member or employee with supervisory authority. If the
+requirements of this subsection are complied with, the charter school may
+employ immediate family of any member of the board of directors or a charter
+school employee with supervisory authority.</span></p>
+
+<p class=aBlock1><span style='color:black'>(3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A requirement that a
+person shall not be disqualified from serving as a member of a charter school's
+board of directors because of the existence of a conflict of interest, so long
+as the person's actions comply with the school's conflict of interest policy
+established as provided in this subsection and applicable law.</span></p>
+
+<p class=aMargin1><u><span style='color:black'>(b2)</span></u><span
+style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>The board of directors of a municipal charter
+school shall adopt a conflict of interest and anti&#8209;nepotism policy
+related to the charter school that includes, at a minimum, the requirements of
+subdivisions (2) and (3) of subsection (b1) of this section.</u></span></p>
+
+<p class=aMargin1><span style='color:black'>….&quot;</span></p>
+
+<p class=aBillSection><b><span style='color:black'>SECTION 4.</span></b><span
+style='color:black'>&nbsp; G.S.&nbsp;115C&#8209;218.25 reads as rewritten:</span></p>
+
+<p class=aSection><span style='color:black;font-weight:normal'>&quot;</span><span
+style='color:black'>&sect; 115C&#8209;218.25.&nbsp; Open meetings and public records.</span></p>
+
+<p class=aMargin1><span style='color:black'>The charter school and board of
+directors <s>of the private nonprofit corporation </s>that operates the charter
+school are subject to the Public Records Act, Chapter 132 of the General
+Statutes, and the Open Meetings Law, Article 33C of Chapter 143 of the General
+Statutes. Notwithstanding the requirements of Chapter 132 of the General
+Statutes, inspection of charter school personnel records for those employees
+directly employed by the board of directors of the charter school shall be
+subject to the requirements of Article 21A of this Chapter. The charter school
+and board of directors <s>of the private nonprofit corporation </s>that
+operates the charter school shall use the same schedule established by the
+Department of Natural and Cultural Resources for retention and disposition of
+records of local school administrative units.&quot;</span></p>
+
+<p class=aBillSection><b><span style='color:black'>SECTION 5.</span></b><span
+style='color:black'>&nbsp; G.S.&nbsp;115C&#8209;218.45(f) reads as rewritten:</span></p>
+
+<p class=aMargin1><span style='color:black'>&quot;(f)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The charter school
+may give enrollment priority to any of the following:</span></p>
+
+<p class=aBlock1><span style='color:black'>(1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Siblings of currently
+enrolled students who were admitted to the charter school in a previous year.
+For the purposes of this section, the term &quot;siblings&quot; includes any of
+the following who reside in the same household: half siblings, stepsiblings,
+and children residing in a family foster home.</span></p>
+
+<p class=aBlock1><span style='color:black'>(2)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Siblings of students who
+have completed the highest grade level offered by that school and who were
+enrolled in at least four grade levels offered by the charter school or, if
+less than four grades are offered, in the maximum number of grades offered by the
+charter school.</span></p>
+
+<p class=aBlock1><span style='color:black'>(3)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Limited to no more than
+fifteen percent (15%) of the school's total enrollment, unless granted a waiver
+by the State Board of Education, the following:</span></p>
+
+<p class=aBlock2><span style='color:black'>a.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Children of the school's
+full&#8209;time employees.</span></p>
+
+<p class=aBlock2><span style='color:black'>b.&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Children of the charter
+school's board of directors.</span></p>
+
+<p class=aBlock1><span style='color:black'>(4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A student who was
+enrolled in the charter school within the two previous school years but left
+the school (i) to participate in an academic study abroad program or a
+competitive admission residential program or (ii) because of the vocational
+opportunities of the student's parent.</span></p>
+
+<p class=aBlock1><span style='color:black'>(5)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A student who was
+enrolled in another charter school in the State in the previous school year
+that does not offer the student's next grade level.</span></p>
+
+<p class=aBlock1><span style='color:black'>(6)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; A student who was
+enrolled in another charter school in the State in the previous school year
+that does not offer the student's next grade level and both of the charter
+schools have an enrollment articulation agreement to accept students or are
+governed by the same board of directors.</span></p>
+
+<p class=aBlock1><u><span style='color:black'>(7)</span></u><span
+style='color:black'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <u>If the charter school is operated by a
+municipality, domiciliaries of the municipality.</u>&quot;</span></p>
+
+<p class=aBillSection><b><span style='color:black'>SECTION 6.</span></b><span
+style='color:black'>&nbsp; G.S.&nbsp;115C&#8209;218.90 reads as rewritten:</span></p>
+
+<p class=aSection><span style='color:black;font-weight:normal'>&quot;</span><span
+style='color:black'>&sect; 115C&#8209;218.90.&nbsp; Employment requirements.</span></p>
+
+<p class=aMargin1><span style='color:black'>(a)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Employees. –</span></p>
+
+<p class=aBlock1><span style='color:black'>(1)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; An employee of a charter
+school is not an employee of the local school administrative unit in which the
+charter school is located. The charter school's board of directors <u>of the
+nonprofit corporation or the governing body of a municipality </u>shall employ
+and contract with necessary teachers to perform the particular service for
+which they are employed in the school; at least fifty percent (50%) of these
+teachers shall hold teacher licenses. All teachers who are teaching in the core
+subject areas of mathematics, science, social studies, and language arts shall
+be college graduates.</span></p>
+
+<p class=aBlock1 style='text-indent:.25in'><span style='color:black'>The <s>board
+</s><u>charter school's board of directors of the nonprofit corporation or the
+governing body of a municipality </u>also may employ necessary employees who
+are not required to hold teacher licenses to perform duties other than teaching
+and may contract for other services. The <s>board </s><u>charter school's board
+of directors of the nonprofit corporation or the governing body of a
+municipality </u>may discharge teachers and nonlicensed employees.</span></p>
+
+<p class=aBlock1><span style='color:black'>…</span></p>
+
+<p class=aBlock1><span style='color:black'>(4)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; The employees of <s>the </s><u>a
+</u>charter school <u>operated by a nonprofit corporation </u>shall be deemed
+employees of the local school administrative unit for purposes of providing
+certain State&#8209;funded employee benefits, including membership in the
+Teachers' and State Employees' Retirement System and the State Health Plan for
+Teachers and State Employees. The State Board of Education provides funds to
+charter schools, approves the original members of the boards of directors of
+the charter schools, has the authority to grant, supervise, and revoke
+charters, and demands full accountability from charter schools for school
+finances and student performance. Accordingly, it is the determination of the General
+Assembly that charter schools are public schools and that the employees of
+charter schools <u>operated by a private nonprofit corporation </u>are public
+school employees. Employees of a charter school <u>operated by a private
+nonprofit corporation </u>whose board of directors elects to become a
+participating employer under G.S.&nbsp;135&#8209;5.3 are &quot;teachers&quot;
+for the purpose of membership in the North Carolina Teachers' and State
+Employees' Retirement System. In no event shall anything contained in this
+Article require the North Carolina Teachers' and State Employees' Retirement
+System to accept employees of a private employer as members or participants of
+the System.</span></p>
+
+<p class=aBlock1><span style='color:black'>….&quot;</span></p>
+
+<p class=aBillSection><b><span style='color:black'>SECTION 11.</span></b><span
+style='color:black'>&nbsp; This act applies only to the Town of Cornelius, the Town
+of Huntersville, the Town of Matthews, and the Town of Mint Hill.</span></p>
+
+<p class=aBillSection><b><span style='color:black'>SECTION 12.</span></b><span
+style='color:black'>&nbsp; If any section or provision of this act is declared
+unconstitutional or invalid by the courts, it does not affect the validity of
+this act as a whole or any part other than the part declared to be
+unconstitutional or invalid.</span></p>
+
+<p class=aBillSection style='page-break-after:avoid'><b><span style='color:
+black'>SECTION 13.</span></b><span style='color:black'>&nbsp; This act is effective
+when it becomes law and applies to applications to establish a charter school
+submitted on or after that date.</span></p>
+
+<p class=aMargin2 style='page-break-after:avoid'>In the General Assembly read
+three times and ratified this the 7<sup>th</sup> day of June, 2018.</p>
+
+<p class=aBase style='page-break-after:avoid'>&nbsp;</p>
+
+<p class=aBase style='page-break-after:avoid'>&nbsp;</p>
+
+<p class=aBase style='page-break-after:avoid'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s/&nbsp; 
+Philip E. Berger</p>
+
+<p class=aBase style='page-break-after:avoid'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;President
+Pro Tempore of the Senate</p>
+
+<p class=aBase style='page-break-after:avoid'>&nbsp;</p>
+
+<p class=aBase style='page-break-after:avoid'>&nbsp;</p>
+
+<p class=aBase style='page-break-after:avoid'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; s/&nbsp; 
+Tim Moore</p>
+
+<p class=aBase style='page-break-after:avoid'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;Speaker
+of the House of Representatives</p>
+
+</div>
+

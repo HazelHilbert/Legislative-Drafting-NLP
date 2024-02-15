@@ -1,0 +1,206 @@
+LEGISLATIVE BILL 347
+Approved by the Governor February 14, 2018
+ 
+Introduced by Geist, 25; at the request of the Governor.
+ 
+A BILL FOR AN ACT relating to school bus permits and qualifications; to amend
+section 79-608, Reissue Revised Statutes of Nebraska, and section
+60-4,115, Revised Statutes Cumulative Supplement, 2016; to eliminate
+certain fees and requirements duplicated under federal law; to change
+powers and duties of the Department of Motor Vehicles and the State
+Department of Education; to provide an operative date; and to repeal the
+original sections.
+Be it enacted by the people of the State of Nebraska,
+Section 1. Section 60-4,115, Revised Statutes Cumulative Supplement, 2016,
+is amended to read:
+60-4,115 (1) Fees for operators' licenses and state identification cards
+shall be collected by department personnel or the county treasurer and
+distributed according to the table in subsection (2) of this section, except
+for the ignition interlock permit and associated fees as outlined in subsection
+(4) of this section. County officials shall remit the county portion of the
+fees collected to the county treasurer for placement in the county general
+fund. All other fees collected shall be remitted to the State Treasurer for
+credit to the appropriate fund.
+(2) The fees provided in this subsection in the following dollar amounts
+apply for operators' licenses and state identification cards.
+   Department  
+  County of Motor State
+Document Total General Vehicles General
+ Fee Fund Cash Fund Fund
+State identification card:     
+Valid for 1 year or less 5.00 2.75 1.25 1.00
+Valid for more than 1 year     
+but not more than 2 years 10.00 2.75 4.00 3.25
+Valid for more than 2 years     
+but not more than 3 years 14.00 2.75 5.25 6.00
+Valid for more than 3 years     
+but not more than 4 years 19.00 2.75 8.00 8.25
+Valid for more than 4 years     
+for person under 21 24.00 2.75 10.25 11.00
+Valid for 5 years 24.00 3.50 10.25 10.25
+Replacement 11.00 2.75 6.00 2.25
+Class O or M operator's license:     
+Valid for 1 year or less 5.00 2.75 1.25 1.00
+Valid for more than 1 year     
+but not more than 2 years 10.00 2.75 4.00 3.25
+Valid for more than 2 years     
+but not more than 3 years 14.00 2.75 5.25 6.00
+Valid for more than 3 years     
+but not more than 4 years 19.00 2.75 8.00 8.25LB347
+2018LB347
+2018
+-1-
+Valid for 5 years 24.00 3.50 10.25 10.25
+Bioptic or telescopic lens
+restriction:    
+Valid for 1 year or less 5.00 0 5.00 0
+Valid for more than 1 year     
+but not more than 2 years 10.00 2.75 4.00 3.25
+Replacement 11.00 2.75 6.00 2.25
+Add, change, or remove class,     
+endorsement, or restriction 5.00 0 5.00 0
+Provisional operator's permit:     
+Original 15.00 2.75 12.25 0
+Bioptic or telescopic lens
+restriction:    
+Valid for 1 year or less 5.00 0 5.00 0
+Valid for more than 1 year     
+but not more than 2 years 15.00 2.75 12.25 0
+Replacement 11.00 2.75 6.00 2.25
+Add, change, or remove class,     
+endorsement, or restriction 5.00 0 5.00 0
+LPD-learner's permit:     
+Original 8.00 .25 5.00 2.75
+Replacement 11.00 2.75 6.00 2.25
+Add, change, or remove class,     
+endorsement, or restriction 5.00 0 5.00 0
+LPE-learner's permit:     
+Original 8.00 .25 5.00 2.75
+Replacement 11.00 2.75 6.00 2.25
+Add, change, or remove class,     
+endorsement, or restriction 5.00 0 5.00 0
+School permit:     
+Original 8.00 .25 5.00 2.75
+Replacement 11.00 2.75 6.00 2.25
+Add, change, or remove class,     
+endorsement, or restriction 5.00 0 5.00 0
+Farm permit:     
+Original or renewal 5.00 .25 0 4.75
+Replacement 5.00 .25 0 4.75
+Temporary 5.00 .25 0 4.75
+Add, change, or remove class,     LB347
+2018LB347
+2018
+-2-
+endorsement, or restriction 5.00 0 5.00 0
+Driving permits:     
+Employment 45.00 0 5.00 40.00
+Medical hardship 45.00 0 5.00 40.00
+Replacement 10.00 .25 5.00 4.75
+Add, change, or remove class,     
+endorsement, or restriction 5.00 0 5.00 0
+Commercial driver's license:     
+Valid for 1 year or less 11.00 1.75 5.00 4.25
+Valid for more than 1 year     
+but not more than 2 years 22.00 1.75 5.00 15.25
+Valid for more than 2 years     
+but not more than 3 years 33.00 1.75 5.00 26.25
+Valid for more than 3 years     
+but not more than 4 years 44.00 1.75 5.00 37.25
+Valid for 5 years 55.00 1.75 5.00 48.25
+Bioptic or telescopic lens
+restriction:    
+Valid for one year or less 11.00 1.75 5.00 4.25
+Valid for more than 1 year     
+but not more than 2 years 22.00 1.75 5.00 15.25
+Replacement 11.00 2.75 6.00 2.25
+Add, change, or remove class,     
+endorsement, or restriction 10.00 1.75 5.00 3.25
+CLP-commercial learner's permit:     
+Original or renewal 10.00 .25 5.00 4.75
+Replacement 10.00 .25 5.00 4.75
+Add, change, or remove class,     
+endorsement, or restriction 10.00 .25 5.00 4.75
+Seasonal permit:     
+Original or renewal 10.00 .25 5.00 4.75
+Replacement 10.00 .25 5.00 4.75
+Add, change, or remove class,     
+endorsement, or restriction 10.00 .25 5.00 4.75
+School bus permit:     
+Original or renewal 5.00 0 5.00 0
+Replacement 5.00 0 5.00 0
+Add, change, or remove class,     
+endorsement, or restriction 5.00 0 5.00 0
+(3) If the department issues an operator's license or a stateLB347
+2018LB347
+2018
+-3-
+identification card and collects the fees, the department shall remit the
+county portion of the fees to the State Treasurer for credit to the Department
+of Motor Vehicles Cash Fund.
+(4)(a) The fee for an ignition interlock permit shall be forty-five
+dollars. Five dollars of the fee shall be remitted to the State Treasurer for
+credit to the Department of Motor Vehicles Cash Fund. Forty dollars of the fee
+shall be remitted to the State Treasurer for credit to the Department of Motor
+Vehicles Ignition Interlock Fund.
+(b) The fee for a replacement ignition interlock permit shall be eleven
+dollars. Two dollars and seventy-five cents of the fee shall be remitted to the
+county treasurer for credit to the county general fund. Six dollars of the fee
+shall be remitted to the State Treasurer for credit to the Department of Motor
+Vehicles Cash Fund. Two dollars and twenty-five cents of the fee shall be
+remitted to the State Treasurer for credit to the General Fund.
+(c) The fee for adding, changing, or removing a class, endorsement, or
+restriction on an ignition interlock permit shall be five dollars. The fee
+shall be remitted to the State Treasurer for credit to the Department of Motor
+Vehicles Cash Fund.
+(5) The department and its agents may collect an identity security
+surcharge to cover the cost of security and technology practices used to
+protect the identity of applicants for and holders of operators' licenses and
+state identification cards and to reduce identity theft, fraud, and forgery and
+counterfeiting of such licenses and cards to the maximum extent possible. The
+surcharge shall be in addition to all other required fees for operators'
+licenses and state identification cards. The amount of the surcharge shall be
+determined by the department. The surcharge shall not exceed eight dollars. The
+surcharge shall be remitted to the State Treasurer for credit to the Department
+of Motor Vehicles Cash Fund.
+Sec. 2. Section 79-608, Reissue Revised Statutes of Nebraska, is amended
+to read:
+79-608 (1) Any person, before operating a school bus, including any school
+bus which transports students by direct contract with the students or their
+parents and not owned by or under contract with the school district or
+nonpublic school, shall submit himself or herself to (a) an examination, to be
+conducted by a driver's license examiner of the Department of Motor Vehicles,
+to determine his or her qualifications to operate such bus and (b) an
+examination by a licensed physician to determine whether or not he or she meets
+the physical and mental standards established pursuant to section 79-607 and
+shall furnish to the school board or board of education or the governing
+authority of a nonpublic school and to the Director of Motor Vehicles  a written
+report of each such examination on standard forms prescribed by the State
+Department of Education, signed by the person conducting the same, showing that
+he or she is qualified to operate a school bus and that he or she meets the
+physical and mental standards.  If the Director of Motor Vehicles determines
+that the person is so qualified and meets such standards, the director shall
+issue to the person a special school bus operator's permit, which shall expire
+each year on the date of birth of the holder, in such form as the director
+prescribes. No contract shall be entered into until such permit has been
+received and exhibited to the school board or the governing authority of a
+nonpublic school. The holder of such permit shall have it on his or her person
+at all times while operating a school bus.
+(2) It shall be unlawful for any person operating a school bus to be or
+remain on duty for a longer period than sixteen consecutive hours. When any
+person operating a bus has been continuously on duty for sixteen hours, he or
+she shall be relieved and not be permitted or required to again go on duty
+without having at least ten consecutive hours' rest off duty, and no such
+operator, who has been on duty sixteen hours in the aggregate in any twenty-
+four-hour period, shall be required or permitted to continue or again go on
+duty without having had at least eight consecutive hours off duty.
+(3) Any person violating this section shall be guilty of a Class V
+misdemeanor. His or her contract with the school district shall be canceled as
+provided in section 79-607.
+Sec. 3.  This act becomes operative on January 1, 2019.
+Sec. 4.  Original section 79-608, Reissue Revised Statutes of Nebraska,
+and section 60-4,115, Revised Statutes Cumulative Supplement, 2016, are
+repealed.LB347
+2018LB347
+2018
+-4-

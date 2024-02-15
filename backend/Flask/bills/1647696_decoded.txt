@@ -1,0 +1,39 @@
+
+								Enrolled  
+							 September 07, 2017
+								Passed 
+							 IN 
+								Senate
+							 August 31, 2017
+								Passed 
+							 IN 
+								Assembly 
+							 September 05, 2017
+								Amended  
+							 IN 
+								Senate
+							 June 21, 2017
+								Amended  
+							 IN 
+								Senate
+							 June 08, 2017
+								CALIFORNIA LEGISLATURE— 
+								2017–2018 REGULAR SESSION
+								Assembly Bill
+							No. 1535Introduced by Assembly Member MaienscheinFebruary 17, 2017 An act to amend Section 2000 of the Corporations Code, relating to corporations. LEGISLATIVE COUNSEL'S DIGESTAB 1535, Maienschein.
+											  Corporations: dissolutions: separate shareholder agreements.Existing law governs suits concerning the dissolution of corporations. Under this law, subject to any contrary provision in the articles, in a suit for involuntary dissolution or a proceeding for voluntary dissolution initiated by a shareholder vote representing only 50% of the voting power, the corporation or, if it does not elect to purchase, the holders of 50% or more of the voting power, as purchasing shareholders, may avoid the corporation’s dissolution and appointment of a receiver by purchasing the plaintiff’s or shareholder’s shares at fair value.This bill would specify that those contrary provisions in the articles may include a reference to a separate written
+			 agreement between 2 or more shareholders pertaining to the purchase of shares.Digest Key
+				Vote:
+				MAJORITY  
+				Appropriation:
+				NO  
+					Fiscal Committee:
+					NO  
+				Local Program:
+                                NO  Bill TextThe people of the State of California do enact as follows:SECTION 1. Section 2000 of the Corporations Code is amended to read:2000. (a) Subject to any contrary provision in the articles, which may include a reference to a separate written agreement between two or more shareholders pertaining to the purchase of shares:In any suit for involuntary dissolution, or in any proceeding for voluntary dissolution initiated by the vote of shareholders representing only 50 percent of the voting power, the corporation or, if it does not elect to purchase, the holders of 50 percent or more of the voting power of the corporation (the “purchasing parties”) may avoid the dissolution of the corporation and the appointment
+						of any receiver by purchasing for cash the shares owned by the plaintiffs or by the shareholders so initiating the proceeding (the “moving parties”) at their fair value.The fair value shall be determined on the basis of the liquidation value as of the valuation date but taking into account the possibility, if any, of sale of the entire business as a going concern in a liquidation. In fixing the value, the amount of any damages resulting if the initiation of the dissolution is a breach by any moving party or parties of an agreement with the purchasing party or parties may be deducted from the amount payable to the moving party or parties, unless the ground for dissolution is that specified in paragraph (4) of subdivision (b) of Section 1800. The election of the corporation to purchase may be made by the approval of the outstanding shares (Section 152) excluding
+						shares held by the moving parties.(b) If the purchasing parties (1) elect to purchase the shares owned by the moving parties, and (2) are unable to agree with the moving parties upon the fair value of those shares, and (3) give bond with sufficient security to pay the estimated reasonable expenses (including attorneys’ fees) of the moving parties if
+						those expenses are recoverable under subdivision (c), the court upon application of the purchasing parties, either in the pending action or in a proceeding initiated in the superior court of the proper county by the purchasing parties in the case of a voluntary election to wind up and dissolve, shall stay the winding up and dissolution proceeding and shall proceed to ascertain and fix the fair value of the shares owned by the moving parties.(c) The court shall appoint three disinterested appraisers to appraise the fair value of the shares owned by the moving parties, and shall make an order referring the matter to the appraisers so appointed for the purpose of ascertaining the value. The order shall prescribe the time and manner of producing evidence, if evidence is required. The award of the appraisers or of a majority of
+						them, when confirmed by the court, shall be final and conclusive upon all parties. The court shall enter a decree, which shall provide in the alternative for winding up and dissolution of the corporation unless payment is made for the shares within the time specified by the decree. If the purchasing parties do not make payment for the shares within the time specified, judgment shall be entered against them and the surety or sureties on the bond for the amount of the expenses (including attorneys’ fees) of the moving parties. Any shareholder aggrieved by the action of the court may appeal the court’s decision.(d) If the purchasing parties desire to prevent the winding up and dissolution, they shall pay to the moving parties the value of their shares ascertained and decreed within the time specified pursuant to this section, or, in case of an
+						appeal, as fixed on appeal. On receiving payment or the tender thereof, the moving parties shall transfer their shares to the purchasing parties.(e) For the purposes of this section, “shareholder” includes a beneficial owner of shares who has entered into an agreement under Section 300 or 706.(f) For the purposes of this section, the valuation date shall be (1) in the case of a suit for involuntary dissolution under Section 1800, the date upon which that action was commenced, or (2) in the case of a proceeding for voluntary dissolution initiated by the vote of shareholders representing only 50 percent of the voting power, the date upon which that proceeding was initiated. However, in either case the court may, upon the hearing of a motion by any party, and for good cause
+						shown, designate some other date as the valuation date.

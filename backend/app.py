@@ -17,11 +17,11 @@ def getText(bill_id):
     return APITools.getTextFromID(str(bill_id))
 
 
-@app.route("/billText/<stateName>")
-def getState(stateName):
-    return pullState(stateName)
-
+@app.route("/billsFromState/<stateName>")
+def getState(stateName)
+    APITools.pullState(stateName)
+    return "Pull Complete"
 
 @app.route("/summariseText/<text>")
-def getSummariseText(text):
+    def getSummariseText(text):
     return call_open_ai("summary", text)
