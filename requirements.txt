@@ -7,3 +7,4 @@ libmagic==1.0
 bs4==0.0.2
 openai==1.12.0
 python-dotenv
+flask-cors    
