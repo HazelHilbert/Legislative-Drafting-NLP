@@ -1,0 +1,10 @@
+/**
+ * Authority types supported by MSAL.
+ */
+export declare enum AuthorityType {
+    Default = 0,
+    Adfs = 1,
+    Dsts = 2,
+    Ciam = 3
+}
+//# sourceMappingURL=AuthorityType.d.ts.map
