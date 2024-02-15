@@ -5,3 +5,4 @@ requests==2.31.0
 pypdf==4.0.1
 libmagic==1.0
 bs4==0.0.2
+openai==1.12.0
