@@ -7,8 +7,9 @@ import os
 from openai import OpenAI
 
 
-def callOpenAI(prompt_type, input_text):
-    client = OpenAI()
+def call_open_ai(prompt_type, input_text):
+    openai_api_key = os.getenv("OPENAI_API_KEY")
+    client = OpenAI(api_key=openai_api_key)
 
     current_directory = os.getcwd()
     filename = current_directory + "/file"
