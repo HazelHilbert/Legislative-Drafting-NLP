@@ -65,16 +65,20 @@ def getTextFromID(bill_ID):
         if file_type[0:3] == 'PDF':
             with open(file_name + '.pdf', 'wb') as file:
                 file.write(decoded_content)
-                reader = PdfReader(str(bill_ID) + '_decoded.pdf')
+                reader = PdfReader("./bills/" + file_name + '.pdf')
                 text = ""
                 for page in reader.pages:
                     text += page.extract_text() + "\n"
+                with open('./bills/' + file_name + '.txt', 'w') as f:
+                    f.write(text)
                 return text
         elif file_type[0:4] == 'HTML':
-            with open(file_name + '.html', 'wb') as file:
+            with open("./bills" + file_name + '.html', 'wb') as file:
                 file.write(decoded_content)
                 soup = BeautifulSoup(decoded_content, features="html.parser")
                 text = soup.get_text()
+                with open('./bills/' + file_name + '.txt', 'w') as f:
+                    f.write(text)
                 return text
 
                 
@@ -105,7 +109,7 @@ def pullState(state):
     count = 0
     id_list = getIDsForState(state)
     for i in id_list:
-        getTextFromID(i, i)
+        getTextFromID(i)
         count += 1
         if count >= 20:
             return

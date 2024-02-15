@@ -1,0 +1,467 @@
+HLS 18RS-277 ENG ROSSED
+2018 Reg ular Session
+HOUSE B ILL NO. 510
+BY REPRESENTATI VE BARRAS
+BUDGETARY PROCEDURES:  Establishes the Louisiana Checkbook website to provide
+transparency  of state fiscal information
+1 AN ACT
+2 To amend and reenact R.S. 39:6(C) and to enact Subpart F of Part II of Chapter 1 of Subtitle
+3 I of Title 39 of the Louisiana Revised Statutes of 1950, to be comprised of R.S.
+4 39:89.1 throug h 89.3, relative to state expenditure reporting ; to provide for the duties
+5 of the comm issioner; to provide for the establishment and maintenance of the
+6 Louisiana Checkbook as a government fiscal transparency  website; to provide for the
+7 information to be included on the website; to provide for implementation; to provide
+8 for an effective date; and to provide for related matters.
+9 Be it enacted by  the L egislature of L ouisiana:
+10 Section 1.  R.S. 39:6(C) is hereby  amended and reenacted and Subpart F of Part II
+11 of Chapter 1 of Subtitle I  of Title 39 of the Louisiana Revised Statutes of 1950, comprised
+12 of R.S. 39:89.1 throug h 89.3, is hereby  enacted to read as follows: 
+13 §6.  Duties of commissioner
+14 *          *          *
+15 C.(1)  The commissioner of administrati on, subject to legislative
+16 appropriation, shall take all necessary  steps for the full implementation of the LaGov
+17 statewide enterprise resource planning  financial system maintained by  the office of
+18 technolog y services in the division of administration throughout the executive branch
+19 of state g overnment, by  not later than October 1, 2021.
+20 (2)  The commissioner of admi nistration shall establish and maintain the
+21 Louisiana Checkbook as a website to post reports of state spending  as provided in
+Page 1 of 13
+CODI NG:  Words in struck throug h type are deletions from existing  law; words underscored
+are additions.
+HLS 18RS-277 ENG ROSSED
+HB NO. 510
+1 R.S. 39:89.1 et seq. The reports shall include the nature and amount of
+2 appropriations for the executive branch of state government contained in the General
+3 Appropriation Act and other acts for each budg et unit, annual salaries and total
+4 compensation of statewide elected offici als and cabinet-level positions in the
+5 executive branch of state govern ment, and the total number in the table of
+6 organization for each budg et unit.  The commissioner shall maintain on the website
+7 a monthly report of spending  by each such budg et unit.  The commissioner of
+8 administration shall consult with the J oint L egislative Committee on the B udget in
+9 the development of specifications of the database used for the website.
+10 (2)  The website shall  include the following  information regarding  state
+11 contracts:
+12 (a)  Contract amount.
+13 (b)  A brief description of the purpose of the contract.
+14 (c)  The beg inning  and ending  dates of the contract.
+15 (d)  The name of the contracting  agency.
+16 (e)  The name of the contractor.
+17 (f)  The city  and state of the contractor.
+18 *          *          *
+19 SUB PART F .  LOUISIANA CHECKB OOK F ISCAL  TRANSPARENCY W EBSITE
+20 §89.1.  L ouisiana Checkbook; establishment and maintenance
+21 A.  The commis sioner of administration shall establish and maintain a
+22 centraliz ed, searchable website, to be called the Louisiana Checkbook, that provides
+23 information to the public about state expenditures and state contracts to provide
+24 fiscal transparency  to the public and allow the public to obtain fiscal information
+25 regarding  the state.  The website shall have an easily  identifiable Internet address and
+26 a dedicated link that is prominently  display ed on the home pag e of the following :
+27 (1)  L ouisiana.g ov.
+28 (2)  The division of administration.
+29 (3)  The office of the g overnor.
+Page 2 of 13
+CODI NG:  Words in struck throug h type are deletions from existing  law; words underscored
+are additions.
+HLS 18RS-277 ENG ROSSED
+HB NO. 510
+1 (4)  The leg islature.
+2 (5)  The leg islative auditor.
+3 (6)  The state treasurer.
+4 (7)  Each statewide elected official and the Public Service Commission.
+5 B.  The division of administration shall provide reports to the Joint
+6 Legislative Committee on the Budget and the state treasurer regarding  the Louisiana
+7 Checkbook on a quarterly  basis in Fiscal Years 2018-2019 throug h 2021-2022, and
+8 upon request thereafter.   The  reports shall include but not be limited to the
+9 following :
+10 (1)  The disclosure of any agency that has not provided information required
+11 to be posted on the website.
+12 (2)  Addit ions, removals, or modifications to the content or format of the
+13 website.
+14 (3)  Information regarding  the usage of the website, including  the number of
+15 visitors to the website in the previous quarter and the number of visitors to the
+16 website in the previous twelve months.
+17 C.  All agencies, boards, commissions, departments, and institutions of higher
+18 education of the state are directed to furnish information, reports, aid, services, and
+19 assistance as may be requested by the commissioner of administra tion in the
+20 performance of the commissioner' s responsibilities as set forth in this Part, all
+21 without any  cost or charg e.
+22 D.  The contents of the website shall  include features such as visual
+23 simplicity , charts and graphs, a mobile and tablet mode, the ability  to download data,
+24 and the ability  to share information on social media.
+25 §89.2.  Contents of L ouisiana Checkbook
+26 A.  The Louisiana Checkbook shall include an expenditure database that is
+27 electronically  searchable by the public at no cost and that contains reporting  of
+28 expenditures by each budg et unit in the executive budg et, including  institutions of
+29 higher education.  Information on the Louisiana Checkbook shall be updated at least
+Page 3 of 13
+CODI NG:  Words in struck throug h type are deletions from existing  law; words underscored
+are additions.
+HLS 18RS-277 ENG ROSSED
+HB NO. 510
+1 mont hly.  The Louisiana Checkbook shall present information in the database in a
+2 manner that is intuitive to members of the general public, including  graphical
+3 representations.
+4 (1)  The database shall, at a minimum, allow users to:
+5 (a)  Search and aggregate expenditures by individual and multiple budget
+6 units and prog rams.
+7 (b)  Search and aggregate payments to individual vendors and governmental
+8 entities, including  the total amount of state payments issued to individual vendors
+9 and g overnmental entities.
+10 (c)  Search and aggregate expenditures and payments from multiple fiscal
+11 years.
+12 (d)  Search and ag gregate ex penditures by  categ ory.
+13 (e)  Download information y ielded by  a search of the database.
+14 (2)  The database shall include ex penditures by  category and shall include:
+15 (a)  Details of expenses charg ed to credit, debit, or other purchase cards and
+16 related fees to the ex tent available from the card issuer.
+17 (b)  Mandated interag ency payments, such as fees to the leg islative auditor,
+18 annual payments to the office of risk manag ement, and contributions to retirement
+19 systems and benefits plans.
+20 (c)  Revenue sharing  and aid to other levels of government, including
+21 minimum foundation prog ram transfers.
+22 (3)  Where avail able, for each expenditure, the database shall include the
+23 following  information:
+24 (a)  The name of the entity  making  the ex penditure.
+25 (b)  The name of the person or entity  receiving  the pay ment.
+26 (c)  The date and the amount of the ex penditure.
+27 (d)  A standar dized descriptive title of the type and purpose of each
+28 expenditure.
+Page 4 of 13
+CODI NG:  Words in struck throug h type are deletions from existing  law; words underscored
+are additions.
+HLS 18RS-277 ENG ROSSED
+HB NO. 510
+1 (e)  The manner of payment, including  check, warrant, credit, debit, or other
+2 purchase card.
+3 (f)  The funding  source, including  the categ orical code and the state fund or
+4 account the ex penditure is accounted from.
+5 (g)  Where applicable, a link to additional information on the contract
+6 available throug h the contracts database.
+7 (4)  The ex penditure database shall not include the following :
+8 (a)    The addresses or telephone numbers of pay ees.
+9 (b)  Tax payment or refund data that include confidential taxpayer
+10 information, such as social security  number or federal tax identification number of
+11 any individual or business.
+12 (c)  Pay ments of state assistance to individual recipients.
+13 (d)  Protected health information as the term is defined under the federal
+14 Health I nsurance Portability  and Accountability  Act of 1996.
+15 (e)  I nformation subject to attorney -client privileg e.
+16 (f)  Secure information that would reveal undercover or intellig ence
+17 operations by  law enforcement.
+18 (g)  Any information that is confidential under state or federal law, rule, or
+19 regulation.
+20 B.(1)  The Louisiana Checkbook shall include a contracts database that is
+21 electronically  searchable by the public at no cost and that contains the following
+22 information for each contract:
+23 (a)  Contract amount.
+24 (b)  A brief description of the purpose of the contract.
+25 (c)  The beg inning  and ending  dates of the contract.
+26 (d)  The name of the contracting  agency.
+27 (e)  The name of the contractor.
+28 (f)  The city  and state of the contractor.
+29 (2)  The database shall, at a minimum, allow users to:
+Page 5 of 13
+CODI NG:  Words in struck throug h type are deletions from existing  law; words underscored
+are additions.
+HLS 18RS-277 ENG ROSSED
+HB NO. 510
+1 (a)  Search and ag gregate records by  agency.
+2 (b)  Search and ag gregate contracts by  contractor.
+3 (c)  Download information y ielded by  a search of the database.
+4 (3)  The L ouisiana Checkbook shall provide access to, or integ rate into, the
+5 Louisiana Checkbook information from the reports on contracts required by law
+6 including :
+7 (a)  Information required to be published on the division of administration' s
+8 website by  R.S. 39:1567(B )(3).
+9 (b)  Copies of the monthly  reports submitted to the Joint Legislative
+10 Committee on the B udget under R.S. 39:1567(E).
+11 (c)  The annual report on the progress of the Hudson Initiative required to be
+12 made available on the I nternet by  R.S. 39:2007(E).
+13 (d)  The annual report on the progress of the Veteran Initiative required to be
+14 made available on the I nternet by  R.S. 39:2177(E).
+15 C.(1)  The Louisiana Checkbook shall include an employ ment and salaries
+16 database that is electronically  searchable by the public at no cost and that contains
+17 information on all state employ ees, including  the following :
+18 (a)  The name of the ag ency.
+19 (b)   The name of the employ ee.
+20 (c)  The job title.
+21 (d)  The salary  of the employ ee.
+22 (e)  The total compensation paid to the employ ee the prior fisca l year,
+23 including  overtime, stipends, and allowances, but excluding  employ ee benefit
+24 payments and nontax able employ ee reimbursements.
+25 (2)  The database shall, at a minimum, allow users to:
+26 (a)  Search and ag gregate records by  agency.
+27 (b)  Search and ag gregate salaries by  job title.
+28 (c)  Download information y ielded by  a search of the database.
+Page 6 of 13
+CODI NG:  Words in struck throug h type are deletions from existing  law; words underscored
+are additions.
+HLS 18RS-277 ENG ROSSED
+HB NO. 510
+1 (3)  The Louisiana Checkbook shall contain information regarding the
+2 number of authoriz ed positions and the number of vacant positions for each
+3 institution of higher education and each budg et unit contained in the Gene ral
+4 Appropriation Act and the Ancillary  Appropriation Act.
+5 D.(1)  The Louisiana Checkbook shall include a boards and commissions
+6 database that is electronically  searchable by the public at no cost and that contains
+7 the membership information, employ ee information , and financial and budget
+8 information required by  R.S. 49:1302 and R.S. 24:513.2.
+9 (2)  The database shall, at a minimum, allow users to:
+10 (a)  Search and ag gregate records by  agency.
+11 (b)  Search and aggregate expenditur es and payments from multiple fiscal
+12 years.
+13 (c)  Search and ag gregate ex penditures by  categ ory.
+14 (d)  Search and aggregate expenditures by individual and multiple agencies.
+15 (e)  Download information y ielded by  a search of the database.
+16 (3)  The Louisiana Checkbook shall include a link or incorporate the annual
+17 reports submitted to the legislature  by the legislative auditor on boards, commissions,
+18 and like entities under R.S. 24:513.2(E).
+19 E.(1)  The Louisiana Checkbook shall include access to the state debt
+20 database, to be established and maintained by the state treasurer.  The database shall
+21 be electronically  searchable by the public at no cost and shall contain information on
+22 state debt, including  the following :
+23 (a)  Amounts and categ ories of state debt, such as pensions, post-employ ment
+24 benefit oblig ations, and capital construction.
+25 (b)  Amounts and categ ories of local debt backed by the full faith and credit
+26 of the state.
+27 (c)  Annual costs of debt service by  categ ory and budg et unit.
+28 (d)  Sources of funding  for state debt oblig ations.
+29 (e)  The per capita costs of state debt.
+Page 7 of 13
+CODI NG:  Words in struck throug h type are deletions from existing  law; words underscored
+are additions.
+HLS 18RS-277 ENG ROSSED
+HB NO. 510
+1 (f)  National and other state comparisons of L ouisiana' s debt.
+2 (g)  Information used to determine the state' s net state tax  supported debt.
+3 (2)  All agencies, boards, commissions, and departments of the state are
+4 directed to furnish information, reports, aid, services, and assistance to the extent
+5 allowed by state and federal law and regulations as may be requested by the state
+6 treasurer in the performance of the treasurer' s responsibilities as set forth in this
+7 Subsection, all without any  cost or charg e.
+8 F.(1)  The Louisiana Checkbook shall include access to a dedicated  funds
+9 database that is electronically  searchable by the public at no cost and that contains
+10 the electronic database of reports supported by appropriations from dedicated funds
+11 required by  R.S. 49:308.5(B ).
+12 (2)  The Louisiana Checkbook shall include access to the report on special
+13 funds prepared by  the state treasurer as required by  R.S. 49:308.3(E).
+14 G.  The Louisiana Checkbook shall include the Louisiana Performance
+15 Accountability  System, the electronic performance database that tracks performance
+16 standards, interim quarterly  performance targets, and actual performance informati on
+17 for executive branch departments and agencies required  under the Louisiana
+18 Government Performance and Accountability  Act, R.S. 39:87.1 et seq.
+19 H.  The  Louisiana Checkbook shall include or provide access to the revenue
+20 and expenditure data on federal, state, and local fiscal matters maintained by the state
+21 Department of Education on its website.
+22 I.  The Louisiana Checkbook shall include or provide access to the following
+23 information related to revenues on which state ex penditures are based:
+24 (1)  The official forecast and the incentive expenditure forecast adopted by
+25 the Revenue Estimating  Conference.
+26 (2)  The tax exemption budg et prepared by the Louisiana Depa rtment of
+27 Revenue under R.S. 47:1517.
+28 (3)  The Annual Tax Collection Report prepared by the Departme nt of
+29 Revenue.
+Page 8 of 13
+CODI NG:  Words in struck throug h type are deletions from existing  law; words underscored
+are additions.
+HLS 18RS-277 ENG ROSSED
+HB NO. 510
+1 (4)  Monthly  reports provided by the Department of Revenue on net
+2 collections and distributions and severance tax  collections and distributions.
+3 (5)  Louisiana Economic Development' s website for economic development
+4 incentives.
+5 J.  The commissioner of administration may include other databases, or
+6 templates and interfaces with new or existing  databases and reports, to provide
+7 additional fiscal transparency  to the public.
+8 §89.3.  I mplementation
+9 A.  The commissioner of administration shall substantially  implement the
+10 Louisiana Checkbook no later than J uly 1, 2019.
+11 B.  Prior to the full implementation of the Louisiana Checkbook, the
+12 commissioner of administration shall submit a quarterly  report to the state treasurer
+13 and the Joint Legislative Committee on the Budget indicating  the status of the
+14 implementation of the Louisiana Checkbook and the estimated completion dates of
+15 components of the L ouisiana Checkbook.
+16 Section 2.  This Act shall become effective upon signature by the governor or, if not
+17 signed by the governor, upon expiration of the time for bills to become law without signature
+18 by the g overnor, as provided by  Article I II, Section 18 of the Constitution of Louisiana.  If
+19 vetoed by the governor and subsequently  approved by the legislature, this Act shall become
+20 effective on the day  following  such approval.
+DIGEST
+The digest printed below was prepared by House Legislative Services.  It constitutes no part
+of the legislative instrument.  The keyword, one-liner, abstract, and digest do not constitute
+part of the law or proof or indicia of leg islative intent.  [ R.S. 1:13(B ) and 24:177(E)]
+HB 510 Eng rossed 2018 Reg ular Session Barras
+Abstract:   Establishes the Louisiana Checkbook as a centraliz ed, searchable website to
+provide information, to provide fiscal transparency , and allow the public to obtain
+fiscal information reg arding  the state.
+Proposed law requires the commissioner of administrati on to take steps necessary  to fully
+implement the LaGov statewide enterprise resource planning  financial system by Oct. 1,
+2021.
+Page 9 of 13
+CODI NG:  Words in struck throug h type are deletions from existing  law; words underscored
+are additions.
+HLS 18RS-277 ENG ROSSED
+HB NO. 510
+Present law requires the commissioner of administration to establish and maintain a website
+to post reports of state spending of the executive branch of state government contained in
+the General Appropriation Act and other acts for each budg et unit.  
+Proposed law requires that the expenditure database provide reports of state spending  of all
+budg et units contained in the ex ecutive budg et.
+Proposed law desig nates the website as the Louisiana Checkbook (checkbook) and requires
+the website to be searchable, to have an easily identifiable Internet address, and a dedicated
+link that is prominently  display ed on the home page of certain state governmen t websites. 
+Proposed law requires that the website include features such as visual simplicity , charts and
+graphs, a mobile and tablet mode, and the ability  to download data and share information on
+social media.
+Present law requires the commissioner of administration to consult with the Joint Legislative
+Committee on the Budget (JLCB) in the development and specifications of the database to
+be used for the website.
+Proposed law deletes present law and instead requires the division of administration to
+prepare quarterly reports for three fiscal years to the JLCB regarding  content chang es,
+website usage, and disclosure of any agencies that do not provide information required by
+law.
+Proposed law directs all agencies, boards, commissions, departments, and institutions of
+higher education of the state and its political subdivisions to furnish information, reports,
+aid, services, and assistance as the commissioner of administration requests, all without any
+cost or charg e.
+Content
+Proposed law requires the checkbook to contain the following  types of information:
+(1)  Ex penditure Data
+(2)  Contracts
+(3)  State Employ ment and Salaries
+(4)  B oards and Commissions
+(5)  Public Debt and Pensions
+(6)  Dedicated F unds
+(7)  Performance Measurements
+(8)  Education Ex penditure Data
+(9)  Revenues and Credits
+Proposed law authoriz es the commissioner of administration to include other databases, or
+templates and interfaces  with existing  databases and reports, to provide additional fiscal
+transparency .
+Expenditure Data
+Proposed law requires that the checkbook include an expendi ture database that is
+electronically  searchable and contains expenditures by each budg et unit contained in the
+executive budget.   The database shall allow users to search and aggregate expenditures
+across multiple fiscal years by budg et unit and program, by individual vendor, and by
+expenditure categ ory.  Users shall also be able to download information from any database
+search.
+Proposed law specifies that the database shall include  expenditures by categ ory and shall
+include details of expenses charg ed to credit, debit, and purchase cards and related fees,
+Page 10 of 13
+CODI NG:  Words in struck throug h type are deletions from existing  law; words underscored
+are additions.
+HLS 18RS-277 ENG ROSSED
+HB NO. 510
+mandated interag ency payments, contributions to retirement systems and benefits plans, and
+revenue sharing  and aid to other levels of government, including  minimum founda tion
+program transfers.
+Proposed law requires certain information for each expenditure where available, including
+the name of the entity  making  the expenditure, the name of the recipient, the type and
+purpose, the manner of payment, the source, and, for contracts, a link to information in the
+contracts database.
+Proposed law specifies that certain information not be included, such as addresses, tax
+payment data, payments of state assistance, protected health information, information 
+subject to attorne y-client privileg e, information related to undercover or intellig ence
+operations by law enforcement, and information that is confidential under state or federal
+laws, rules, and reg ulations.
+Contract Inf ormation
+Present law requires the commissioner of administration to maintain a website to post
+specified information regarding  state contracts, including  the contract amount, a description
+of the contract, the dates of the contract, the name of the contracting  agency, and the name
+and location of the contractor.
+Proposed law requires that the checkbook include an electronically  searchable contract
+database containing  information similar to what is required in present law.
+Proposed law requires certain information related to contracts that is required under present
+law also be made available on the checkbook including  the following :
+(a) An annual report of all professional, personal, consulting , social services, and other
+contracts over which the office of state procurement has authority , including  a report
+of all contracts awarded without competitive bidding , and information on contracts
+contained in the annual report. (R.S. 39:1357)   
+(b) A report at the end of each month submitted to the JLCB summariz ing each contract
+awarded that month over which the office of state procureme nt has power and
+authority .
+(c) The annual report the commissioner of administration prepares on the progress of the
+Hudson Initiative, including  the total number and dollar value of contracts awarded
+to small entrepreneurships and the number of contracts that included a good faith
+small entrepreneurship subcontracting  plan.
+(d) The annual report the commissioner of administration prepares on the progress of the
+Veteran Initiative, including  the total number and dollar value of contracts awarded
+to veteran and service-connected  disabled veteran-owned small entrepreneurships
+and the number of contracts that included a good faith subcontracting  plan for such
+entrepreneurships.
+State Em ploym ent and Salaries
+Proposed law  requires that the checkbook contain an electronically   searchable employ ment
+and salaries database.  The database shall contain salary  and compensation information for
+all state employ ees.
+Proposed law requires the database to allow users to search and aggregate records by agency
+and job title and to download information y ielded by  a search of the database.
+Page 11 of 13
+CODI NG:  Words in struck throug h type are deletions from existing  law; words underscored
+are additions.
+HLS 18RS-277 ENG ROSSED
+HB NO. 510
+Proposed law requires that the checkbook contain information regarding  the number of
+authoriz ed positions and the number of vacant positions for each budg et unit contained in
+the General Appropriation Act and the Ancillary  Appropriation Act.
+Boards and Com missions
+Present law requires boards, commissions, and like entities to submit certain information
+regarding  membership, salaries, and financial and budg et information to the commissioner
+of administration (R.S. 49:1302) and the leg islative auditor (R.S. 24:513.2).
+Proposed law requires that the checkbook contain an electronically  searchable database of
+the membership, employ ee, and financial and budg et information that boards, commissions,
+and like entities are required to submit to the commissioner of administration and to the
+legislative auditor. 
+Proposed law requires that the checkbook provide access to the  annual report that the
+legislative auditor is required to submit under present law (R.S. 24:513.2(E)) to the
+legislature on financial and personnel information on boards, commissions, and like entities.
+Public Debt and P ensions
+Proposed law requires that the checkbook contain access to an electronically  searchable state
+debt database, to be established and maintained by the state treasurer.  The database shall 
+include  information on public debt and pensions, including  amounts and categ ories of state
+debt, amounts and categ ories of local debt backed by the state, costs of debt service, and
+sources of funding .  Requires all agencies, boards, commissions, and departments of the state
+to furnish information, reports, aid, services, and assistance to the extent allowed by law, as
+may be requested by the treasurer to comply  with proposed law, all without any cost or
+charg e.
+Dedicated F unds
+Present law (R.S. 49:308.5(B )) requires the commissioner of administration to provide
+access to an electronic database of annual reports of all entities and activities supported by
+special treasury  funds.
+Proposed law requires that the checkbook include access to an electronically  searchable
+dedicated funds database that includes the database required by  present law.
+Present law (R.S. 49:308.3(E)) requires the state treasurer to submit an annual report to the
+JLCB and the leg islative fiscal office a report on special treasury  funds.
+Proposed law requires that the checkbook provide access to the report required under present
+law.
+Performance Measurem ents
+Proposed law requires that the checkbook include or provide access to the La. Performance
+Accountability  System, the electronic performance database that tracks performance
+standards, interim quarterly  performance targets, and actual performance information for
+executive branch departments and agencies required under the La. Government Performance
+and Accountability  Act.
+Education Spending
+Proposed law requires that the checkbook include or provide access to the revenue and
+expenditure data on federal, state, and local fiscal matters maintained by  the state Dept. of
+Education on its website.
+Page 12 of 13
+CODI NG:  Words in struck throug h type are deletions from existing  law; words underscored
+are additions.
+HLS 18RS-277 ENG ROSSED
+HB NO. 510
+Revenues and Credits
+Proposed law requires that the checkbook include or provide access to certain information
+related to revenues on which expenditures are based, including  the official forecast and the
+incentive expenditure forecast adopted by the Revenue Estimating  Conference; report s on
+tax collection and tax exemptions prepared by the Dept. of Revenue; and the La. Economic
+Development' s website for economic development incentives. 
+Implem entation
+Proposed law  requires the commissioner of administration to substantially  implement the
+checkbook no later than  July 1, 2019.  Requires the commissioner of administration to
+report to the state treasurer and the J LCB  quarterly  on the status of implementation of the
+checkbook and the estimated completion dates of its components prior to full
+implementation.
+Effective upon sig nature of g overnor or lapse of time for g ubernatorial action.
+(Amends R.S. 39:6(C); Adds R.S. 39:89.1-89.3)
+Page 13 of 13
+CODI NG:  Words in struck throug h type are deletions from existing  law; words underscored
+are additions.
