@@ -4,14 +4,26 @@
 # I assume you use export on Linux too but the OpenAI docs don't specify this.
 
 import os
+from flask.cli import load_dotenv
 from openai import OpenAI
 
 
 def call_open_ai(prompt_type, input_text):
+    # Get the current directory where the script is running
+    current_directory = os.getcwd()
+
+    # Append the .env filename to the parent directory path
+    env_path = os.path.join(os.path.dirname(os.getcwd()), '.env')
+
+    # Load the .env file
+    load_dotenv(env_path)
+
+    # Now try to get the environment variable
     openai_api_key = os.getenv("OPENAI_API_KEY")
+    print(openai_api_key)
+
     client = OpenAI(api_key=openai_api_key)
 
-    current_directory = os.getcwd()
     filename = current_directory + "/file"
 
     # Options: summary, citationJSON, citationString. Default prompt is 'summary'
