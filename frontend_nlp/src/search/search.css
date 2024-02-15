@@ -15,7 +15,9 @@
      margin: 0;
      padding: 0;
  }
- 
+ .ms-centre {
+    text-align: center;
+  }
  .ms-welcome__header {
     padding: 20px;
     padding-bottom: 30px;
