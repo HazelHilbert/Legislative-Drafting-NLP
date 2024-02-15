@@ -17,3 +17,7 @@ def getText(bill_id):
 @app.route("/billText/<stateName>")
 def getState(stateName):
     return pullState(stateName)
+
+@app.route("/summariseText/<text>")
+def getSummariseText(text):
+    return test(text)
