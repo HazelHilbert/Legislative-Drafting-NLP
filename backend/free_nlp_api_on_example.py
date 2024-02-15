@@ -6,6 +6,7 @@
 import os
 from openai import OpenAI
 
+
 def callOpenAI(prompt_type, input_text):
     client = OpenAI()
 
@@ -13,14 +14,14 @@ def callOpenAI(prompt_type, input_text):
     filename = current_directory + "/file"
 
     # Options: summary, citationJSON, citationString. Default prompt is 'summary'
-    type = prompt_type #"summary"
+    type = prompt_type  # "summary"
 
     # Open and read filename.txt and place the content of the file into the string called string
-    #with open(filename + '.txt', 'r') as file:
+    # with open(filename + '.txt', 'r') as file:
     #    string = file.read().rstrip()
 
     # Truncate string to fit ChatGPT's token restriction
-    string = input_text[0:2500] #string[0:2500]
+    string = input_text[0:2500]  # string[0:2500]
 
     # Choose what prompt you want
     def get_prompt(type):
