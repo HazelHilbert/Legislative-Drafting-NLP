@@ -1,2 +1,0 @@
-Flask==3.0.1
-Flask-SQLAlchemy==3.0.0
