@@ -1,5 +1,11 @@
 from flask import Flask
 import APITools
+import requests
+import base64
+from pypdf import PdfReader
+import os
+import magic
+import io
 
 app = Flask(__name__)
 
@@ -14,7 +20,3 @@ def getText(bill_id):
     return APITools.getTextFromID(str(bill_id))
 
 
-@app.route("/billsFromState/<stateName>")
-def getState(stateName):
-    APITools.pullState(stateName)
-    return "Pull Complete"

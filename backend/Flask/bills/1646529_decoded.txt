@@ -1,0 +1,19 @@
+ 
+
+
+
+Public Act 100-0385
+HB2907 EnrolledLRB100 07143 KTG 21435 b
+
+ AN ACT concerning public aid.
+
+ Be it enacted by the People of the State of Illinois,
+represented in the General Assembly:
+
+
+ Section 5. The Illinois Public Aid Code is amended by changing Section 5-5.25 as follows:
+ (305 ILCS 5/5-5.25) Sec. 5-5.25. Access to psychiatric mental health services. The General Assembly finds that providing access to psychiatric mental health services in a timely manner will improve the quality of life for persons suffering from mental illness and will contain health care costs by avoiding the need for more costly inpatient hospitalization. The Department of Healthcare and Family Services shall reimburse psychiatrists and federally qualified health centers as defined in
+Section 1905(l)(2)(B) of the federal Social Security Act for mental health services provided by psychiatrists, as
+authorized by Illinois law, to recipients via telepsychiatry. The Department, by rule, shall establish: (i) criteria for such services to be reimbursed, including appropriate facilities and equipment to be used at both sites and requirements for a physician or other licensed health care professional to be present at the site where the patient is located; however, the Department shall not require that a physician or other licensed health care professional be physically present in the same room as the patient for the entire time during which the patient is receiving telepsychiatry services; , and (ii) a method to reimburse providers for mental health services provided by telepsychiatry.
+ On and after July 1, 2012, the Department shall reduce any rate of reimbursement for services or other payments or alter any methodologies authorized by this Code to reduce any rate of reimbursement for services or other payments in accordance with Section 5-5e. (Source: P.A. 97-689, eff. 6-14-12.)
+
