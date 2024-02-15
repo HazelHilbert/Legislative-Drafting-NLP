@@ -18,3 +18,8 @@ def hello_world():
 @app.route("/billText/<bill_id>")
 def getText(bill_id):
     return APITools.getTextFromID(str(bill_id))
+
+
+@app.route("/billText/<stateName>")
+def getState(stateName):
+    return pullState(stateName)
