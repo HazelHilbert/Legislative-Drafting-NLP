@@ -5,29 +5,22 @@ import os
 import magic
 import io
 from bs4 import BeautifulSoup
+import csv
 
 my_key = "480c76cff050a40771e1190b3cab219d"
 
 codes_list = []
 
-codes_list.append(["AL","Alabama"])
-codes_list.append(["AK","Alaska"])
-codes_list.append(["AZ","Arizona"])
-codes_list.append(["AR","Arkansas"])
-codes_list.append(["CA","California"])
-codes_list.append(["CO","Colorado"])
-codes_list.append(["CT","Connecticut"])
-codes_list.append(["DE","Delaware"])
-codes_list.append(["FL","Florida"])
-codes_list.append(["GA","Georgia"])
-codes_list.append(["HI","Hawaii"])
-codes_list.append(["ID","Idaho"])
-codes_list.append(["IL","Illinois"])
-codes_list.append(["IN","Indiana"])
-codes_list.append(["IA","Iowa"])
-codes_list.append(["KS","Kansas"])
-codes_list.append(["KY","Kentucky"])
-codes_list.append(["LA","Louisiana"])
+file = open('state.csv')
+type(file)
+
+csvreader = csv.reader(file)
+for i in csvreader:
+        codes_list.append(i)
+codes_list.pop(0)
+
+        
+
 
 def getTextOfExample():
         api_url = "https://api.legiscan.com/?key=480c76cff050a40771e1190b3cab219d&op=getBillText&id=2915412"
@@ -63,22 +56,18 @@ def getTextFromID(bill_ID):
         bytesData.seek(0)
         file_type = magic.from_buffer(bytesData.read())
         if file_type[0:3] == 'PDF':
-            with open(file_name + '.pdf', 'wb') as file:
+            with open("./bills/" + file_name + '.pdf', 'wb') as file:
                 file.write(decoded_content)
-                reader = PdfReader("./bills/" + file_name + '.pdf')
+                reader = PdfReader("./bills/" +str(bill_ID) + '_decoded.pdf')
                 text = ""
                 for page in reader.pages:
                     text += page.extract_text() + "\n"
-                with open('./bills/' + file_name + '.txt', 'w') as f:
-                    f.write(text)
                 return text
         elif file_type[0:4] == 'HTML':
-            with open("./bills" + file_name + '.html', 'wb') as file:
+            with open("./bills/" + file_name + '.html', 'wb') as file:
                 file.write(decoded_content)
                 soup = BeautifulSoup(decoded_content, features="html.parser")
                 text = soup.get_text()
-                with open('./bills/' + file_name + '.txt', 'w') as f:
-                    f.write(text)
                 return text
 
                 
@@ -118,8 +107,8 @@ def pullState(state):
 def convertToCode(juristiction):
     for i in codes_list:
         print(i)
-        if i[1] == juristiction:
-            return i[0]
+        if i[2] == juristiction:
+            return i[1]
 
 
 def run2():
