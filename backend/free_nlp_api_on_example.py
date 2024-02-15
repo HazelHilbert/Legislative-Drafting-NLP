@@ -2,51 +2,51 @@
 # If on Windows setx OPENAI_API_KEY "your-api-key-here"
 # If on macOS export OPENAI_API_KEY='your-api-key-here'
 # I assume you use export on Linux too but the OpenAI docs don't specify this.
-# Make sure you run   pip install openai
+
 import os
-
 from openai import OpenAI
-client = OpenAI()
 
-current_directory = os.getcwd()
-filename = current_directory + "/file"
+def callOpenAI(prompt_type, input_text):
+    client = OpenAI()
 
-# Options: summary, citationJSON, citationString. Default prompt is 'summary'
-type = "summary"
+    current_directory = os.getcwd()
+    filename = current_directory + "/file"
 
-# Open and read filename.txt and place the content of the file into the string called string
-with open(filename+'.txt', 'r') as file:
-    string = file.read().rstrip()
+    # Options: summary, citationJSON, citationString. Default prompt is 'summary'
+    type = prompt_type #"summary"
 
-# Truncate string to fit ChatGPT's token restriction
-string = string[0:2500]
+    # Open and read filename.txt and place the content of the file into the string called string
+    #with open(filename + '.txt', 'r') as file:
+    #    string = file.read().rstrip()
 
-# Choose what prompt you want
-def get_prompt(type):
-  if (type == "summary"):
-   prompt = "Summarize this text for me: "
-  elif (type == "citationJSON"):
-    prompt = "Return ONLY the citation(s) from this string as json: "
-  elif (type == "citationString"):
-    prompt = "Return ONLY the citation(s) from this string: "
-  else:
-    prompt = "Summarize this text for me: "
-  return prompt
+    # Truncate string to fit ChatGPT's token restriction
+    string = input_text[0:2500] #string[0:2500]
 
-# Call ChatGPT
-completion = client.chat.completions.create(
-  model="gpt-3.5-turbo",
-  messages=[
-    {"role": "system", "content": "You are a helpful assistant."},
-    {"role": "user", "content": get_prompt(type)+string}
-  ]
-)
+    # Choose what prompt you want
+    def get_prompt(type):
+        if (type == "summary"):
+            prompt = "Summarize this text for me: "
+        elif (type == "citationJSON"):
+            prompt = "Return ONLY the citation(s) from this string as json: "
+        elif (type == "citationString"):
+            prompt = "Return ONLY the citation(s) from this string: "
+        else:
+            prompt = "Summarize this text for me: "
+        return prompt
 
-# Print the prompt given to ChatGPT
-# print("Prompt: "+get_prompt(type)+string+"\n")
+    # Call ChatGPT
+    completion = client.chat.completions.create(
+        model="gpt-3.5-turbo",
+        messages=[
+            {"role": "system", "content": "You are a helpful assistant."},
+            {"role": "user", "content": get_prompt(type) + string}
+        ]
+    )
 
-response = completion.choices[0].message.content
+    # Print the prompt given to ChatGPT
+    # print("Prompt: "+get_prompt(type)+string+"\n")
 
-print(response)
+    response = completion.choices[0].message.content
 
-# return response
+    print(response)
+    return response
