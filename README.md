@@ -14,7 +14,7 @@ For Windows:
 
 ```bash
 python -m venv venv
-.\venv\Scripts\activate
+.\venv\Scripts\activate.bat
 ```
 
 ### Install the Requirements:

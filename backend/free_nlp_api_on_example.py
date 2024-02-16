@@ -20,7 +20,6 @@ def call_open_ai(prompt_type, input_text):
 
     # Now try to get the environment variable
     openai_api_key = os.getenv("OPENAI_API_KEY")
-    print(openai_api_key)
 
     client = OpenAI(api_key=openai_api_key)
 
@@ -35,18 +34,6 @@ def call_open_ai(prompt_type, input_text):
 
     # Truncate string to fit ChatGPT's token restriction
     string = input_text[0:2500]  # string[0:2500]
-
-    # Choose what prompt you want
-    def get_prompt(type):
-        if (type == "summary"):
-            prompt = "Summarize this text for me: "
-        elif (type == "citationJSON"):
-            prompt = "Return ONLY the citation(s) from this string as json: "
-        elif (type == "citationString"):
-            prompt = "Return ONLY the citation(s) from this string: "
-        else:
-            prompt = "Summarize this text for me: "
-        return prompt
 
     # Call ChatGPT
     completion = client.chat.completions.create(
@@ -64,3 +51,15 @@ def call_open_ai(prompt_type, input_text):
 
     print(response)
     return response
+
+# Choose what prompt you want
+def get_prompt(type):
+    match type:
+        case "summary":
+            return "Summarize this text for me: "
+        case "citationJSON":
+            "Return ONLY the citation(s) from this string as json: "
+        case "citationString":
+            return "Return ONLY the citation(s) from this string: "
+        case _:
+            return "Summarize this text for me: "
