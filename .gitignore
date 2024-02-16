@@ -33,3 +33,7 @@ ENV/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
+
+# Frontend
+frontend_nlp/.vscode/
+frontend_nlp/node_modules/
