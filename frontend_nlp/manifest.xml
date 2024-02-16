@@ -27,6 +27,7 @@
           </GetStarted>
           <FunctionFile resid="Commands.Url" />
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
+            
             <CustomTab id="NLPTab">
 
               <Group id="PropylonGroup1">

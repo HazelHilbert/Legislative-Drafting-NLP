@@ -22,6 +22,14 @@ module.exports = async (env, options) => {
       vendor: ["react", "react-dom", "core-js", "@fluentui/react-components", "@fluentui/react-icons"],
       taskpane: ["./src/taskpane/index.jsx", "./src/taskpane/taskpane.html"],
       commands: "./src/commands/commands.js",
+      analyze: "./src/taskpane/reactPages/Analyze.jsx",
+      citations: "./src/taskpane/reactPages/Citations.jsx",
+      detectChanges: "./src/taskpane/reactPages/DetectChanges.jsx",
+      docPref: "./src/taskpane/reactPages/DocPref.jsx",
+      refresh: "./src/taskpane/reactPages/Refresh.jsx",
+      search: "./src/taskpane/reactPages/Search.jsx",
+      summarize: "./src/taskpane/reactPages/Summarize.jsx",
+      unlinkCitations: "./src/taskpane/reactPages/UnlinkCitations.jsx",
     },
     output: {
       clean: true,
@@ -95,6 +103,48 @@ module.exports = async (env, options) => {
         template: "./src/commands/commands.html",
         chunks: ["commands"],
       }),
+
+      new HtmlWebpackPlugin({
+        filename: "analyze.html",
+        template: "./src/taskpane/pages/analyze.html",
+        chunks: ["analyze"],
+      }),
+      new HtmlWebpackPlugin({
+        filename: "citations.html",
+        template: "./src/taskpane/pages/citations.html",
+        chunks: ["citations"],
+      }),
+      new HtmlWebpackPlugin({
+        filename: "detectChanges.html",
+        template: "./src/taskpane/pages/detectChanges.html",
+        chunks: ["detectChanges"],
+      }),
+      new HtmlWebpackPlugin({
+        filename: "docPref.html",
+        template: "./src/taskpane/pages/docPref.html",
+        chunks: ["docPref"],
+      }),
+      new HtmlWebpackPlugin({
+        filename: "refresh.html",
+        template: "./src/taskpane/pages/refresh.html",
+        chunks: ["refresh"],
+      }),
+      new HtmlWebpackPlugin({
+        filename: "search.html",
+        template: "./src/taskpane/pages/search.html",
+        chunks: ["search"],
+      }),
+      new HtmlWebpackPlugin({
+        filename: "summarize.html",
+        template: "./src/taskpane/pages/summarize.html",
+        chunks: ["summarize"],
+      }),
+      new HtmlWebpackPlugin({
+        filename: "unlinkCitations.html",
+        template: "./src/taskpane/pages/unlinkCitations.html",
+        chunks: ["unlinkCitations"],
+      }),
+
       new webpack.ProvidePlugin({
         Promise: ["es6-promise", "Promise"],
       }),
