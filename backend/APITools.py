@@ -2,7 +2,6 @@ import requests
 import base64
 from pypdf import PdfReader
 import os
-import magic
 import io
 from bs4 import BeautifulSoup
 import csv
@@ -49,25 +48,27 @@ def getTextFromID(bill_ID):
     response = requests.get(api_url)
     data = response.json()
     response_body = (data['text']['doc'])
+    print("Start")
+
     try:
         decoded_content = base64.b64decode(response_body)
-        bytesData = io.BytesIO()
-        bytesData.write(decoded_content)
-        bytesData.seek(0)
-        file_type = magic.from_buffer(bytesData.read())
-        if file_type[0:3] == 'PDF':
+        file_type = (data['text']['mime'])
+        print(file_type)
+        if file_type == 'application/pdf':
             with open("./bills/" + file_name + '.pdf', 'wb') as file:
                 file.write(decoded_content)
                 reader = PdfReader("./bills/" +str(bill_ID) + '_decoded.pdf')
                 text = ""
                 for page in reader.pages:
                     text += page.extract_text() + "\n"
+                print(text)
                 return text
-        elif file_type[0:4] == 'HTML':
+        elif file_type == 'text/html':
             with open("./bills/" + file_name + '.html', 'wb') as file:
                 file.write(decoded_content)
                 soup = BeautifulSoup(decoded_content, features="html.parser")
                 text = soup.get_text()
+                print(text)
                 return text
 
                 
