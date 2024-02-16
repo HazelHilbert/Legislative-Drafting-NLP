@@ -1,9 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+node_modules/
 /.pnp
 .pnp.js
+.pnp.*
 
 # testing
 /coverage
@@ -23,7 +24,8 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-.idea
+.vscode/
+.idea/
 Flask/
 
 # Virtual environment
@@ -33,7 +35,3 @@ ENV/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-
-# Frontend
-frontend_nlp/.vscode/
-frontend_nlp/node_modules/
