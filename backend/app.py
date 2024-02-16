@@ -27,3 +27,21 @@ def getState(stateName):
 @app.route("/summariseText/<text>")
 def getSummariseText(text):
     return call_open_ai("summary", text)
+
+
+@app.route("/citationJSON/<billText>")
+def getCitationJSON(billText) :
+    return call_open_ai("citationJSON", billText)
+
+@app.route("/citationString/<billText>")
+def getCitationString(billText) :
+    return call_open_ai("citationString", billText)
+
+
+
+
+
+
+
+
+
