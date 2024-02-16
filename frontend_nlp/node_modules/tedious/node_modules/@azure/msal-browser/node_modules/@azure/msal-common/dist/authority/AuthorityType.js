@@ -1,0 +1,19 @@
+/*! @azure/msal-common v13.3.1 2023-10-27 */
+'use strict';
+/*
+ * Copyright (c) Microsoft Corporation. All rights reserved.
+ * Licensed under the MIT License.
+ */
+/**
+ * Authority types supported by MSAL.
+ */
+var AuthorityType;
+(function (AuthorityType) {
+    AuthorityType[AuthorityType["Default"] = 0] = "Default";
+    AuthorityType[AuthorityType["Adfs"] = 1] = "Adfs";
+    AuthorityType[AuthorityType["Dsts"] = 2] = "Dsts";
+    AuthorityType[AuthorityType["Ciam"] = 3] = "Ciam";
+})(AuthorityType || (AuthorityType = {}));
+
+export { AuthorityType };
+//# sourceMappingURL=AuthorityType.js.map

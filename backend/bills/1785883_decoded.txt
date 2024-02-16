@@ -1,0 +1,130 @@
+ 
+
+
+
+SB3144 EngrossedLRB100 15915 HLH 31030 b
+
+1 AN ACT concerning finance.
+
+2 Be it enacted by the People of the State of Illinois,
+3represented in the General Assembly:
+
+
+4 Section 5. The State Finance Act is amended by changing 5Sections 5.857 and 6z-100 as follows:
+6 (30 ILCS 105/5.857)7 (Section scheduled to be repealed on July 1, 2018)8 Sec. 5.857. The Capital Development Board Revolving Fund. 9This Section is repealed July 1, 2022 July 1, 2018.
+10(Source: P.A. 99-78, eff. 7-20-15; 99-523, eff. 6-30-16; 11100-23, eff. 7-6-17.)
+12 (30 ILCS 105/6z-100)13 (Section scheduled to be repealed on July 1, 2018)14 Sec. 6z-100. Capital Development Board Revolving Fund; 15payments into and use. All monies received by the Capital 16Development Board for publications or copies issued by the 17Board, and all monies received for contract administration 18fees, charges, or reimbursements owing to the Board shall be 19deposited into a special fund known as the Capital Development 20Board Revolving Fund, which is hereby created in the State 21treasury. The monies in this Fund shall be used by the Capital 22Development Board, as appropriated, for expenditures for   SB3144 Engrossed- 2 -LRB100 15915 HLH 31030 b
+1personal services, retirement, social security, contractual 2services, legal services, travel, commodities, printing, 3equipment, electronic data processing, or telecommunications. 4Unexpended moneys in the Fund shall not be transferred or 5allocated by the Comptroller or Treasurer to any other fund, 6nor shall the Governor authorize the transfer or allocation of 7those moneys to any other fund. This Section is repealed July 81, 2022 July 1, 2018.
+9(Source: P.A. 99-523, eff. 6-30-16; 100-23, eff. 7-6-17.)
+10 Section 10. The General Obligation Bond Act is amended by 11changing Section 15 as follows:
+
+
+
+12 (30 ILCS 330/15) (from Ch. 127, par. 665)
+
+13 Sec. 15. Computation of Principal and Interest; transfers. 
+14 (a) Upon each delivery of Bonds authorized to be issued 15under this Act,
+the Comptroller shall compute and certify to 16the Treasurer the total amount
+of principal of, interest on, 17and premium, if any, on Bonds issued that will
+be payable in 18order to retire such Bonds, the amount of principal of,
+19interest on and premium, if any, on such Bonds that will be 20payable on each
+payment date according to the tenor of such 21Bonds during the then current and
+each succeeding fiscal year, 22and the amount of sinking fund payments needed to be deposited 23in connection with Qualified School Construction Bonds 24authorized by subsection (e) of Section 9.
+With respect to the   SB3144 Engrossed- 3 -LRB100 15915 HLH 31030 b
+1interest payable on variable rate bonds, such
+certifications 2shall be calculated at the maximum rate of interest that
+may be 3payable during the fiscal year, after taking into account any 4credits
+permitted in the related indenture or other instrument 5against the amount
+of such interest required to be appropriated 6for such period pursuant to
+subsection (c) of Section 14 of 7this Act. With respect to the interest
+payable, such 8certifications shall include the amounts certified by the
+9Director of the
+Governor's Office of Management and Budget 10under subsection (b) of Section 9 of
+this Act.
+11 On or before the last day of each month the State Treasurer 12and Comptroller
+shall transfer from (1) the Road Fund with 13respect to Bonds issued under
+paragraph (a) of Section 4 of 14this Act, or Bonds issued under authorization in Public Act 1598-781, or Bonds issued for the purpose of
+refunding such 16bonds, and from (2) the General
+Revenue Fund, with respect to 17all other Bonds issued under this Act, to the
+General 18Obligation Bond Retirement and Interest Fund an amount 19sufficient to
+pay the aggregate of the principal of, interest 20on, and premium, if any, on
+Bonds payable, by their terms on 21the next payment date divided by the number of
+full calendar 22months between the date of such Bonds and the first such 23payment
+date, and thereafter, divided by the number of months 24between each succeeding
+payment date after the first. Such 25computations and transfers shall be
+made for each series of 26Bonds issued and delivered. Interest payable on
+variable rate   SB3144 Engrossed- 4 -LRB100 15915 HLH 31030 b
+1bonds shall be calculated at the maximum rate of interest that
+2may be payable for the relevant period, after taking into 3account any credits
+permitted in the related indenture or other 4instrument against the amount of
+such interest required to be 5appropriated for such period pursuant to
+subsection (c) of 6Section 14 of this Act. Computations of interest shall
+include 7the amounts certified by the Director of the
+Governor's Office 8of Management and Budget
+under subsection (b) of Section 9 of 9this Act. Interest for which moneys
+have already been deposited 10into the capitalized interest account within the
+General 11Obligation Bond Retirement and Interest Fund shall not be 12included
+in the calculation of the amounts to be transferred 13under this subsection. Notwithstanding any other provision in 14this Section, the transfer provisions provided in this 15paragraph shall not apply to transfers made in fiscal year 2010 16or fiscal year 2011 with respect to Bonds issued in fiscal year 172010 or fiscal year 2011 pursuant to Section 7.2 of this Act. 18In the case of transfers made in fiscal year 2010 or fiscal 19year 2011 with respect to the Bonds issued in fiscal year 2010 20or fiscal year 2011 pursuant to Section 7.2 of this Act, on or 21before the 15th day of the month prior to the required debt 22service payment, the State Treasurer and Comptroller shall 23transfer from the General Revenue Fund to the General 24Obligation Bond Retirement and Interest Fund an amount 25sufficient to pay the aggregate of the principal of, interest 26on, and premium, if any, on the Bonds payable in that next   SB3144 Engrossed- 5 -LRB100 15915 HLH 31030 b
+1month. 
+2 The transfer of monies herein and above directed is not 3required if monies
+in the General Obligation Bond Retirement 4and Interest Fund are more than
+the amount otherwise to be 5transferred as herein above provided, and if the
+Governor or 6his authorized representative notifies the State Treasurer and
+7Comptroller of such fact in writing.
+8 (b) After the effective date of this Act, the balance of, 9and monies
+directed to be included in the Capital Development 10Bond Retirement and
+Interest Fund, Anti-Pollution Bond 11Retirement and Interest Fund,
+Transportation Bond, Series A 12Retirement and Interest Fund, Transportation
+Bond, Series B 13Retirement and Interest Fund, and Coal Development Bond
+14Retirement and Interest Fund shall be transferred to and 15deposited in the
+General Obligation Bond Retirement and 16Interest Fund. This Fund shall be
+used to make debt service 17payments on the State's general obligation Bonds
+heretofore 18issued which are now outstanding and payable from the Funds 19herein
+listed as well as on Bonds issued under this Act.
+20 (c) The unused portion of federal funds received for or as 21a reimbursement for a capital
+facilities project, as authorized 22by Section 3 of this Act, for which
+monies from the Capital 23Development Fund have been expended shall remain in the Capital 24Development Board Contributory Trust Fund and shall be used for 25capital projects and for no other purpose, subject to 26appropriation and as directed by the Capital Development Board.   SB3144 Engrossed- 6 -LRB100 15915 HLH 31030 b
+1Any federal funds received as reimbursement
+for the completed 2construction of a capital facilities project, as
+authorized by 3Section 3 of this Act, for which monies from the Capital
+4Development Fund have been expended shall be deposited in the 5General
+Obligation Bond Retirement and Interest Fund.
+6(Source: P.A. 100-23, eff. 7-6-17.)
+
+7 Section 15. The Capital Development Bond Act of 1972 is 8amended by changing Section 9a as follows:
+
+
+
+9 (30 ILCS 420/9a) (from Ch. 127, par. 759a)
+
+
+10 Sec. 9a. 
+The unused portion of federal funds received for 11or as a reimbursement for a capital improvement
+project for 12which moneys from the Capital Development Fund have been 13expended
+shall remain in the Capital Development Board 14Contributory Trust Fund and shall be used for capital projects 15and for no other purpose, subject to appropriation and as 16directed by the Capital Development Board. Any federal funds 17received as reimbursement
+for the completed construction of a 18capital improvement project for which
+moneys from the Capital 19Development Fund have been expended shall be deposited
+in the 20Capital Development Bond Retirement and Interest Fund.
+21(Source: P.A. 98-245, eff. 1-1-14.)
+
+22 Section 20. The School Construction Law is amended by 23changing Section 5-10 as follows:
+
+
+
+  SB3144 Engrossed- 7 -LRB100 15915 HLH 31030 b
+1 (105 ILCS 230/5-10)
+
+
+2 Sec. 5-10. Grant awards. The Capital Development Board is 3authorized to
+make grants to school districts for school 4construction projects with funds
+appropriated by the General
+5Assembly from the School Infrastructure Fund or the School 6Construction Fund pursuant to the provisions of this
+Article. 7The State Board of Education is authorized to make grants to 8school
+districts for debt service with funds appropriated by 9the General Assembly from
+the School Infrastructure Fund 10pursuant to the provisions of
+this Article.
+11(Source: P.A. 90-548, eff. 1-1-98.)
+
+
+12 Section 99. Effective date. This Act takes effect upon 13becoming law. 
+
