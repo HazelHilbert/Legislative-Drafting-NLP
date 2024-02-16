@@ -54,12 +54,12 @@ def call_open_ai(prompt_type, input_text):
 
 # Choose what prompt you want
 def get_prompt(type):
-    if (type == "summary"):
-        prompt = "Summarize this text for me: "
-    elif (type == "citationJSON"):
-        prompt = "Return ONLY the citation(s) from this string as json: "
-    elif (type == "citationString"):
-        prompt = "Return ONLY the citation(s) from this string: "
-    else:
-        prompt = "Summarize this text for me: "
-    return prompt
+    match type:
+        case "summary":
+            return "Summarize this text for me: "
+        case "citationJSON":
+            "Return ONLY the citation(s) from this string as json: "
+        case "citationString":
+            return "Return ONLY the citation(s) from this string: "
+        case _:
+            return "Summarize this text for me: "
