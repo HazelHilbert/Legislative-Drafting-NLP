@@ -1,1 +1,0 @@
-{"version":3,"file":"packageMetadata.js","sources":["../src/packageMetadata.ts"],"sourcesContent":["/* eslint-disable header/header */\r\nexport const name = \"@azure/msal-browser\";\r\nexport const version = \"2.38.3\";\r\n"],"names":[],"mappings":";;AAAA;IACa,IAAI,GAAG,sBAAsB;IAC7B,OAAO,GAAG;;;;"}
