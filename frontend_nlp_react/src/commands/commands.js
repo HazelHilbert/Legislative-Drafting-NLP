@@ -5,8 +5,10 @@
 
 /* global Office */
 
-Office.onReady(() => {
-  // If needed, Office.js is ready to be called.
+Office.onReady((info) => {
+  if (info.host === Office.HostType.Document) {
+    // Assign event handlers and initialize the add-in here
+  }
 });
 
 /**
@@ -28,5 +30,15 @@ function action(event) {
   event.completed();
 }
 
+/**
+ * Opens the specified website in the default system browser.
+ * @param event {Office.AddinCommands.Event}
+ */
+function openWebsite(event) {
+  Office.context.ui.openBrowserWindow("https://propylon.com");
+  event.completed();
+}
+
 // Register the function with Office.
 Office.actions.associate("action", action);
+Office.actions.associate("openWebsite", openWebsite);

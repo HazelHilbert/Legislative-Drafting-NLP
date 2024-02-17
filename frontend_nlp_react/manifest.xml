@@ -201,8 +201,8 @@
                 </Control>           
               </Group>
 
-              <Group id="MoreInfoGroup">
-                <Label resid="MoreInfoGroupLabel" />
+              <Group id="WebsiteGroup">
+                <Label resid="WebsiteGroupLabel" />
                 <Icon>
                   <bt:Image size="16" resid="Circle.16x16" />
                   <bt:Image size="32" resid="Circle.32x32" />
@@ -215,12 +215,12 @@
                     <Description resid="WebsiteButtonTooltip" />
                   </Supertip>
                   <Icon>
-                    <bt:Image size="16" resid="Info.16x16" />
-                    <bt:Image size="32" resid="Info.32x32" />
-                    <bt:Image size="80" resid="Info.80x80" />
+                    <bt:Image size="16" resid="Circle.16x16" />
+                    <bt:Image size="32" resid="Circle.32x32" />
+                    <bt:Image size="80" resid="Circle.80x80" />
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
-                    <FunctionName>openLink</FunctionName>
+                    <FunctionName>openWebsite</FunctionName>
                   </Action>
                 </Control>
               </Group>
@@ -261,6 +261,8 @@
         <bt:Url id="DocPref.Url" DefaultValue="https://localhost:3000/docPref.html"/>
         <bt:Url id="Refresh.Url" DefaultValue="https://localhost:3000/refresh.html"/>
         <bt:Url id="UnlinkCitations.Url" DefaultValue="https://localhost:3000/unlinkCitations.html"/>
+        <bt:Url id="WebsiteButton.Url" DefaultValue="https://propylon.com"/>
+        
 
       </bt:Urls>
       <bt:ShortStrings>
@@ -273,7 +275,11 @@
         <bt:String id="DropdownDocPrefLabel" DefaultValue="Document Preferences" />
         <bt:String id="DropdownRefreshLabel" DefaultValue="Refresh" />
         <bt:String id="DropdownUnlinkCitationsLabel" DefaultValue="Unlink Citations" />
-        <bt:String id="WebsiteButtonLabel" DefaultValue="Website" />
+        
+        <bt:String id="WebsiteGroupLabel" DefaultValue="Info" />
+        <bt:String id="WebsiteButtonLabel" DefaultValue="Open Website" />
+        <bt:String id="WebsiteButtonTooltip" DefaultValue="Click to open the website" />
+
         <bt:String id="PropylonGroup1Label" DefaultValue="NLP Group" />
         <bt:String id="PropylonGroup2Label" DefaultValue="NLP Group 2" />
         <bt:String id="MoreInfoGroupLabel" DefaultValue="More Info" />
