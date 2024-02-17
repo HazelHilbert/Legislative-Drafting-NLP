@@ -52,13 +52,14 @@ def call_open_ai(prompt_type, input_text):
     print(response)
     return response
 
+
 # Choose what prompt you want
-def get_prompt(type):
-    match type:
+def get_prompt(prompt_type):
+    match prompt_type:
         case "summary":
             return "Summarize this text for me: "
         case "citationJSON":
-            "Return ONLY the citation(s) from this string as json: "
+            return "Return ONLY the citation(s) from this string as json: "
         case "citationString":
             return "Return ONLY the citation(s) from this string: "
         case _:
