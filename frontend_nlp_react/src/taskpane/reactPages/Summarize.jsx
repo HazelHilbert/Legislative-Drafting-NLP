@@ -11,11 +11,18 @@ const Summarize = () => {
         const documentBody = context.document.body;
         context.load(documentBody);
         await context.sync();
-        setSummarizedText(documentBody.text);
+        getSummarizeText(documentBody.text);
       });
     } catch (error) {
       console.log("Error: " + error);
     }
+  };
+
+  const getSummarizeText = async (text) => {
+    fetch("http://127.0.0.1:5000/summariseText/" + text)
+      .then(async (response) => await response.text())
+      .then((data) => setSummarizedText(data))
+      .catch((error) => console.error("Error:", error));
   };
 
   const handleSummarize = async () => {
