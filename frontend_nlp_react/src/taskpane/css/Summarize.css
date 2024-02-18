@@ -15,7 +15,7 @@ body {
   background-color: #009e83;
   color: white;
   cursor: pointer;
-  transition: background-color 0.1s ease, transform 0.3s ease;
+  transition: background-color 0.1s ease, transform 0.1s ease;
   font-weight: 600;
 }
 
@@ -29,4 +29,8 @@ body {
 
 .button:focus {
   outline: none;
+}
+
+.summarized-text {
+  margin: 2rem;
 }

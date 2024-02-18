@@ -1,6 +1,6 @@
 /* global Word console */
 
-const insertText = async (text) => {
+export const insertText = async (text) => {
   // Write text to the document.
   try {
     await Word.run(async (context) => {
