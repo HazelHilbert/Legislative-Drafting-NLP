@@ -1,0 +1,32 @@
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.centre-text {
+  text-align: center;
+}
+
+.button {
+  margin-top: 2rem;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-size: 1rem;
+  border: none;
+  background-color: #009e83;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.1s ease, transform 0.3s ease;
+  font-weight: 600;
+}
+
+.button:hover {
+  background-color: #00826c;
+}
+
+.button:active {
+  transform: scale(0.95);
+}
+
+.button:focus {
+  outline: none;
+}

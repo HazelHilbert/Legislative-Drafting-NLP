@@ -28,6 +28,7 @@
   "dependencies": {
     "@fluentui/react-components": "^9.30.4",
     "@fluentui/react-icons": "^2.0.214",
+    "babel-preset-es2015": "^6.24.1",
     "core-js": "^3.9.1",
     "es6-promise": "^4.2.8",
     "react": "^18.2.0",
@@ -51,6 +52,7 @@
     "babel-loader": "^8.2.2",
     "babel-polyfill": "^6.26.0",
     "copy-webpack-plugin": "^9.0.1",
+    "css-loader": "^6.10.0",
     "eslint-plugin-office-addins": "^2.1.5",
     "eslint-plugin-react": "^7.28.0",
     "file-loader": "^6.2.0",
@@ -68,6 +70,7 @@
     "os-browserify": "^0.3.0",
     "process": "^0.11.10",
     "source-map-loader": "^3.0.0",
+    "style-loader": "^3.3.4",
     "ts-loader": "^9.4.1",
     "typescript": "^4.7.4",
     "webpack": "^5.76.3",
