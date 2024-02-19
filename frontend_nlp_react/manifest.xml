@@ -85,7 +85,7 @@
                   </Icon>
                   <Action xsi:type="ShowTaskpane">
                     <TaskpaneId>Button2</TaskpaneId>
-                    <SourceLocation resid="Search.Url" />
+                    <SourceLocation resid="Taskpane.Url" />
                   </Action>
                 </Control>
 
