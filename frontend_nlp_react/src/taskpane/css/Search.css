@@ -52,3 +52,8 @@ input {
 .search-icon-container:active img {
   transform: scale(0.8);
 }
+
+.search-text {
+  margin: 1rem;
+  font-size: smaller;
+}
