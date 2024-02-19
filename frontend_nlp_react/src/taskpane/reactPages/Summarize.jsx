@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
-import "../css/summarize.css";
+import "../css/Summarize.css";
 
 const Summarize = () => {
   const [summarizedText, setSummarizedText] = useState("");
@@ -12,6 +12,7 @@ const Summarize = () => {
         context.load(documentBody);
         await context.sync();
         getSummarizeText(documentBody.text);
+        // setSummarizedText(documentBody.text);
       });
     } catch (error) {
       console.log("Error: " + error);
@@ -31,8 +32,6 @@ const Summarize = () => {
 
   return (
     <div className="centre-text">
-      <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1/hosted/office.js"></script>
-
       <div>
         <img src="../../assets/propylonFull.png" alt="Propylon Logo" />
       </div>

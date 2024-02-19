@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import "../css/Search.css";
 
 const Search = () => {
-  return <div>Search</div>;
+  const handleClick = () => {};
+
+  return (
+    <div>
+      <div>
+        <img src="../../assets/propylonFull.png" alt="Propylon Logo" />
+      </div>
+      <div className="search-container">
+        <input type="text" placeholder="Search..." />
+        <button className="search-icon-container" onClick={handleClick}>
+          <img src="../../assets/searchIcon.png" alt="Search" />
+        </button>
+      </div>
+    </div>
+  );
 };
 
-ReactDOM.render(<Search />, document.getElementById("search-root"));
+Office.onReady((info) => {
+  if (info.host === Office.HostType.Word) {
+    window.Word = Word;
+    ReactDOM.render(<Search />, document.getElementById("search-root"));
+  }
+});
