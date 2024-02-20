@@ -7,7 +7,7 @@ import { FluentProvider, webLightTheme } from "@fluentui/react-components";
 
 const title = "Propylon Task Pane Add-in";
 
-const rootElement = document.getElementById("container");
+const rootElement = document.getElementById("search");
 const root = createRoot(rootElement);
 
 /* Render application after Office initializes */
