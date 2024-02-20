@@ -1,6 +1,8 @@
-from flask import Flask
+import os
+from flask import Flask, request, render_template, send_file
 from flask_cors import CORS
 import APITools
+import docx
 from free_nlp_api_on_example import call_open_ai
 
 app = Flask(__name__)
@@ -37,11 +39,11 @@ def getCitationJSON(billText) :
 def getCitationString(billText) :
     return call_open_ai("citationString", billText)
 
-
-
-
-
-
-
-
-
+@app.route('/generate_document/<searchText>/<text>')
+def create_word_doc(searchText,text):
+    mydoc = docx.Document()  
+    mydoc.add_paragraph(text)    
+    mydoc.save(searchText + ".docx")
+    os.startfile(searchText + ".docx")
+    return "Hello"
+    

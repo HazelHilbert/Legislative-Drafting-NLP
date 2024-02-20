@@ -9,8 +9,7 @@ Office.onReady((info) => {
     if (info.host === Office.HostType.Word) {
         document.getElementById("sideload-msg").style.display = "none";
         document.getElementById("app-body").style.display = "flex";
-        document.getElementById("displaySelectedText").onclick = displaySelectedText;
-        document.getElementById("displayAllText").onclick = displayAllText;
+        document.getElementById("getDoc").onclick = getDoc; 
     }
 });
 
@@ -21,9 +20,23 @@ document.getElementById("searchInput").addEventListener("keypress", function (ev
     }
 });
 
+async function getDoc() {
+    var searchText = document.getElementById("searchInput").value;
+    fetch("http://127.0.0.1:5000/billText/" + searchText)
+        .then(async response => await response.text())
+        .then(data => createDoc(searchText,data))
+        .catch(error => console.error('Error:', error));
+}
+
+async function createDoc(searchText,text) {
+    fetch("http://127.0.0.1:5000/generate_document/"+searchText+"/" + text)
+        .then(async response => await response.text())
+        .then(data => displayOutput(data))
+        .catch(error => console.error('Error:', error));
+}
+
 async function performSearch() {
     var searchText = document.getElementById("searchInput").value;
-    // Make a request to your backend endpoint
     fetch("http://127.0.0.1:5000/billText/" + searchText)
         .then(async response => await response.text())
         .then(data => displayOutput(data))
