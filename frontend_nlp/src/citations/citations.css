@@ -81,7 +81,26 @@ b {
     font-weight: bold;
 }
 
-#selectedText {
-    font-size: 18px; /* Adjust the font size as needed */
-    margin-top: 20px; /* Adjust the top margin as needed */
+#output {
+    font-size: 18px; 
+    margin-top: 20px; 
+    text-align: justify;
+}
+
+.search-bar {
+    width: 250px;
+    height: 35px; 
+    border-radius: 10px; 
+    padding: 5px 10px; /*Height, Width */
+    font-size: 16px; 
+}
+
+.search-button {
+    width: 70px;
+    height: 30px; 
+    border-radius: 5px; 
+    padding: 5px 10px; /*Height, Width */
+    font-size: 12px; 
+    margin-top: 10px;
+    background-color: white;
 }
