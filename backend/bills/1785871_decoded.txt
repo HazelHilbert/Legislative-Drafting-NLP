@@ -1,0 +1,889 @@
+Second Regular Session
+Seventy-first General Assembly
+STATE OF COLORADO
+REENGROSSED
+This Version Includes All Amendments
+Adopted in the House of Introduction
+LLS NO. 18-0790.01 Bob Lackner x4350 SENATE BILL 18-233
+Senate Committees House Committees
+State, Veterans, & Military Affairs
+A BILL FOR AN ACT
+CONCERNING TECHNICAL MODIF ICATIONS TO MISCELLANEOUS 101
+PROVISIONS OF THE "UNIFORM ELECTION CODE OF 1992". 102
+Bill Summary
+(Note:  This summary applies to this bill as introduced and does
+not reflect any amendments that may be subsequently adopted. If this billpasses third reading in the house of introduction, a bill summary thatapplies to the reengrossed version of this bill will be available athttp://leg.colorado.gov
+.)
+The bill makes the following technical modifications to
+miscellaneous provisions of the "Uniform Election Code of 1992"  (code):
+! Section 1 of the bill clarifies that any undeliverable
+message or any other message indicating that the elector'selectronic-mail address is no longer valid does not need tobe stored in the statewide voter registration system. 
+SENATE
+3rd Reading Unamended
+April 23, 2018SENATE
+Amended 2nd Reading
+April 19, 2018SENATE SPONSORSHIP
+Marble and Fenberg,  
+HOUSE SPONSORSHIP
+Foote and Neville P.,  
+Shading denotes  HOUSE amendmen t.  Double underlining denotes SE NATE amendment.
+Capital letters or bold & italic numbers indicate new material to be added to existing statute.
+Dashes through the words indicate  deletions from existing statute.
+! Section 2  specifies voter registration requirements
+pertaining to a homeless elector.
+! Section 3  clarifies that existing requirements prohibiting a
+loss of voter registration status while a person is confinedin a correctional facility, jail, or state institution apply wh en
+the person is not serving a sentence for a felony conviction.Section 3 also clarifies that existing requirementspermitting a confined prisoner who is awaiting trial or hasnot been tried to register to vote also applies to a prisonerwho is not serving a sentence for a felony conviction. Thissection further adds that all such prisoners may list theirconfinement location as their ballot address for voterregistration purposes. 
+! Section 4  clarifies the text of certain questions an elector
+answers upon registering and adds as a question the addresswhere the elector wishes to receive his or her ballot ifdifferent from the address of record.
+! Section 5  makes changes to existing statutory provisions to
+facilitate the registration of electors at driver's licenseexamination facilities. 
+! Section 6  specifies that a declaration or change of
+affiliation made by an unaffiliated elector must be deferredif the elector has already been mailed a primary electionballot packet. The deadline by which the elector mustdeclare, change, or withdraw an affiliation only applies toa primary election and does not apply to a general orcoordinated election. 
+! Section 7  requires the department of state, no later than
+July 31, 2019, to regularly provide the department ofrevenue (DOR) with current voter registration information.The DOR must use the information to determine whetheran individual is registered to vote at the time he or sheapplies to obtain, renew, or update a driver's license or stateidentification card.
+! Section 8  changes the deadlines for registering to vote in
+advance of a political party caucus, assembly, orconvention and for affiliating with the political party inadvance of such events. 
+! Section 9  requires the state central committee of each
+major political party to compile and provide to the secretaryof state (secretary) information concerning the membershipof the county central committees of the party in addition tothe bylaws or rules of each county central committee. 
+! Section 10  prohibits an unaffiliated elector from signing a
+petition for a candidate of a major political party. 
+233
+-2-
+! Section 11  prohibits a write-in vote for president in a
+general election from being counted unless it includes awrite-in vote for vice-president.
+! Section 12  deletes an existing statutory requirement that a
+copy of the notice of the cancellation of an election beposted at each voter service and polling center (VSPC) ofthe political subdivision.
+! Section 13  repeals statutory language requiring the county
+clerk and recorder (county clerk) to prepare a combinedprimary election ballot to be used by unaffiliated electors.
+! Section 14  clarifies the certification requirements for
+election judges such that they will be certifying that theyare residents of the state and deletes language requiringthem to certify that they reside in the political subdivision.Section 14 also changes the date in advance of an electionwhen classes for training election or supervisor judges mustbe held.
+! Section 15  changes the deadline by which the appropriate
+official of a minor political party must certify to the countyclerk an initial list of the names and addresses of electorsserving as election judges. 
+! Section 16  changes the deadline by which any unaffiliated
+elector may give notice to the county clerk offering to serveas an election judge. 
+! Sections 17, 18, and 19  replace the term "precinct" with
+"VSPC" in 3 statutory sections addressing election andsupervisor judges. Section 17 requires the county clerk toappoint election judges for each location where electionactivities are occurring instead of for each precinct as underexisting law. This section also permits the county clerk toappoint an election judge to serve in a county other than thecounty in which the election judge resides. If more than onesupervisor judge is serving at a VSPC, section 19 alsorequires the judges to be of different political partyaffiliations. 
+! Section 20  replaces the term "polling location" with
+"VSPC" in a statutory section dealing with the number ofelection judges.
+! Section 21  repeals an outdated statutory section requiring,
+where voting is by ballot or on a ballot card, a particularcounting of the ballots and the sealing of the transfer box.Section 20 also repeals outmoded provisions concerningpreparation of the paper tape in electronic voting.
+! Section 22  changes the deadline by which comments
+pertaining to a ballot issue must be filed with the political
+233
+-3-
+subdivision.
+! Section 23  changes, for referred ballot measures, the
+deadline by which petition representatives are required tosubmit to the political subdivision comments favorable tothe petition.
+! Section 24  changes the deadline by which the designated
+election official of a political subdivision (DEO) isrequired to submit to the county clerk the full text of anyrequired ballot issue notices.
+! Sections 25, 26, 27, and 29  eliminate the general
+requirement that a secrecy envelope or sleeve be includedin a mail ballot packet. Section 26 also modifies thelanguage used for instructing the elector on completing amail ballot. Section 29 also requires the county clerk toensure the privacy of each elector's vote when electionjudges are removing and separating marked ballots fromreturn envelopes and specifies actions that must be taken bythe county clerk if he or she chooses not to include asecrecy envelope or sleeve in the mail ballot packet.
+! Section 28  also changes the deadline by which a DEO is
+required to provide a mail ballot to a registered elector whor e q u e s t s  t h e  b a l l o t  a t  t h e  D E O ' s  o f f i c e  o r  t h e  o f f i c edesignated in the mail ballot plan filed with the secretary.
+! Section 30  repeals statutory provisions governing the
+process of applying for an absentee ballot. 
+! Section 31  provides that, if the declaration accompanying
+a federal write-in absentee ballot is received after theelection, it is to be treated as an application to register tovote for subsequent elections. 
+! Section 32  changes the deadline by which the DEO is to
+complete the verification and counting of all provisionalballots.
+! Section 33  changes the deadline by which the canvass
+board is to complete its duties.
+! In the case of an election that includes a statewide ballot
+measure, section 34  c hang e s  t h e  d e a d l i n e  b y  w h i c h  t h e
+county clerk is to transmit to the secretary the portion of theabstract of votes cast that contains the statewide abstract ofvotes cast. Section 34 also changes the deadline by whichthe secretary is to compile and total election returns,determine if a recount is necessary, and order any recounts.
+! Section 35  changes the deadline by which the canvass
+board is to certify to the DEO the official abstract of votescast for all candidates and ballot measures in the election.
+! Section 36  deletes a requirement that the secretary notify
+233
+-4-
+the affected county clerk of a recount for congressional,
+state and district offices, state ballot questions, and stateballot issues by means of registered mail and facsimiletransmission. Section 36 also changes the deadline forcompleting the recount.
+! Section 37  changes the deadline by which a recount of
+other offices, ballot issues, and ballot questions arising outof an election coordinated by the county clerk is to becompleted and also changes another deadline affecting thenotice to be given to the county clerk by a politicalsubdivision where a recount is being waived.
+! Section 38  changes the deadlines by which an interested
+party is to submit a notarized written request for a recountand by which an automatic recount is to be completed.
+! Section 39  changes the manner of calculating the number
+of signatures required for a petition to recall a schooldistrict director. 
+! Section 40 changes the deadline by which a signer may
+request that his or her name be stricken from a recallpetition.
+Be it enacted by the General Assembly of the State of Colorado: 1
+SECTION 1.   In Colorado Revised Statutes, 1-1-110, amend 2
+(5)(c) as follows: 3
+1-1-110.  Powers of county clerk and recorder and deputy - 4
+communication to electors.  (5) (c)  All correspondence sent to an elector 5
+pursuant to this subsection (5) shall be maintained in the elec tor's 6
+registration records stored in the statewide voter registration  s y s t e m 7
+created in section 1-2-301; 
+EXCEPT THAT ANY UNDELIVERABLE MESSAGE 8
+OR ANY OTHER MESSAGE INDICATING THAT THE ELECTOR 'S 9
+ELECTRONIC -MAIL ADDRESS IS NO LONGER VALID AS DESCRIBED IN 10
+SUBSECTION  (5)(a)(II) OF THIS SECTION DOES NOT NEED TO BE STORED IN 11
+THE STATEWIDE VOTER REGISTRATION SYSTEM . 12
+SECTION 2.   In Colorado Revised Statutes, 1-2-102, amend 13
+(1)(a)(II) as follows: 14
+233 -5-
+1-2-102.  Rules for determining residence.  (1)  The following 1
+rules shall be used to determine the residence of a person inte nding to 2
+register or to vote in any precinct in this state and shall be used by 3
+election judges in challenge procedures: 4
+(a) (II)  The mailing address of a homeless individual shall 5
+constitute that individual's residence for purposes of register ing or voting 6
+in any precinct in this state. A homeless individual who has no  mailing 7
+address shall not be eligible to register or to vote. The maili ng address of 8
+a homeless individual may include a shelter, a homeless service  provider, 9
+or a private residence, but it may not include a post office bo x or general 10
+delivery at a post office.  FOR THE PURPOSE OF VOTER REGISTRATION 11
+RESIDENCE , A HOMELESS ELECTOR SHALL IDENTIFY A SPECIFIC LOCATION 12
+WITHIN A COUNTY WHERE THE ELECTOR RETURNS TO REGULARLY . THIS 13
+LOCATION MAY INCLUDE A HOMELESS SHELTER , A HOMELESS SERVICES 14
+PROVIDER , A PARK , A CAMPGROUND , A VACANT LOT , A BUSINESS ADDRESS , 15
+OR ANY OTHER PHYSICAL LOCATION . IF THE HOMELESS ELECTOR 'S 16
+REGISTRATION RESIDENCE DOES NOT INCLUDE A MAILING ADDRESS , THE 17
+ELECTOR SHALL ALSO PROVIDE A MAILING ADDRESS . 18
+SECTION 3.   In Colorado Revised Statutes, 1-2-103, amend  (1) 19
+and (4) as follows: 20
+1-2-103.  Military service - students - inmates - persons with 21
+behavioral or mental health disorders - confinement.  ( 1 )   F o r  t h e 22
+purposes of registration, voting, and eligibility for office, n o person shall 23
+gain GAINS residence by reason of that person's presence, or lose  LOSES it 24
+by reason of absence, while in the civil or military service of  the state or 25
+of the United States; nor  while a student at any institution of higher 26
+education; nor  OR while confined in a correctional facility, jail, or state 27
+233 -6-
+institution IF THE PERSON IS NOT SERVING A SENTENCE FOR A FELONY 1
+CONVICTION . 2
+(4)  No person while serving a sentence of detention or 3
+confinement in a correctional facility, jail, or other location  for a felony 4
+conviction or while serving a sentence of parole shall be  IS eligible to 5
+register to vote or to vote in any election; however,  EXCEPT THAT  a 6
+confined prisoner who is awaiting trial  but has not been tried OR WHO IS 7
+NOT SERVING A SENTENCE FOR A FELONY CONVICTION  shall be certified by 8
+the institutional administrator, and  shall be permitted to register to vote 9
+by mail registration  pursuant to part 5 of  this article  ARTICLE 2, AND MAY 10
+LIST HIS OR HER CONFINEMENT LOCATION AS HIS OR HER BALLOT ADDRE SS 11
+IN ACCORDANCE WITH SECTION 1-2-204  (2)(f.3). 12
+SECTION 4.   In Colorado Revised Statutes, 1-2-204, amend 13
+(2)(i); repeal  (2)(k); and add (2)(f.3) as follows: 14
+1-2-204.  Questions answered by elector - rules.  (2)  In addition, 15
+each elector shall correctly answer the following: 16
+(f.3)  T HE ADDRESS WHERE THE ELECTOR WISHES TO RECEIVE HIS 17
+OR HER BALLOT IF DIFFERENT FROM THE ADDRESS OF RECORD ; 18
+(i)  Whether or not the elector has voted or  was registered to vote 19
+in another county of this state or  in another state; 20
+(k)  Whether any communication by mail from the county clerk 21
+and recorder to such eligible elector, including a confirmation  card 22
+provided pursuant to section 1-2-605, should be sent to the ele ctor's 23
+deliverable mailing address; 24
+SECTION 5.   In Colorado Revised Statutes, 1-2-213, amend 25
+(2)(a) and (6)  as follows: 26
+1-2-213.  Registration at driver's license examination faciliti es. 27
+233 -7-
+(2) (a)  An applicant who wishes to complete an application for 1
+registration must provide the information required by section 1 -2-204 and 2
+make the self-affirmation required under section 1-2-205  WITH THE 3
+EXCEPTION OF THE INFORMATION REQUIRED BY SECTION 1-2-204 (2)(f.3). 4
+THE APPLICANT SHALL ALSO SIGN THE SELF -AFFIRMATION REQUIRED BY 5
+SECTION 1-2-205. 6
+(6) (a)  Unless the registrant states on the form that the chan ge of 7
+address  is not for voter registration purposes, any eligible  ANY 8
+REGISTERED elector who informs a driver's license examination facility of 9
+a change of name or address must have notice of the change of n ame or 10
+address forwarded by the driver's license examination facility to the 11
+county clerk and recorder of the county in which the elector re sides. 12
+(b)  The county clerk and record er of the count y in which the 13
+elector resides shall change the registration record of the ele ctor to reflect 14
+the change of name and address, MARK THE REGISTRATION RECORD AS 15
+"ACTIVE ", AND SEND TO THE ELECTOR 'S ADDRESS OF RECORD , B Y 16
+FORWARDABLE MAIL , NOTICE OF THE CHANGE AND A POSTAGE PAID 17
+PRE-ADDRESSED RETURN FORM BY WHICH THE ELECTOR MAY VERIFY OR 18
+CORRECT THE INFORMATION . 19
+(c)  I F THE ELECTOR RETURNS THE FORM DESCRIBED IN SUBSECTION 20
+(6)(b)  OF THIS SECTION AND INDICATES THAT THE CHANGE WAS IN ERROR , 21
+THE APPROPRIATE COUNTY CLERK AND RECORDER SHALL IMMEDIATELY 22
+CORRECT THE ELECTOR 'S PREVIOUSLY UPDATED INFORMATION IN THE 23
+STATEWIDE VOTER REGISTRATION DATABASE . 24
+SECTION 6.   In Colorado Revised Statutes, 1-2-219, amend  (1) 25
+as follows: 26
+1-2-219.  Changing or withdrawing declaration of affiliation. 27
+233 -8-
+(1)  Any eligible elector desiring to change or withdraw the el ector's 1
+affiliation may do so by completing and signing a prescribed re quest for 2
+the change or withdrawal and filing it with the county clerk an d recorder 3
+or by submitting a personal letter written by the elector to th e county clerk 4
+and recorder at any time up to and including the twenty-ninth d ay 5
+preceding an  A PRIMARY election; except that, if the twenty-ninth day 6
+before an  THE PRIMARY election is a Saturday, Sunday, or legal holiday, 7
+the change or withdrawal applies if made by the next day that i s not a 8
+Saturday, Sunday, or legal holiday. The prescribed form or pers onal letter 9
+for the change must include the elector's printed name, address  within the 10
+county, birth date, social security number, if the elector wish es to state it, 11
+and signature, the date, the elector's previous affiliation sta tus, and the 12
+requested change in affiliation status. A prescribed form must be 13
+furnished by the county clerk and recorder upon the elector's o ral or 14
+written request. Upon receiving the request, the county clerk a nd recorder 15
+shall change the elector's affiliation on his or her registrati on record. If 16
+the affiliation is withdrawn, the designation on the elector's registration 17
+record must be changed to "unaffiliated". If an elector changes  affiliation, 18
+the elector is entitled to vote, at any primary election, only the ballot of 19
+the political party to which the elector is currently affiliate d. A change or 20
+withdrawal of affiliation may not be made by anyone other than the 21
+elector. N OTWITHSTANDING ANY OTHER PROVISION OF LAW , A 22
+DECLARATION OR CHANGE OF AFFILIATION MADE BY AN UNAFFILIATED 23
+ELECTOR IN ACCORDANCE WITH THIS SECTION MUST BE DEFERRED IF THE 24
+ELECTOR HAS ALREADY BEEN MAILED A PRIMARY ELECTION BALLOT 25
+PACKET . THE DEADLINE BY WHICH THE ELECTOR MUST DECLARE , CHANGE , 26
+OR WITHDRAW AN AFFILIATION AS SPECIFIED IN THIS SUBSECTION (1) ONLY 27
+233 -9-
+APPLIES TO A PRIMARY ELECTION AND DOES NOT APPLY TO A GENERAL O R 1
+COORDINATED ELECTION . 2
+SECTION 7.   In Colorado Revised Statutes, 1-2-302, amend  (6) 3
+as follows: 4
+1-2-302.  Maintenance of computerized statewide voter 5
+registration list - confidentiality.  ( 6 )   T h e  s e c r e t a r y  o f  s t a t e  s h a l l 6
+determine and use other necessary means to maintain the master list of 7
+registered electors on a current basis. The department of state  and the 8
+department of revenue shall allow for the exchange of informati on 9
+between the systems used by them to collect information on resi dence 10
+addresses, signatures, and party affiliation for all applicants  for driver's 11
+licenses or state identification cards. N O LATER THAN JULY 31, 2019,  THE 12
+DEPARTMENT OF STATE SHALL REGULARLY PROVIDE THE DEPARTMENT OF 13
+REVENUE WITH CURRENT VOTER REGISTRATION INFORMATION . THE 14
+DEPARTMENT OF REVENUE MUST USE THE INFORMATION TO DETERMINE 15
+WHETHER AN INDIVIDUAL IS REGISTERED TO VOTE AT THE TIME HE OR S HE 16
+APPLIES TO OBTAIN , RENEW , OR UPDATE A DRIVER 'S LICENSE OR STATE 17
+IDENTIFICATION CARD . The department of revenue may exchange 18
+information on residence addresses in the driver's license data base with 19
+the motor vehicle registration database, motorist insurance dat abase, and 20
+the state income tax information systems. 21
+SECTION 8.   In Colorado Revised Statutes, 1-3-101, amend  (1), 22
+(2), and (3)(a) as follows: 23
+1-3-101.  Party affiliation required - residence.  (1)  In order to 24
+vote at any precinct caucus, assembly, or convention of a polit ical party, 25
+the elector must be a resident of the precinct for thirty  TWENTY -TWO days, 26
+must be registered to vote no later than twenty-nine  TWENTY -TWO days 27
+233 -10-
+before the caucus, assembly, or convention, and must be affilia ted with 1
+the political party holding the caucus, assembly, or convention  for at least 2
+two months  TWENTY -TWO DAYS  as shown in the statewide voter 3
+registration system; except that any registered elector who has  attained the 4
+age of eighteen years or who has become a naturalized citizen d uring the 5
+two months  TWENTY -TWO DAYS  immediately preceding the meeting may 6
+vote at any caucus, assembly, or convention even though the ele ctor has 7
+been affiliated with the political party for less than two mont hs 8
+TWENTY -TWO DAYS . 9
+(2)  Notwithstanding subsection (1) of this section and section 10
+1-2-101 (1)(b), an elector who moves from the precinct where re gistered 11
+during the twenty-nine  TWENTY -ONE days prior to any caucus shall be 12
+permitted to  MAY participate IN and vote at the caucus in the precinct of 13
+the elector's former residence but shall not be eligible for el ection as a 14
+delegate or for nomination as a precinct committeeperson in the  former 15
+precinct. 16
+(3) (a)  No later than twenty-eight  TWENTY -ONE days prior to the 17
+date of the precinct caucus, the county clerk and recorder shal l furnish 18
+without charge to each major political party in the county a li st of the 19
+registered electors in the county who are affiliated with that political 20
+party. 21
+SECTION 9.   In Colorado Revised Statutes, 1-3-103, amend 22
+(9)(a) as follows: 23
+1-3-103.  Party committees.  (9) (a)  No later than ninety days 24
+after the organization of the state central committees of the m ajor political 25
+parties in each odd-numbered year, each committee shall adopt i n its 26
+bylaws or rules its general guidelines and regulations for all county party 27
+233 -11-
+matters. Such bylaws or rules shall establish a procedure for t he selection 1
+of delegates to any party assembly that is consistent with part y practice. 2
+Any method under such procedure for choosing or allocating dele gates in 3
+a county based on the number of votes cast at an election for a  particular 4
+candidate shall be uniform among the counties so that all types  of ballots 5
+are counted o r not counted for purposes of determining the numb er of 6
+votes cast. Any county central committee may adopt its own rule s in 7
+conformance with those of the state central committee. In the a bsence of 8
+county rules pertaining to specific items, the party's state ce ntral 9
+committee's guidelines and rules shall apply. Each state centra l committee 10
+shall file its party's bylaws or rules with the secretary of st ate no later than 11
+the first Monday in February in each even-numbered year and, if  filed 12
+prior to that date, the bylaws or rules may be amended until th at date. No 13
+bylaw or rule may be filed or amended after the first Monday in  February 14
+in each even-numbered year. Where the bylaws or rules are not f iled in 15
+accordance with this section, the party's state central committ ee, as well 16
+as the party's county central co mmittee, a re subject to the cod e through 17
+the general election of the same year. E ACH STATE CENTRAL COMMITTEE 18
+SHALL COMPILE AND PROVIDE TO THE SECRETARY OF STATE INFORMATION 19
+CONCERNING THE MEMBERSHIP OF THE COUNTY CENTRAL COMMITTEES OF 20
+THE PARTY IN ADDITION TO THE BYLAWS OR RULES OF EACH COUNTY 21
+CENTRAL COMMITTEE . 22
+SECTION 10.   In Colorado Revised Statutes, 1-4-801, amend 23
+(2)(a) as follows: 24
+1-4-801.  Designation of party candidates by petition.  (2) The 25
+signature requirements for the petition are as follows: 26
+(a)  Every petition in the case of a candidate for any county o ffice 27
+233 -12-
+shall  MUST be signed by electors eligible to vote within the county 1
+commissioner district or political subdivision for which the of ficer is to 2
+be elected. Except as otherwise provided in paragraph (e) of th is 3
+subsection (2)  SUBSECTION (2)(e)  OF THIS SECTION , the petition shall  MUST 4
+require signers equal in number to twenty percent of the votes cast in the 5
+political subdivision at the contested or uncontested primary e lection for 6
+the political party's candidate for the office for which the pe tition is being 7
+circulated or, if there was no primary election, at the last pr eceding 8
+general election for which there was a candidate for the office . 9
+NOTWITHSTANDING ANY OTHER PROVISION OF LAW , AN UNAFFILIATED 10
+ELECTOR IS NOT ELIGIBLE TO SIGN A PETITION FOR A CANDIDATE OF A 11
+MAJOR POLITICAL PARTY . 12
+SECTION 11.   In Colorado Revised Statutes, amend  1-4-1103 as 13
+follows: 14
+1-4-1103.  Write-in votes for governor, president.  ( 1 )   N o 15
+write-in vote for governor in a general election shall  WILL be counted 16
+unless it includes a write-in vote for lieutenant governor. 17
+(2)  N O WRITE -IN VOTE FOR PRESIDENT IN A GENERAL ELECTION 18
+WILL BE COUNTED UNLESS IT INCLUDES A WRITE -IN VOTE FOR 19
+VICE-PRESIDENT . 20
+SECTION 12.   In Colorado Revised Statutes, 1-5-208, amend  (6) 21
+as follows: 22
+1-5-208.  Election may be canceled - when.  (6)  The governing 23
+body shall provide notice by publication of the cancellation of  t h e 24
+election. A copy of the notice must be posted at each voter ser vice and 25
+polling center of the political subdivision,  in the office of the designated 26
+election official and in the office of the clerk and recorder f or each county 27
+233 -13-
+in which the political subdivision is located and, for special districts, a 1
+copy of the notice must be filed in the office of the division of local 2
+government. The governing body shall also notify the candidates  that the 3
+election was canceled and that they were elected by acclamation . 4
+SECTION 13.   In Colorado Revised Statutes, 1-5-402, repeal  (2) 5
+as follows: 6
+1-5-402.  Primary election ballots.  (2)  No later than forty-five 7
+days before the primary election, the county clerk and recorder  s h a l l 8
+prepare a combined primary election ballot to be used by unaffi liated 9
+electors. the ballot must be printed in the following manner: 10
+(a)  All official ballots must be printed according to the prov isions 11
+of sections 1-4-101, 1-5-407, and 1- 5-408. acr oss the t op of ea ch ballot 12
+the words "primary election ballot for unaffiliated voters" sha ll be printed. 13
+(b)  The positions of candidates on the ballots to be used by 14
+unaffiliated electors must be arranged in the order specified i n paragraph 15
+(b) of subsection (1) of this section; except that the candidat es of each 16
+political party must be clearly and conspicuously segregated fr om the 17
+candidates of any other political party and grouped together ac cording to 18
+section 1-4-101 (2). 19
+SECTION 14.   In Colorado Revised Statutes, 1-6-101, amend 20
+(2)(a) and (5) as follows: 21
+1-6-101.  Qualifications for election judges - student election 22
+judges - definition - legislative declaration.  (2)  The persons appointed 23
+as election judges, except for persons appointed as student ele ction judges 24
+pursuant to the provisions of subsection (7) of this section, s hall certify 25
+in writing that they meet the following qualifications: 26
+(a)  They are registered electors who reside in the political 27
+233 -14-
+subdivision, unless otherwise excepted,  OF THE STATE  and are willing to 1
+serve; 2
+(5)  The county clerk and recorder or the designated election 3
+official shall hold a class of instruction concerning the tasks  of an election 4
+judge and a special school of instruction concerning the task o f a 5
+supervisor judge not more than forty-five  SIXTY  days prior to each 6
+election. 7
+SECTION 15.   In Colorado Revised Statutes, amend  1-6-103.5 8
+as follows: 9
+1-6-103.5.  Recommendations by minor political parties.  No 10
+later than the last Tuesday of April in even-numbered years  SIXTY DAYS 11
+BEFORE A PRIMARY OR GENERAL ELECTION , the county chairperson or 12
+other authorized official of a minor political party may certif y to the 13
+county clerk and recorder AN INITIAL LIST OF the names and addresses of 14
+registered electors recommended to serve as election judges for  one or 15
+more precincts  in the county. If the list contains more than one name, for 16
+any precinct in the county  the order of preference shall  MUST be indicated. 17
+The county clerk and recorder shall select election judges from  the party 18
+according to such order of preference, if indicated. 19
+SECTION 16.   In Colorado Revised Statutes, amend  1-6-103.7 20
+as follows: 21
+1-6-103.7.  Unaffiliated voters - self-nomination.  No later than 22
+the last Tuesday of April in even-numbered years  SIXTY DAYS BEFORE A 23
+PRIMARY OR GENERAL ELECTION , any registered elector who is 24
+unaffiliated with a political party or political organization m ay give notice 25
+in writing to the clerk and recorder of the county in which suc h elector 26
+resides offering to serve as an election judge and stating that  the elector 27
+233 -15-
+is a registered elector and is unaffiliated with any political party or 1
+political organization. 2
+SECTION 17.   In Colorado Revised Statutes, amend  1-6-104 as 3
+follows: 4
+1-6-104.  Appointment of election judges by county clerk and 5
+recorder and designated election officials.  (1)  For each election 6
+coordinated by the county clerk and recorder, the county clerk and 7
+recorder shall appoint election judges for each precinct in the  county An 8
+election judge for a precinct shall serve for a two-year period  beginning 9
+on the last Tuesday of May in even-numbered years and ending on  the last 10
+Monday in May of the next even-numbered year or until the desig nated 11
+election official appoints another person to replace that elect ion judge for 12
+that precinct, whichever is earlier  LOCATION WHERE ELECTION ACTIVITIES 13
+ARE OCCURRING . 14
+(2)  The county clerk and recorder may appoint an election judg e 15
+to serve in a precinct of the  county other than the precinct  COUNTY  in 16
+which the election judge resides. 17
+(3)  If, at the time the county clerk and recorder appoints ele ction 18
+judges, for a precinct,  the list of recommended election judges submitted 19
+in accordance with section 1-6-102 contains an insufficient num ber of 20
+names for a major political party's share of the total number o f election 21
+judges as required in section 1-6-109, th e designated election official 22
+shall appoint any additional election judges necessary from amo ng the 23
+persons recommended by minor political parties in accordance wi th 24
+section 1-6-103.5 and the unaffiliated voters who have offered to serve 25
+as election judges in accordance with section 1-6-103.7. 26
+(4)  For each election coordinated by the county clerk and reco rder, 27
+233 -16-
+the county clerk and recorder may appoint one or more student e lection 1
+judges that satisfy the requirements contained in section 1-6-1 01 (7) to 2
+serve as an election judge, and shall designate the precinct  LOCATIONS 3
+WHERE ELECTION ACTIVITIES ARE OCCURRING  in which the student 4
+election judge shall serve based upon the number of qualified s tudents 5
+and vacancies in the number of available positions for election  judges 6
+throughout the c ounty. notwithstanding the fact that a student election 7
+judge may serve in a precinct of the county other than the prec inct in 8
+which the student election judge resides. 9
+SECTION 18.   In Colorado Revised Statutes, 1-6-109, amend  (1), 10
+(2), and (3) as follows: 11
+1-6-109.  Party affiliation of election judges in partisan 12
+elections - definition.  (1)  For partisan elections in precincts  VOTER 13
+SERVICE AND POLLING CENTERS  that have an even number of election 14
+judges, each major political party is entitled to one-half of t he number of 15
+election judges. 16
+(2)  For partisan elections in precincts  VOTER SERVICE AND 17
+POLLING CENTERS  that have an odd number of election judges, one major 18
+political par ty is entitled to the extra election judge in one- half of the 19
+precincts  VOTER SERVICE AND POLLING CENTERS , as determined by the 20
+county clerk and recorder, and the other major political party is entitled 21
+to the extra election judge in the other one-half of the precin cts VOTER 22
+SERVICE AND POLLING CENTERS , as determined by the county clerk and 23
+recorder. 24
+(3)  If an odd number of precincts  VOTER SERVICE AND POLLING 25
+CENTERS  exist, the county clerk and recorder shall determine which maj or 26
+political party is entitled to any extra election judge. The co unty clerk and 27
+233 -17-
+recorder shall make this determination either by mutual agreeme nt of both 1
+of the major political parties or, if the two major political p arties cannot 2
+agree, by lot. 3
+SECTION 19.   In Colorado Revised Statutes, 1-6-109.5, amend 4
+(1) as follows: 5
+1-6-109.5.  Appointment and duties of supervisor judge - 6
+definition.  (1)  The designated election official shall appoint AT LEAST 7
+one election judge in each precinct  VOTER SERVICE AND POLLING CENTER 8
+as supervisor judge. To the extent possible, the  supervisor judge  JUDGES 9
+must be from a major political party, AND IF MORE THAN ONE SUPERVISOR 10
+JUDGE IS SERVING AT A VOTER SERVICE AND POLLING CENTER , THE JUDGES 11
+MUST BE OF DIFFERENT POLITICAL PARTY AFFILIATIONS . The designated 12
+election official shall notify the supervisor judge of the appo intment. 13
+SECTION 20.   In Colorado Revised Statutes, 1-6-111, amend  (3), 14
+(4), (5), (7), and (8) as follows: 15
+1-6-111.  Number of election judges.  (3)  When two election 16
+judges who are not of the same political affiliation are presen t at the 17
+polling location  VOTER SERVICE AND POLLING CENTER , voting may 18
+proceed. 19
+(4)  For nonpartisan elections, the designated election officia l shall 20
+appoint no fewer than two election judges to serve as judges fo r each 21
+polling location  VOTER SERVICE AND POLLING CENTER  to perform the 22
+designated functions. 23
+(5)  The designated election official and, for partisan electio ns, the 24
+county clerk and recorder may appoint other election judges as needed to 25
+perform duties other than polling location  VOTER SERVICE AND POLLING 26
+CENTER duties. These duties may include inspecting ballots, duplicatin g 27
+233 -18-
+ballots, and counting paper ballots. For partisan elections, if  the county 1
+clerk and recorder appoints election judges to perform duties o ther than 2
+voter service and polling center duties, the county clerk and r ecorder shall 3
+appoint two election judges to perform such duties. The two ele ction 4
+judges so appointed shall not be of the same political affiliat ion. 5
+(7)  Where student election judges have been appointed by the 6
+county clerk and recorder to serve in a particular polling loca tion VOTER 7
+SERVICE AND POLLING CENTER pursuant to this article  ARTICLE 6, no more 8
+than half of the total number of election judges serving in any  one polling 9
+location are permitted to be student election judges. 10
+(8)  Subject to the requirements of this article  ARTICLE 6 regarding 11
+the number and party affiliation of election judges, the county  clerk and 12
+recorder or designated election official may allow an election judge to 13
+work at a polling location  VOTER SERVICE AND POLLING CENTER for a shift 14
+lasting less than an entire day; except that, at least two judg es of different 15
+affiliations must be present at each polling location  VOTER SERVICE AND 16
+POLLING CENTER  at all times. 17
+SECTION 21.   In Colorado Revised Statutes, 1-7-505, repeal  (2) 18
+and (3) as follows: 19
+1-7-505.  Close of polls - count and seals in electronic voting . 20
+(2)  In polling locations in which voting is on a ballot or bal lot card, 21
+election judges shall prepare a return in duplicate showing the  number of 22
+eligible electors, as indicated by the pollbook, who have voted  in the 23
+precinct, the number of official ballots or ballot cards receiv ed, and the 24
+number of spoiled and unused ballots or ballot cards returned. The 25
+original copy of the return shall be deposited in the metal or durable 26
+plastic transfer box, along with all voted and spoiled ballots.  The transfer 27
+233 -19-
+box shall then be sealed in such a way as to prevent tampering with the 1
+box or its contents. The designated election official shall pro vide a 2
+numbered seal. The duplicate copy of the return shall be mailed  at the 3
+nearest post office or post office box to the designated electi on official by 4
+an election judge other than the one who delivers the transfer box to the 5
+designated counting center. For partisan elections, two electio n judges of 6
+different political affiliations, as provided in section 1-6-10 9.5, shall 7
+deliver the sealed transfer box to the counting center designat ed by the 8
+county clerk and recorder. 9
+(3)  In polling locations in which electronic voting is by a me thod 10
+other than a ballot or ballot card, election judges shall, afte r securing the 11
+voting devices, prepare the paper tape containing the votes. 12
+SECTION 22.   In Colorado Revised Statutes, 1-7-901, amend  (4) 13
+as follows: 14
+1-7-901.  Receipt of comments concerning ballot issues. 15
+(4)  Since section 20 (3)(b)(v) of article X of the state const itution 16
+requires that comments pertaining to a ballot issue be filed by  forty-five 17
+days before the election and since such day is always a Saturda y, all 18
+comments shall be filed by the end of the business day  NOON on the 19
+Friday before the forty-fifth day before the election. 20
+SECTION 23.   In Colorado Revised Statutes, 1-7-903, amend  (3) 21
+as follows: 22
+1-7-903.  Preparation of written comments.  (3)  Petition 23
+representatives required to summarize favorable comments in fav or of 24
+their petition shall submit the summary in typewritten form to the 25
+designated election official for the jurisdiction in which the petition is 26
+presented no later than forty-three  FORTY -FOUR days before the election. 27
+233 -20-
+If a summary is not filed by the petition representatives withi n the time 1
+allowed, the designated election official shall print the follo wing in the 2
+ballot issue notice where the summary would appear: "No summary  was 3
+filed by the statutory deadline." 4
+SECTION 24.   In Colorado Revised Statutes, amend  1-7-904 as 5
+follows: 6
+1-7-904.  Transmittal of notices.  Notwithstanding the provision 7
+for independent mail ballot elections in section 1-7-116 (1), t he 8
+designated election official or the official's designee for a p olitical 9
+subdivision conducting an election in November shall prepare an d deliver 10
+to the county clerk and recorder for the county or counties in which the 11
+political subdivision is located no later than forty-two  FORTY -THREE days 12
+before the election the full text of any required ballot issue notices. 13
+SECTION 25.   In Colorado Revised Statutes, 1-7.5-103, amend 14
+the introductory portion, (5), and (7) as follows: 15
+1-7.5-103.  Definitions.  As used in this article  ARTICLE 7.5, unless 16
+the context otherwise requires: 17
+(5)  "Mail ballot packet" means the packet of information provi ded 18
+by the designated election official to eligible electors in the  mail ballot 19
+election and to persons preregistered to vote pursuant to secti on 1-2-101 20
+(2) who will be eighteen years of age on the date of the mail b allot 21
+election. The packet includes the ballot, instructions for comp leting the 22
+ballot, a secrecy envelope or sleeve, and  a return envelope, AND, I F 23
+APPLICABLE , A SECRECY ENVELOPE OR SLEEVE . 24
+(7)  "Return envelope" means an envelope that is printed with 25
+spaces for the name and address of, and a self-affirmation to b e signed by, 26
+an eligible elector voting in a mail ballot election, that cont ains a secrecy 27
+233 -21-
+envelope and  ballot for the elector, and that is designed to allow election 1
+officials, upon examining the signature, name, and address on t he outside 2
+of the envelope, to determine whether the enclosed ballot is be ing 3
+submitted by an eligible elector who has not previously voted i n that 4
+particular election. 5
+SECTION 26.   In Colorado Revise d Statutes, 1-7.5-104.5, amend 6
+(4)(a) as follows: 7
+1-7.5-104.5.  Ballots and supplies for mail voting.  (4) (a)  On the 8
+mail ballot instructions, and the secrecy envelope or sleeve or  on the 9
+combined instructions and secrecy envelope or sleeve, whichever  i s 10
+applicable,  the statement  FOLLOWING STATEMENTS MUST BE PRINTED :  11
+"All ballots are counted in the same manner." must be printed  AND "YOU 12
+MUST SIGN THE AFFIRMATION ON THE ENVELOPE . DO NOT SIGN , INITIAL , OR 13
+PRINT YOUR NAME ON THE BALLOT ." 14
+SECTION 27.   In Colorado Revised Statutes, 1-7.5-106, amend 15
+(1)(a) as follows: 16
+1-7.5-106.  Secretary of state - duties and powers.  ( 1 )   I n 17
+addition to any other duties prescribed by law, the secretary o f state, with 18
+advice from election officials of the several political subdivi sions, shall: 19
+(a)  Prescribe the form of materials to be used in the conduct of 20
+mail ballot elections; except that all mail ballot packets shal l include a 21
+ballot, instructions for completing the ballot, a secrecy envel ope, and a 22
+return envelope; 23
+SECTION 28.   In Colorado Revised Statutes, 1-7.5-107, amend 24
+(2.7) as follows: 25
+1-7.5-107.  Procedures for conducting mail ballot election - 26
+primary elections - first-time voters casting a mail ballot aft er having 27
+233 -22-
+registered by mail to vote - in-person request for ballot - rep eal. 1
+(2.7)  Subsequent to the preparation of ballots in accordance w ith section 2
+1-5-402 but prior to the mailing required under subsection (3) of this 3
+section, AND NO S OONER THAN FORTY -FIVE DAYS NOR LATER THAN 4
+THIRTY -TWO DAYS BEFORE AN ELECTION , a designated election official 5
+shall provide a mail ballot to a registered elector requesting the ballot at 6
+the designated election official's office or the office designa ted in the mail 7
+ballot plan filed with the secretary of state. 8
+SECTION 29.   In Colorado Revised Statutes, 1-7.5-107.3, amend 9
+(2)(b); and add (5.5) as follows: 10
+1-7.5-107.3.  Verification of signatures - rules.  ( 2 )  ( b )   A n 11
+original return envelope with an enclosed secrecy envelope  containing a 12
+voted ballot that is not counted in accordance with paragraph ( a) of this 13
+subsection (2)  SUBSECTION (2)(a) OF THIS SECTION  shall be stored under 14
+seal in the office of the county clerk and recorder in a secure  location 15
+separate from valid return envelopes and may be removed only un der the 16
+authority of the district attorney or by order of a court havin g jurisdiction. 17
+(5.5)  T HE COUNTY CLERK AND RECORDER SHALL ENSURE THE 18
+PRIVACY OF EACH ELECTOR 'S VOTE WHEN ELECTION JUDGES ARE 19
+REMOVING AND SEPARATING MARKED BALLOTS FROM RETURN ENVELOPES . 20
+IF THE COUNTY CLERK AND RECORDER CHOOSES NOT TO INCLUDE A 21
+SECRECY ENVELOPE OR SLEEVE IN THE MAIL BALLOT PACKET , HE OR SHE 22
+MUST NOTIFY THE SECRETARY OF STATE IN THE ELECTION PLAN REQUIRE D 23
+UNDER SECTION 1-7.5-105  (1) AND MUST ALSO EXPLAIN THE COUNTY 'S 24
+PROCESS FOR ENSURING THE PRIVACY OF MARKED BALLOTS . THE 25
+SECRETARY OF STATE SHALL PROMULGATE RULES TO ENSURE THE PRIVACY 26
+OF EACH ELECTOR 'S VOTE . 27
+233 -23-
+SECTION 30.   In Colorado Revised Statutes, repeal  1-7.5-116 as 1
+follows: 2
+1-7.5-116.  Applications for absentee ballot.  ( 1 )  ( a )   A n 3
+application for an absentee ballot must be made in writing, by electronic 4
+mail, or by fax, using the application form furnished by the de signated 5
+election official or in the form of a letter that includes the applicant's 6
+printed name, signature, residence address, mailing address if the 7
+applicant wishes to receive the mail ballot by mail, and date o f birth. 8
+(b)  If the application is made for a primary election ballot, the 9
+application shall name the political party with which the appli cant is 10
+affiliated or, if the applicant is unaffiliated, the applicatio n must either 11
+name the political party with which the applicant wishes to aff iliate or 12
+must state that the applicant wishes to remain unaffiliated and  receive an 13
+unaffiliated primary election ballot, or if such combined ballo t is not 14
+available, the ballots for each party primary along with notice  that the 15
+elector shall vote in only one primary. 16
+(2)  The application for an absentee ballot must be personally 17
+signed by the applicant; or, in the case of the applicant's ina bility to sign, 18
+the elector's mark must be witnessed by another person. 19
+(3)  The application for an absentee ballot must be filed with the 20
+designated election official of the political subdivision in wh ich the 21
+applicant resides or is entitled to vote. The application must be filed no 22
+later than the close of business on the Friday immediately prec eding the 23
+election; except that, if the applicant wishes to receive the a bsentee ballot 24
+by mail, the application must be filed no later than the close of business 25
+on the seventh day before the election. 26
+(4)  An application for an absentee ballot is subject to the ru les of 27
+233 -24-
+residency contained in section 1-2-102 and is subject to challe nge as 1
+provided in parts 1 and 2 of article 9 of this title. 2
+(5)  A prisoner in pretrial detention may apply for an absentee 3
+ballot from the prisoner's county of residence. No application for an 4
+absentee ballot shall be accepted unless personally signed by t he applicant 5
+and accompanied by a certification from the institutional admin istrator or 6
+the administrator's designee that the applicant is in pretrial detention. The 7
+institutional administrator shall certify the application immed iately upon 8
+request by the prisoner. 9
+(6)  No person shall give to any eligible elector any form for the 10
+purpose of requesting an absentee ballot unless the form prompt s the 11
+applicant to provide all the information required by subsection  (1) of this 12
+section and is either provided by the state or the elector's co unty or 13
+contains the following statement: "Under Colorado law, your abs entee 14
+ballot application must contain your printed name, signature, r esidence 15
+address, mailing address if you wish to receive the ballot by m ail, and 16
+date of birth. If you do not provide all of this information, y ou may not 17
+receive an absentee ba llot according to the rules established b y the 18
+secretary of state." Violation of this subsection (6) is an off ense 19
+punishable as provided in section 1-13-803. 20
+(7)  Notwithstanding any other provision of this section, no 21
+absentee ballot shall be mailed to an applicant unless the desi gnated 22
+election official has previously received an application for an  absentee 23
+ballot from the applicant. 24
+SECTION 31.   In Colorado Revised Statutes, 1-8.3-107, amend 25
+(2) as follows: 26
+1-8.3-107.  Methods of registering to vote.  (2)  A covered voter 27
+233 -25-
+may use the declaration accompanying a federal write-in absente e ballot 1
+to apply to register to vote simultaneously with the submission  of the 2
+federal write-in absentee ballot. if the declaration is receive d no later than 3
+twenty-two days before the election.  If the declaration is received after 4
+that date  THE ELECTION , it shall be treated as an application to register to 5
+vote for subsequent elections. 6
+SECTION 32.   In Colorado Revised Statutes, 1-8.5-105, amend 7
+(5) as follows: 8
+1-8.5-105.  Verification of provisional ballot information - 9
+counting procedure.  (5)  The designated election official shall complete 10
+the verification and counting of all provisional ballots within  ten days 11
+after a primary election and within fourteen  NINE  days after a PRIMARY , 12
+general, odd-year, or coordinated election, OR WITHIN AN ALTERNATE 13
+PERIOD OF TIME , IF NECESSARY , AS DESIGNATED BY THE SECRETARY OF 14
+STATE . The designated election official shall count all regular ball ots cast 15
+in an election before counting any provisional ballots. 16
+SECTION 33.   In Colorado Revised Statutes, 1-10-102, amend 17
+(1) as follows: 18
+1-10-102.  Official abstract of votes cast - certification.  (1)  No 19
+later than the thirteenth day after a primary election and no l ater than the 20
+seventeenth  TWENTY -SECOND  day after any other  election coordinated by 21
+the county clerk and recorder, the canvass board shall complete  its duties. 22
+SECTION 34.   In Colorado Revised Statutes, amend  1-10-103 as 23
+follows: 24
+1-10-103.  Transmitting returns to the secretary of state - tot al 25
+of results.  (1)  Immediately after the official abstract of votes cast has 26
+been certified and no later than the thirteenth day after a pri mary election 27
+233 -26-
+and the eighteenth  TWENTY -SECOND  day after a  ANY general  OR PRIMARY 1
+ELECTION OR ANY COORDINATED election THAT INCLUDES A STATEWIDE 2
+BALLOT MEASURE , the county clerk and recorder shall transmit to the 3
+secretary of state the portion of the abstract of votes cast th at contains the 4
+statewide abstract of votes cast. 5
+(2)  No later than the twentieth day after a primary election a nd no 6
+later than the thirtieth  TWENTY -SEVENTH  day after any other  PRIMARY OR 7
+GENERAL ELECTION OR ANY COORDINATED election THAT INCLUDES A 8
+STATEWIDE BALLOT MEASURE , the secretary of state shall compile and 9
+total the returns received from all counties for all candidates , ballot 10
+issues, and ballot questions certified by the secretary of stat e, determine 11
+if a recount of any office, ballot issue, or ballot question is  necessary, and 12
+order the appropriate recounts, if any. 13
+(3)  Each  FOLLOWING EACH GENERAL ELECTION , THE county clerk 14
+and recorder shall transmit a list of the names of those candid ates elected 15
+to county offices to the secretary of state. no later than the sixteenth day 16
+after the election. 17
+SECTION 35.   In Colorado Revised Statutes, 1-10-203, amend 18
+(1) as follows: 19
+1-10-203.  Official abstract of votes cast - nonpartisan 20
+elections.  (1)  No later than seventeen  TWENTY -TWO d a y s  a f t e r  a n 21
+election, the canvass board shall certify to the designated ele ction official 22
+the official abstract of votes cast for all candidates, ballot issues, and 23
+ballot questions in that election. 24
+SECTION 36.   In Colorado Revised Statutes, 1-10.5-102, amend 25
+(2) as follows: 26
+1-10.5-102.  Recounts for congressional, state, and district 27
+233 -27-
+offices, state ballot questions, and state ballot issues.  (2)  The secretary 1
+of state shall notify the county clerk and recorder of each cou nty involved 2
+by registered mail and facsimile transmission  of a public recount to be 3
+conducted in the county at a place prescribed by the secretary of state. The 4
+recount shall be completed no later than the thirtieth  THIRTY -FIFTH day 5
+after any election. The secretary of state shall promulgate and  provide 6
+each county clerk and recorder with the necessary rules and reg ulations  to 7
+conduct the recount in a fair, impartial, and uniform manner, i ncluding 8
+provisions for watchers during the recount. Any rule or regulat ion 9
+concerning the conduct of a recount shall  MUST take into account the type 10
+of voting system and equipment used by the county in which the recount 11
+is to be conducted. 12
+SECTION 37.   In Colorado Revised Statutes, amend  1-10.5-103 13
+as follows: 14
+1-10.5-103.  Recount for other offices, ballot issues, and ball ot 15
+questions in an election coordinated by county clerk and record er. In 16
+any election coordinated by the county clerk and recorder, if i t appears, as 17
+evidenced by the official abstract of votes cast, that a recoun t is required 18
+for any office, ballot question, or ballot issue not included i n section 19
+1-10.5-102, the county clerk and recorder shall order a recount  of the 20
+votes cast for the office, ballot question, or ballot issue. An y recount of 21
+the votes shall be completed no later than the thirtieth  THIRTY -FIFTH day 22
+after the election. A political subdivision that referred a bal lot issue or 23
+ballot question to the electors may waive the automatic recount  provisions 24
+of this section if the ballot issue or ballot question fails by  giving written 25
+notice to the county clerk and recorder within fourteen days af ter the 26
+primary election or eighteen  TWENTY -THREE  days after any other  election. 27
+233 -28-
+SECTION 38.   In Colorado Revised Statutes, 1-10.5-106, amend 1
+(2) as follows: 2
+1-10.5-106.  Request for recount by interested party - 3
+definitions.  (2)  Whenever a recount is not required, an interested party 4
+may submit a notarized written request for a recount at the exp ense of the 5
+interested party making the request. This request shall be file d with the 6
+secretary of state, the county clerk and recorder, the designat ed election 7
+offici al, or other governing body that originally certified the  candidate, 8
+ballot question, or ballot issue for the ballot within twenty-o ne days after 9
+a primary election and within thirty-one  TWENTY -EIGHT days after any 10
+other  PRIMARY , GENERAL , OR COORDINATED election. Such election 11
+official shall notify the political subdivision within which th e election was 12
+held no later than the day following receipt of the request. Be fore 13
+conducting the recount, the election official who will conduct the recount 14
+shall determine the cost of the recount within one day of recei ving the 15
+request to recount, notify the interested party that requested the recount of 16
+the cost, and collect the costs of conducting the recount. If t he request is 17
+filed with the secretary of state, the secretary of state shall  determine the 18
+cost of the recount by adding the individual amounts determined  by the 19
+political subdivisions conducting the recount. The interested p arty that 20
+requested the recount shall pay the cost of the recount by cert ified funds 21
+to the election official with whom the request for a recount wa s filed 22
+within one day of receiving the election official's cost determ ination. The 23
+funds shall be placed in escrow for payment of all expenses inc urred in the 24
+recount. If after the recount the result of the election is rev ersed in favor 25
+of the interested party that requested the recount or if the am ended 26
+election count is such that a recount otherwise would have been  required, 27
+233 -29-
+the payment for expenses shall be refunded to the interested pa rty that 1
+requested the recount. Any escrow amounts not refunded to the i nterested 2
+party that requested the recount shall be paid to the election officials who 3
+conducted the recount. Any recount of votes pursuant to this se ction shall 4
+be completed no later than the thirtieth day after the primary election and 5
+no later than the  thirty-seventh day after any other  PRIMARY , GENERAL , OR 6
+COORDINATED  election. 7
+SECTION 39.   In Colorado Revised Statutes, amend  1-12-105 as 8
+follows: 9
+1-12-105.  Signatures required for school district officers.  A 10
+petition to recall a school district officer shall be signed by  eligible 11
+electors of the school district equal in number to at least for ty percent of 12
+those electors who voted in such district in the last preceding  election at 13
+which the director to be recalled was elected as indicated by t he pollbook 14
+or abstract for such election  THE ENTIRE VOTE CAST AT THE LAST 15
+PRECEDING ELECTION FOR ALL CANDIDATES FOR THE SC HOOL DISTRICT 16
+DIRECTOR POSITION OCCUPIED BY THE INCUMBENT SOUGHT TO BE 17
+RECALLED . If no such election was held, the petition shall be signed by 18
+eligible electors of the school district equal in number to at least ten 19
+percent of those electors residing within the school district o n the date that 20
+the petition is approved as to form under section 1-12-108 (4).  In no case 21
+shall the number required for recall be less than ten percent o f eligible 22
+electors qualified to vote in the most recent biennial school e lection; 23
+except that no more than fifteen thousand signatures is require d. 24
+SECTION 40.   In Colorado Revised Statutes, 1-12-108, amend 25
+(9)(d) as follows: 26
+1-12-108.  Petition requirements - approval as to form - 27
+233 -30-
+determination of sufficiency - protest - offenses.  (9) (d) (I)  N OT LATER 1
+THAN THREE DAYS AFTER THE PETITION HAS BEEN FILED IN ACCORDANCE 2
+WITH SUBSECTION (7.5)  OF THIS SECTION , any signer may request that his 3
+or her name be stricken from the petition at any time prior to when the 4
+petition is deemed sufficient and the time for protest has pass ed by filing 5
+with the designated election official a written request that hi s or her 6
+signature be stricken and delivering a copy of the request to a t least one 7
+member of the committee. If the request is delivered to the mem ber of the 8
+committee or the designated election official through the Unite d States 9
+mail, it shall be deemed delivered to the committee or the desi gnated 10
+election official on the date shown by the cancellation mark on  t h e 11
+envelope containing the request received by the member of the c ommittee 12
+or the designated election official. If the request is delivere d to the 13
+member of the committee or the designated election official in any other 14
+manner, it shall be deemed delivered to the committee or the de signated 15
+election official on the date of delivery and stamped receipt b y the 16
+designated election official. 17
+(II)  If the designated election official receives a written re quest 18
+TIMELY filed in accordance with this paragraph (d) after the petition is 19
+filed but before the petition is deemed sufficient and the time  for protest 20
+has passed  SUBSECTION (9)(d)(I)  OF THIS SECTION , the election official 21
+shall strike the signature of the signer who filed the request.  If the election 22
+official receives such a written request before the petition is  filed, the 23
+election official shall strike the signature of the signer who filed the 24
+request promptly upon the filing of the petition. 25
+SECTION 41.   In Colorado Revised Statutes, 1-1-104, amend 26
+(2.8)(a) as follows: 27
+233 -31-
+1-1-104.  Definitions.  As used in this code, unless the context 1
+otherwise requires: 2
+(2.8)  "Confirmation card" means a communication mailed from a 3
+county clerk and recorder to an elector pursuant to section 1-2 -302.5 4
+(2)(b)(III), 1-2-509 (3)(b)(III), or 1-2-605, which card must: 5
+(a)  Be mailed to the elector's address of record; unless the e lector 6
+has requested that such communication be sent to his or her del iverable 7
+mailing address pursuant to section 1-2-204 (2)(k); 8
+SECTION 42.  In Colorado Revised Statutes, 1-7-201, amend 9
+(2.3) as follows: 10
+1-7-201.  Voting at primary election.  (2.3)  An eligible 11
+unaffiliated elector is entitled to vote in the primary electio n of a major 12
+political party without affiliating with that political party. To vote in a 13
+political party's primary election without declaring an affilia tion with the 14
+political party, any eligible unaffiliated elector shall be giv en a combined 15
+ballot, if applicable. If a combined ballot is not available, t he elector  shall 16
+declare to the election judges the name of the political party in whose 17
+primary election the elector wishes to vote. Thereupon, the ele ction judges 18
+shall deliver the appropriate party ballot to the elector. In a ddition, any 19
+eligible unaffiliated elector may openly declare to the electio n judges the 20
+name of the political party with which the elector wishes to af filiate and 21
+complete the necessary forms. An eligible elector must separate ly date and 22
+sign or date and initial a declar ation of affiliation with a po litical party 23
+form in such manner that the elector clearly acknowledges that the 24
+affiliation has been properly recorded. Thereupon, the election  judges 25
+shall deliver the appropriate party ballot to the eligible elec tor. 26
+SECTION 43.   Effective date - applicability.  (1)  This act takes 27
+233 -32-
+effect upon passage; except that section 26 of this act takes e ffect July 1, 1
+2018. 2
+(2)  This act applies to elections conducted on or after the 3
+applicable effective date of this act. 4
+SECTION 44.   Safety clause.  The general assembly hereby finds, 5
+determines, and declares that this act is necessary for the imm ediate 6
+preservation of the public peace, health, and safety. 7
+233 -33-
