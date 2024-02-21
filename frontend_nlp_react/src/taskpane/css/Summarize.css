@@ -2,39 +2,81 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.centre-text {
+.background {
+  background-color: white;
+  height: 100vh;
   text-align: center;
 }
 
-.button {
-  margin-top: 2rem;
-  margin-bottom: 1rem;
-
-  padding: 1rem 1.5rem;
-  border-radius: 8px;
-  font-size: 1rem;
-  border: none;
-  background-color: #009e83;
-  color: white;
-  cursor: pointer;
-  transition: background-color 0.1s ease, transform 0.1s ease;
-  font-weight: 600;
+.image {
+  padding: 20px 0px 0px 0px;
 }
 
-.button:hover {
-  background-color: #00826c;
+.searchContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  height: 25px; 
+  margin-top: 25px;
 }
 
-.button:active {
-  transform: scale(0.95);
+.searchBar {
+  width: 60%;
+  height: 100%; 
+  padding: 5px 10px;
+  border: 2px solid #ccc;
+  border-radius: 1000px;
+  font-size: 16px;
+  margin-right: 10px;
 }
 
-.button:focus {
+.searchBar:focus {
   outline: none;
+  border-color: gray; 
+}
+
+.searchButton {
+  height: 100%;
+  padding: 7px;
+  border: 2px solid #ccc;
+  border-radius: 1000px;
+  cursor: pointer;
+}
+
+.searchButton:focus {
+  border-color: gray; 
+}
+
+.summarizeButton {
+  height: 40px;
+  padding: 10px;
+  background-color: white;
+  border: 2px solid #ccc;
+  border-radius: 1000px;
+  font-size: 16px;
+  color: gray;
+  margin-top: 25px;
+  cursor: pointer;
+}
+
+.summarizeButton:focus {
+  outline: none;
+  border-color: gray;
+}
+
+.line {
+  height: 2px; 
+  background-color: #ccc; 
+  border-radius: 1px; 
+  margin-top: 35px;
+  position: absolute;
+  left: 5%; 
+  width: 90%; 
 }
 
 .summarized-text {
   text-align: left;
-  font-size: smaller;
-  margin: 1rem;
+  font : Arial;
+  font-size: 16px;
+  margin: 3rem 1rem;
 }
