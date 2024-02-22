@@ -36,6 +36,6 @@ python -m venv venv
 With the virtual environment activated, install the project dependencies using:
 
 ```bash
-pip install -r requirements.txt
+pip install -r backend/requirements.txt
 ```
 make sure you have python and pip installed first
