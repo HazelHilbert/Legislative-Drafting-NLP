@@ -16,8 +16,8 @@ services:
     command: flask run --host=0.0.0.0
   frontend:
     build:
-      context: ./frontend_nlp
-      dockerfile: Dockerfile.frontend
+      context: ./
+      dockerfile: frontend_nlp/Dockerfile.frontend
     ports:
       - "3000:3000"
     stdin_open: true

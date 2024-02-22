@@ -1,8 +1,8 @@
 FROM node:18
-WORKDIR /app/frontend_nlp
+WORKDIR /app
+COPY frontend_nlp/package.json ./
+COPY ./frontend_nlp ./frontend_nlp
 RUN npm install
 RUN npm i office-addin-debugging
-
-COPY . .
 EXPOSE 3000
 CMD ["npm","start"]
