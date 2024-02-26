@@ -4,6 +4,7 @@ import { makeStyles } from "@fluentui/react-components";
 import { FluentProvider, webLightTheme } from "@fluentui/react-components";
 import { createRoot } from "react-dom/client";
 import { Tab, TabList, Input } from "@fluentui/react-components";
+import { Button } from "@fluentui/react-components";
 
 const useStyles = makeStyles({
   root: {
@@ -127,10 +128,7 @@ const Search = () => {
                 </div>
             </div>
         </div>
-        <div style={{width: 120, height: 32, position: 'relative'}}>
-            <div style={{width: 120, height: 32, left: 0, top: 0, position: 'absolute', background: '#0078D4', boxShadow: '0px 2px 4px -0.75px rgba(0, 0, 0, 0.10)'}} />
-            <div style={{left: 11, top: 5, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '600', wordWrap: 'break-word'}}>Documentation</div>
-        </div>
+        <Button appearance="primary" >Documentation</Button>
       </div>
     </div>
   );
