@@ -94,7 +94,8 @@ const Search = () => {
       <div style={{alignSelf: 'stretch', height: 383, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 26, display: 'flex'}}>
         <div style={{alignSelf: 'stretch', height: 325, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 30, display: 'flex'}}>
           <div style={{alignSelf: 'stretch', height: 141, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 21, display: 'flex'}}>
-              <img style={{width: 64, height: 64}} src="https://via.placeholder.com/64x64" />
+              {/* <img  src="https://via.placeholder.com/64x64" /> */}
+              <img src="../../assets/propylonFull.png" alt="Propylon Logo" style={{ maxWidth: '100%', width: 64, height: 'auto' }}/>
               <div style={{color: '#333333', fontSize: 42, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>Instructions</div>
           </div>         
           <div style={{alignSelf: 'stretch', height: 154, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 33, display: 'flex'}}>
