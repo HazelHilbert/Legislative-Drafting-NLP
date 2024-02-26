@@ -49,22 +49,25 @@ const Search = () => {
   };
 
   const tabs = [
-    { label: "First Tab", value: "tab1" },
-    { label: "Second Tab", value: "tab2" },
-    { label: "Third Tab", value: "tab3" },
-    { label: "Fourth Tab", value: "tab4" },
+    { label: "Search", value: "tab1" },
+    { label: "Result", value: "tab2" },
+    { label: "Filter", value: "tab3" },
+    { label: "Add", value: "tab4" },
+    { label: "Settings", value: "tab5" }
   ];
 
-  return (
-    <div className={styles.root}>
-      <h1>Hello World</h1>
-      <TabList selectedValue={tabs[0].value} onTabSelect={(event, data) => {}}>
-        {tabs.map((tab) => (
-          <Tab key={tab.value} value={tab.value}>
-            {tab.label}
-          </Tab>
-        ))}
-      </TabList>
+  return (  
+    <div className={styles.root} style={{width: '100%', height: '100%', background: 'white', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 28, display: 'inline-flex'}}>
+      <div style={{alignSelf: 'stretch', height: 90, paddingLeft: 14, paddingRight: 14, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 14, display: 'flex'}}>
+        {/* Top Navigation */}
+        <TabList style={{alignSelf: 'stretch', justifyContent: 'center', alignItems: 'flex-start', display: 'inline-flex'}} selectedValue={tabs[0].value} onTabSelect={(event, data) => {}}>
+          {tabs.map((tab) => (
+            <Tab style={{width: 64, height: 44, position: 'relative'}} key={tab.value} value={tab.value}> 
+              {tab.label} 
+            </Tab>
+          ))}
+        </TabList>
+      </div>
     </div>
   );
 };
