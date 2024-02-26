@@ -5,6 +5,7 @@ import { FluentProvider, webLightTheme } from "@fluentui/react-components";
 import { createRoot } from "react-dom/client";
 import { Tab, TabList, Input } from "@fluentui/react-components";
 import { Button } from "@fluentui/react-components";
+import { ChevronRight24Filled, DocumentDismiss24Regular, BookQuestionMark24Regular, Question24Regular} from '@fluentui/react-icons';
 
 const useStyles = makeStyles({
   root: {
@@ -74,7 +75,7 @@ const InstructionPage = ({title}) => (
 );
 
 const ResultItem = ({title, state, date}) => (
-  <div style={{ width: '100%', height: '100%', background: 'white', borderRadius: 4, justifyContent: 'flex-start', alignItems: 'center', gap: 9, display: 'inline-flex' }}>
+  <div style={{alignSelf: 'stretch', background: 'white', borderRadius: 4, justifyContent: 'space-between', alignItems: 'center', display: 'inline-flex'}}>
     <div style={{ paddingLeft: 6, paddingRight: 4, justifyContent: 'flex-start', alignItems: 'center', gap: 4, display: 'flex' }}>
       <div style={{ paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'center', gap: 10, display: 'flex' }}>
         <div style={{ color: '#424242', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '700', textDecoration: 'underline', wordWrap: 'break-word' }}>{title}</div>
@@ -85,23 +86,15 @@ const ResultItem = ({title, state, date}) => (
         <div style={{ textAlign: 'right', color: '#616161', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '400', wordWrap: 'break-word' }}>{state}  •  {date}</div>
       </div>
       <div style={{ justifyContent: 'flex-end', alignItems: 'center', display: 'flex' }}>
-        <div style={{ width: 16, height: 16, position: 'relative' }}>
-          <div style={{ width: 6, height: 12, left: 5, top: 2, position: 'absolute', background: '#616161' }}></div>
-        </div>
-        <div style={{ width: 16, height: 16, position: 'relative' }}>
-          <div style={{ width: 13, height: 14, left: 1, top: 1, position: 'absolute', background: '#616161' }}></div>
-        </div>
-        <div style={{ width: 16, height: 16, position: 'relative' }}>
-          <div style={{ width: 6, height: 12, left: 5, top: 2, position: 'absolute', background: '#616161' }}></div>
-        </div>
-        <div style={{ width: 24, height: 0, transform: 'rotate(90deg)', transformOrigin: '0 0', border: '1px #D1D1D1 solid' }}></div>
-        <div style={{ width: 24, height: 32, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', display: 'inline-flex' }}>
-          <div style={{ alignSelf: 'stretch', flex: '1 1 0', paddingLeft: 4, paddingRight: 4, paddingTop: 6, paddingBottom: 6, borderRadius: 4, justifyContent: 'center', alignItems: 'center', display: 'inline-flex' }}>
-            <div style={{ width: 20, height: 20, position: 'relative' }}>
-              <div style={{ width: 6.50, height: 12, left: 7.50, top: 4, position: 'absolute', background: '#424242' }}></div>
-            </div>
-          </div>
-        </div>
+        <button  style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
+          <DocumentDismiss24Regular style={{width: 16, height: 16, position: 'relative'}}> </DocumentDismiss24Regular>
+        </button>
+        <button  style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
+          <BookQuestionMark24Regular style={{width: 16, height: 16, position: 'relative'}}> </BookQuestionMark24Regular>
+        </button>
+        <button  style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
+          <ChevronRight24Filled style={{width: 16, height: 16, position: 'relative'}}> </ChevronRight24Filled>
+        </button>
       </div>
     </div>
   </div>
@@ -109,14 +102,14 @@ const ResultItem = ({title, state, date}) => (
 
 const InsertButton = ({ count }) => (
   <div style={{ height: 27, paddingLeft: 12, paddingRight: 12, paddingTop: 5, paddingBottom: 5, background: '#0F6CBD', borderRadius: 4, overflow: 'hidden', justifyContent: 'center', alignItems: 'center', display: 'inline-flex' }}>
-    <div style={{ paddingBottom: 2, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex' }}>
+    <div style={{ paddingBottom: 2, justifyContent: 'flex-center', alignItems: 'flex-start', display: 'flex' }}>
       <div style={{ color: 'white', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '600', lineHeight: 20, wordWrap: 'break-word' }}>Insert ({count})</div>
     </div>
   </div>
 );
 
 const ResultsPage = () => (
-  <div>
+  <div style={{width: '100%', height: 'auto', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 14, display: 'inline-flex'}}> 
     <ResultItem title = "Lorem Ipsum" state = "TX" date="Jan 12, 2024"/>
     <ResultItem title = "Second Result" state = "TX" date="Jan 12, 2024"/>
     {/* Add more ResultItem components as needed */}
