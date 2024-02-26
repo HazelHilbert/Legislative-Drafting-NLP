@@ -1,6 +1,3 @@
-/* eslint-disable no-undef */
-/* eslint-disable @typescript-eslint/no-unused-vars */
-/* eslint-disable prettier/prettier */
 import * as React from "react";
 import { useState } from "react";
 import { makeStyles } from "@fluentui/react-components";
@@ -51,39 +48,83 @@ const Search = () => {
   };
 
   return (
-    <div style={{globalStyles, width: '100%', height: '100%', background: 'white', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 14, display: 'inline-flex'}}>
-      <div className="image">
-        <img src="../../assets/propylonFull.png" alt="Propylon Logo" />
-      </div>
-      {/* Search Bar */}
-      <div style={{ width: '100%', height: '100%', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 14, display: 'inline-flex' }}>
-        <div style={{ alignSelf: 'stretch', height: 32, borderRadius: 4, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex' }}>
-          <div style={{ alignSelf: 'stretch', paddingLeft: 10, paddingRight: 10, background: 'rgba(255, 255, 255, 0)', justifyContent: 'flex-start', alignItems: 'center', gap: 10, display: 'inline-flex' }}>
-            <div style={{ flex: '1 1 0', height: 32, justifyContent: 'flex-start', alignItems: 'center', display: 'flex' }}>
-              <Input appearance="underline" style={{flex: '1 1 0', height: 32, paddingTop: 5, paddingBottom: 7, paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex', color: '#707070', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '400', wordWrap: 'break-word' }} placeholder="Enter Bill ID" />
+    <div style={{width: '100%', height: '100%', background: 'white', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 28, display: 'inline-flex'}}>
+      <div style={{alignSelf: 'stretch', height: 90, paddingLeft: 14, paddingRight: 14, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 14, display: 'flex'}}>
+        <div style={{alignSelf: 'stretch', justifyContent: 'center', alignItems: 'flex-start', display: 'inline-flex'}}>
+            <div style={{width: 64, height: 44, position: 'relative'}}>
+                <div style={{width: 64, height: 44, left: 0, top: 0, position: 'absolute', background: 'white'}} />
+                <div style={{width: 64, height: 2, left: 0, top: 42, position: 'absolute', background: '#0078D7'}} />
+                <div style={{width: 56, left: 4, top: 24, position: 'absolute', textAlign: 'center', color: '#333333', fontSize: 12, fontFamily: 'Segoe UI', fontWeight: '700', wordWrap: 'break-word'}}>Search</div>
+                <div style={{width: 16, height: 16, left: 24, top: 8, position: 'absolute'}}>
+                    <div style={{width: 16, height: 16, left: 16, top: 0, position: 'absolute', transform: 'rotate(180deg)', transformOrigin: '0 0', background: '#0078D4'}}></div>
+                </div>
             </div>
-          </div>
-          <div style={{ width: 321, height: 1, background: '#575757' }} />
+            <div style={{width: 64, height: 44, position: 'relative'}}>
+                <div style={{width: 64, height: 44, left: 0, top: 0, position: 'absolute', background: 'white'}} />
+                <div style={{width: 56, left: 4, top: 24, position: 'absolute', textAlign: 'center', color: '#333333', fontSize: 12, fontFamily: 'Segoe UI', fontWeight: '400', wordWrap: 'break-word'}}>Result</div>
+                <div style={{width: 11, height: 16, left: 26, top: 8, position: 'absolute'}}>
+                    <div style={{width: 11, height: 16, left: 0, top: 0, position: 'absolute', background: '#0078D4'}}></div>
+                </div>
+            </div>
+            <div style={{width: 64, height: 44, position: 'relative'}}>
+                <div style={{width: 64, height: 44, left: 0, top: 0, position: 'absolute', background: 'white'}} />
+                <div style={{width: 56, left: 4, top: 24, position: 'absolute', textAlign: 'center', color: '#333333', fontSize: 12, fontFamily: 'Segoe UI', fontWeight: '400', wordWrap: 'break-word'}}>Filter</div>
+                <div style={{width: 16, height: 11, left: 24, top: 11, position: 'absolute'}}>
+                    <div style={{width: 16, height: 11, left: 0, top: 0, position: 'absolute', background: '#0078D4'}}></div>
+                </div>
+            </div>
+            <div style={{width: 64, height: 44, position: 'relative'}}>
+                <div style={{width: 64, height: 44, left: 0, top: 0, position: 'absolute', background: 'white'}} />
+                <div style={{width: 56, left: 4, top: 24, position: 'absolute', textAlign: 'center', color: '#333333', fontSize: 12, fontFamily: 'Segoe UI', fontWeight: '400', wordWrap: 'break-word'}}>Add</div>
+                <div style={{width: 16, height: 16, left: 24, top: 8, position: 'absolute'}}>
+                    <div style={{width: 16, height: 16, left: 0, top: 0, position: 'absolute', background: '#0078D4'}}></div>
+                </div>
+            </div>
+            <div style={{width: 64, height: 44, position: 'relative'}}>
+                <div style={{width: 64, height: 44, left: 0, top: 0, position: 'absolute', background: 'white'}} />
+                <div style={{width: 56, left: 4, top: 24, position: 'absolute', textAlign: 'center', color: '#333333', fontSize: 12, fontFamily: 'Segoe UI', fontWeight: '400', wordWrap: 'break-word'}}>Search</div>
+                <div style={{left: 24, top: 8, position: 'absolute', textAlign: 'center', color: '#0078D4', fontSize: 16, fontFamily: 'Fabric External MDL2 Assets', fontWeight: '400', wordWrap: 'break-word'}}></div>
+            </div>
+        </div>
+        <div style={{alignSelf: 'stretch', height: 32, borderRadius: 4, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex'}}>
+            <div style={{alignSelf: 'stretch', paddingLeft: 10, paddingRight: 10, background: 'rgba(255, 255, 255, 0)', justifyContent: 'flex-start', alignItems: 'center', gap: 10, display: 'inline-flex'}}>
+                <div style={{flex: '1 1 0', height: 32, justifyContent: 'flex-start', alignItems: 'center', display: 'flex'}}>
+                    <div style={{flex: '1 1 0', height: 32, paddingTop: 5, paddingBottom: 7, paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex'}}>
+                        <div style={{color: '#707070', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>Search</div>
+                    </div>
+                </div>
+            </div>
+            <div style={{width: 464, height: 1, background: '#575757'}} />
         </div>
       </div>
-      {/* Summary */}
-      <div style={{alignSelf: 'stretch', justifyContent: 'space-between', alignItems: 'center', display: 'inline-flex'}}>
-          <div style={{paddingLeft: 7, paddingRight: 7, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 14, display: 'inline-flex'}}>
-              <button style={{alignSelf: 'stretch', color: 'black', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '600', wordWrap: 'break-word'}}>
-                Summarize Text
-              </button>
-          </div>
-          <div style={{paddingLeft: 14, paddingRight: 14, justifyContent: 'flex-start', alignItems: 'flex-start', gap: 11, display: 'flex'}}>
-              <button  style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
-                <EditArrowBack24Regular style={{width: 16, height: 16, position: 'relative'}}> </EditArrowBack24Regular>
-              </button>
-              <button  style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
-                <DocumentOnePageMultiple24Regular style={{width: 16, height: 16, position: 'relative'}}> </DocumentOnePageMultiple24Regular>
-              </button>
-          </div>
-      </div>
-      <div style={{height: 120, paddingLeft: 7, paddingRight: 7, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 14, display: 'flex'}}>
-          <div style={{alignSelf: 'stretch', color: 'black', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '400', wordWrap: 'break-word'}}>dolor sit amet consectetur. Eu sagittis tempor lacus id. Tortor felis pellentesque elementum nunc pellentesque. Lorem dolor dictum habitant aliquam. Fermentum non praesent feugiat mollis <br/><br/></div>
+      <div style={{alignSelf: 'stretch', height: 383, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 26, display: 'flex'}}>
+        <div style={{alignSelf: 'stretch', height: 325, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 30, display: 'flex'}}>
+            <div style={{alignSelf: 'stretch', height: 141, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 21, display: 'flex'}}>
+                <img style={{width: 64, height: 64}} src="https://via.placeholder.com/64x64" />
+                <div style={{color: '#333333', fontSize: 42, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>Instructions</div>
+            </div>
+            <div style={{alignSelf: 'stretch', height: 154, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 33, display: 'flex'}}>
+                <div style={{alignSelf: 'stretch', textAlign: 'center', color: '#333333', fontSize: 21, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>Lorem ipsum dolor sit amet consectetur.</div>
+                <div style={{alignSelf: 'stretch', height: 93, paddingLeft: 48, paddingRight: 48, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 18, display: 'flex'}}>
+                    <div style={{justifyContent: 'flex-start', alignItems: 'flex-start', gap: 9, display: 'inline-flex'}}>
+                        <div style={{textAlign: 'center', color: 'black', fontSize: 18, fontFamily: 'Fabric External MDL2 Assets', fontWeight: '400', wordWrap: 'break-word'}}></div>
+                        <div style={{color: '#231F20', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>Lorem ipsum dolor sit amet</div>
+                    </div>
+                    <div style={{justifyContent: 'flex-start', alignItems: 'flex-start', gap: 9, display: 'inline-flex'}}>
+                        <div style={{textAlign: 'center', color: 'black', fontSize: 18, fontFamily: 'Fabric External MDL2 Assets', fontWeight: '400', wordWrap: 'break-word'}}></div>
+                        <div style={{color: '#231F20', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>Lorem ipsum dolor sit amet</div>
+                    </div>
+                    <div style={{justifyContent: 'flex-start', alignItems: 'flex-start', gap: 9, display: 'inline-flex'}}>
+                        <div style={{textAlign: 'center', color: 'black', fontSize: 18, fontFamily: 'Fabric External MDL2 Assets', fontWeight: '400', wordWrap: 'break-word'}}></div>
+                        <div style={{color: '#231F20', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>Lorem ipsum dolor sit amet</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style={{width: 120, height: 32, position: 'relative'}}>
+            <div style={{width: 120, height: 32, left: 0, top: 0, position: 'absolute', background: '#0078D4', boxShadow: '0px 2px 4px -0.75px rgba(0, 0, 0, 0.10)'}} />
+            <div style={{left: 11, top: 5, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '600', wordWrap: 'break-word'}}>Documentation</div>
+        </div>
       </div>
     </div>
   );
