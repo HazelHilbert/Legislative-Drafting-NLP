@@ -82,51 +82,47 @@ const ResultItem = ({ title, state, date }) => {
   };
 
   return (
-  <div>
-  <div style={{alignSelf: 'stretch', background: 'white', borderRadius: 4, justifyContent: 'space-between', alignItems: 'center', display: 'inline-flex'}}>
-    <div style={{ paddingLeft: 6, paddingRight: 4, justifyContent: 'flex-start', alignItems: 'center', gap: 4, display: 'flex' }}>
-      <div style={{ paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'center', gap: 10, display: 'flex' }}>
-        <div style={{ color: '#424242', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '700', textDecoration: 'underline', wordWrap: 'break-word' }}>{title}</div>
+  <div style={{width: '100%', height: '100%', background: 'white', borderRadius: 4, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 7, display: 'inline-flex'}}>
+    <div style={{alignSelf: 'stretch', background: 'white', borderRadius: 4, justifyContent: 'space-between', alignItems: 'center', display: 'inline-flex'}}>
+      <div style={{ paddingLeft: 6, paddingRight: 4, justifyContent: 'flex-start', alignItems: 'center', gap: 4, display: 'flex' }}>
+        <div style={{ paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'center', gap: 10, display: 'flex' }}>
+          <div style={{ color: '#424242', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '700', textDecoration: 'underline', wordWrap: 'break-word' }}>{title}</div>
+        </div>
+      </div>
+      <div style={{ paddingLeft: 4, justifyContent: 'flex-end', alignItems: 'center', gap: 4, display: 'flex' }}>
+        <div style={{ width: 119, paddingLeft: 2, paddingRight: 4, justifyContent: 'flex-start', alignItems: 'center', gap: 10, display: 'flex' }}>
+          <div style={{ textAlign: 'right', color: '#616161', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '400', wordWrap: 'break-word' }}>{state}  •  {date}</div>
+        </div>
+        <div style={{ justifyContent: 'flex-end', alignItems: 'center', display: 'flex' }}>
+          <button  style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
+            <DocumentDismiss24Regular style={{width: 16, height: 16, position: 'relative'}}> </DocumentDismiss24Regular>
+          </button>
+          <button  onClick={handleChevronClick} style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
+            <BookQuestionMark24Regular style={{width: 16, height: 16, position: 'relative'}}> </BookQuestionMark24Regular>
+          </button>
+          <button style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
+            <ChevronRight24Filled style={{width: 16, height: 16, position: 'relative'}}> </ChevronRight24Filled>
+          </button>
+        </div>
       </div>
     </div>
-    <div style={{ paddingLeft: 4, justifyContent: 'flex-end', alignItems: 'center', gap: 4, display: 'flex' }}>
-      <div style={{ width: 119, paddingLeft: 2, paddingRight: 4, justifyContent: 'flex-start', alignItems: 'center', gap: 10, display: 'flex' }}>
-        <div style={{ textAlign: 'right', color: '#616161', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '400', wordWrap: 'break-word' }}>{state}  •  {date}</div>
+    {showSummary && (
+      <div style={{ alignSelf: 'stretch', paddingBottom: 7, paddingLeft: 7, paddingRight: 7, justifyContent: 'flex-start', alignItems: 'flex-start', gap: 10, display: 'inline-flex' }}>
+        <div style={{ flex: '1 1 0', height: 48, color: '#333333', fontSize: 12, fontFamily: 'Segoe UI', fontWeight: '400', wordWrap: 'break-word' }}>
+          Lorem ipsum dolor sit amet consectetur. Turpis eu mi quis nunc scelerisque non pulvinar sit lacus. Pellentesque ultrices vel fusce laoreet purus blandit.
+        </div>
       </div>
-      <div style={{ justifyContent: 'flex-end', alignItems: 'center', display: 'flex' }}>
-        <button  style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
-          <DocumentDismiss24Regular style={{width: 16, height: 16, position: 'relative'}}> </DocumentDismiss24Regular>
-        </button>
-        <button  onClick={handleChevronClick} style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
-          <BookQuestionMark24Regular style={{width: 16, height: 16, position: 'relative'}}> </BookQuestionMark24Regular>
-        </button>
-        <button style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
-          <ChevronRight24Filled style={{width: 16, height: 16, position: 'relative'}}> </ChevronRight24Filled>
-        </button>
-      </div>
-    </div>
-  </div>
-  {showSummary && (
-    <div style={{ alignSelf: 'stretch', paddingBottom: 7, paddingLeft: 7, paddingRight: 7, justifyContent: 'flex-start', alignItems: 'flex-start', gap: 10, display: 'inline-flex' }}>
-      <div style={{ flex: '1 1 0', height: 48, color: '#333333', fontSize: 12, fontFamily: 'Segoe UI', fontWeight: '400', wordWrap: 'break-word' }}>
-        Lorem ipsum dolor sit amet consectetur. Turpis eu mi quis nunc scelerisque non pulvinar sit lacus. Pellentesque ultrices vel fusce laoreet purus blandit.
-      </div>
-    </div>
-  )}
+    )}
   </div>
   );
 };
 
 const InsertButton = ({ count }) => (
-  <div style={{ height: 27, paddingLeft: 12, paddingRight: 12, paddingTop: 5, paddingBottom: 5, background: '#0F6CBD', borderRadius: 4, overflow: 'hidden', justifyContent: 'center', alignItems: 'center', display: 'inline-flex' }}>
-    <div style={{ paddingBottom: 2, justifyContent: 'flex-center', alignItems: 'flex-start', display: 'flex' }}>
-      <div style={{ color: 'white', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '600', lineHeight: 20, wordWrap: 'break-word' }}>Insert ({count})</div>
-    </div>
-  </div>
+  <Button appearance="primary" style={{marginLeft: 12, marginRight: 12, marginTop: 14, marginBottom: 5, overflow: 'hidden'}}>Insert ({count})</Button>
 );
 
 const ResultsPage = () => (
-  <div style={{width: '100%', height: '100%', background: 'white', borderRadius: 4, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 7, display: 'inline-flex'}}> 
+  <div style={{width: '100%', height: '100%', background: 'white', borderRadius: 4, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 7, display: 'inline-flex'}}> 
     <ResultItem title = "Lorem Ipsum" state = "TX" date="Jan 12, 2024"/>
     <ResultItem title = "Second Result" state = "TX" date="Jan 12, 2024"/>
     {/* Add more ResultItem components as needed */}
