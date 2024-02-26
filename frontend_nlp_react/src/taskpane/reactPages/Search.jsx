@@ -30,6 +30,7 @@ const Search = () => {
 
   const [searchText, setSearchText] = useState("");
   const [searchOutput, setSearchOutput] = useState("");
+  const [selectedTab, setSelectedTab] = useState("tab1"); // Add state for the selected tab
 
   const handleClick = () => {
     fetch("http://127.0.0.1:5000/billText/" + searchText)
@@ -60,7 +61,7 @@ const Search = () => {
     <div className={styles.root} style={{width: '100%', height: '100%', background: 'white', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 28, display: 'inline-flex'}}>
       <div style={{alignSelf: 'stretch', height: 90, paddingLeft: 14, paddingRight: 14, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 14, display: 'flex'}}>
         {/* Top Navigation */}
-        <TabList style={{alignSelf: 'stretch', justifyContent: 'center', alignItems: 'flex-start', display: 'inline-flex'}} selectedValue={tabs[0].value} onTabSelect={(event, data) => {}}>
+        <TabList style={{alignSelf: 'stretch', justifyContent: 'center', alignItems: 'flex-start', display: 'inline-flex'}} selectedValue={selectedTab} onTabSelect={(event, data) => setSelectedTab(data.value)}>
           {tabs.map((tab) => (
             <Tab style={{width: 64, height: 44, position: 'relative'}} key={tab.value} value={tab.value}> 
               {tab.label} 
