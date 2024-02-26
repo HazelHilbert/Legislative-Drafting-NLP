@@ -14,6 +14,14 @@ const useStyles = makeStyles({
     padding: "50px 20px",  // Using direct property instead of shorthands
     rowGap: "20px",
   },
+  tabListContainer: {
+    alignSelf: 'stretch',
+    justifyContent: 'center',
+    alignItems: 'flex-start',
+    display: 'inline-flex',
+    flexWrap: 'wrap', // Allow flex items to wrap to the next line
+    gap: '8px', // Adjust the gap between tabs
+  },
 });
 
 const globalStyles = {
@@ -61,7 +69,7 @@ const Search = () => {
     <div className={styles.root} style={{width: '100%', height: '100%', background: 'white', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 28, display: 'inline-flex'}}>
       <div style={{alignSelf: 'stretch', height: 90, paddingLeft: 14, paddingRight: 14, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 14, display: 'flex'}}>
         {/* Top Navigation */}
-        <TabList style={{alignSelf: 'stretch', justifyContent: 'center', alignItems: 'flex-start', display: 'inline-flex'}} selectedValue={selectedTab} onTabSelect={(event, data) => setSelectedTab(data.value)}>
+        <TabList className={styles.tabListContainer} selectedValue={selectedTab} onTabSelect={(event, data) => setSelectedTab(data.value)}>
           {tabs.map((tab) => (
             <Tab style={{width: 64, height: 44, position: 'relative'}} key={tab.value} value={tab.value}> 
               {tab.label} 
