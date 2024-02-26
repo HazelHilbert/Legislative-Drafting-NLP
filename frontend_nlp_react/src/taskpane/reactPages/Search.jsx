@@ -68,15 +68,17 @@ const Search = () => {
   return (  
     <div className={styles.root} style={{width: '100%', height: '100%', background: 'white', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 28, display: 'inline-flex'}}>
       {/* Top Navigation */}
+      
       <div style={{alignSelf: 'stretch', height: 90, paddingLeft: 14, paddingRight: 14, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 14, display: 'flex'}}>
         {/* Top Navigation */}
-        <TabList className={styles.tabListContainer} selectedValue={selectedTab} onTabSelect={(event, data) => setSelectedTab(data.value)}>
+        <TabList style={{width: 'auto'}} className={styles.tabListContainer} selectedValue={selectedTab} onTabSelect={(event, data) => setSelectedTab(data.value)}>
           {tabs.map((tab) => (
-            <Tab style={{width: 64, height: 44, position: 'relative'}} key={tab.value} value={tab.value}> 
+            <Tab style={{width: 'auto', height: 44, position: 'relative'}} key={tab.value} value={tab.value}> 
               {tab.label} 
             </Tab>
           ))}
         </TabList>
+
         {/* Search Bar */}
         <div style={{ width: '100%', height: '100%', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 14, display: 'inline-flex' }}>
           <div style={{ alignSelf: 'stretch', height: 32, borderRadius: 4, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex' }}>
@@ -89,52 +91,45 @@ const Search = () => {
           </div>
         </div>
       </div>
-            
+      
       {/* Default Instruction Page */}
-      <div style={{alignSelf: 'stretch', height: 383, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 26, display: 'flex'}}>
-        <div style={{alignSelf: 'stretch', height: 325, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 30, display: 'flex'}}>
-          <div style={{alignSelf: 'stretch', height: 141, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 21, display: 'flex'}}>
-              {/* <img  src="https://via.placeholder.com/64x64" /> */}
-              <img src="../../assets/propylonFull.png" alt="Propylon Logo" style={{ maxWidth: '100%', width: 64, height: 'auto' }}/>
-              <div style={{color: '#333333', fontSize: 42, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>Instructions</div>
-          </div>         
-          <div style={{alignSelf: 'stretch', height: 154, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 33, display: 'flex'}}>
-            <div style={{alignSelf: 'stretch', textAlign: 'center', color: '#333333', fontSize: 21, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>
-              Lorem ipsum dolor sit amet consectetur.
+      <div style={{width: '100%', height: '100%', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 26, display: 'inline-flex'}}>
+        <div style={{alignSelf: 'stretch', height: 'auto', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 28, display: 'flex'}}>
+            <div style={{alignSelf: 'stretch', height: 'auto', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 21, display: 'flex'}}>
+                <img style={{width: 'auto', height: 32}} src="../../assets/propylonFull.png" />
+                <div style={{color: '#333333', fontSize: 42, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>
+                  Instructions
+                </div>
             </div>
-            <div style={{alignSelf: 'stretch', height: 93, paddingLeft: 48, paddingRight: 48, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 18, display: 'flex'}}>
-              <div style={{justifyContent: 'flex-start', alignItems: 'flex-start', gap: 9, display: 'inline-flex'}}>
-                <div style={{textAlign: 'center', color: 'black', fontSize: 18, fontFamily: 'Fabric External MDL2 Assets', fontWeight: '400', wordWrap: 'break-word'}}>
-                  X
-                </div>         
-                <div style={{color: '#231F20', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>
-                  Lorem ipsum dolor sit amet
+            <div style={{alignSelf: 'stretch', height: 'auto', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 33, display: 'flex'}}>
+                <div style={{alignSelf: 'stretch', textAlign: 'center', color: '#333333', fontSize: 21, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>
+                  Propylon Legislation Search Tool. 
                 </div>
-              </div>
-              <div style={{justifyContent: 'flex-start', alignItems: 'flex-start', gap: 9, display: 'inline-flex'}}>
-                <div style={{textAlign: 'center', color: 'black', fontSize: 18, fontFamily: 'Fabric External MDL2 Assets', fontWeight: '400', wordWrap: 'break-word'}}>
-                  X
-                </div>    
-                <div style={{color: '#231F20', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>
-                  Lorem ipsum dolor sit amet
-                </div> 
-              </div>  
-              <div style={{justifyContent: 'flex-start', alignItems: 'flex-start', gap: 9, display: 'inline-flex'}}>
-                <div style={{textAlign: 'center', color: 'black', fontSize: 18, fontFamily: 'Fabric External MDL2 Assets', fontWeight: '400', wordWrap: 'break-word'}}>
-                  X
+                <div style={{alignSelf: 'stretch', height: 93, paddingLeft: 48, paddingRight: 48, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 18, display: 'flex'}}>
+                    <div style={{justifyContent: 'flex-start', alignItems: 'flex-start', gap: 9, display: 'inline-flex'}}>
+                        <div style={{textAlign: 'center', color: 'black', fontSize: 18, fontFamily: 'Fabric External MDL2 Assets', fontWeight: '400', wordWrap: 'break-word'}}></div>
+                        <div style={{color: '#231F20', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>
+                          Bills
+                        </div>
+                    </div>
+                    <div style={{justifyContent: 'flex-start', alignItems: 'flex-start', gap: 9, display: 'inline-flex'}}>
+                        <div style={{textAlign: 'center', color: 'black', fontSize: 18, fontFamily: 'Fabric External MDL2 Assets', fontWeight: '400', wordWrap: 'break-word'}}></div>
+                        <div style={{color: '#231F20', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>
+                          Legislations
+                        </div>
+                    </div>
+                    <div style={{justifyContent: 'flex-start', alignItems: 'flex-start', gap: 9, display: 'inline-flex'}}>
+                        <div style={{textAlign: 'center', color: 'black', fontSize: 18, fontFamily: 'Fabric External MDL2 Assets', fontWeight: '400', wordWrap: 'break-word'}}></div>
+                        <div style={{color: '#231F20', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>
+                          Citations
+                        </div>
+                    </div>
                 </div>
-                <div style={{color: '#231F20', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>
-                  Lorem ipsum dolor sit amet
-                </div>
-              </div>
             </div>
-          </div>
         </div>
         <div style={{width: 120, height: 32, position: 'relative'}}>
-          <div style={{width: 120, height: 32, left: 0, top: 0, position: 'absolute', background: '#0078D4', boxShadow: '0px 2px 4px -0.75px rgba(0, 0, 0, 0.10)'}} />
-          <div style={{left: 11, top: 5, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '600', wordWrap: 'break-word'}}>
-            Documentation
-          </div>
+            <div style={{width: 120, height: 32, left: 0, top: 0, position: 'absolute', background: '#0078D4', boxShadow: '0px 2px 4px -0.75px rgba(0, 0, 0, 0.10)'}} />
+            <div style={{left: 11, top: 5, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '600', wordWrap: 'break-word'}}>Documentation</div>
         </div>
       </div>
     </div>

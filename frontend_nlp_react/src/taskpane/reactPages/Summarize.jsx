@@ -77,7 +77,7 @@ const Summarize = () => {
       <div style={{globalStyles, width: '100%', height: '100%', background: 'white', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 14, display: 'inline-flex'}}>
         {/* Propylon Logo */}
         <div className="image">
-          <img src="../../assets/propylonFull.png" alt="Propylon Logo" style={{ maxWidth: '100%', height: 'auto' }}/>
+          <img src="../../assets/propylonFull.png" alt="Propylon Logo" style={{ maxWidth: '100%', width: 128, height: 'auto' }}/>
         </div>
         {/* Search Bar */}
         <div style={{ width: '100%', height: '100%', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 14, display: 'inline-flex' }}>
