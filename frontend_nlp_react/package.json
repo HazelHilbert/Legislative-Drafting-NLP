@@ -26,7 +26,8 @@
     "watch": "webpack --mode development --watch"
   },
   "dependencies": {
-    "@fluentui/react-components": "^9.30.4",
+    "@fluentui/react": "^8.115.6",
+    "@fluentui/react-components": "^9.46.5",
     "@fluentui/react-icons": "^2.0.214",
     "babel-preset-es2015": "^6.24.1",
     "core-js": "^3.9.1",

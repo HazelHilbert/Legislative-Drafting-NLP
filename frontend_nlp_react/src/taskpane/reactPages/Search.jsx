@@ -7,12 +7,44 @@ import { Input } from "@fluentui/react-components";
 import { FluentProvider, webLightTheme } from "@fluentui/react-components";
 import { createRoot } from "react-dom/client";
 
+import {
+  shorthands,
+  Tab,
+  TabList,
+} from "@fluentui/react-components";
+// import type { TabListProps } from "@fluentui/react-components";
 
 const useStyles = makeStyles({
   root: {
-    minHeight: "100vh",
+    alignItems: "flex-start",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    ...shorthands.padding("50px", "20px"),
+    rowGap: "20px",
   },
 });
+
+export const Default = (props) => {
+  const styles = useStyles();
+
+  return (
+    <div className={styles.root}>
+      <h1>Hellow World</h1>
+      <TabList {...props}>
+        <Tab value="tab1">First Tab</Tab>
+        <Tab value="tab2">Second Tab</Tab>
+        <Tab value="tab3">Third Tab</Tab>
+        <Tab value="tab4">Fourth Tab</Tab>
+      </TabList>
+    </div>
+  );
+};
+// const useStyles = makeStyles({
+//   root: {
+//     minHeight: "100vh",
+//   },
+// });
 
 const globalStyles = {
   color: '#707070',
@@ -48,9 +80,31 @@ const Search = () => {
   };
 
   return (
-    <div style={{width: '100%', height: '100%', background: 'white', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 28, display: 'inline-flex'}}>
-      <div style={{alignSelf: 'stretch', height: 90, paddingLeft: 14, paddingRight: 14, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 14, display: 'flex'}}>
-        {/* <div style={{alignSelf: 'stretch', justifyContent: 'center', alignItems: 'flex-start', display: 'inline-flex'}}>
+    <TabList {...props}>
+        <Tab value="tab1">First Tab</Tab>
+        <Tab value="tab2">Second Tab</Tab>
+        <Tab value="tab3">Third Tab</Tab>
+        <Tab value="tab4">Fourth Tab</Tab>
+      </TabList>
+  );
+};
+
+const searchTitle = "Propylon Legislation Search";
+const searchRootElement = document.getElementById("search-root");
+const searchRoot = createRoot(searchRootElement);
+
+Office.onReady(() => {
+  searchRoot.render(
+    <FluentProvider theme={webLightTheme}>
+      <Search title={searchTitle} />
+    </FluentProvider>
+  );
+});
+
+
+{/* <div style={{width: '100%', height: '100%', background: 'white', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 28, display: 'inline-flex'}}>
+    <div style={{alignSelf: 'stretch', height: 90, paddingLeft: 14, paddingRight: 14, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 14, display: 'flex'}}>
+        <div style={{alignSelf: 'stretch', justifyContent: 'center', alignItems: 'flex-start', display: 'inline-flex'}}>
             <div style={{width: 64, height: 44, position: 'relative'}}>
                 <div style={{width: 64, height: 44, left: 0, top: 0, position: 'absolute', background: 'white'}} />
                 <div style={{width: 64, height: 2, left: 0, top: 42, position: 'absolute', background: '#0078D7'}} />
@@ -85,31 +139,7 @@ const Search = () => {
                 <div style={{width: 56, left: 4, top: 24, position: 'absolute', textAlign: 'center', color: '#333333', fontSize: 12, fontFamily: 'Segoe UI', fontWeight: '400', wordWrap: 'break-word'}}>Search</div>
                 <div style={{left: 24, top: 8, position: 'absolute', textAlign: 'center', color: '#0078D4', fontSize: 16, fontFamily: 'Fabric External MDL2 Assets', fontWeight: '400', wordWrap: 'break-word'}}></div>
             </div>
-        </div> */}
-        <TabList selectedValue={selectedTabValue} onTabSelect={onTabSelect}>
-          <Tab id="generalTab" value="general">
-            General
-          </Tab>
-          <Tab id="appearanceTab" value="appearance">
-            Appearance
-          </Tab>
-          <Tab
-            id="soundsTab"
-            value="sounds"
-            icon={<MusicNote1Filled />}
-            aria-label="Sounds"
-          />
-          <Tab id="advancedTab" value="advanced" disabled>
-            Advanced
-          </Tab>
-          <Tab id="aboutTab" icon={<InfoRegular />} value="about">
-            About
-          </Tab>
-        </TabList>
-        {selectedTabValue === "general" && <GeneralPanel />}
-        {selectedTabValue === "appearance" && <AppearancePanel />}
-        {selectedTabValue === "sounds" && <SoundsPanel />}
-        {selectedTabValue === "about" && <AboutPanel />}
+        </div>
         <div style={{alignSelf: 'stretch', height: 32, borderRadius: 4, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex'}}>
             <div style={{alignSelf: 'stretch', paddingLeft: 10, paddingRight: 10, background: 'rgba(255, 255, 255, 0)', justifyContent: 'flex-start', alignItems: 'center', gap: 10, display: 'inline-flex'}}>
                 <div style={{flex: '1 1 0', height: 32, justifyContent: 'flex-start', alignItems: 'center', display: 'flex'}}>
@@ -120,8 +150,8 @@ const Search = () => {
             </div>
             <div style={{width: 464, height: 1, background: '#575757'}} />
         </div>
-      </div>
-      <div style={{alignSelf: 'stretch', height: 383, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 26, display: 'flex'}}>
+    </div>
+    <div style={{alignSelf: 'stretch', height: 383, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 26, display: 'flex'}}>
         <div style={{alignSelf: 'stretch', height: 325, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 30, display: 'flex'}}>
             <div style={{alignSelf: 'stretch', height: 141, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 21, display: 'flex'}}>
                 <img style={{width: 64, height: 64}} src="https://via.placeholder.com/64x64" />
@@ -149,19 +179,5 @@ const Search = () => {
             <div style={{width: 120, height: 32, left: 0, top: 0, position: 'absolute', background: '#0078D4', boxShadow: '0px 2px 4px -0.75px rgba(0, 0, 0, 0.10)'}} />
             <div style={{left: 11, top: 5, position: 'absolute', textAlign: 'center', color: 'white', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '600', wordWrap: 'break-word'}}>Documentation</div>
         </div>
-      </div>
     </div>
-  );
-};
-
-const searchTitle = "Propylon Legislation Search";
-const searchRootElement = document.getElementById("search-root");
-const searchRoot = createRoot(searchRootElement);
-
-Office.onReady(() => {
-  searchRoot.render(
-    <FluentProvider theme={webLightTheme}>
-      <Search title={searchTitle} />
-    </FluentProvider>
-  );
-});
+</div> */}
