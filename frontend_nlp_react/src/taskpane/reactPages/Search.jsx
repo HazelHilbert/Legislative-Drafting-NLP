@@ -116,11 +116,9 @@ const ResultItem = ({ title, state, date }) => {
   </div>
   );
 };
-
 const InsertButton = ({ count }) => (
   <Button appearance="primary" style={{marginLeft: 12, marginRight: 12, marginTop: 14, marginBottom: 5, overflow: 'hidden'}}>Insert ({count})</Button>
 );
-
 const ResultsPage = () => (
   <div style={{width: '100%', height: '100%', background: 'white', borderRadius: 4, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 7, display: 'inline-flex'}}> 
     <ResultItem title = "Lorem Ipsum" state = "TX" date="Jan 12, 2024"/>
@@ -198,6 +196,9 @@ const Search = () => {
       )}
       {selectedTab === "tab2" && (
         <ResultsPage/>
+      )}
+      {selectedTab === "tab3" && (
+        <FiltersPage/>
       )}
     </div>
   );
