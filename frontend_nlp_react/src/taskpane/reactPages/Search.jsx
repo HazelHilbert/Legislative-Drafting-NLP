@@ -50,7 +50,7 @@ const Search = () => {
   return (
     <div style={{width: '100%', height: '100%', background: 'white', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 28, display: 'inline-flex'}}>
       <div style={{alignSelf: 'stretch', height: 90, paddingLeft: 14, paddingRight: 14, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 14, display: 'flex'}}>
-        <div style={{alignSelf: 'stretch', justifyContent: 'center', alignItems: 'flex-start', display: 'inline-flex'}}>
+        {/* <div style={{alignSelf: 'stretch', justifyContent: 'center', alignItems: 'flex-start', display: 'inline-flex'}}>
             <div style={{width: 64, height: 44, position: 'relative'}}>
                 <div style={{width: 64, height: 44, left: 0, top: 0, position: 'absolute', background: 'white'}} />
                 <div style={{width: 64, height: 2, left: 0, top: 42, position: 'absolute', background: '#0078D7'}} />
@@ -85,7 +85,31 @@ const Search = () => {
                 <div style={{width: 56, left: 4, top: 24, position: 'absolute', textAlign: 'center', color: '#333333', fontSize: 12, fontFamily: 'Segoe UI', fontWeight: '400', wordWrap: 'break-word'}}>Search</div>
                 <div style={{left: 24, top: 8, position: 'absolute', textAlign: 'center', color: '#0078D4', fontSize: 16, fontFamily: 'Fabric External MDL2 Assets', fontWeight: '400', wordWrap: 'break-word'}}></div>
             </div>
-        </div>
+        </div> */}
+        <TabList selectedValue={selectedTabValue} onTabSelect={onTabSelect}>
+          <Tab id="generalTab" value="general">
+            General
+          </Tab>
+          <Tab id="appearanceTab" value="appearance">
+            Appearance
+          </Tab>
+          <Tab
+            id="soundsTab"
+            value="sounds"
+            icon={<MusicNote1Filled />}
+            aria-label="Sounds"
+          />
+          <Tab id="advancedTab" value="advanced" disabled>
+            Advanced
+          </Tab>
+          <Tab id="aboutTab" icon={<InfoRegular />} value="about">
+            About
+          </Tab>
+        </TabList>
+        {selectedTabValue === "general" && <GeneralPanel />}
+        {selectedTabValue === "appearance" && <AppearancePanel />}
+        {selectedTabValue === "sounds" && <SoundsPanel />}
+        {selectedTabValue === "about" && <AboutPanel />}
         <div style={{alignSelf: 'stretch', height: 32, borderRadius: 4, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex'}}>
             <div style={{alignSelf: 'stretch', paddingLeft: 10, paddingRight: 10, background: 'rgba(255, 255, 255, 0)', justifyContent: 'flex-start', alignItems: 'center', gap: 10, display: 'inline-flex'}}>
                 <div style={{flex: '1 1 0', height: 32, justifyContent: 'flex-start', alignItems: 'center', display: 'flex'}}>
