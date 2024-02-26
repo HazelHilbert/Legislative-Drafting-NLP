@@ -6,6 +6,7 @@ import { createRoot } from "react-dom/client";
 import { Tab, TabList, Input } from "@fluentui/react-components";
 import { Button } from "@fluentui/react-components";
 import { ChevronRight24Filled, DocumentDismiss24Regular, BookQuestionMark24Regular, Question24Regular} from '@fluentui/react-icons';
+import { Checkbox, Dropdown, Calendar, Text } from '@fluentui/react';
 
 const useStyles = makeStyles({
   root: {
@@ -128,6 +129,64 @@ const ResultsPage = () => (
   </div>
 );
 
+const FiltersPage = () => {
+  const legislativeDocumentTypes = [
+    { key: 'type1', text: 'Type 1' },
+    { key: 'type2', text: 'Type 2' },
+    { key: 'type3', text: 'Type 3' },
+    // Add more document types as needed
+  ];
+
+  const usStates = [
+    { key: 'alabama', text: 'Alabama' },
+    { key: 'alaska', text: 'Alaska' },
+    { key: 'arizona', text: 'Arizona' },
+    // Add more US states as needed
+  ];
+
+  const onCheckboxChange = (ev, isChecked) => {
+    // Handle checkbox change
+  };
+
+  const onDropdownChange = (event, option, index) => {
+    // Handle dropdown change
+  };
+
+  const onDateSelect = (date) => {
+    // Handle date selection
+  };
+
+  return (
+    <div>
+      <div>
+        <h2>Legislative Document Types</h2>
+        {legislativeDocumentTypes.map((type) => (
+          <Checkbox
+            key={type.key}
+            label={type.text}
+            onChange={onCheckboxChange}
+          />
+        ))}
+      </div>
+
+      <div>
+        <h2>US State</h2>
+        <Dropdown
+          placeholder="Select a state"
+          options={usStates}
+          onChange={onDropdownChange}
+        />
+      </div>
+
+      <div>
+        <h2>Effective Date</h2>
+        <Calendar onSelectDate={onDateSelect} />
+      </div>
+    </div>
+  );
+};
+
+
 
 const Search = () => {
   const styles = useStyles();
@@ -168,7 +227,7 @@ const Search = () => {
   return (  
     <div className={styles.root} style={{alignSelf: 'stretch', width: '100%', height: '100%', background: 'white', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 28, display: 'inline-flex'}}>
       {/* Top Navigation */}
-      <div style={{alignSelf: 'stretch', height: 90, paddingLeft: 14, paddingRight: 14, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 14, display: 'flex'}}>
+      <div style={{alignSelf: 'stretch', height: 90, paddingLeft: 14, paddingRight: 14, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 0, display: 'flex'}}>
         {/* Top Navigation */}
         <TabList style={{width: 'auto'}} className={styles.tabListContainer} selectedValue={selectedTab} onTabSelect={(event, data) => setSelectedTab(data.value)}>
           {tabs.map((tab) => (
@@ -199,6 +258,14 @@ const Search = () => {
       )}
       {selectedTab === "tab3" && (
         <FiltersPage/>
+      )}
+      {selectedTab === "tab4" && (
+        // <AddPage/>
+        <h1>Add</h1>
+      )}
+      {selectedTab === "tab5" && (
+        // <AddPage/>
+        <h1>Settings</h1>
       )}
     </div>
   );
