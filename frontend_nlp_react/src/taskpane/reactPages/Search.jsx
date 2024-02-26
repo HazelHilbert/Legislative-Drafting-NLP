@@ -74,7 +74,15 @@ const InstructionPage = ({title}) => (
       </div>
 );
 
-const ResultItem = ({title, state, date}) => (
+const ResultItem = ({ title, state, date }) => {
+  const [showSummary, setShowSummary] = React.useState(false);
+
+  const handleChevronClick = () => {
+    setShowSummary(!showSummary);
+  };
+
+  return (
+  <div>
   <div style={{alignSelf: 'stretch', background: 'white', borderRadius: 4, justifyContent: 'space-between', alignItems: 'center', display: 'inline-flex'}}>
     <div style={{ paddingLeft: 6, paddingRight: 4, justifyContent: 'flex-start', alignItems: 'center', gap: 4, display: 'flex' }}>
       <div style={{ paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'center', gap: 10, display: 'flex' }}>
@@ -89,16 +97,25 @@ const ResultItem = ({title, state, date}) => (
         <button  style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
           <DocumentDismiss24Regular style={{width: 16, height: 16, position: 'relative'}}> </DocumentDismiss24Regular>
         </button>
-        <button  style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
+        <button  onClick={handleChevronClick} style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
           <BookQuestionMark24Regular style={{width: 16, height: 16, position: 'relative'}}> </BookQuestionMark24Regular>
         </button>
-        <button  style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
+        <button style={{ border: 'none', background: 'none', cursor: 'pointer' }}>
           <ChevronRight24Filled style={{width: 16, height: 16, position: 'relative'}}> </ChevronRight24Filled>
         </button>
       </div>
     </div>
   </div>
-);
+  {showSummary && (
+    <div style={{ alignSelf: 'stretch', paddingBottom: 7, paddingLeft: 7, paddingRight: 7, justifyContent: 'flex-start', alignItems: 'flex-start', gap: 10, display: 'inline-flex' }}>
+      <div style={{ flex: '1 1 0', height: 48, color: '#333333', fontSize: 12, fontFamily: 'Segoe UI', fontWeight: '400', wordWrap: 'break-word' }}>
+        Lorem ipsum dolor sit amet consectetur. Turpis eu mi quis nunc scelerisque non pulvinar sit lacus. Pellentesque ultrices vel fusce laoreet purus blandit.
+      </div>
+    </div>
+  )}
+  </div>
+  );
+};
 
 const InsertButton = ({ count }) => (
   <div style={{ height: 27, paddingLeft: 12, paddingRight: 12, paddingTop: 5, paddingBottom: 5, background: '#0F6CBD', borderRadius: 4, overflow: 'hidden', justifyContent: 'center', alignItems: 'center', display: 'inline-flex' }}>
@@ -109,7 +126,7 @@ const InsertButton = ({ count }) => (
 );
 
 const ResultsPage = () => (
-  <div style={{width: '100%', height: 'auto', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 14, display: 'inline-flex'}}> 
+  <div style={{width: '100%', height: '100%', background: 'white', borderRadius: 4, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 7, display: 'inline-flex'}}> 
     <ResultItem title = "Lorem Ipsum" state = "TX" date="Jan 12, 2024"/>
     <ResultItem title = "Second Result" state = "TX" date="Jan 12, 2024"/>
     {/* Add more ResultItem components as needed */}
