@@ -3,7 +3,7 @@ import { useState } from "react";
 import { makeStyles } from "@fluentui/react-components";
 import { FluentProvider, webLightTheme } from "@fluentui/react-components";
 import { createRoot } from "react-dom/client";
-import { Tab, TabList } from "@fluentui/react-components";
+import { Tab, TabList, Input } from "@fluentui/react-components";
 
 const useStyles = makeStyles({
   root: {
@@ -76,6 +76,17 @@ const Search = () => {
             </Tab>
           ))}
         </TabList>
+
+        <div style={{ width: '100%', height: '100%', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 14, display: 'inline-flex' }}>
+          <div style={{ alignSelf: 'stretch', height: 32, borderRadius: 4, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex' }}>
+            <div style={{ alignSelf: 'stretch', paddingLeft: 10, paddingRight: 10, background: 'rgba(255, 255, 255, 0)', justifyContent: 'flex-start', alignItems: 'center', gap: 10, display: 'inline-flex' }}>
+              <div style={{ flex: '1 1 0', height: 32, justifyContent: 'flex-start', alignItems: 'center', display: 'flex' }}>
+                <Input appearance="underline" style={{flex: '1 1 0', height: 32, paddingTop: 5, paddingBottom: 7, paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex', color: '#707070', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '400', wordWrap: 'break-word' }} placeholder="Search" />
+              </div>
+            </div>
+            <div style={{ width: 321, height: 1, background: '#575757' }} />
+          </div>
+        </div>
       </div>
     </div>
   );
