@@ -34,6 +34,97 @@ const globalStyles = {
   wordWrap: 'break-word',
 };
 
+const InstructionPage = ({title}) => (
+  <div style={{width: '100%', height: '100%', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 26, display: 'inline-flex'}}>
+        <div style={{alignSelf: 'stretch', height: 'auto', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 28, display: 'flex'}}>
+            <div style={{alignSelf: 'stretch', height: 'auto', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 21, display: 'flex'}}>
+                <img style={{width: 'auto', height: 32}} src="../../assets/propylonFull.png" />
+                <div style={{color: '#333333', fontSize: 42, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>
+                  {title}
+                </div>
+            </div>
+            <div style={{alignSelf: 'stretch', height: 'auto', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 33, display: 'flex'}}>
+                <div style={{alignSelf: 'stretch', textAlign: 'center', color: '#333333', fontSize: 21, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>
+                  Propylon Legislation Search Tool. 
+                </div>
+                <div style={{alignSelf: 'stretch', height: 93, paddingLeft: 48, paddingRight: 48, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 18, display: 'flex'}}>
+                    <div style={{justifyContent: 'flex-start', alignItems: 'flex-start', gap: 9, display: 'inline-flex'}}>
+                        <div style={{textAlign: 'center', color: 'black', fontSize: 18, fontFamily: 'Fabric External MDL2 Assets', fontWeight: '400', wordWrap: 'break-word'}}></div>
+                        <div style={{color: '#231F20', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>
+                          Bills
+                        </div>
+                    </div>
+                    <div style={{justifyContent: 'flex-start', alignItems: 'flex-start', gap: 9, display: 'inline-flex'}}>
+                        <div style={{textAlign: 'center', color: 'black', fontSize: 18, fontFamily: 'Fabric External MDL2 Assets', fontWeight: '400', wordWrap: 'break-word'}}></div>
+                        <div style={{color: '#231F20', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>
+                          Legislations
+                        </div>
+                    </div>
+                    <div style={{justifyContent: 'flex-start', alignItems: 'flex-start', gap: 9, display: 'inline-flex'}}>
+                        <div style={{textAlign: 'center', color: 'black', fontSize: 18, fontFamily: 'Fabric External MDL2 Assets', fontWeight: '400', wordWrap: 'break-word'}}></div>
+                        <div style={{color: '#231F20', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>
+                          Citations
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <Button appearance="primary" >Documentation</Button>
+      </div>
+);
+
+const ResultItem = ({title, state, date}) => (
+  <div style={{ width: '100%', height: '100%', background: 'white', borderRadius: 4, justifyContent: 'flex-start', alignItems: 'center', gap: 9, display: 'inline-flex' }}>
+    <div style={{ paddingLeft: 6, paddingRight: 4, justifyContent: 'flex-start', alignItems: 'center', gap: 4, display: 'flex' }}>
+      <div style={{ paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'center', gap: 10, display: 'flex' }}>
+        <div style={{ color: '#424242', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '700', textDecoration: 'underline', wordWrap: 'break-word' }}>{title}</div>
+      </div>
+    </div>
+    <div style={{ paddingLeft: 4, justifyContent: 'flex-end', alignItems: 'center', gap: 4, display: 'flex' }}>
+      <div style={{ width: 119, paddingLeft: 2, paddingRight: 4, justifyContent: 'flex-start', alignItems: 'center', gap: 10, display: 'flex' }}>
+        <div style={{ textAlign: 'right', color: '#616161', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '400', wordWrap: 'break-word' }}>{state}  •  {date}</div>
+      </div>
+      <div style={{ justifyContent: 'flex-end', alignItems: 'center', display: 'flex' }}>
+        <div style={{ width: 16, height: 16, position: 'relative' }}>
+          <div style={{ width: 6, height: 12, left: 5, top: 2, position: 'absolute', background: '#616161' }}></div>
+        </div>
+        <div style={{ width: 16, height: 16, position: 'relative' }}>
+          <div style={{ width: 13, height: 14, left: 1, top: 1, position: 'absolute', background: '#616161' }}></div>
+        </div>
+        <div style={{ width: 16, height: 16, position: 'relative' }}>
+          <div style={{ width: 6, height: 12, left: 5, top: 2, position: 'absolute', background: '#616161' }}></div>
+        </div>
+        <div style={{ width: 24, height: 0, transform: 'rotate(90deg)', transformOrigin: '0 0', border: '1px #D1D1D1 solid' }}></div>
+        <div style={{ width: 24, height: 32, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', display: 'inline-flex' }}>
+          <div style={{ alignSelf: 'stretch', flex: '1 1 0', paddingLeft: 4, paddingRight: 4, paddingTop: 6, paddingBottom: 6, borderRadius: 4, justifyContent: 'center', alignItems: 'center', display: 'inline-flex' }}>
+            <div style={{ width: 20, height: 20, position: 'relative' }}>
+              <div style={{ width: 6.50, height: 12, left: 7.50, top: 4, position: 'absolute', background: '#424242' }}></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+);
+
+const InsertButton = ({ count }) => (
+  <div style={{ height: 27, paddingLeft: 12, paddingRight: 12, paddingTop: 5, paddingBottom: 5, background: '#0F6CBD', borderRadius: 4, overflow: 'hidden', justifyContent: 'center', alignItems: 'center', display: 'inline-flex' }}>
+    <div style={{ paddingBottom: 2, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex' }}>
+      <div style={{ color: 'white', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '600', lineHeight: 20, wordWrap: 'break-word' }}>Insert ({count})</div>
+    </div>
+  </div>
+);
+
+const ResultsPage = () => (
+  <div>
+    <ResultItem title = "Lorem Ipsum" state = "TX" date="Jan 12, 2024"/>
+    <ResultItem title = "Second Result" state = "TX" date="Jan 12, 2024"/>
+    {/* Add more ResultItem components as needed */}
+    <InsertButton count={2} /> {/* Update the count based on the number of results */}
+  </div>
+);
+
+
 const Search = () => {
   const styles = useStyles();
 
@@ -66,10 +157,13 @@ const Search = () => {
     { label: "Settings", value: "tab5" }
   ];
 
+  const instructionPages = {
+    tab1: {title: 'Instructions'},
+  };
+
   return (  
-    <div className={styles.root} style={{width: '100%', height: '100%', background: 'white', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 28, display: 'inline-flex'}}>
+    <div className={styles.root} style={{alignSelf: 'stretch', width: '100%', height: '100%', background: 'white', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 28, display: 'inline-flex'}}>
       {/* Top Navigation */}
-      
       <div style={{alignSelf: 'stretch', height: 90, paddingLeft: 14, paddingRight: 14, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 14, display: 'flex'}}>
         {/* Top Navigation */}
         <TabList style={{width: 'auto'}} className={styles.tabListContainer} selectedValue={selectedTab} onTabSelect={(event, data) => setSelectedTab(data.value)}>
@@ -93,43 +187,12 @@ const Search = () => {
         </div>
       </div>
       
-      {/* Default Instruction Page */}
-      <div style={{width: '100%', height: '100%', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 26, display: 'inline-flex'}}>
-        <div style={{alignSelf: 'stretch', height: 'auto', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 28, display: 'flex'}}>
-            <div style={{alignSelf: 'stretch', height: 'auto', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 21, display: 'flex'}}>
-                <img style={{width: 'auto', height: 32}} src="../../assets/propylonFull.png" />
-                <div style={{color: '#333333', fontSize: 42, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>
-                  Instructions
-                </div>
-            </div>
-            <div style={{alignSelf: 'stretch', height: 'auto', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 33, display: 'flex'}}>
-                <div style={{alignSelf: 'stretch', textAlign: 'center', color: '#333333', fontSize: 21, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>
-                  Propylon Legislation Search Tool. 
-                </div>
-                <div style={{alignSelf: 'stretch', height: 93, paddingLeft: 48, paddingRight: 48, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 18, display: 'flex'}}>
-                    <div style={{justifyContent: 'flex-start', alignItems: 'flex-start', gap: 9, display: 'inline-flex'}}>
-                        <div style={{textAlign: 'center', color: 'black', fontSize: 18, fontFamily: 'Fabric External MDL2 Assets', fontWeight: '400', wordWrap: 'break-word'}}></div>
-                        <div style={{color: '#231F20', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>
-                          Bills
-                        </div>
-                    </div>
-                    <div style={{justifyContent: 'flex-start', alignItems: 'flex-start', gap: 9, display: 'inline-flex'}}>
-                        <div style={{textAlign: 'center', color: 'black', fontSize: 18, fontFamily: 'Fabric External MDL2 Assets', fontWeight: '400', wordWrap: 'break-word'}}></div>
-                        <div style={{color: '#231F20', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>
-                          Legislations
-                        </div>
-                    </div>
-                    <div style={{justifyContent: 'flex-start', alignItems: 'flex-start', gap: 9, display: 'inline-flex'}}>
-                        <div style={{textAlign: 'center', color: 'black', fontSize: 18, fontFamily: 'Fabric External MDL2 Assets', fontWeight: '400', wordWrap: 'break-word'}}></div>
-                        <div style={{color: '#231F20', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '300', wordWrap: 'break-word'}}>
-                          Citations
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <Button appearance="primary" >Documentation</Button>
-      </div>
+      {selectedTab === "tab1" && (
+        <InstructionPage title={instructionPages.tab1.title}/>
+      )}
+      {selectedTab === "tab2" && (
+        <ResultsPage/>
+      )}
     </div>
   );
 };
