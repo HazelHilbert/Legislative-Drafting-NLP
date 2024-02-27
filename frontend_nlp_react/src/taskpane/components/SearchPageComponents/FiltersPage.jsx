@@ -1,7 +1,16 @@
 // Filters Tab
 import { Calendar } from "@fluentui/react";
-import { Checkbox, Combobox, makeStyles, tokens, useId } from "@fluentui/react-components";
-import React, { useState } from "react";
+import {
+  Checkbox,
+  Combobox,
+  ToggleButton,
+  makeStyles,
+  tokens,
+  useId,
+  MultiselectWithTags,
+} from "@fluentui/react-components";
+import { Dismiss12Regular, Dismiss24Regular } from "@fluentui/react-icons";
+import React, { useRef, useState } from "react";
 
 const useStyles = makeStyles({
   root: {
@@ -106,15 +115,15 @@ const FiltersPage = () => {
     const selectedListId = `${comboId}-selection`;
 
     // refs for managing focus when removing tags
-    const selectedListRef = React.useRef(null);
-    const comboboxInputRef = React.useRef(null);
+    const selectedListRef = useRef(null);
+    const comboboxInputRef = useRef(null);
 
     const options = usStates.map((state) => state.text);
     const styles = useStyles();
 
     // Handle selectedOptions both when an option is selected or deselected in the Combobox,
     // and when an option is removed by clicking on a tag
-    const [selectedOptions, setSelectedOptions] = React.useState([]);
+    const [selectedOptions, setSelectedOptions] = useState([]);
 
     const onSelect = (event, data) => {
       setSelectedOptions(data.selectedOptions);
@@ -172,7 +181,7 @@ const FiltersPage = () => {
           {...props}
         >
           {options.map((option) => (
-            <Option key={option}>{option}</Option>
+            <option key={option}>{option}</option>
           ))}
         </Combobox>
       </div>
