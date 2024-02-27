@@ -5,7 +5,7 @@ import { FluentProvider, webLightTheme } from "@fluentui/react-components";
 import { createRoot } from "react-dom/client";
 import { Tab, TabList, Input } from "@fluentui/react-components";
 import { Button } from "@fluentui/react-components";
-import { ChevronRight24Filled, DocumentDismiss24Regular, BookQuestionMark24Regular, Question24Regular, Delete24Regular} from '@fluentui/react-icons';
+import { ChevronRight24Filled, DocumentDismiss24Regular, BookQuestionMark24Regular, Question24Regular, Dismiss24Regular, Delete24Regular} from '@fluentui/react-icons';
 import { Checkbox, Dropdown, Calendar, Text } from '@fluentui/react';
 import { ToggleButton } from "@fluentui/react-components";
 import { Combobox, Option, shorthands, useId} from "@fluentui/react-components";
@@ -13,6 +13,13 @@ import {tokens} from "@fluentui/react-components";
 import { Dismiss12Regular } from "@fluentui/react-icons";
 
 // Styles
+const globalStyles = {
+  color: '#707070',
+  fontSize: 14,
+  fontFamily: 'Segoe UI, sans-serif',
+  fontWeight: 400,
+  wordWrap: 'break-word',
+};
 const useStyles = makeStyles({
   root: {
     alignItems: "flex-start",
@@ -39,15 +46,60 @@ const useStyles = makeStyles({
     gridGap: tokens.spacingHorizontalXXS,
   },
 });
-const globalStyles = {
-  color: '#707070',
-  fontSize: 14,
-  fontFamily: 'Segoe UI, sans-serif',
-  fontWeight: 400,
 
-  wordWrap: 'break-word',
-};
-
+// Data
+const usStates = [
+  { key: 'alabama', text: 'Alabama' },
+  { key: 'alaska', text: 'Alaska' },
+  { key: 'arizona', text: 'Arizona' },
+  { key: 'arkansas', text: 'Arkansas' },
+  { key: 'california', text: 'California' },
+  { key: 'colorado', text: 'Colorado' },
+  { key: 'connecticut', text: 'Connecticut' },
+  { key: 'delaware', text: 'Delaware' },
+  { key: 'florida', text: 'Florida' },
+  { key: 'georgia', text: 'Georgia' },
+  { key: 'hawaii', text: 'Hawaii' },
+  { key: 'idaho', text: 'Idaho' },
+  { key: 'illinois', text: 'Illinois' },
+  { key: 'indiana', text: 'Indiana' },
+  { key: 'iowa', text: 'Iowa' },
+  { key: 'kansas', text: 'Kansas' },
+  { key: 'kentucky', text: 'Kentucky' },
+  { key: 'louisiana', text: 'Louisiana' },
+  { key: 'maine', text: 'Maine' },
+  { key: 'maryland', text: 'Maryland' },
+  { key: 'massachusetts', text: 'Massachusetts' },
+  { key: 'michigan', text: 'Michigan' },
+  { key: 'minnesota', text: 'Minnesota' },
+  { key: 'mississippi', text: 'Mississippi' },
+  { key: 'missouri', text: 'Missouri' },
+  { key: 'montana', text: 'Montana' },
+  { key: 'nebraska', text: 'Nebraska' },
+  { key: 'nevada', text: 'Nevada' },
+  { key: 'new-hampshire', text: 'New Hampshire' },
+  { key: 'new-jersey', text: 'New Jersey' },
+  { key: 'new-mexico', text: 'New Mexico' },
+  { key: 'new-york', text: 'New York' },
+  { key: 'north-carolina', text: 'North Carolina' },
+  { key: 'north-dakota', text: 'North Dakota' },
+  { key: 'ohio', text: 'Ohio' },
+  { key: 'oklahoma', text: 'Oklahoma' },
+  { key: 'oregon', text: 'Oregon' },
+  { key: 'pennsylvania', text: 'Pennsylvania' },
+  { key: 'rhode-island', text: 'Rhode Island' },
+  { key: 'south-carolina', text: 'South Carolina' },
+  { key: 'south-dakota', text: 'South Dakota' },
+  { key: 'tennessee', text: 'Tennessee' },
+  { key: 'texas', text: 'Texas' },
+  { key: 'utah', text: 'Utah' },
+  { key: 'vermont', text: 'Vermont' },
+  { key: 'virginia', text: 'Virginia' },
+  { key: 'washington', text: 'Washington' },
+  { key: 'west-virginia', text: 'West Virginia' },
+  { key: 'wisconsin', text: 'Wisconsin' },
+  { key: 'wyoming', text: 'Wyoming' },
+]; 
 
 // Instruction Tab
 //      Onboarding page describing how to use the search page. 
@@ -142,19 +194,13 @@ const ResultsPage = () => (
   <div style={{width: '100%', height: '100%', background: 'white', borderRadius: 4, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 7, display: 'inline-flex'}}> 
     <ResultItem title = "Lorem Ipsum" state = "TX" date="Jan 12, 2024"/>
     <ResultItem title = "Second Result" state = "TX" date="Jan 12, 2024"/>
-    {/* Add more ResultItem components as needed */}
+    {/* Add more ResultItem components as needed. Maybe we can add some sort of mapping to show each result. */}
     <InsertButton count={2} /> {/* Update the count based on the number of results */}
   </div>
 );
 
 // Filters Tab
 //      Allows the selection of filters to be used in search
-const usStates = [
-  { key: 'alabama', text: 'Alabama' },
-  { key: 'alaska', text: 'Alaska' },
-  { key: 'arizona', text: 'Arizona' },
-  { key: 'arkansas', text: 'Arkansas' },
-]; 
 const FiltersPage = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedFileTypes, setSelectedFileTypes] = useState([]);
@@ -171,7 +217,6 @@ const FiltersPage = () => {
     { key: 'minutes', text: 'Minutes' },
     { key: 'regulation', text: 'Regulation' },
   ];
-  
 
   // Filter Tab Functions to handle interaction with filters. 
   const handleFileTypeChange = (fileType) => {
@@ -212,24 +257,33 @@ const FiltersPage = () => {
     }
   };
   const renderChips = () => {
-    const chips = [];
-
-    const chipStyle = {
-      marginRight: '5px', // Adjust the margin as needed
-      display: 'inline-block',
+    const [hoverStates, setHoverStates] = React.useState({
+      hover1: false,
+      hover2: false,
+      hover3: false,
+    });
+    
+    const handleHover = (buttonIndex, isHovering) => {
+      setHoverStates((prevStates) => ({
+        ...prevStates,
+        [`hover${buttonIndex}`]: isHovering,
+      }));
     };
+    
+    const chips = [];
 
     if (selectedDate) {
       chips.push(
-        <div key="date" style={chipStyle}>
-          <ToggleButton
-            onRenderIcon={() => null} // Replace with your date icon
-            onRenderText={() => `Date: ${selectedDate.toDateString()}`}
-            shape="circular"
-            onMouseOver={(e) => e.preventDefault()} // Prevent button flickering on hover
-            onClick={() => handleRemoveFilter('date')}
-          />
-        </div>
+                    <ToggleButton
+                      key="date"
+                      onMouseOver={() => handleHover(1, true)}
+                      onMouseOut={() => handleHover(1, false)}
+                      icon={hoverStates.hover1 ? <Dismiss24Regular /> : <p></p>}
+                      iconPosition="after"
+                      shape="circular"
+                      onClick={() => handleRemoveFilter('fileType')}
+                      onRenderText={() => `Date: ${selectedDate.toDateString()}`}
+                    />
       );
     }
 
@@ -238,7 +292,7 @@ const FiltersPage = () => {
         chips.push(
           <div key={`fileType_${index}`} style={chipStyle}>
             <ToggleButton
-              onRenderIcon={() => null} // Replace with your file type icon
+              onRenderIcon={() => Dismiss24Regular} 
               onRenderText={() => `Type: ${fileType}`}
               shape="circular"
               onMouseOver={(e) => e.preventDefault()} // Prevent button flickering on hover
@@ -253,7 +307,7 @@ const FiltersPage = () => {
       chips.push(
         <div key="state" style={chipStyle}>
           <ToggleButton
-            onRenderIcon={() => null} // Replace with your state icon
+            onRenderIcon={() => Dismiss24Regular} // Replace with your state icon
             onRenderText={() => `State: ${selectedState}`}
             shape="circular"
             onMouseOver={(e) => e.preventDefault()} // Prevent button flickering on hover
@@ -266,6 +320,7 @@ const FiltersPage = () => {
     return chips;
   };
 
+  // Removed
   const Mixed = () => {
     const [option1, setOption1] = React.useState(false);
     const [option2, setOption2] = React.useState(true);
