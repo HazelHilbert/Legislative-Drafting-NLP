@@ -11,7 +11,7 @@ import { ToggleButton } from "@fluentui/react-components";
 import { Combobox, Option, shorthands, useId} from "@fluentui/react-components";
 import {tokens} from "@fluentui/react-components";
 import { Dismiss12Regular } from "@fluentui/react-icons";
-
+const Large = () => <Checkbox size="large" label="Large" />;
 // Styles
 const useStyles = makeStyles({
   root: {
@@ -44,7 +44,7 @@ const globalStyles = {
   fontSize: 14,
   fontFamily: 'Segoe UI, sans-serif',
   fontWeight: 400,
-  lineHeight: 20,
+
   wordWrap: 'break-word',
 };
 
@@ -148,7 +148,13 @@ const ResultsPage = () => (
 );
 
 // Filters Tab
-//      Allows the selection of filters to be used in search 
+//      Allows the selection of filters to be used in search
+const usStates = [
+  { key: 'alabama', text: 'Alabama' },
+  { key: 'alaska', text: 'Alaska' },
+  { key: 'arizona', text: 'Arizona' },
+  { key: 'arkansas', text: 'Arkansas' },
+]; 
 const FiltersPage = () => {
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedFileTypes, setSelectedFileTypes] = useState([]);
@@ -165,12 +171,7 @@ const FiltersPage = () => {
     { key: 'minutes', text: 'Minutes' },
     { key: 'regulation', text: 'Regulation' },
   ];
-  const usStates = [
-    { key: 'alabama', text: 'Alabama' },
-    { key: 'alaska', text: 'Alaska' },
-    { key: 'arizona', text: 'Arizona' },
-    { key: 'arkansas', text: 'Arkansas' },
-  ];
+  
 
   // Filter Tab Functions to handle interaction with filters. 
   const handleFileTypeChange = (fileType) => {
@@ -265,159 +266,93 @@ const FiltersPage = () => {
     return chips;
   };
 
+  const Mixed = () => {
+    const [option1, setOption1] = React.useState(false);
+    const [option2, setOption2] = React.useState(true);
+    const [option3, setOption3] = React.useState(false);
+  
+    return (
+      <>
+        <Checkbox
+          checked={
+            option1 && option2 && option3
+              ? true
+              : !(option1 || option2 || option3)
+              ? false
+              : "mixed"
+          }
+          onChange={(_ev, data) => {
+            setOption1(!!data.checked);
+            setOption2(!!data.checked);
+            setOption3(!!data.checked);
+          }}
+          label="All options"
+        />
+  
+        <Checkbox
+          checked={option1}
+          onChange={() => setOption1((checked) => !checked)}
+          label="Option 1"
+        />
+        <Checkbox
+          checked={option2}
+          onChange={() => setOption2((checked) => !checked)}
+          label="Option 2"
+        />
+        <Checkbox
+          checked={option3}
+          onChange={() => setOption3((checked) => !checked)}
+          label="Option 3"
+        />
+      </>
+    );
+  };
 
   return (
-    // <div>
-    //   <div style={{ marginTop: '10px', marginBottom: '10px', fontWeight: 'bold' }}>
-    //     Selected Filters: {renderChips()}
-    //   </div>
-
-    //   <div>
-    //     <h2>Legislative Document Types</h2>
-    //     {legislativeDocumentTypes.map((type) => (
-    //       <Checkbox key={type.key} label={type.text} id={type.key} onChange={onCheckboxChange} />
-    //     ))}
-    //   </div>
-
-    //   <div>
-    //     <h2>US State</h2>
-    //     <Dropdown placeholder="Select a state" options={usStates} onChange={onDropdownChange} />
-    //   </div>
-
-    //   <div>
-    //     <h2>Effective Dates</h2>
-    //     <Calendar onSelectDate={onDateSelect} />
-    //   </div>
-    // </div>
-    <div style={{width: '100%', height: '100%', paddingBottom: 14, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 14, display: 'inline-flex'}}>
-      <div style={{alignSelf: 'stretch', height: 109, padding: 7, background: '#F6F6F6', borderRadius: 7, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 7, display: 'flex'}}>
+    <div style={{width: '100%', height: '100%', paddingBottom: 0, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 14, display: 'inline-flex'}}>
+      <div style={{alignSelf: 'stretch', height: 'auto', padding: 7, background: '#F6F6F6', borderRadius: 7, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 7, display: 'flex'}}>
           <div style={{paddingLeft: 6, paddingRight: 4, justifyContent: 'flex-start', alignItems: 'center', gap: 4, display: 'inline-flex'}}>
               <div style={{paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'center', gap: 10, display: 'flex'}}>
-                  <div style={{color: '#424242', fontSize: 20, fontFamily: 'Segoe UI', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>Selected Filters</div>
-              </div>
-          </div>
-          {/* <div style={{alignSelf: 'stretch', height: 68, paddingLeft: 28, paddingRight: 28, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 4, display: 'flex'}}>
-              <div><span style="color: '#424242', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '700', lineHeight: 20, wordWrap: 'break-word'">Document Type: </span><span style="color: '#424242', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'">Option, Option</span></div>
-              <div><span style="color: '#424242', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '700', lineHeight: 20, wordWrap: 'break-word'">States: </span><span style="color: '#424242', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'">Alaska</span></div>
-              <div><span style="color: '#424242', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '700', lineHeight: 20, wordWrap: 'break-word'">Effective Date: </span><span style="color: '#424242', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'">2/02/2024</span></div>
-          </div> */}
-      </div>
-      <div style={{alignSelf: 'stretch', paddingLeft: 6, paddingRight: 4, justifyContent: 'flex-start', alignItems: 'center', gap: 4, display: 'inline-flex'}}>
-          <div style={{paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'center', gap: 10, display: 'flex'}}>
-              <div style={{color: '#424242', fontSize: 20, fontFamily: 'Segoe UI', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>Filters</div>
-          </div>
-      </div>
-      <div style={{flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 14, display: 'flex'}}>
-          <div style={{paddingLeft: 6, paddingRight: 4, justifyContent: 'flex-start', alignItems: 'center', gap: 4, display: 'inline-flex'}}>
-              <div style={{paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'center', gap: 10, display: 'flex'}}>
-                  <div style={{color: '#424242', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '700', lineHeight: 20, wordWrap: 'break-word'}}>Document Type</div>
-              </div>
-          </div>
-          <div style={{width: 351, justifyContent: 'flex-start', alignItems: 'flex-start', gap: 11, display: 'inline-flex'}}>
-              <div style={{height: 32, borderRadius: 2, justifyContent: 'flex-start', alignItems: 'center', display: 'flex'}}>
-                  <div style={{height: 32, padding: 6, justifyContent: 'flex-start', alignItems: 'center', gap: 4, display: 'flex'}}>
-                      <div style={{height: 16, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex'}}>
-                          <div style={{width: 16, height: 16, position: 'relative'}}>
-                              <div style={{width: 16, height: 16, left: 0, top: 0, position: 'absolute', borderRadius: 2, border: '1px #616161 solid'}} />
-                          </div>
-                      </div>
-                      <div style={{paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex'}}>
-                          <div style={{color: '#424242', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>Option</div>
-                      </div>
-                  </div>
-              </div>
-              <div style={{height: 32, borderRadius: 2, justifyContent: 'flex-start', alignItems: 'center', display: 'flex'}}>
-                  <div style={{height: 32, padding: 6, justifyContent: 'flex-start', alignItems: 'center', gap: 4, display: 'flex'}}>
-                      <div style={{height: 16, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex'}}>
-                          <div style={{width: 16, height: 16, position: 'relative'}}>
-                              <div style={{width: 16, height: 16, left: 0, top: 0, position: 'absolute', borderRadius: 2, border: '1px #616161 solid'}} />
-                              <div style={{width: 16, height: 16, left: 0, top: 0, position: 'absolute'}}>
-                                  <div style={{width: 14, height: 14, left: 1, top: 1, position: 'absolute', background: 'white'}} />
-                                  <div style={{width: 16, height: 16, left: 0, top: 0, position: 'absolute', background: '#0F6CBD'}}></div>
-                              </div>
-                          </div>
-                      </div>
-                      <div style={{paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex'}}>
-                          <div style={{color: '#424242', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>Option</div>
-                      </div>
-                  </div>
-              </div>
-              <div style={{height: 32, borderRadius: 2, justifyContent: 'flex-start', alignItems: 'center', display: 'flex'}}>
-                  <div style={{height: 32, padding: 6, justifyContent: 'flex-start', alignItems: 'center', gap: 4, display: 'flex'}}>
-                      <div style={{height: 16, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex'}}>
-                          <div style={{width: 16, height: 16, position: 'relative'}}>
-                              <div style={{width: 16, height: 16, left: 0, top: 0, position: 'absolute', borderRadius: 2, border: '1px #616161 solid'}} />
-                          </div>
-                      </div>
-                      <div style={{paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex'}}>
-                          <div style={{color: '#424242', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>Option</div>
-                      </div>
-                  </div>
-              </div>
-              <div style={{height: 32, borderRadius: 2, justifyContent: 'flex-start', alignItems: 'center', display: 'flex'}}>
-                  <div style={{height: 32, padding: 6, justifyContent: 'flex-start', alignItems: 'center', gap: 4, display: 'flex'}}>
-                      <div style={{height: 16, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex'}}>
-                          <div style={{width: 16, height: 16, position: 'relative'}}>
-                              <div style={{width: 16, height: 16, left: 0, top: 0, position: 'absolute', borderRadius: 2, border: '1px #616161 solid'}} />
-                              <div style={{width: 16, height: 16, left: 0, top: 0, position: 'absolute'}}>
-                                  <div style={{width: 14, height: 14, left: 1, top: 1, position: 'absolute', background: 'white'}} />
-                                  <div style={{width: 16, height: 16, left: 0, top: 0, position: 'absolute', background: '#0F6CBD'}}></div>
-                              </div>
-                          </div>
-                      </div>
-                      <div style={{paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex'}}>
-                          <div style={{color: '#424242', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>Option</div>
-                      </div>
-                  </div>
-              </div>
-              <div style={{height: 32, borderRadius: 2, justifyContent: 'flex-start', alignItems: 'center', display: 'flex'}}>
-                  <div style={{height: 32, padding: 6, justifyContent: 'flex-start', alignItems: 'center', gap: 4, display: 'flex'}}>
-                      <div style={{height: 16, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex'}}>
-                          <div style={{width: 16, height: 16, position: 'relative'}}>
-                              <div style={{width: 16, height: 16, left: 0, top: 0, position: 'absolute', borderRadius: 2, border: '1px #616161 solid'}} />
-                          </div>
-                      </div>
-                      <div style={{paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex'}}>
-                          <div style={{color: '#424242', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>Option</div>
-                      </div>
-                  </div>
-              </div>
-              <div style={{height: 32, borderRadius: 2, justifyContent: 'flex-start', alignItems: 'center', display: 'flex'}}>
-                  <div style={{height: 32, padding: 6, justifyContent: 'flex-start', alignItems: 'center', gap: 4, display: 'flex'}}>
-                      <div style={{height: 16, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex'}}>
-                          <div style={{width: 16, height: 16, position: 'relative'}}>
-                              <div style={{width: 16, height: 16, left: 0, top: 0, position: 'absolute', borderRadius: 2, border: '1px #616161 solid'}} />
-                          </div>
-                      </div>
-                      <div style={{paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex'}}>
-                          <div style={{color: '#424242', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '400', lineHeight: 20, wordWrap: 'break-word'}}>Option</div>
-                      </div>
-                  </div>
+                  <h3 style={{color: '#424242', fontFamily: 'Segoe UI', fontWeight: '400', wordWrap: 'break-word'}}>Selected Filters {renderChips()} </h3>
               </div>
           </div>
       </div>
 
-
-      <div style={{alignSelf: 'stretch', height: 208, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 0, display: 'flex'}}>
-          <div style={{paddingLeft: 6, paddingRight: 4, justifyContent: 'flex-start', alignItems: 'center', gap: 4, display: 'inline-flex'}}>
+      {/* Document Type */}
+      <div style={{alignSelf: 'stretch', height: 'auto', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 14, display: 'flex'}}>
+          <div style={{paddingLeft: 7, paddingRight: 4, justifyContent: 'flex-start', alignItems: 'center', gap: 4, display: 'inline-flex'}}>
               <div style={{paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'center', gap: 10, display: 'flex'}}>
+                  <div style={{color: '#424242', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '700', wordWrap: 'break-word'}}>Document Type</div>
+              </div>
+          </div>
+          <div style={{paddingLeft: 28, paddingRight: 4, justifyContent: 'flex-start', alignItems: 'center', gap: 20, display: 'inline-flex', flexWrap: 'wrap'}}>
+            {legislativeDocumentTypes.map((type) => (
+              <Checkbox key={type.key} label={type.text} id={type.key} onChange={onCheckboxChange} />
+            ))}
+          </div>
+      </div>
+
+      {/* States */}
+      <div style={{alignSelf: 'stretch', height: 'auto', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 0, display: 'flex'}}>
+          <div style={{paddingLeft: 7, paddingRight: 4, justifyContent: 'flex-start', alignItems: 'center', gap: 0, display: 'inline-flex'}}>
+              <div style={{paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'center', gap: 0, display: 'flex'}}>
                   <h3 style={{color: '#424242', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '700', wordWrap: 'break-word'}}>State</h3>
               </div>
           </div>
-          
-          <div style={{height: 174, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex'}}>
-              <MultiselectWithTags></MultiselectWithTags>
+          {/* Tick Boxes */}
+          <div style={{paddingLeft: 28, height: 'auto', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex'}}>
+              <MultiselectWithTags placeholder="Select a state" options={usStates} onChange={onDropdownChange}></MultiselectWithTags>
           </div>
       </div>
       {/* Effective Dates */}
       <div style={{alignSelf: 'stretch', height: 'auto', flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 0, display: 'flex'}}> 
-          <div style={{paddingLeft: 6, paddingRight: 4, justifyContent: 'flex-start', alignItems: 'center', gap: 4, display: 'inline-flex'}}>
-              <div style={{paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'center', gap: 10, display: 'flex'}}>
+          <div style={{paddingLeft: 7, paddingRight: 4, justifyContent: 'flex-start', alignItems: 'center', gap: 0, display: 'inline-flex'}}>
+              <div style={{paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'center', gap: 0, display: 'flex'}}>
                   <h3 style={{color: '#424242', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '700', wordWrap: 'break-word'}}>Effective Date</h3>
               </div>
           </div>
           {/* Calendar */}
-          <div style={{alignSelf: 'stretch', justifyContent: 'center', alignItems: 'center', gap: 10, display: 'inline-flex'}}>
+          <div style={{paddingLeft: 28, alignSelf: 'stretch', justifyContent: 'center', alignItems: 'center', gap: 0, display: 'inline-flex'}}>
               <div style={{justifyContent: 'flex-start', alignItems: 'flex-start', gap: 10, display: 'flex'}}>
                   <Calendar onSelectDate={onDateSelect} style={{width: 248, boxShadow: '0px 0px 2px rgba(0, 0, 0, 0.12)', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 12, display: 'flex'}} />
               </div>
@@ -435,7 +370,7 @@ const MultiselectWithTags = (props) => {
   const selectedListRef = React.useRef(null);
   const comboboxInputRef = React.useRef(null);
 
-  const options = ["Cat", "Dog", "Ferret", "Fish", "Hamster", "Snake"];
+  const options = usStates.map(state => state.text);
   const styles = useStyles();
 
   // Handle selectedOptions both when an option is selected or deselected in the Combobox,
@@ -467,7 +402,6 @@ const MultiselectWithTags = (props) => {
 
   return (
     <div className={styles.root}>
-      <label id={comboId}>Best pets</label>
       {selectedOptions.length ? (
         <ul
           id={selectedListId}
