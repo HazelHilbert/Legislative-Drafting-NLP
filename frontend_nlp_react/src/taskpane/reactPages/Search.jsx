@@ -272,6 +272,7 @@ const FiltersPage = () => {
 
     
     const chipStyle = {
+      width: 'auto'
     };
 
     const chips = [];
@@ -301,7 +302,7 @@ const FiltersPage = () => {
             style={chipStyle}
             onMouseOver={() => handleHover(1, true)}
             onMouseOut={() => handleHover(1, false)}
-            icon={hoverStates.hover1 ? <Dismiss24Regular /> : <p></p>}
+            {...(hoverStates.hover1 && { icon: <Dismiss24Regular /> })}
             iconPosition="after"
             shape="circular"
             onClick={() => handleRemoveFilter('fileType')}
@@ -318,7 +319,7 @@ const FiltersPage = () => {
             style={chipStyle}
             onMouseOver={() => handleHover(1, true)}
             onMouseOut={() => handleHover(1, false)}
-            icon={hoverStates.hover1 ? <Dismiss24Regular /> : <p></p>}
+            {...(hoverStates.hover1 && { icon: <Dismiss24Regular /> })}
             iconPosition="after"
             shape="circular"
             onClick={() => handleRemoveFilter('state')}
