@@ -11,7 +11,7 @@ import { ToggleButton } from "@fluentui/react-components";
 import { Combobox, Option, shorthands, useId} from "@fluentui/react-components";
 import {tokens} from "@fluentui/react-components";
 import { Dismiss12Regular } from "@fluentui/react-icons";
-const Large = () => <Checkbox size="large" label="Large" />;
+
 // Styles
 const useStyles = makeStyles({
   root: {
@@ -354,7 +354,7 @@ const FiltersPage = () => {
           {/* Calendar */}
           <div style={{paddingLeft: 28, alignSelf: 'stretch', justifyContent: 'center', alignItems: 'center', gap: 0, display: 'inline-flex'}}>
               <div style={{justifyContent: 'flex-start', alignItems: 'flex-start', gap: 10, display: 'flex'}}>
-                  <Calendar onSelectDate={onDateSelect} style={{width: 248, boxShadow: '0px 0px 2px rgba(0, 0, 0, 0.12)', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 12, display: 'flex'}} />
+                  <Calendar onSelectDate={onDateSelect} style={{width: 'auto', boxShadow: '0px 0px 2px rgba(0, 0, 0, 0.12)', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 12, display: 'flex'}} />
               </div>
           </div>
       </div>
@@ -504,7 +504,7 @@ const Search = () => {
                 <Input appearance="underline" style={{flex: '1 1 0', height: 32, paddingTop: 5, paddingBottom: 7, paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex', color: '#707070', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '400', wordWrap: 'break-word' }} placeholder="Search" />
               </div>
             </div>
-            <div style={{ width: 321, height: 1, background: '#575757' }} />
+            <div style={{ width: 'auto', height: 1, background: '#575757' }} />
           </div>
         </div>
       </div>
@@ -533,6 +533,7 @@ const Search = () => {
 const searchTitle = "Propylon Legislation Search";
 const searchRootElement = document.getElementById("search-root");
 const searchRoot = createRoot(searchRootElement);
+
 Office.onReady(() => {
   searchRoot.render(
     <FluentProvider theme={webLightTheme}>
