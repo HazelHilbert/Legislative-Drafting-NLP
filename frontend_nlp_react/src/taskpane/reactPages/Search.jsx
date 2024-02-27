@@ -269,51 +269,60 @@ const FiltersPage = () => {
         [`hover${buttonIndex}`]: isHovering,
       }));
     };
-    
-    const chips = [];
 
+    
+    const chipStyle = {
+    };
+
+    const chips = [];
+    
     if (selectedDate) {
       chips.push(
-                    <ToggleButton
-                      key="date"
-                      onMouseOver={() => handleHover(1, true)}
-                      onMouseOut={() => handleHover(1, false)}
-                      icon={hoverStates.hover1 ? <Dismiss24Regular /> : <p></p>}
-                      iconPosition="after"
-                      shape="circular"
-                      onClick={() => handleRemoveFilter('fileType')}
-                      onRenderText={() => `Date: ${selectedDate.toDateString()}`}
-                    />
+        <ToggleButton 
+          key="date"
+          size="small"
+          style={chipStyle}
+          onMouseOver={() => handleHover(1, true)}
+          onMouseOut={() => handleHover(1, false)}
+          {...(hoverStates.hover1 && { icon: <Dismiss24Regular /> })}
+          iconPosition="after"
+          shape="circular"
+          onClick={() => handleRemoveFilter('date')}
+        >{selectedDate.toDateString()}</ToggleButton>
       );
     }
 
     if (selectedFileTypes.length > 0) {
       selectedFileTypes.forEach((fileType, index) => {
         chips.push(
-          <div key={`fileType_${index}`} style={chipStyle}>
-            <ToggleButton
-              onRenderIcon={() => Dismiss24Regular} 
-              onRenderText={() => `Type: ${fileType}`}
-              shape="circular"
-              onMouseOver={(e) => e.preventDefault()} // Prevent button flickering on hover
-              onClick={() => handleRemoveFilter('fileType')}
-            />
-          </div>
+          <ToggleButton
+            key="date"
+            size="small"
+            style={chipStyle}
+            onMouseOver={() => handleHover(1, true)}
+            onMouseOut={() => handleHover(1, false)}
+            icon={hoverStates.hover1 ? <Dismiss24Regular /> : <p></p>}
+            iconPosition="after"
+            shape="circular"
+            onClick={() => handleRemoveFilter('fileType')}
+          >{fileType}</ToggleButton>
         );
       });
     }
 
     if (selectedState) {
       chips.push(
-        <div key="state" style={chipStyle}>
           <ToggleButton
-            onRenderIcon={() => Dismiss24Regular} // Replace with your state icon
-            onRenderText={() => `State: ${selectedState}`}
+            key="date"
+            size="small"
+            style={chipStyle}
+            onMouseOver={() => handleHover(1, true)}
+            onMouseOut={() => handleHover(1, false)}
+            icon={hoverStates.hover1 ? <Dismiss24Regular /> : <p></p>}
+            iconPosition="after"
             shape="circular"
-            onMouseOver={(e) => e.preventDefault()} // Prevent button flickering on hover
             onClick={() => handleRemoveFilter('state')}
-          />
-        </div>
+          >{selectedState}</ToggleButton>
       );
     }
 
