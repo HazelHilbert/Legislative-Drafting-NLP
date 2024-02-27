@@ -84,7 +84,7 @@ const Summarize = () => {
           <div style={{ alignSelf: 'stretch', height: 32, borderRadius: 4, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex' }}>
             <div style={{ alignSelf: 'stretch', paddingLeft: 10, paddingRight: 10, background: 'rgba(255, 255, 255, 0)', justifyContent: 'flex-start', alignItems: 'center', gap: 10, display: 'inline-flex' }}>
               <div style={{ flex: '1 1 0', height: 32, justifyContent: 'flex-start', alignItems: 'center', display: 'flex' }}>
-                <Input appearance="underline" style={{flex: '1 1 0', height: 32, paddingTop: 5, paddingBottom: 7, paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex', color: '#707070', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '400', wordWrap: 'break-word' }} placeholder="Enter Bill ID" />
+                <Input appearance="underline" style={{flex: '1 1 0', height: 32, paddingTop: 5, paddingBottom: 7, paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'flex-start', display: 'flex', color: '#707070', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '400', wordWrap: 'break-word' }} placeholder="Enter Bill ID" value={searchQuery} onChange={handleSearchInputChange} onKeyPress={handleKeyPress} />
               </div>
             </div>
             <div style={{ width: 321, height: 1, background: '#575757' }} />
@@ -107,7 +107,7 @@ const Summarize = () => {
             </div>
         </div>
         <div style={{height: 120, paddingLeft: 7, paddingRight: 7, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'center', gap: 14, display: 'flex'}}>
-          <div lassName="line" style={{alignSelf: 'stretch', color: 'black', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '400', wordWrap: 'break-word'}}>
+          <div className="line" style={{alignSelf: 'stretch', color: 'black', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '400', wordWrap: 'break-word'}}>
             <p>{summarizedText}</p>
           </div>
         </div>
