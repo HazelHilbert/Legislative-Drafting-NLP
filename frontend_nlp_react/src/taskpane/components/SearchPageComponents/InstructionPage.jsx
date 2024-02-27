@@ -1,166 +1,29 @@
-import { Button } from "@fluentui/react-components";
 import React from "react";
-// Instruction Tab
-//      Onboarding page describing how to use the search page.
+import { Button } from "@fluentui/react-components";
+import "./InstructionPage.css"; // Import the CSS file here
+
 const InstructionPage = ({ title }) => {
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "100%",
-        flexDirection: "column",
-        justifyContent: "flex-start",
-        alignItems: "center",
-        gap: 26,
-        display: "inline-flex",
-      }}
-    >
-      <div
-        style={{
-          alignSelf: "stretch",
-          height: "auto",
-          flexDirection: "column",
-          justifyContent: "flex-start",
-          alignItems: "center",
-          gap: 28,
-          display: "flex",
-        }}
-      >
-        <div
-          style={{
-            alignSelf: "stretch",
-            height: "auto",
-            flexDirection: "column",
-            justifyContent: "flex-start",
-            alignItems: "center",
-            gap: 21,
-            display: "flex",
-          }}
-        >
-          <img style={{ width: "auto", height: 32 }} src="../../assets/propylonFull.png" />
-          <div
-            style={{
-              color: "#333333",
-              fontSize: 42,
-              fontFamily: "Segoe UI",
-              fontWeight: "300",
-              wordWrap: "break-word",
-            }}
-          >
-            {title}
-          </div>
+    <div className="instructionPageContainer">
+      <div className="sectionContainer">
+        <div className="sectionInnerContainer">
+          <img className="logoImage" src="../../assets/propylonFull.png" />
+          <div className="titleText">{title}</div>
         </div>
-        <div
-          style={{
-            alignSelf: "stretch",
-            height: "auto",
-            flexDirection: "column",
-            justifyContent: "flex-start",
-            alignItems: "center",
-            gap: 33,
-            display: "flex",
-          }}
-        >
-          <div
-            style={{
-              alignSelf: "stretch",
-              textAlign: "center",
-              color: "#333333",
-              fontSize: 21,
-              fontFamily: "Segoe UI",
-              fontWeight: "300",
-              wordWrap: "break-word",
-            }}
-          >
-            Propylon Legislation Search Tool.
-          </div>
-          <div
-            style={{
-              alignSelf: "stretch",
-              height: 93,
-              paddingLeft: 48,
-              paddingRight: 48,
-              flexDirection: "column",
-              justifyContent: "center",
-              alignItems: "center",
-              gap: 18,
-              display: "flex",
-            }}
-          >
-            <div style={{ justifyContent: "flex-start", alignItems: "flex-start", gap: 9, display: "inline-flex" }}>
-              <div
-                style={{
-                  textAlign: "center",
-                  color: "black",
-                  fontSize: 18,
-                  fontFamily: "Fabric External MDL2 Assets",
-                  fontWeight: "400",
-                  wordWrap: "break-word",
-                }}
-              >
-                
-              </div>
-              <div
-                style={{
-                  color: "#231F20",
-                  fontSize: 14,
-                  fontFamily: "Segoe UI",
-                  fontWeight: "300",
-                  wordWrap: "break-word",
-                }}
-              >
-                Bills
-              </div>
+        <div className="sectionContainer">
+          <div className="descriptionText">Propylon Legislation Search Tool.</div>
+          <div className="featureListContainer">
+            <div className="featureItem">
+              <div className="featureIcon"></div>
+              <div className="featureText">Bills</div>
             </div>
-            <div style={{ justifyContent: "flex-start", alignItems: "flex-start", gap: 9, display: "inline-flex" }}>
-              <div
-                style={{
-                  textAlign: "center",
-                  color: "black",
-                  fontSize: 18,
-                  fontFamily: "Fabric External MDL2 Assets",
-                  fontWeight: "400",
-                  wordWrap: "break-word",
-                }}
-              >
-                
-              </div>
-              <div
-                style={{
-                  color: "#231F20",
-                  fontSize: 14,
-                  fontFamily: "Segoe UI",
-                  fontWeight: "300",
-                  wordWrap: "break-word",
-                }}
-              >
-                Legislations
-              </div>
+            <div className="featureItem">
+              <div className="featureIcon"></div>
+              <div className="featureText">Legislations</div>
             </div>
-            <div style={{ justifyContent: "flex-start", alignItems: "flex-start", gap: 9, display: "inline-flex" }}>
-              <div
-                style={{
-                  textAlign: "center",
-                  color: "black",
-                  fontSize: 18,
-                  fontFamily: "Fabric External MDL2 Assets",
-                  fontWeight: "400",
-                  wordWrap: "break-word",
-                }}
-              >
-                
-              </div>
-              <div
-                style={{
-                  color: "#231F20",
-                  fontSize: 14,
-                  fontFamily: "Segoe UI",
-                  fontWeight: "300",
-                  wordWrap: "break-word",
-                }}
-              >
-                Citations
-              </div>
+            <div className="featureItem">
+              <div className="featureIcon"></div>
+              <div className="featureText">Citations</div>
             </div>
           </div>
         </div>
