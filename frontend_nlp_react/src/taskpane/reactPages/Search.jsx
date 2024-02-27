@@ -11,6 +11,7 @@ import { ToggleButton } from "@fluentui/react-components";
 import { Combobox, Option, shorthands, useId} from "@fluentui/react-components";
 import {tokens} from "@fluentui/react-components";
 import { Dismiss12Regular } from "@fluentui/react-icons";
+import { Link } from 'react-router-dom';
 
 // Styles
 const globalStyles = {
@@ -156,9 +157,10 @@ const ResultItem = ({ title, state, date }) => {
   <div style={{width: '100%', height: '100%', background: 'white', borderRadius: 4, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 7, display: 'inline-flex'}}>
     <div style={{alignSelf: 'stretch', background: 'white', borderRadius: 4, justifyContent: 'space-between', alignItems: 'center', display: 'inline-flex'}}>
       <div style={{ paddingLeft: 6, paddingRight: 4, justifyContent: 'flex-start', alignItems: 'center', gap: 4, display: 'flex' }}>
-        <div style={{ paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'center', gap: 10, display: 'flex' }}>
-          <div style={{ color: '#424242', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '700', textDecoration: 'underline', wordWrap: 'break-word' }}>{title}</div>
-        </div>
+          <div style={{ paddingLeft: 2, paddingRight: 2, justifyContent: 'flex-start', alignItems: 'center', gap: 10, display: 'flex' }}>
+            {/* Wrap the title in a Link component to allow to link to detailed result page when chevron clicked*/}
+            <Link to={`/result/${encodeURIComponent(title)}`} style={{ color: '#424242', fontSize: 14, fontFamily: 'Segoe UI', fontWeight: '700', textDecoration: 'underline', wordWrap: 'break-word' }}>{title}</Link>
+          </div>
       </div>
       <div style={{ paddingLeft: 4, justifyContent: 'flex-end', alignItems: 'center', gap: 4, display: 'flex' }}>
         <div style={{ width: 119, paddingLeft: 2, paddingRight: 4, justifyContent: 'flex-start', alignItems: 'center', gap: 10, display: 'flex' }}>
@@ -218,6 +220,92 @@ const FiltersPage = () => {
     { key: 'regulation', text: 'Regulation' },
   ];
 
+  const MultiselectWithTags = (props) => {
+    // generate ids for handling labelling
+    const comboId = useId("combo-multi");
+    const selectedListId = `${comboId}-selection`;
+  
+    // refs for managing focus when removing tags
+    const selectedListRef = React.useRef(null);
+    const comboboxInputRef = React.useRef(null);
+  
+    const options = usStates.map(state => state.text);
+    const styles = useStyles();
+  
+    // Handle selectedOptions both when an option is selected or deselected in the Combobox,
+    // and when an option is removed by clicking on a tag
+    const [selectedOptions, setSelectedOptions] = React.useState([]);
+  
+    const onSelect = (event, data) => {
+      setSelectedOptions(data.selectedOptions);
+    };
+  
+    const onTagClick = (option, index) => {
+      // remove selected option
+      setSelectedOptions(selectedOptions.filter((o) => o !== option));
+  
+      // focus previous or next option, defaulting to focusing back to the combo input
+      const indexToFocus = index === 0 ? 1 : index - 1;
+      const optionToFocus = selectedListRef.current?.querySelector(
+        `#${comboId}-remove-${indexToFocus}`
+      );
+      if (optionToFocus) {
+        optionToFocus.focus();
+      } else {
+        comboboxInputRef.current?.focus();
+      }
+    };
+  
+    const labelledBy =
+      selectedOptions.length > 0 ? `${comboId} ${selectedListId}` : comboId;
+  
+    return (
+      <div className={styles.root}>
+        {selectedOptions.length ? (
+          <ul
+            id={selectedListId}
+            className={styles.tagsList}
+            ref={selectedListRef}
+          >
+            {/* The "Remove" span is used for naming the buttons without affecting the Combobox name */}
+            <span id={`${comboId}-remove`} hidden>
+              Remove
+            </span>
+            {selectedOptions.map((option, i) => (
+              <li key={option}>
+                <Button
+                  size="small"
+                  shape="circular"
+                  appearance="primary"
+                  icon={<Dismiss12Regular />}
+                  iconPosition="after"
+                  onClick={() => onTagClick(option, i)}
+                  id={`${comboId}-remove-${i}`}
+                  aria-labelledby={`${comboId}-remove ${comboId}-remove-${i}`}
+                >
+                  {option}
+                </Button>
+              </li>
+            ))}
+          </ul>
+        ) : null}
+        <Combobox
+          aria-labelledby={labelledBy}
+          multiselect={true}
+          placeholder="Select States"
+          selectedOptions={selectedOptions}
+          onOptionSelect={onSelect}
+          ref={comboboxInputRef}
+          {...props}
+        >
+          {options.map((option) => (
+            <Option key={option}>{option}</Option>
+          ))}
+        </Combobox>
+      </div>
+    );
+  };
+
   // Filter Tab Functions to handle interaction with filters. 
   const handleFileTypeChange = (fileType) => {
     setSelectedFileTypes((prevFileTypes) => {
@@ -269,7 +357,6 @@ const FiltersPage = () => {
         [`hover${buttonIndex}`]: isHovering,
       }));
     };
-
     
     const chipStyle = {
       width: 'auto'
@@ -330,49 +417,6 @@ const FiltersPage = () => {
     return chips;
   };
 
-  // Removed
-  const Mixed = () => {
-    const [option1, setOption1] = React.useState(false);
-    const [option2, setOption2] = React.useState(true);
-    const [option3, setOption3] = React.useState(false);
-  
-    return (
-      <>
-        <Checkbox
-          checked={
-            option1 && option2 && option3
-              ? true
-              : !(option1 || option2 || option3)
-              ? false
-              : "mixed"
-          }
-          onChange={(_ev, data) => {
-            setOption1(!!data.checked);
-            setOption2(!!data.checked);
-            setOption3(!!data.checked);
-          }}
-          label="All options"
-        />
-  
-        <Checkbox
-          checked={option1}
-          onChange={() => setOption1((checked) => !checked)}
-          label="Option 1"
-        />
-        <Checkbox
-          checked={option2}
-          onChange={() => setOption2((checked) => !checked)}
-          label="Option 2"
-        />
-        <Checkbox
-          checked={option3}
-          onChange={() => setOption3((checked) => !checked)}
-          label="Option 3"
-        />
-      </>
-    );
-  };
-
   return (
     <div style={{width: '100%', height: '100%', paddingBottom: 0, flexDirection: 'column', justifyContent: 'center', alignItems: 'center', gap: 14, display: 'inline-flex'}}>
       <div style={{alignSelf: 'stretch', height: 'auto', padding: 7, background: '#F6F6F6', borderRadius: 7, flexDirection: 'column', justifyContent: 'flex-start', alignItems: 'flex-start', gap: 7, display: 'flex'}}>
@@ -426,91 +470,7 @@ const FiltersPage = () => {
   </div>
   );
 };
-const MultiselectWithTags = (props) => {
-  // generate ids for handling labelling
-  const comboId = useId("combo-multi");
-  const selectedListId = `${comboId}-selection`;
 
-  // refs for managing focus when removing tags
-  const selectedListRef = React.useRef(null);
-  const comboboxInputRef = React.useRef(null);
-
-  const options = usStates.map(state => state.text);
-  const styles = useStyles();
-
-  // Handle selectedOptions both when an option is selected or deselected in the Combobox,
-  // and when an option is removed by clicking on a tag
-  const [selectedOptions, setSelectedOptions] = React.useState([]);
-
-  const onSelect = (event, data) => {
-    setSelectedOptions(data.selectedOptions);
-  };
-
-  const onTagClick = (option, index) => {
-    // remove selected option
-    setSelectedOptions(selectedOptions.filter((o) => o !== option));
-
-    // focus previous or next option, defaulting to focusing back to the combo input
-    const indexToFocus = index === 0 ? 1 : index - 1;
-    const optionToFocus = selectedListRef.current?.querySelector(
-      `#${comboId}-remove-${indexToFocus}`
-    );
-    if (optionToFocus) {
-      optionToFocus.focus();
-    } else {
-      comboboxInputRef.current?.focus();
-    }
-  };
-
-  const labelledBy =
-    selectedOptions.length > 0 ? `${comboId} ${selectedListId}` : comboId;
-
-  return (
-    <div className={styles.root}>
-      {selectedOptions.length ? (
-        <ul
-          id={selectedListId}
-          className={styles.tagsList}
-          ref={selectedListRef}
-        >
-          {/* The "Remove" span is used for naming the buttons without affecting the Combobox name */}
-          <span id={`${comboId}-remove`} hidden>
-            Remove
-          </span>
-          {selectedOptions.map((option, i) => (
-            <li key={option}>
-              <Button
-                size="small"
-                shape="circular"
-                appearance="primary"
-                icon={<Dismiss12Regular />}
-                iconPosition="after"
-                onClick={() => onTagClick(option, i)}
-                id={`${comboId}-remove-${i}`}
-                aria-labelledby={`${comboId}-remove ${comboId}-remove-${i}`}
-              >
-                {option}
-              </Button>
-            </li>
-          ))}
-        </ul>
-      ) : null}
-      <Combobox
-        aria-labelledby={labelledBy}
-        multiselect={true}
-        placeholder="Select one or more animals"
-        selectedOptions={selectedOptions}
-        onOptionSelect={onSelect}
-        ref={comboboxInputRef}
-        {...props}
-      >
-        {options.map((option) => (
-          <Option key={option}>{option}</Option>
-        ))}
-      </Combobox>
-    </div>
-  );
-};
 
 const Search = () => {
   const styles = useStyles();
@@ -584,8 +544,7 @@ const Search = () => {
         <FiltersPage/>
       )}
       {selectedTab === "tab4" && (
-        // <AddPage/>
-        <h1>Add</h1>
+        <ResultsPage/>
       )}
       {selectedTab === "tab5" && (
         // <AddPage/>
