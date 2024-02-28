@@ -1,0 +1,6 @@
+Notes
+
+- firstly do pip install pyodbc
+- Download ODBC Driver 18 for SQL Server
+- The username and the password should be the same for everyone i think, because it is the admins username and password
+- If it doesnt work and doesnt give you access, you have to go to the Networking section in the SQL server and add your IP address
