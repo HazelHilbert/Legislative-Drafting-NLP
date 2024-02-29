@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import { Input } from "@fluentui/react-components";
+import { FluentProvider, webLightTheme } from "@fluentui/react-components";
+import { EditArrowBack24Regular, DocumentOnePageMultiple24Regular } from "@fluentui/react-icons";
 import "../css/Citations.css";
 
 const Citations = () => {
@@ -31,19 +34,33 @@ const Citations = () => {
   };
 
   return (
-    <div className="background">
-      <div className="image">
-        <img src="../../assets/propylonFull.png" alt="Propylon Logo" />
+    <FluentProvider theme={webLightTheme}>
+      <div className="mainContainer globalStyles">
+        {/* Propylon Logo */}
+        <div className="image">
+          <img src="../../assets/propylonFull.png" alt="Propylon Logo" />
+        </div>
+        {/* Search Bar */}
+        <div className="searchBarContainer">
+          <div className="searchInputContainer">
+            <div className="searchInputWrapper">
+              <Input
+                  appearance="underline"
+                  className="searchInput globalStyles"
+                  placeholder="Enter Bill ID"
+                  value={searchQuery}
+                  onChange={handleSearchInputChange}
+                  onKeyPress={handleKeyPress}/>
+              </div>
+            <div className="underline"></div>
+          </div>       
+        </div>
+        {/* Citation */}
+        <div className="line">
+          <p>{citationText}</p>
+        </div>
       </div>
-      <div className="searchContainer">
-        <input type="text" placeholder="Enter Bill ID" value={searchQuery} onChange={handleSearchInputChange} onKeyPress={handleKeyPress} className="searchBar"/>
-        <img src="../../assets/searchIcon.png" alt="Search" className="searchButton" onClick={getBillText} tabIndex="0" />
-      </div>
-      <div className="line"></div>
-      <div className="citation-text">
-        <p>{citationText}</p>
-      </div>
-    </div>
+    </FluentProvider>
   );
 };
 
