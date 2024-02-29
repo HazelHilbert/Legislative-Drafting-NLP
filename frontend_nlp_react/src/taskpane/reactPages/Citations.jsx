@@ -11,9 +11,17 @@ const Citations = () => {
 
   const getCitationText = async (text) => {
     fetch("http://127.0.0.1:5000/citationString/" + text)
-      .then(async (response) => await response.text())
+      .then(async (response) => {
+        if (!response.ok) {
+          throw new Error("Invalid Bill ID");
+        }
+        return await response.text();
+      })
       .then((data) => setCitationText(data))
-      .catch((error) => console.error("Error:", error));
+      .catch((error) => {
+        console.error("Error:", error);
+        setCitationText("Invalid Bill ID");
+      });
   };
 
   const handleSearchInputChange = (event) => {
@@ -28,25 +36,13 @@ const Citations = () => {
 
   const getBillText = async () => {
     if (!searchQuery) {
-      setCitationText("No text entered");
-      return;
-    }
+    setCitationText("No text entered");
+    return;
+  }
     fetch("http://127.0.0.1:5000/billText/" + searchQuery)
-    .then(async (response) => {
-      if (response.ok) {
-        return response.text();
-      } else {
-        throw new Error("Invalid bill ID");
-      }
-    })
-    .then((data) => getCitationText(data))
-    .catch((error) => {
-      if (error.message === "Invalid bill ID") {
-        setCitationText("Invalid bill ID");
-      } else {
-        console.error("Error:", error);
-      }
-    });
+      .then(async (response) => await response.text())
+      .then((data) => getCitationText(data))
+      .catch((error) => console.error("Error:", error));
   };
 
   return (
