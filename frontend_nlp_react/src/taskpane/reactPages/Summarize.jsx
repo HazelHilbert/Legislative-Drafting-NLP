@@ -9,6 +9,7 @@ import "../css/Summarize.css";
 const Summarize = () => {
   const [summarizedText, setSummarizedText] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const getText = async () => {
     try {
@@ -24,11 +25,19 @@ const Summarize = () => {
   };
 
   const getSummarizeText = async (text) => {
-    fetch("http://127.0.0.1:5000/summariseText/" + text)
-      .then(async (response) => await response.text())
-      .then((data) => setSummarizedText(data))
-      .catch((error) => console.error("Error:", error));
+    setLoading(true);
+    try {
+      const response = await fetch("http://127.0.0.1:5000/summariseText/" + text);
+      const data = await response.text();
+      setSummarizedText(data);
+    } catch (error) {
+      console.error("Error:", error);
+    } finally {
+      setLoading(false);
+    }
   };
+
+  console.log(loading);
 
   const handleSummarize = async () => {
     await getText();
@@ -91,7 +100,13 @@ const Summarize = () => {
           </div>
         </div>
         <div className="line">
-          <p>{summarizedText}</p>
+          {loading ? (
+            <div>
+              <img src="../../assets/loading.gif" />
+            </div>
+          ) : (
+            <p>{summarizedText}</p>
+          )}
         </div>
       </div>
     </FluentProvider>
