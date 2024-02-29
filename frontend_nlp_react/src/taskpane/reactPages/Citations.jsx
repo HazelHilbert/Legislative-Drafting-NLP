@@ -27,10 +27,26 @@ const Citations = () => {
   };
 
   const getBillText = async () => {
+    if (!searchQuery) {
+      setCitationText("No text entered");
+      return;
+    }
     fetch("http://127.0.0.1:5000/billText/" + searchQuery)
-      .then(async (response) => await response.text())
-      .then((data) => getCitationText(data))
-      .catch((error) => console.error("Error:", error));
+    .then(async (response) => {
+      if (response.ok) {
+        return response.text();
+      } else {
+        throw new Error("Invalid bill ID");
+      }
+    })
+    .then((data) => getCitationText(data))
+    .catch((error) => {
+      if (error.message === "Invalid bill ID") {
+        setCitationText("Invalid bill ID");
+      } else {
+        console.error("Error:", error);
+      }
+    });
   };
 
   return (
