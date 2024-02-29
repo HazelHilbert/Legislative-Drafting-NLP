@@ -10,7 +10,7 @@ const useStyles = makeStyles({
     display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
-    rowGap: "20px",
+    rowGap: "0px",
   },
   tabListContainer: {
     alignSelf: "stretch",
@@ -25,7 +25,7 @@ const useStyles = makeStyles({
     marginTop: 0,
     paddingLeft: 0,
     display: "flex",
-    gridGap: tokens.spacingHorizontalXXS,
+    gridGap: 0,
   },
 });
 
@@ -35,12 +35,19 @@ const SearchPage = () => {
   const [searchText, setSearchText] = useState("");
   const [searchOutput, setSearchOutput] = useState("");
   const [selectedTab, setSelectedTab] = useState("tab1"); // Add state for the selected tab
+  const [loading, setLoading] = useState(false);
 
-  const handleClick = () => {
-    fetch("http://127.0.0.1:5000/billText/" + searchText)
-      .then(async (response) => await response.text())
-      .then((data) => setSearchOutput(data))
-      .catch((error) => console.error("Error:", error));
+  const handleClick = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch("http://127.0.0.1:5000/billText/" + searchText);
+      const data = await response.text();
+      setSearchOutput(data);
+    } catch (error) {
+      console.error("Error:", error);
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleChange = (event) => {
@@ -81,6 +88,7 @@ const SearchPage = () => {
       }}
     >
       {/* Top Navigation */}
+      <img src="../../assets/propylonFull.png" width={"50%"} />
       <div
         style={{
           alignSelf: "stretch",
@@ -182,16 +190,25 @@ const SearchPage = () => {
         </div>
       </div>
 
-      {selectedTab === "tab1" && <InstructionPage title={instructionPages.tab1.title} />}
+      {selectedTab === "tab1"}
       {selectedTab === "tab2" && <ResultsPage />}
       {selectedTab === "tab3" && <FiltersPage />}
       {selectedTab === "tab4" && <ResultsPage />}
       {selectedTab === "tab5" && (
         // <AddPage/>
-        <h1>Settings</h1>
+        <div>
+          <h1>Settings</h1>
+          <InstructionPage title={instructionPages.tab1.title} />
+        </div>
       )}
       <div>
-        <p>{searchOutput}</p>
+        {loading ? (
+          <div>
+            <img src="../../assets/loading.gif" />
+          </div>
+        ) : (
+          <p>{searchOutput}</p>
+        )}
       </div>
     </div>
   );
