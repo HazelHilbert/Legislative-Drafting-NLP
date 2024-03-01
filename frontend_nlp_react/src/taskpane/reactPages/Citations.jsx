@@ -13,16 +13,24 @@ function removeForwardSlash(string) {
 const Citations = () => {
   const [citationText, setCitationText] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const getCitationText = async (text) => {
-    fetch("http://127.0.0.1:5000/citationString/" + removeForwardSlash(text))
-      .then(async (response) => await response.text())
-      .then((data) => setCitationText(data))
-      .catch((error) => {
-        console.error("Error:", error);
-        setCitationText("Invalid Bill ID");
-      });
+    setLoading(true);
+    try {
+      const response = await fetch("http://127.0.0.1:5000/citationString/" + removeForwardSlash(text));
+      if (!response.ok) {
+        setCitationText("Invalid Bill!");
+      }
+      const data = await response.text();
+      setCitationText(data);
+    } catch (error) {
+      setCitationText("Invalid Bill!");
+    } finally {
+      setLoading(false);
+    }
   };
+
 
   const handleSearchInputChange = (event) => {
     setSearchQuery(event.target.value); 
@@ -76,7 +84,13 @@ const Citations = () => {
         </div>
         {/* Citation */}
         <div className="line">
-          <p>{citationText}</p>
+        {loading ? (
+            <div>
+              <img src="../../assets/loading.gif" />
+            </div>
+          ) : (
+            <p>{citationText}</p>
+          )}
         </div>
       </div>
     </FluentProvider>
