@@ -5,12 +5,17 @@ import { FluentProvider, webLightTheme } from "@fluentui/react-components";
 import { EditArrowBack24Regular, DocumentOnePageMultiple24Regular } from "@fluentui/react-icons";
 import "../css/Citations.css";
 
+function removeForwardSlash(string) {
+  const regex = new RegExp('/'.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+  return string.replace(regex, '');
+}
+
 const Citations = () => {
   const [citationText, setCitationText] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
 
   const getCitationText = async (text) => {
-    fetch("http://127.0.0.1:5000/citationString/" + text)
+    fetch("http://127.0.0.1:5000/citationString/" + removeForwardSlash(text))
       .then(async (response) => await response.text())
       .then((data) => setCitationText(data))
       .catch((error) => {
@@ -31,22 +36,20 @@ const Citations = () => {
 
   const getBillText = async () => {
     if (!searchQuery) {
-    setCitationText("No text entered");
-    return;
-  }
-    fetch("http://127.0.0.1:5000/billText/" + searchQuery)
-      .then(async (response) => {
-        if (!response.ok) {
-          setCitationText("Invalid Bill ID");
-          return;
-        }
-        return await response.text();
-      })        
-      .then((data) => getCitationText(data))
-      .catch((error) => {
-        console.error("Error:", error);
-        setCitationText("Invalid Bill ID");
-      });  
+      setCitationText("No text entered");
+      return;
+    }
+    try {
+      const response = await fetch("http://127.0.0.1:5000/billText/" + searchQuery);
+      if (!response.ok) {
+        setCitationText("Invalid Bill!");
+        return; 
+      }
+      const data = await response.text();
+      getCitationText(data);
+    } catch (error) {
+      setCitationText("Invalid Bill!");
+    }
   };
 
   return (

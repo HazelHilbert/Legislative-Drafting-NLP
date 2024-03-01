@@ -6,6 +6,11 @@ import { FluentProvider, webLightTheme } from "@fluentui/react-components";
 import { EditArrowBack24Regular, DocumentOnePageMultiple24Regular } from "@fluentui/react-icons";
 import "../css/Summarize.css";
 
+function removeForwardSlash(string) {
+  const regex = new RegExp('/'.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+  return string.replace(regex, '');
+}
+
 const Summarize = () => {
   const [summarizedText, setSummarizedText] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
@@ -31,7 +36,7 @@ const Summarize = () => {
   const getSummarizeText = async (text) => {
     setLoading(true);
     try {
-      const response = await fetch("http://127.0.0.1:5000/summariseText/" + text);
+      const response = await fetch("http://127.0.0.1:5000/summariseText/" + removeForwardSlash(text));
       if (!response.ok) {
         setSummarizedText("Invalid Summarize!");
       }
@@ -61,16 +66,20 @@ const Summarize = () => {
   };
 
   const getBillText = async () => {
+    if (!searchQuery) {
+      setSummarizedText("No text entered");
+      return;
+    }
     try {
       const response = await fetch("http://127.0.0.1:5000/billText/" + searchQuery);
       if (!response.ok) {
-        setSummarizedText("Invalid Search!");
+        setSummarizedText("Invalid Bill!");
         return; 
       }
       const data = await response.text();
       getSummarizeText(data);
     } catch (error) {
-      setSummarizedText("Invalid Search!");
+      setSummarizedText("Invalid Bill!");
     }
   };
 
