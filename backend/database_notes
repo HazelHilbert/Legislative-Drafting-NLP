@@ -1,0 +1,13 @@
+Notes
+
+- firstly do pip install pyodbc
+- Download ODBC Driver 18 for SQL Server
+- May have to use phone hotspot as Trinity WiFi has a firewall against database connection
+- The username and the password should be the same for everyone i think, because it is the admins username and password
+- If it doesnt work and doesnt give you access, you have to go to the Networking section in the SQL server and add your IP address
+
+- The commented out code creates a table in the database
+
+run SELECT * FROM databaseTest; in the query editor on azure, logging in with the username and password in the code. This will print out all the files saved.
+
+The data is converted from text to binary.
