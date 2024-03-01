@@ -73,38 +73,6 @@
   background: #575757;
 }
 
-.summaryContainer {
-  align-self: stretch;
-  justify-content: space-between;
-  align-items: center;
-  display: inline-flex;
-}
-
-.summaryButton {
-  align-self: stretch;
-  color: #212529;
-  background-color: #f8f9fa;
-  border: 1px solid #dee2e6;
-  border-radius: 0.2rem;
-  font-size: 14px;
-  font-family: "Segoe UI";
-  font-weight: 600;
-  padding: 0.375rem 0.75rem;
-  cursor: pointer;
-}
-
-.iconButton {
-  border: none;
-  background: none;
-  cursor: pointer;
-}
-
-.icon {
-  width: 16px;
-  height: 16px;
-  position: relative;
-}
-
 .line {
   height: 120px;
   padding-left: 7px;
