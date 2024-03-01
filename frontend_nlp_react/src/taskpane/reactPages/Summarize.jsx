@@ -17,10 +17,14 @@ const Summarize = () => {
         const documentBody = context.document.body;
         context.load(documentBody);
         await context.sync();
+        if (!documentBody.text.trim()) {
+          setSummarizedText("No text highlighted!");
+          return; 
+        }
         getSummarizeText(documentBody.text);
       });
     } catch (error) {
-      console.log("Error: " + error);
+      setSummarizedText("Error!");
     }
   };
 
@@ -28,10 +32,13 @@ const Summarize = () => {
     setLoading(true);
     try {
       const response = await fetch("http://127.0.0.1:5000/summariseText/" + text);
+      if (!response.ok) {
+        setSummarizedText("Invalid Summarize!");
+      }
       const data = await response.text();
       setSummarizedText(data);
     } catch (error) {
-      console.error("Error:", error);
+      setSummarizedText("Invalid Summarize!");
     } finally {
       setLoading(false);
     }
@@ -54,10 +61,17 @@ const Summarize = () => {
   };
 
   const getBillText = async () => {
-    fetch("http://127.0.0.1:5000/billText/" + searchQuery)
-      .then(async (response) => await response.text())
-      .then((data) => getSummarizeText(data))
-      .catch((error) => console.error("Error:", error));
+    try {
+      const response = await fetch("http://127.0.0.1:5000/billText/" + searchQuery);
+      if (!response.ok) {
+        setSummarizedText("Invalid Search!");
+        return; 
+      }
+      const data = await response.text();
+      getSummarizeText(data);
+    } catch (error) {
+      setSummarizedText("Invalid Search!");
+    }
   };
 
   return (
