@@ -19,10 +19,14 @@
   display: inline-flex;
 }
 
+.image {
+  text-align: center; 
+  width: 40%;
+}
+
 .image img {
-  max-width: 100%;
-  width: 128px;
-  height: auto;
+  padding-top: 15px;
+  max-width: 100%; 
 }
 
 .searchBarContainer {

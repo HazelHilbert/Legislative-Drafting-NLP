@@ -96,13 +96,15 @@ const SearchPage = () => {
       }}
     >
       {/* Top Navigation */}
-      <img src="../../assets/propylonFull.png" width={"50%"} />
+      <img src="../../assets/propylonFull.png" width={"50%"} style={{ marginTop: "10px" }}/>
       <div
         style={{
           alignSelf: "stretch",
           height: 90,
           paddingLeft: 14,
           paddingRight: 14,
+          paddingTop:14,
+          marginTop: "10px",
           flexDirection: "column",
           justifyContent: "flex-start",
           alignItems: "center",
