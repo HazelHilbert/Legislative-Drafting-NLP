@@ -38,13 +38,21 @@ const SearchPage = () => {
   const [loading, setLoading] = useState(false);
 
   const handleClick = async () => {
+    if (!searchText) {
+      setSearchOutput("No text entered");
+      return;
+    }
     setLoading(true);
     try {
       const response = await fetch("http://127.0.0.1:5000/billText/" + searchText);
+      if (!response.ok) {
+        setSearchOutput("Invalid Bill!");
+        return;
+      }
       const data = await response.text();
       setSearchOutput(data);
     } catch (error) {
-      console.error("Error:", error);
+      setSearchOutput("Invalid Bill!");
     } finally {
       setLoading(false);
     }
@@ -88,13 +96,15 @@ const SearchPage = () => {
       }}
     >
       {/* Top Navigation */}
-      <img src="../../assets/propylonFull.png" width={"50%"} />
+      <img src="../../assets/propylonFull.png" width={"50%"} style={{ marginTop: "10px" }}/>
       <div
         style={{
           alignSelf: "stretch",
           height: 90,
           paddingLeft: 14,
           paddingRight: 14,
+          paddingTop:14,
+          marginTop: "10px",
           flexDirection: "column",
           justifyContent: "flex-start",
           alignItems: "center",

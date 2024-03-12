@@ -5,23 +5,30 @@ import { FluentProvider, webLightTheme } from "@fluentui/react-components";
 import { EditArrowBack24Regular, DocumentOnePageMultiple24Regular } from "@fluentui/react-icons";
 import "../css/Citations.css";
 
+function removeForwardSlash(string) {
+  const regex = new RegExp('/'.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+  return string.replace(regex, '');
+}
+
 const Citations = () => {
   const [citationText, setCitationText] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const getCitationText = async (text) => {
-    fetch("http://127.0.0.1:5000/citationString/" + text)
-      .then(async (response) => {
-        if (!response.ok) {
-          throw new Error("Invalid Bill ID");
-        }
-        return await response.text();
-      })
-      .then((data) => setCitationText(data))
-      .catch((error) => {
-        console.error("Error:", error);
-        setCitationText("Invalid Bill ID");
-      });
+    setLoading(true);
+    try {
+      const response = await fetch("http://127.0.0.1:5000/citationString/" + removeForwardSlash(text));
+      if (!response.ok) {
+        setCitationText("Invalid Bill!");
+      }
+      const data = await response.text();
+      setCitationText(data);
+    } catch (error) {
+      setCitationText("Invalid Bill!");
+    } finally {
+      setLoading(false);
+    }
   };
 
   const handleSearchInputChange = (event) => {
@@ -36,13 +43,20 @@ const Citations = () => {
 
   const getBillText = async () => {
     if (!searchQuery) {
-    setCitationText("No text entered");
-    return;
-  }
-    fetch("http://127.0.0.1:5000/billText/" + searchQuery)
-      .then(async (response) => await response.text())
-      .then((data) => getCitationText(data))
-      .catch((error) => console.error("Error:", error));
+      setCitationText("No text entered");
+      return;
+    }
+    try {
+      const response = await fetch("http://127.0.0.1:5000/billText/" + searchQuery);
+      if (!response.ok) {
+        setCitationText("Invalid Bill!");
+        return; 
+      }
+      const data = await response.text();
+      getCitationText(data);
+    } catch (error) {
+      setCitationText("Invalid Bill!");
+    }
   };
 
   return (
@@ -69,7 +83,13 @@ const Citations = () => {
         </div>
         {/* Citation */}
         <div className="line">
-          <p>{citationText}</p>
+        {loading ? (
+            <div>
+              <img src="../../assets/loading.gif" />
+            </div>
+          ) : (
+            <p>{citationText}</p>
+          )}
         </div>
       </div>
     </FluentProvider>

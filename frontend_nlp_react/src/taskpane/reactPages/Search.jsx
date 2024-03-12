@@ -1,14 +1,17 @@
 import * as React from "react";
 import { FluentProvider, webLightTheme } from "@fluentui/react-components";
 import { createRoot } from "react-dom/client";
+import "../css/Search.css";
 
 import SearchPage from "../components/SearchPageComponents/SearchPage";
 
 const Search = () => {
   return (
-    <div>
-      <SearchPage />
-    </div>
+    <FluentProvider theme={webLightTheme}>
+      <div className="background globalStyles">
+        <SearchPage />
+      </div>
+    </FluentProvider>
   );
 };
 

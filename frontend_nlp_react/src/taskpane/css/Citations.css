@@ -10,7 +10,8 @@
 .mainContainer {
   width: 100%;
   height: 100%;
-  background: white;
+  min-height: 100vh; 
+  background: white; 
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
@@ -18,10 +19,14 @@
   display: inline-flex;
 }
 
+.image {
+  text-align: center; 
+  width: 40%;
+}
+
 .image img {
-  max-width: 100%;
-  width: 128px;
-  height: auto;
+  padding-top: 15px;
+  max-width: 100%; 
 }
 
 .searchBarContainer {
