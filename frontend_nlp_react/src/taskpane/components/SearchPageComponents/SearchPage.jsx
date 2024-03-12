@@ -36,14 +36,16 @@ const SearchPage = () => {
   const [searchOutput, setSearchOutput] = useState("");
   const [selectedTab, setSelectedTab] = useState("tab1"); // Add state for the selected tab
   const [loading, setLoading] = useState(false);
+  const [imageID, setImageID] = useState("../../assets/LoadingTwoColour.gif");
 
   const handleClick = async () => {
     if (!searchText) {
       setSearchOutput("No text entered");
       return;
     }
-    setLoading(true);
     try {
+      loadingEasterEgg();
+      setLoading(true);
       const response = await fetch("http://127.0.0.1:5000/billText/" + searchText);
       if (!response.ok) {
         setSearchOutput("Invalid Bill!");
@@ -55,6 +57,14 @@ const SearchPage = () => {
       setSearchOutput("Invalid Bill!");
     } finally {
       setLoading(false);
+    }
+  };
+
+  const loadingEasterEgg = () => {
+    if (Math.floor(Math.random() * 100 + 1) == 1) {
+      setImageID("../../assets/loading.gif");
+    } else {
+      setImageID("../../assets/LoadingTwoColour.gif");
     }
   };
 
@@ -96,14 +106,14 @@ const SearchPage = () => {
       }}
     >
       {/* Top Navigation */}
-      <img src="../../assets/propylonFull.png" width={"50%"} style={{ marginTop: "10px" }}/>
+      <img src="../../assets/propylonFull.png" width={"50%"} style={{ marginTop: "10px" }} />
       <div
         style={{
           alignSelf: "stretch",
           height: 90,
           paddingLeft: 14,
           paddingRight: 14,
-          paddingTop:14,
+          paddingTop: 14,
           marginTop: "10px",
           flexDirection: "column",
           justifyContent: "flex-start",
@@ -207,14 +217,14 @@ const SearchPage = () => {
       {selectedTab === "tab5" && (
         // <AddPage/>
         <div>
-          <h1>Settings</h1>
+          <h1 style={{ textAlign: "center" }}>Settings</h1>
           <InstructionPage title={instructionPages.tab1.title} />
         </div>
       )}
       <div>
         {loading ? (
-          <div>
-            <img src="../../assets/loading.gif" />
+          <div style={{ marginTop: 100 }}>
+            <img src={imageID} width={"100px"} />
           </div>
         ) : (
           <p>{searchOutput}</p>
