@@ -1,5 +1,6 @@
 import nltk
 from nltk.tokenize import *
+nltk.download('punkt')
 import json
 import pandas as pd
 import requests
@@ -7,6 +8,8 @@ import requests
 import json
 
 from transformers import AutoModel, AutoTokenizer
+
+output_model_dir = "./fine_tuned_model"
 
 model_name = "bert-base-uncased"  # Example pre-trained model name
 tokenizer_pretrained = AutoTokenizer.from_pretrained(model_name)
@@ -16,6 +19,23 @@ bills = []
 
 with open('data_sample.jsonl') as f:
     data = [json.loads(line) for line in f]
+
+def createValArr(arr, cite):
+    valArr = []
+    tokenizer = nltk.tokenize.MWETokenizer()
+    for i in arr:
+        if i in cite:
+            citeTokens = tokenizer.tokenize(word_tokenize(i))
+            for j in citeTokens:
+                if j == citeTokens[0]:
+                    valArr.append('B-cite')
+                else:
+                    valArr.append('I-cite')
+        else:
+            valArr.append('O')
+
+    print(valArr)
+    return valArr
 
 def CompareArray(arrayA, arrayB):
     if len(arrayA) == len(arrayB):
