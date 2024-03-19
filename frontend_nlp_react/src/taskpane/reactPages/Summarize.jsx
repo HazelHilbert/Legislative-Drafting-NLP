@@ -19,7 +19,7 @@ const Summarize = () => {
 
   const getText = async () => {
     try {
-      loadingEasterEgg();
+      // loadingEasterEgg();
       setLoading(true);
       await Word.run(async (context) => {
         const documentBody = context.document.body;
@@ -81,7 +81,7 @@ const Summarize = () => {
       return;
     }
     try {
-      loadingEasterEgg();
+      // loadingEasterEgg();
       setLoading(true);
       const response = await fetch("http://127.0.0.1:5000/billText/" + searchQuery);
       if (!response.ok) {

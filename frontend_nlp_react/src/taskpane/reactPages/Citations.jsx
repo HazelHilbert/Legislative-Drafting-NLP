@@ -26,7 +26,7 @@ const Citations = () => {
 
   const getCitationText = async (text) => {
     try {
-      loadingEasterEgg();
+      // loadingEasterEgg();
       setLoading(true);
 
       const response = await fetch("http://127.0.0.1:5000/citationString/" + removeForwardSlash(text));
@@ -58,7 +58,7 @@ const Citations = () => {
       return;
     }
     try {
-      loadingEasterEgg();
+      // loadingEasterEgg();
       setLoading(true);
       const response = await fetch("http://127.0.0.1:5000/billText/" + searchQuery);
       if (!response.ok) {
