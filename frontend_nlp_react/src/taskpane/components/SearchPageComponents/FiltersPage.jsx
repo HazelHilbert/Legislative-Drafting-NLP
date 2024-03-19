@@ -39,9 +39,6 @@ const useStyles = makeStyles({
 
 //      Allows the selection of filters to be used in search
 const FiltersPage = () => {
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [selectedFileTypes, setSelectedFileTypes] = useState([]);
-  const [selectedState, setSelectedState] = useState(null);
 
   // Data
   const usStates = [
