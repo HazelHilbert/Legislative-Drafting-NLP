@@ -10,7 +10,7 @@ from transformers import AdamW, AutoModelForSequenceClassification, TrainingArgu
 from tqdm import tqdm
 from sklearn.preprocessing import LabelEncoder
 from datasets import load_dataset
-
+from torch.utils.data import Dataset
 
 from transformers import BertTokenizer, BertForTokenClassification
 from transformers import AutoTokenizer
@@ -18,7 +18,6 @@ from transformers import AutoTokenizer
 from transformers import TrainingArguments, Trainer
 
 from huggingface_hub import login
-login()
 
 print("Start")
 
@@ -27,7 +26,7 @@ output_model_dir = "./fine_tuned_model"
 
 model_name = "nlpaueb/legal-bert-base-uncased"
 tokenizer = AutoTokenizer.from_pretrained(output_model_dir)
-model = BertForTokenClassification.from_pretrained(output_model_dir, num_labels=3)  # Adjust num_labels as needed
+model = BertForTokenClassification.from_pretrained(model_name, num_labels=3)  # Adjust num_labels as needed
 
 bills = []
 
@@ -39,22 +38,38 @@ args = TrainingArguments(
     evaluation_strategy="epoch",
     save_strategy="epoch",
     learning_rate=2e-5,
-    num_train_epochs=3,
+    num_train_epochs=1,
     weight_decay=0.01,
     push_to_hub=True,
 )
 
-def assignLabels(tokens):
-    return
+class CustomDataset(Dataset):
+    def __init__(self, texts, labels, tokenizer):
+        self.texts = texts
+        self.labels = labels
+        self.tokenizer = tokenizer
 
+    def __len__(self):
+        return len(self.texts)
+
+    def __getitem__(self, idx):
+        # Retrieve the text at the specified index
+        text = self.texts[idx]
+        # Tokenize the text using the tokenizer
+        tokenized_input = self.tokenizer(text, is_split_into_words=True)
+        # Retrieve the corresponding labels
+        labels = self.labels[idx]
+        # You might need to adjust the labels here to match tokenized input
+        return {"input_ids": tokenized_input["input_ids"], "labels": labels}
+    
 def alignValArr(valArr):
     newArr = []
     newArr.append(-100)
     for i in valArr:
         if i == "B-LC":
-            newArr.append(4040)
+            newArr.append(1)
         elif i == "I-LC":
-            newArr.append(4041)
+            newArr.append(2)
         else:
             newArr.append(0)
     newArr.append(-100)
@@ -70,24 +85,41 @@ def sampleTrain():
 
     tokens = tokenize(text, test_citations)
     valArr = createValArr(tokens, test_citations)
+    valArr = alignValArr(valArr)
     tokens = tokenizer.tokenize(text)
     print(tokens)
-    tokens = tokenizer(tokens, is_split_into_words=True)
-    print(f"tokenized text: {tokenizer(text)}")
-    print(tokens)
-    print(valArr)
-    print(tokens["token_type_ids"])
-    print(tokens.tokens())
-    tokens["token_type_ids"] = alignValArr(valArr)
-    print(tokens)
 
+    # Prepare your dataset here
+    texts = [tokens]  # Your texts
+    labels = [valArr]  # Your labels, aligned and adjusted as necessary
+    dataset = CustomDataset(texts, labels, tokenizer)
+    print(dataset)
+
+    # Then, create your Trainer with this dataset
     trainer = Trainer(
         model=model,
         args=args,
-        train_dataset=tokens,
+        train_dataset=dataset,
         tokenizer=tokenizer,
     )
+
     trainer.train()
+    #tokens = tokenizer(tokens, is_split_into_words=True)
+    #print(f"tokenized text: {tokenizer(text)}")
+    #print(tokens)
+    #print(valArr)
+    #print(tokens["token_type_ids"])
+    #print(tokens.tokens())
+    #tokens["token_type_ids"] = alignValArr(valArr)
+    #print(tokens)
+
+    #trainer = Trainer(
+    #    model=model,
+    #    args=args,
+    #    train_dataset=tokens,
+    #    tokenizer=tokenizer,
+    #)
+    #trainer.train()
 
 
 
