@@ -12,6 +12,8 @@ import {
 import { Dismiss12Regular, Dismiss24Regular } from "@fluentui/react-icons";
 import React, { useRef, useState } from "react";
 
+import "./FiltersPage.css";
+
 const useStyles = makeStyles({
   root: {
     alignItems: "flex-start",
@@ -148,7 +150,7 @@ const FiltersPage = () => {
     return (
       <div className={styles.root}>
         {selectedOptions.length ? (
-          <ul id={selectedListId} className={styles.tagsList} ref={selectedListRef}>
+          <ul id={selectedListId} className={styles.tagsListm} ref={selectedListRef}>
             {/* The "Remove" span is used for naming the buttons without affecting the Combobox name */}
             <span id={`${comboId}-remove`} hidden>
               Remove
@@ -343,6 +345,7 @@ const FiltersPage = () => {
           }}
         >
           <div
+            className="selected-filters"
             style={{
               paddingLeft: 2,
               paddingRight: 2,
@@ -361,6 +364,7 @@ const FiltersPage = () => {
 
       {/* Document Type */}
       <div
+        className="document"
         style={{
           alignSelf: "stretch",
           height: "auto",
@@ -423,6 +427,7 @@ const FiltersPage = () => {
 
       {/* States */}
       <div
+        className="selected-filters"
         style={{
           alignSelf: "stretch",
           height: "auto",

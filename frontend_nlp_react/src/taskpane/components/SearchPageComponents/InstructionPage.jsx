@@ -7,7 +7,6 @@ const InstructionPage = ({ title }) => {
     <div className="instructionPageContainer">
       <div className="sectionContainer">
         <div className="sectionInnerContainer">
-          <img className="logoImage" src="../../assets/propylonFull.png" />
           <div className="titleText">{title}</div>
         </div>
         <div className="sectionContainer">

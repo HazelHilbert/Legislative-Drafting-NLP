@@ -106,7 +106,7 @@ const SearchPage = () => {
       }}
     >
       {/* Top Navigation */}
-      <img src="../../assets/propylonFull.png" width={"50%"} style={{ marginTop: "10px" }} />
+      <img src="../../assets/propylonFull.png" className="image" width={"50%"} style={{ marginTop: "10px" }} />
       <div
         style={{
           alignSelf: "stretch",
@@ -125,7 +125,7 @@ const SearchPage = () => {
         {/* Top Navigation */}
         <TabList
           style={{ width: "auto" }}
-          className={styles.tabListContainer}
+          className={"tabs"}
           selectedValue={selectedTab}
           onTabSelect={(event, data) => setSelectedTab(data.value)}
         >
@@ -138,6 +138,7 @@ const SearchPage = () => {
 
         {/* Search Bar */}
         <div
+          className="search-bar"
           style={{
             width: "100%",
             height: "100%",
