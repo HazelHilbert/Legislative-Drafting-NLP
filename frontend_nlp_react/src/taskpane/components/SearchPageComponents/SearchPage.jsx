@@ -30,6 +30,11 @@ const useStyles = makeStyles({
 });
 
 const SearchPage = () => {
+  // Filter Page Filters
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedFileTypes, setSelectedFileTypes] = useState([]);
+  const [selectedState, setSelectedState] = useState(null);
+
   const styles = useStyles();
 
   const [searchText, setSearchText] = useState("");
@@ -42,10 +47,9 @@ const SearchPage = () => {
   const getSearchResults = async (text) => {
     // Grab the information from the input box. 
     // Grab the values from the filters pills. 
-
     try {
       // getch("https://127.0.0.1:500/search?query=exampleQuery&....") add all the queries inside this search paramter
-      const response = await fetch("http://127.0.0.1:5000/search/" + );
+      const response = await fetch("http://127.0.0.1:5000/search" + "?query=somequery&state=Alaska&documentType=example&effectiveDate=123");
       if (!response.ok) {
         setSummarizedText("Invalid Summarize!");
       }
@@ -230,7 +234,16 @@ const SearchPage = () => {
 
       {selectedTab === "tab1"}
       {selectedTab === "tab2" && <ResultsPage />}
-      {selectedTab === "tab3" && <FiltersPage />}
+      {selectedTab === "tab3" && 
+        <FiltersPage
+          selectedDate={selectedDate}
+          setSelectedDate={setSelectedDate}
+          selectedFileTypes={selectedFileTypes}
+          setSelectedFileTypes={setSelectedFileTypes}
+          selectedState={selectedState}
+          setSelectedState={setSelectedState}
+        />
+      }
       {selectedTab === "tab4" && <ResultsPage />}
       {selectedTab === "tab5" && (
         // <AddPage/>

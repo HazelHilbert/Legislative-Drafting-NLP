@@ -38,7 +38,19 @@ const useStyles = makeStyles({
 });
 
 //      Allows the selection of filters to be used in search
-const FiltersPage = () => {
+const FiltersPage = ({
+  selectedDate,
+  setSelectedDate,
+  selectedFileTypes,
+  setSelectedFileTypes,
+  selectedState,
+  setSelectedState
+}) => {
+  // Filters:
+  // const [selectedDate, setSelectedDate] = useState(null);
+  // const [selectedFileTypes, setSelectedFileTypes] = useState([]);
+  // const [selectedState, setSelectedState] = useState(null);
+  
 
   // Data
   const usStates = [
@@ -94,10 +106,7 @@ const FiltersPage = () => {
     { key: "wyoming", text: "Wyoming" },
   ];
 
-  // Filters:
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [selectedFileTypes, setSelectedFileTypes] = useState([]);
-  const [selectedState, setSelectedState] = useState(null);
+  
 
   //    Document Type | US States | Date
   const legislativeDocumentTypes = [
@@ -199,19 +208,24 @@ const FiltersPage = () => {
       }
     });
   };
+
   const handleStateChange = (event, option) => {
     setSelectedState(option.text);
   };
+
   const onCheckboxChange = (ev, isChecked) => {
     const fileType = ev.target.id;
     handleFileTypeChange(fileType);
   };
+
   const onDropdownChange = (event, option, index) => {
     handleStateChange(event, option);
   };
+
   const onDateSelect = (date) => {
     setSelectedDate(date);
   };
+
   const handleRemoveFilter = (filterType) => {
     switch (filterType) {
       case "date":
@@ -227,6 +241,7 @@ const FiltersPage = () => {
         break;
     }
   };
+
   const renderChips = () => {
     const [hoverStates, setHoverStates] = React.useState({
       hover1: false,
