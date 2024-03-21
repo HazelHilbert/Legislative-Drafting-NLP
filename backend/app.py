@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, render_template, send_file
+from flask import Flask, request, render_template, send_file, jsonify
 from flask_cors import CORS
 import APITools
 import docx
@@ -47,3 +47,19 @@ def create_word_doc(searchText,text):
     os.startfile(searchText + ".docx")
     return "Hello"
     
+
+@app.route('/search', methods=['GET'])
+def search():
+    query = request.args.get('query')
+    state = request.args.get('state')
+    documentType = request.args.get('doctype')
+    effectiveDate = request.args.get("effectiveDate")
+
+    response = {
+        'query': query,
+        'state': state,
+        'document': documentType, 
+        'Effective Date' : effectiveDate,
+    }
+    
+    return jsonify(response)
