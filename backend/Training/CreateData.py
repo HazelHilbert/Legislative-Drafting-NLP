@@ -1,3 +1,5 @@
+# This code is intended for the training of our AI model. However, at present it is unfinished, running it will cause errors.
+
 import nltk
 from nltk.tokenize import *
 import json
@@ -5,19 +7,24 @@ import pandas as pd
 import requests
 import torch
 import json
+import numpy as np
 from torch.utils.data import DataLoader, TensorDataset
 from transformers import AdamW, AutoModelForSequenceClassification, TrainingArguments
 from tqdm import tqdm
 from sklearn.preprocessing import LabelEncoder
 from datasets import load_dataset
 from torch.utils.data import Dataset
-
+from transformers import DataCollatorForTokenClassification
 from transformers import BertTokenizer, BertForTokenClassification
 from transformers import AutoTokenizer
 
 from transformers import TrainingArguments, Trainer
 
 from huggingface_hub import login
+
+import evaluate
+
+metric = evaluate.load("seqeval")
 
 print("Start")
 
@@ -27,11 +34,14 @@ output_model_dir = "./fine_tuned_model"
 model_name = "nlpaueb/legal-bert-base-uncased"
 tokenizer = AutoTokenizer.from_pretrained(output_model_dir)
 model = BertForTokenClassification.from_pretrained(model_name, num_labels=3)  # Adjust num_labels as needed
+data_collator = DataCollatorForTokenClassification(tokenizer=tokenizer)
 
 bills = []
 
 with open('dummy.jsonl') as f:
     data = [json.loads(line) for line in f]
+
+
 
 args = TrainingArguments(
     "kavans25/SwEng25",
@@ -76,6 +86,24 @@ def alignValArr(valArr):
     print(newArr)
     return newArr
 
+def compute_metrics(eval_preds):
+    logits, labels = eval_preds
+    predictions = np.argmax(logits, axis=-1)
+
+    # Remove ignored index (special tokens) and convert to labels
+    true_labels = [[label_names[l] for l in label if l != -100] for label in labels]
+    true_predictions = [
+        [label_names[p] for (p, l) in zip(prediction, label) if l != -100]
+        for prediction, label in zip(predictions, labels)
+    ]
+    all_metrics = metric.compute(predictions=true_predictions, references=true_labels)
+    return {
+        "precision": all_metrics["overall_precision"],
+        "recall": all_metrics["overall_recall"],
+        "f1": all_metrics["overall_f1"],
+        "accuracy": all_metrics["overall_accuracy"],
+    }
+
 def sampleTrain():
     text =  "the provisions of 12 O.S. 1941 had an impact on 34 N.C. 1234"
     test_citations = []
@@ -84,8 +112,8 @@ def sampleTrain():
     test_citations.append("12 O.S. 1941")
 
     tokens = tokenize(text, test_citations)
-    valArr = createValArr(tokens, test_citations)
-    valArr = alignValArr(valArr)
+    valArrS = createValArr(tokens, test_citations)
+    valArr = alignValArr(valArrS)
     tokens = tokenizer.tokenize(text)
     print(tokens)
 
@@ -95,11 +123,25 @@ def sampleTrain():
     dataset = CustomDataset(texts, labels, tokenizer)
     print(dataset)
 
+    batch = data_collator(dataset)
+    print(batch["labels"])
+
+    predictions = valArrS.copy()
+    predictions[2] = 'O'
+    metric.compute(predictions=[predictions], references=[valArrS])
+
+    
+    
+    
+    
     # Then, create your Trainer with this dataset
     trainer = Trainer(
         model=model,
         args=args,
         train_dataset=dataset,
+        eval_dataset=dataset,
+        data_collator=data_collator,
+        compute_metrics=compute_metrics,
         tokenizer=tokenizer,
     )
 
@@ -253,21 +295,9 @@ def tokenize(text, citations_list):
 def train(data):
     return null
 
-text =  "the provisions of 12 O.S. 1941 had an impact on 34 N.C. 1234"
-test_citations = []
-
-newCite = []
-test_citations.append("34 N.C. 1234")
-test_citations.append("12 O.S. 1941")
-
-tokenize(text, test_citations)
-
-for i in bills:
-    print(i[1])
+sampleTrain()
 
 # Save the model and tokenizer to the specified directory
 model.save_pretrained(output_model_dir)
 tokenizer.save_pretrained(output_model_dir)
 
-
-sampleTrain()
