@@ -1,16 +1,10 @@
-// Filters Tab
-import { Calendar } from "@fluentui/react";
-import {
-  Checkbox,
-  Combobox,
-  ToggleButton,
-  makeStyles,
-  tokens,
-  useId,
-  MultiselectWithTags,
-} from "@fluentui/react-components";
-import { Dismiss12Regular, Dismiss24Regular } from "@fluentui/react-icons";
 import React, { useRef, useState } from "react";
+
+// Fluent UI Components
+import { Calendar } from "@fluentui/react";
+import { Checkbox, Combobox, ToggleButton, makeStyles, tokens, useId} from "@fluentui/react-components";
+import { Dismiss12Regular, Dismiss24Regular } from "@fluentui/react-icons";
+
 
 const useStyles = makeStyles({
   root: {
