@@ -95,6 +95,10 @@ const FiltersPage = () => {
   ];
 
   // Filters:
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedFileTypes, setSelectedFileTypes] = useState([]);
+  const [selectedState, setSelectedState] = useState(null);
+
   //    Document Type | US States | Date
   const legislativeDocumentTypes = [
     { key: "bill", text: "Bill" },
