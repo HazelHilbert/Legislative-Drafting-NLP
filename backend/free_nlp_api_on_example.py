@@ -54,13 +54,24 @@ def call_open_ai(prompt_type, input_text):
 
 
 # Choose what prompt you want
+# def get_prompt(prompt_type):
+#     match prompt_type:
+#         case "summary":
+#             return "Summarize this text for me: "
+#         case "citationJSON":
+#             return "Return ONLY the citation(s) from this string as json: "
+#         case "citationString":
+#             return "Return ONLY the citation(s) from this string: "
+#         case _:
+#             return "Summarize this text for me: "
+# Define the prompts in a dictionary
+prompts = {
+    "summary": "Summarize this text for me: ",
+    "citationJSON": "Return ONLY the citation(s) from this string as json: ",
+    "citationString": "Return ONLY the citation(s) from this string: "
+}
+
+# Function to retrieve the prompt based on the prompt type
 def get_prompt(prompt_type):
-    match prompt_type:
-        case "summary":
-            return "Summarize this text for me: "
-        case "citationJSON":
-            return "Return ONLY the citation(s) from this string as json: "
-        case "citationString":
-            return "Return ONLY the citation(s) from this string: "
-        case _:
-            return "Summarize this text for me: "
+    # Use dictionary.get() method to handle prompt types not found in the dictionary
+    return prompts.get(prompt_type, "Summarize this text for me: ")

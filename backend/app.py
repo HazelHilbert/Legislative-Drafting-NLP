@@ -39,6 +39,23 @@ def getCitationJSON(billText) :
 def getCitationString(billText) :
     return call_open_ai("citationString", billText)
 
+@app.route("/summariseBill/<billID>")
+def getSummariseBill(billID):
+    billText = getText(billID)
+    
+    return call_open_ai("summary", billText)
+
+
+@app.route("/citationJSONBill/<billID>")
+def getCitationJSONBill(billID) :
+    billText = getText(billID)
+    return call_open_ai("citationJSON", billText)
+
+@app.route("/citationStringBill/<billID>")
+def getCitationStringBill(billID) :
+    billText = getText(billID)
+    return call_open_ai("citationString", billText)
+
 @app.route('/generate_document/<searchText>/<text>')
 def create_word_doc(searchText,text):
     mydoc = docx.Document()  
