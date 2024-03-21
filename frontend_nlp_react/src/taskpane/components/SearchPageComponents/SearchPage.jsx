@@ -49,9 +49,6 @@ const SearchPage = () => {
     // Grab the values from the filters pills. 
     try {
       // getch("https://127.0.0.1:500/search?query=exampleQuery&....") add all the queries inside this search paramter
-      console.log("This is test output")
-      
-      console.log(selectedFileTypes)
       const response = await fetch("http://127.0.0.1:5000/search" + "?query=${selectedDate}&state=${selectedFileTypes}&documentType=example&effectiveDate=123");
       if (!response.ok) {
         setSummarizedText("Invalid Summarize!");
@@ -71,7 +68,8 @@ const SearchPage = () => {
     try {
       // loadingEasterEgg();
       setLoading(true);
-      const response = await fetch(`http://127.0.0.1:5000/search?query=${searchText}&state=${selectedState}&documentType=${selectedFileTypes}&effectiveDate=${selectedDate}`);
+      
+      const response = await fetch(`http://127.0.0.1:5000/search?query=${searchText}&state=${selectedState}&documentType=${selectedFileTypes.join(', ')}&effectiveDate=${selectedDate.toDateString()}`);
 
       // const response = await fetch("http://127.0.0.1:5000/billText/" + searchText);
       if (!response.ok) {

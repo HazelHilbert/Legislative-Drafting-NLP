@@ -31,22 +31,11 @@ const useStyles = makeStyles({
   },
 });
 
-//      Allows the selection of filters to be used in search
-const FiltersPage = ({
-  selectedDate,
-  setSelectedDate,
-  selectedFileTypes,
-  setSelectedFileTypes,
-  selectedState,
-  setSelectedState
-}) => {
-  // Filters:
-  // const [selectedDate, setSelectedDate] = useState(null);
-  // const [selectedFileTypes, setSelectedFileTypes] = useState([]);
-  // const [selectedState, setSelectedState] = useState(null);
-  
+// Allows the selection of filters to be used in search
+const FiltersPage = ({selectedDate, setSelectedDate, selectedFileTypes, 
+                      setSelectedFileTypes, selectedState, setSelectedState}) => {
 
-  // Data
+  // US States
   const usStates = [
     { key: "alabama", text: "Alabama" },
     { key: "alaska", text: "Alaska" },
@@ -100,9 +89,11 @@ const FiltersPage = ({
     { key: "wyoming", text: "Wyoming" },
   ];
 
-  
+  const debug = () => {
+    return `Output: ${selectedFileTypes}`;
+  };
 
-  //    Document Type | US States | Date
+  // Document Type | US States | Date
   const legislativeDocumentTypes = [
     { key: "bill", text: "Bill" },
     { key: "resolution", text: "Resolution" },
@@ -112,6 +103,7 @@ const FiltersPage = ({
     { key: "minutes", text: "Minutes" },
     { key: "regulation", text: "Regulation" },
   ];
+
 
   const MultiselectWithTags = (props) => {
     // generate ids for handling labelling
@@ -193,6 +185,7 @@ const FiltersPage = ({
   };
 
   // Filter Tab Functions to handle interaction with filters.
+  // Handles applying file type
   const handleFileTypeChange = (fileType) => {
     setSelectedFileTypes((prevFileTypes) => {
       if (prevFileTypes.includes(fileType)) {
@@ -203,6 +196,7 @@ const FiltersPage = ({
     });
   };
 
+  // Handles apply state
   const handleStateChange = (event, option) => {
     setSelectedState(option.text);
   };
@@ -226,7 +220,7 @@ const FiltersPage = ({
         setSelectedDate(null);
         break;
       case "fileType":
-        setSelectedFileTypes([]);
+        // setSelectedFileTypes([]);
         break;
       case "state":
         setSelectedState(null);
@@ -494,6 +488,7 @@ const FiltersPage = ({
           ></MultiselectWithTags>
         </div>
       </div>
+      
       {/* Effective Dates */}
       <div
         style={{
@@ -551,8 +546,7 @@ const FiltersPage = ({
           }}
         >
           <div style={{ justifyContent: "flex-start", alignItems: "flex-start", gap: 10, display: "flex" }}>
-            <Calendar
-              onSelectDate={onDateSelect}
+            <Calendar onSelectDate={onDateSelect}
               style={{
                 width: "auto",
                 boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.12)",
@@ -564,6 +558,10 @@ const FiltersPage = ({
             />
           </div>
         </div>
+      </div>
+
+      <div>
+      <p>{debug()}</p>
       </div>
     </div>
   );
