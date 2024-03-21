@@ -45,6 +45,7 @@ const Summarize = () => {
         setSummarizedText("Invalid Summarize!");
       }
       const data = await response.text();
+      let userIsScrolling = false;
       const allWords = data.split(" ");
       let i = 0;
       const interval = setInterval(() => {
@@ -53,7 +54,21 @@ const Summarize = () => {
         if (i === allWords.length) {
           clearInterval(interval);
         }
-        window.scrollTo(0, document.body.scrollHeight);
+        window.addEventListener("wheel", () => {
+          userIsScrolling = true;
+        });   
+        window.addEventListener("touchstart", () => {
+          userIsScrolling = true;
+        });
+        const scrollBar = document.documentElement;
+        scrollBar.addEventListener("mousedown", (event) => {
+          if (event.target === scrollBar) {
+            event.preventDefault();
+            userIsScrolling = true;
+          }
+        });
+        if(!userIsScrolling)
+          window.scrollTo(0, document.body.scrollHeight);
       }, 100); // Interval Duration
     } catch (error) {
       setSummarizedText("Invalid Summarize!");
