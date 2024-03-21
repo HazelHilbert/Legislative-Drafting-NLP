@@ -31,3 +31,14 @@ def test_citation_string_bill(mock_requests):
     data = response.text
     assert "105 ILCS 5/10-22.6" in data
     assert "105 ILCS 5/34-19" in data
+
+
+def test_citation_JSON_bill(mock_requests):
+    expected_data = {
+        "citations": ["105 ILCS 5/10-22.6", "105 ILCS 5/34-19"]
+    }
+    mock_requests.get(f"{test_url}citationJSONBill/1254828", json = expected_data)
+    response = requests.get(f"{test_url}citationJSONBill/1254828")
+    assert response.status_code == 200  
+    data = response.json()
+    assert data['citations'] == ["105 ILCS 5/10-22.6", "105 ILCS 5/34-19"]
