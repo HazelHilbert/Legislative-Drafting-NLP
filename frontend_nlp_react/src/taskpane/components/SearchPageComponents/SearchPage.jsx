@@ -3,43 +3,26 @@ import React, { useState } from "react";
 import InstructionPage from "./InstructionPage";
 import ResultsPage from "./ResultsPage";
 import FiltersPage from "./FiltersPage";
-import useStyles from "./SearchPageConsts"
+import {useStyles, tabs, instructionPages, usStates, legislativeDocumentTypes} from "./SearchPageConsts"
 
 const SearchPage = () => {
   // Page styling:
   const styles = useStyles();
-  
-  // Filter Page Filters
-  const [selectedDate, setSelectedDate] = useState(null);
-  const [selectedFileTypes, setSelectedFileTypes] = useState([]);
-  const [selectedState, setSelectedState] = useState(null);
-  const [chips, setChips] = useState([]);
 
-  
-
+  // Search Page Menu Items
   const [searchText, setSearchText] = useState("");
   const [searchOutput, setSearchOutput] = useState("");
   const [selectedTab, setSelectedTab] = useState("tab1"); // Add state for the selected tab
   const [loading, setLoading] = useState(false);
   const [imageID, setImageID] = useState("../../assets/LoadingTwoColour.gif");
 
+  // Filter Page Filters
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedFileTypes, setSelectedFileTypes] = useState([]);
+  const [selectedState, setSelectedState] = useState(null);
+  const [chips, setChips] = useState([]);
 
-  const getSearchResults = async (text) => {
-    // Grab the information from the input box. 
-    // Grab the values from the filters pills. 
-    try {
-      // getch("https://127.0.0.1:500/search?query=exampleQuery&....") add all the queries inside this search paramter
-      const response = await fetch("http://127.0.0.1:5000/search" + "?query=${selectedDate}&state=${selectedFileTypes}&documentType=example&effectiveDate=123");
-      if (!response.ok) {
-        setSummarizedText("Invalid Summarize!");
-      }
-      const data = await response.text();
-      setSummarizedText(data);
-    } catch (error) {
-      setSummarizedText("Invalid Summarize!");
-    }
-  };
-
+  // Get Search Results
   const handleClick = async () => {
     if (!searchText) {
       setSearchOutput("No text entered");
@@ -65,124 +48,24 @@ const SearchPage = () => {
     }
   };
 
-  const loadingEasterEgg = () => {
-    if (Math.floor(Math.random() * 100 + 1) == 1) {
-      setImageID("../../assets/loading.gif");
-    } else {
-      setImageID("../../assets/LoadingTwoColour.gif");
-    }
-  };
-
-  const handleChange = (event) => {
-    setSearchText(event.target.value);
-  };
-
+  // Handle search
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
       handleClick();
     }
   };
-
-  const tabs = [
-    { label: "Search", value: "tab1" },
-    { label: "Result", value: "tab2" },
-    { label: "Filter", value: "tab3" },
-    { label: "Add", value: "tab4" },
-    { label: "Settings", value: "tab5" },
-  ];
-
-  const instructionPages = {
-    tab1: { title: "Instructions" },
+  // Change Search Result Input
+  const handleChange = (event) => {
+    setSearchText(event.target.value);
   };
-
   
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // Filter page functions
-  // US States
-  const usStates = [
-    { key: "alabama", text: "Alabama" },
-    { key: "alaska", text: "Alaska" },
-    { key: "arizona", text: "Arizona" },
-    { key: "arkansas", text: "Arkansas" },
-    { key: "california", text: "California" },
-    { key: "colorado", text: "Colorado" },
-    { key: "connecticut", text: "Connecticut" },
-    { key: "delaware", text: "Delaware" },
-    { key: "florida", text: "Florida" },
-    { key: "georgia", text: "Georgia" },
-    { key: "hawaii", text: "Hawaii" },
-    { key: "idaho", text: "Idaho" },
-    { key: "illinois", text: "Illinois" },
-    { key: "indiana", text: "Indiana" },
-    { key: "iowa", text: "Iowa" },
-    { key: "kansas", text: "Kansas" },
-    { key: "kentucky", text: "Kentucky" },
-    { key: "louisiana", text: "Louisiana" },
-    { key: "maine", text: "Maine" },
-    { key: "maryland", text: "Maryland" },
-    { key: "massachusetts", text: "Massachusetts" },
-    { key: "michigan", text: "Michigan" },
-    { key: "minnesota", text: "Minnesota" },
-    { key: "mississippi", text: "Mississippi" },
-    { key: "missouri", text: "Missouri" },
-    { key: "montana", text: "Montana" },
-    { key: "nebraska", text: "Nebraska" },
-    { key: "nevada", text: "Nevada" },
-    { key: "new-hampshire", text: "New Hampshire" },
-    { key: "new-jersey", text: "New Jersey" },
-    { key: "new-mexico", text: "New Mexico" },
-    { key: "new-york", text: "New York" },
-    { key: "north-carolina", text: "North Carolina" },
-    { key: "north-dakota", text: "North Dakota" },
-    { key: "ohio", text: "Ohio" },
-    { key: "oklahoma", text: "Oklahoma" },
-    { key: "oregon", text: "Oregon" },
-    { key: "pennsylvania", text: "Pennsylvania" },
-    { key: "rhode-island", text: "Rhode Island" },
-    { key: "south-carolina", text: "South Carolina" },
-    { key: "south-dakota", text: "South Dakota" },
-    { key: "tennessee", text: "Tennessee" },
-    { key: "texas", text: "Texas" },
-    { key: "utah", text: "Utah" },
-    { key: "vermont", text: "Vermont" },
-    { key: "virginia", text: "Virginia" },
-    { key: "washington", text: "Washington" },
-    { key: "west-virginia", text: "West Virginia" },
-    { key: "wisconsin", text: "Wisconsin" },
-    { key: "wyoming", text: "Wyoming" },
-  ];
-
+  // Debugging
   const debug = () => {
     return `Output: ${selectedFileTypes}`;
   };
 
-  // Document Type | US States | Date
-  const legislativeDocumentTypes = [
-    { key: "bill", text: "Bill" },
-    { key: "resolution", text: "Resolution" },
-    { key: "law", text: "Law" },
-    { key: "amendment", text: "Amendment" },
-    { key: "report", text: "Report" },
-    { key: "minutes", text: "Minutes" },
-    { key: "regulation", text: "Regulation" },
-  ];
-
-
+  // Complete Remove and Fix
   const MultiselectWithTags = (props) => {
     // generate ids for handling labelling
     const comboId = useId("combo-multi");
@@ -261,6 +144,7 @@ const SearchPage = () => {
       </div>
     );
   };
+
 
   // Filter Tab Functions to handle interaction with filters.
   // Handles applying file type
@@ -391,6 +275,7 @@ const SearchPage = () => {
   const updateChips = (newChips) => {
     setChips(newChips);
   };
+  
   return (
     <div
       className={styles.root}

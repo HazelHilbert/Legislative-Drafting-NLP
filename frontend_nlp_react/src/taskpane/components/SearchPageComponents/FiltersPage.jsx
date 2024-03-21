@@ -1,10 +1,17 @@
-import React, { useRef, useState } from "react";
-
-// Fluent UI Components
+// Filters Tab
 import { Calendar } from "@fluentui/react";
-import { Checkbox, Combobox, ToggleButton, makeStyles, tokens, useId} from "@fluentui/react-components";
+import {
+  Checkbox,
+  Combobox,
+  ToggleButton,
+  makeStyles,
+  tokens,
+  useId,
+  MultiselectWithTags,
+} from "@fluentui/react-components";
 import { Dismiss12Regular, Dismiss24Regular } from "@fluentui/react-icons";
-
+import React, { useRef, useState } from "react";
+import {useStyles, usStates, legislativeDocumentTypes} from "./SearchPageConsts"
 
 const useStyles = makeStyles({
   root: {
@@ -31,97 +38,13 @@ const useStyles = makeStyles({
   },
 });
 
-// Allows the selection of filters to be used in search
- 
-const FiltersPage = ({ chips, updateChips, selectedFileTypes, setSelectedFileTypes, selectedState, setSelectedState, onCheckboxChange, onDateSelect }) => {
-  const renderChips = () => {
-    return chips.map((chip, index) => (
-      <div key={index}>{chip}</div>
-    ));
-  };
+// Allows us to select filters for searching for different pieces of legislative documents
+const FiltersPage = () => {
+  // Filters:
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedFileTypes, setSelectedFileTypes] = useState([]);
+  const [selectedState, setSelectedState] = useState(null);
 
-  // Render checkboxes for file types
-  const renderFileTypeCheckboxes = () => {
-    return legislativeDocumentTypes.map((type) => (
-      <Checkbox key={type.key} label={type.text} id={type.key} onChange={onCheckboxChange} checked={selectedFileTypes.includes(type.key)} />
-    ));
-  };
-
-  
-  // Debugging
-  const debug = () => {
-    return `Output: ${selectedFileTypes}`;
-  };
-
-
-
-
-  // // List of US states to display in dropdown menu on filters tab
-  const usStates = [
-    { key: "alabama", text: "Alabama" },
-    { key: "alaska", text: "Alaska" },
-    { key: "arizona", text: "Arizona" },
-    { key: "arkansas", text: "Arkansas" },
-    { key: "california", text: "California" },
-    { key: "colorado", text: "Colorado" },
-    { key: "connecticut", text: "Connecticut" },
-    { key: "delaware", text: "Delaware" },
-    { key: "florida", text: "Florida" },
-    { key: "georgia", text: "Georgia" },
-    { key: "hawaii", text: "Hawaii" },
-    { key: "idaho", text: "Idaho" },
-    { key: "illinois", text: "Illinois" },
-    { key: "indiana", text: "Indiana" },
-    { key: "iowa", text: "Iowa" },
-    { key: "kansas", text: "Kansas" },
-    { key: "kentucky", text: "Kentucky" },
-    { key: "louisiana", text: "Louisiana" },
-    { key: "maine", text: "Maine" },
-    { key: "maryland", text: "Maryland" },
-    { key: "massachusetts", text: "Massachusetts" },
-    { key: "michigan", text: "Michigan" },
-    { key: "minnesota", text: "Minnesota" },
-    { key: "mississippi", text: "Mississippi" },
-    { key: "missouri", text: "Missouri" },
-    { key: "montana", text: "Montana" },
-    { key: "nebraska", text: "Nebraska" },
-    { key: "nevada", text: "Nevada" },
-    { key: "new-hampshire", text: "New Hampshire" },
-    { key: "new-jersey", text: "New Jersey" },
-    { key: "new-mexico", text: "New Mexico" },
-    { key: "new-york", text: "New York" },
-    { key: "north-carolina", text: "North Carolina" },
-    { key: "north-dakota", text: "North Dakota" },
-    { key: "ohio", text: "Ohio" },
-    { key: "oklahoma", text: "Oklahoma" },
-    { key: "oregon", text: "Oregon" },
-    { key: "pennsylvania", text: "Pennsylvania" },
-    { key: "rhode-island", text: "Rhode Island" },
-    { key: "south-carolina", text: "South Carolina" },
-    { key: "south-dakota", text: "South Dakota" },
-    { key: "tennessee", text: "Tennessee" },
-    { key: "texas", text: "Texas" },
-    { key: "utah", text: "Utah" },
-    { key: "vermont", text: "Vermont" },
-    { key: "virginia", text: "Virginia" },
-    { key: "washington", text: "Washington" },
-    { key: "west-virginia", text: "West Virginia" },
-    { key: "wisconsin", text: "Wisconsin" },
-    { key: "wyoming", text: "Wyoming" },
-  ];
-
-  // // Document types to display in document time on filters tab
-  const legislativeDocumentTypes = [
-    { key: "bill", text: "Bill" },
-    { key: "resolution", text: "Resolution" },
-    { key: "law", text: "Law" },
-    { key: "amendment", text: "Amendment" },
-    { key: "report", text: "Report" },
-    { key: "minutes", text: "Minutes" },
-    { key: "regulation", text: "Regulation" },
-  ];
-
-  // Broken:
   const MultiselectWithTags = (props) => {
     // generate ids for handling labelling
     const comboId = useId("combo-multi");
@@ -201,436 +124,374 @@ const FiltersPage = ({ chips, updateChips, selectedFileTypes, setSelectedFileTyp
     );
   };
 
-  // // Filter Tab Functions to handle interaction with filters.
-  // // Handles applying file type
-  // const handleFileTypeChange = (fileType) => {
-  //   setSelectedFileTypes((prevFileTypes) => {
-  //     if (prevFileTypes.includes(fileType)) {
-  //       return prevFileTypes.filter((type) => type !== fileType);
-  //     } else {
-  //       return [...prevFileTypes, fileType];
-  //     }
-  //   });
-  // };
+  // Filter Tab Functions to handle interaction with filters.
+  const handleFileTypeChange = (fileType) => {
+    setSelectedFileTypes((prevFileTypes) => {
+      if (prevFileTypes.includes(fileType)) {
+        return prevFileTypes.filter((type) => type !== fileType);
+      } else {
+        return [...prevFileTypes, fileType];
+      }
+    });
+  };
+  const handleStateChange = (event, option) => {
+    setSelectedState(option.text);
+  };
+  const onCheckboxChange = (ev, isChecked) => {
+    const fileType = ev.target.id;
+    handleFileTypeChange(fileType);
+  };
+  const onDropdownChange = (event, option, index) => {
+    handleStateChange(event, option);
+  };
+  const onDateSelect = (date) => {
+    setSelectedDate(date);
+  };
+  const handleRemoveFilter = (filterType) => {
+    switch (filterType) {
+      case "date":
+        setSelectedDate(null);
+        break;
+      case "fileType":
+        setSelectedFileTypes([]);
+        break;
+      case "state":
+        setSelectedState(null);
+        break;
+      default:
+        break;
+    }
+  };
+  const renderChips = () => {
+    const [hoverStates, setHoverStates] = React.useState({
+      hover1: false,
+      hover2: false,
+      hover3: false,
+    });
 
-  // // Handles apply state
-  // const handleStateChange = (event, option) => {
-  //   setSelectedState(option.text);
-  // };
+    const handleHover = (buttonIndex, isHovering) => {
+      setHoverStates((prevStates) => ({
+        ...prevStates,
+        [`hover${buttonIndex}`]: isHovering,
+      }));
+    };
 
-  // const onCheckboxChange = (ev, isChecked) => {
-  //   const fileType = ev.target.id;
-  //   handleFileTypeChange(fileType);
-  // };
+    const chipStyle = {
+      width: "auto",
+    };
 
-  // const onDropdownChange = (event, option, index) => {
-  //   handleStateChange(event, option);
-  // };
+    const chips = [];
 
-  // const onDateSelect = (date) => {
-  //   setSelectedDate(date);
-  // };
+    if (selectedDate) {
+      chips.push(
+        <ToggleButton
+          key="date"
+          size="small"
+          style={chipStyle}
+          onMouseOver={() => handleHover(1, true)}
+          onMouseOut={() => handleHover(1, false)}
+          {...(hoverStates.hover1 && { icon: <Dismiss24Regular /> })}
+          iconPosition="after"
+          shape="circular"
+          onClick={() => handleRemoveFilter("date")}
+        >
+          {selectedDate.toDateString()}
+        </ToggleButton>
+      );
+    }
 
-  // const handleRemoveFilter = (filterType) => {
-  //   switch (filterType) {
-  //     case "date":
-  //       setSelectedDate(null);
-  //       break;
-  //     case "fileType":
-  //       // setSelectedFileTypes([]);
-  //       break;
-  //     case "state":
-  //       setSelectedState(null);
-  //       break;
-  //     default:
-  //       break;
-  //   }
-  // };
+    if (selectedFileTypes.length > 0) {
+      selectedFileTypes.forEach((fileType, index) => {
+        chips.push(
+          <ToggleButton
+            key="date"
+            size="small"
+            style={chipStyle}
+            onMouseOver={() => handleHover(1, true)}
+            onMouseOut={() => handleHover(1, false)}
+            {...(hoverStates.hover1 && { icon: <Dismiss24Regular /> })}
+            iconPosition="after"
+            shape="circular"
+            onClick={() => handleRemoveFilter("fileType")}
+          >
+            {fileType}
+          </ToggleButton>
+        );
+      });
+    }
 
-  // const renderChips = () => {
-  //   const [hoverStates, setHoverStates] = React.useState({
-  //     hover1: false,
-  //     hover2: false,
-  //     hover3: false,
-  //   });
+    if (selectedState) {
+      chips.push(
+        <ToggleButton
+          key="date"
+          size="small"
+          style={chipStyle}
+          onMouseOver={() => handleHover(1, true)}
+          onMouseOut={() => handleHover(1, false)}
+          {...(hoverStates.hover1 && { icon: <Dismiss24Regular /> })}
+          iconPosition="after"
+          shape="circular"
+          onClick={() => handleRemoveFilter("state")}
+        >
+          {selectedState}
+        </ToggleButton>
+      );
+    }
 
-  //   const handleHover = (buttonIndex, isHovering) => {
-  //     setHoverStates((prevStates) => ({
-  //       ...prevStates,
-  //       [`hover${buttonIndex}`]: isHovering,
-  //     }));
-  //   };
-
-  //   const chipStyle = {
-  //     width: "auto",
-  //   };
-
-  //   const chips = [];
-
-  //   if (selectedDate) {
-  //     chips.push(
-  //       <ToggleButton
-  //         key="date"
-  //         size="small"
-  //         style={chipStyle}
-  //         onMouseOver={() => handleHover(1, true)}
-  //         onMouseOut={() => handleHover(1, false)}
-  //         {...(hoverStates.hover1 && { icon: <Dismiss24Regular /> })}
-  //         iconPosition="after"
-  //         shape="circular"
-  //         onClick={() => handleRemoveFilter("date")}
-  //       >
-  //         {selectedDate.toDateString()}
-  //       </ToggleButton>
-  //     );
-  //   }
-
-  //   if (selectedFileTypes.length > 0) {
-  //     selectedFileTypes.forEach((fileType, index) => {
-  //       chips.push(
-  //         <ToggleButton
-  //           key="date"
-  //           size="small"
-  //           style={chipStyle}
-  //           onMouseOver={() => handleHover(1, true)}
-  //           onMouseOut={() => handleHover(1, false)}
-  //           {...(hoverStates.hover1 && { icon: <Dismiss24Regular /> })}
-  //           iconPosition="after"
-  //           shape="circular"
-  //           onClick={() => handleRemoveFilter("fileType")}
-  //         >
-  //           {fileType}
-  //         </ToggleButton>
-  //       );
-  //     });
-  //   }
-
-  //   if (selectedState) {
-  //     chips.push(
-  //       <ToggleButton
-  //         key="date"
-  //         size="small"
-  //         style={chipStyle}
-  //         onMouseOver={() => handleHover(1, true)}
-  //         onMouseOut={() => handleHover(1, false)}
-  //         {...(hoverStates.hover1 && { icon: <Dismiss24Regular /> })}
-  //         iconPosition="after"
-  //         shape="circular"
-  //         onClick={() => handleRemoveFilter("state")}
-  //       >
-  //         {selectedState}
-  //       </ToggleButton>
-  //     );
-  //   }
-
-  //   return chips;
-  // };
+    return chips;
+  };
 
   return (
-    <div>
-      {/* Render selected filters as chips */}
-      <div>
-        <div>
-          <div>
-            <h3 style={{ color: '#424242', fontFamily: 'Segoe UI', fontWeight: '400', wordWrap: 'break-word' }}>
-              Selected Filters: {renderChips()}
+    <div
+      style={{
+        width: "100%",
+        height: "100%",
+        paddingBottom: 0,
+        flexDirection: "column",
+        justifyContent: "center",
+        alignItems: "center",
+        gap: 14,
+        display: "inline-flex",
+      }}
+    >
+      <div
+        style={{
+          alignSelf: "stretch",
+          height: "auto",
+          padding: 7,
+          background: "#F6F6F6",
+          borderRadius: 7,
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          alignItems: "flex-start",
+          gap: 7,
+          display: "flex",
+        }}
+      >
+        <div
+          style={{
+            paddingLeft: 6,
+            paddingRight: 4,
+            justifyContent: "flex-start",
+            alignItems: "center",
+            gap: 4,
+            display: "inline-flex",
+          }}
+        >
+          <div
+            style={{
+              paddingLeft: 2,
+              paddingRight: 2,
+              justifyContent: "flex-start",
+              alignItems: "center",
+              gap: 10,
+              display: "flex",
+            }}
+          >
+            <h3 style={{ color: "#424242", fontFamily: "Segoe UI", fontWeight: "400", wordWrap: "break-word" }}>
+              Selected Filters {renderChips()}{" "}
             </h3>
           </div>
         </div>
       </div>
 
       {/* Document Type */}
-      <div>
-        <div>
-          <div>
-            <div>Document Type</div>
+      <div
+        style={{
+          alignSelf: "stretch",
+          height: "auto",
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          alignItems: "flex-start",
+          gap: 14,
+          display: "flex",
+        }}
+      >
+        <div
+          style={{
+            paddingLeft: 7,
+            paddingRight: 4,
+            justifyContent: "flex-start",
+            alignItems: "center",
+            gap: 4,
+            display: "inline-flex",
+          }}
+        >
+          <div
+            style={{
+              paddingLeft: 2,
+              paddingRight: 2,
+              justifyContent: "flex-start",
+              alignItems: "center",
+              gap: 10,
+              display: "flex",
+            }}
+          >
+            <div
+              style={{
+                color: "#424242",
+                fontSize: 14,
+                fontFamily: "Segoe UI",
+                fontWeight: "700",
+                wordWrap: "break-word",
+              }}
+            >
+              Document Type
+            </div>
           </div>
         </div>
-        <div>{renderFileTypeCheckboxes()}</div>
+        <div
+          style={{
+            paddingLeft: 28,
+            paddingRight: 4,
+            justifyContent: "flex-start",
+            alignItems: "center",
+            gap: 20,
+            display: "inline-flex",
+            flexWrap: "wrap",
+          }}
+        >
+          {legislativeDocumentTypes.map((type) => (
+            <Checkbox key={type.key} label={type.text} id={type.key} onChange={onCheckboxChange} />
+          ))}
+        </div>
       </div>
 
       {/* States */}
-      <div>
-        <div>
-          <div>
-            <h3>State</h3>
+      <div
+        style={{
+          alignSelf: "stretch",
+          height: "auto",
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          alignItems: "flex-start",
+          gap: 0,
+          display: "flex",
+        }}
+      >
+        <div
+          style={{
+            paddingLeft: 7,
+            paddingRight: 4,
+            justifyContent: "flex-start",
+            alignItems: "center",
+            gap: 0,
+            display: "inline-flex",
+          }}
+        >
+          <div
+            style={{
+              paddingLeft: 2,
+              paddingRight: 2,
+              justifyContent: "flex-start",
+              alignItems: "center",
+              gap: 0,
+              display: "flex",
+            }}
+          >
+            <h3
+              style={{
+                color: "#424242",
+                fontSize: 14,
+                fontFamily: "Segoe UI",
+                fontWeight: "700",
+                wordWrap: "break-word",
+              }}
+            >
+              State
+            </h3>
           </div>
         </div>
         {/* Tick Boxes */}
-        <div>
-          <MultiselectWithTags placeholder="Select a state" options={usStates} onChange={(e, option) => setSelectedState(option.text)} />
+        <div
+          style={{
+            paddingLeft: 28,
+            height: "auto",
+            flexDirection: "column",
+            justifyContent: "flex-start",
+            alignItems: "flex-start",
+            display: "flex",
+          }}
+        >
+          <MultiselectWithTags
+            placeholder="Select a state"
+            options={usStates}
+            onChange={onDropdownChange}
+          ></MultiselectWithTags>
         </div>
       </div>
-      
       {/* Effective Dates */}
-      <div>
-        <div>
-          <div>
-            <h3>Effective Date</h3>
+      <div
+        style={{
+          alignSelf: "stretch",
+          height: "auto",
+          flexDirection: "column",
+          justifyContent: "flex-start",
+          alignItems: "flex-start",
+          gap: 0,
+          display: "flex",
+        }}
+      >
+        <div
+          style={{
+            paddingLeft: 7,
+            paddingRight: 4,
+            justifyContent: "flex-start",
+            alignItems: "center",
+            gap: 0,
+            display: "inline-flex",
+          }}
+        >
+          <div
+            style={{
+              paddingLeft: 2,
+              paddingRight: 2,
+              justifyContent: "flex-start",
+              alignItems: "center",
+              gap: 0,
+              display: "flex",
+            }}
+          >
+            <h3
+              style={{
+                color: "#424242",
+                fontSize: 14,
+                fontFamily: "Segoe UI",
+                fontWeight: "700",
+                wordWrap: "break-word",
+              }}
+            >
+              Effective Date
+            </h3>
           </div>
         </div>
         {/* Calendar */}
-        <div>
-          <div style={{ justifyContent: 'flex-start', alignItems: 'flex-start', gap: 10, display: 'flex' }}>
-            <Calendar onSelectDate={onDateSelect} />
+        <div
+          style={{
+            paddingLeft: 28,
+            alignSelf: "stretch",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: 0,
+            display: "inline-flex",
+          }}
+        >
+          <div style={{ justifyContent: "flex-start", alignItems: "flex-start", gap: 10, display: "flex" }}>
+            <Calendar
+              onSelectDate={onDateSelect}
+              style={{
+                width: "auto",
+                boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.12)",
+                justifyContent: "flex-start",
+                alignItems: "flex-start",
+                gap: 12,
+                display: "flex",
+              }}
+            />
           </div>
         </div>
       </div>
     </div>
-    // <div
-    //   style={{
-    //     width: "100%",
-    //     height: "100%",
-    //     paddingBottom: 0,
-    //     flexDirection: "column",
-    //     justifyContent: "center",
-    //     alignItems: "center",
-    //     gap: 14,
-    //     display: "inline-flex",
-    //   }}
-    // >
-    //   <div
-    //     style={{
-    //       alignSelf: "stretch",
-    //       height: "auto",
-    //       padding: 7,
-    //       background: "#F6F6F6",
-    //       borderRadius: 7,
-    //       flexDirection: "column",
-    //       justifyContent: "flex-start",
-    //       alignItems: "flex-start",
-    //       gap: 7,
-    //       display: "flex",
-    //     }}
-    //   >
-    //     <div
-    //       style={{
-    //         paddingLeft: 6,
-    //         paddingRight: 4,
-    //         justifyContent: "flex-start",
-    //         alignItems: "center",
-    //         gap: 4,
-    //         display: "inline-flex",
-    //       }}
-    //     >
-    //       <div
-    //         style={{
-    //           paddingLeft: 2,
-    //           paddingRight: 2,
-    //           justifyContent: "flex-start",
-    //           alignItems: "center",
-    //           gap: 10,
-    //           display: "flex",
-    //         }}
-    //       >
-    //         <h3 style={{ color: "#424242", fontFamily: "Segoe UI", fontWeight: "400", wordWrap: "break-word" }}>
-    //           Selected Filters {renderChips()}{" "}
-    //         </h3>
-    //       </div>
-    //     </div>
-    //   </div>
-
-    //   {/* Document Type */}
-    //   <div
-    //     style={{
-    //       alignSelf: "stretch",
-    //       height: "auto",
-    //       flexDirection: "column",
-    //       justifyContent: "flex-start",
-    //       alignItems: "flex-start",
-    //       gap: 14,
-    //       display: "flex",
-    //     }}
-    //   >
-    //     <div
-    //       style={{
-    //         paddingLeft: 7,
-    //         paddingRight: 4,
-    //         justifyContent: "flex-start",
-    //         alignItems: "center",
-    //         gap: 4,
-    //         display: "inline-flex",
-    //       }}
-    //     >
-    //       <div
-    //         style={{
-    //           paddingLeft: 2,
-    //           paddingRight: 2,
-    //           justifyContent: "flex-start",
-    //           alignItems: "center",
-    //           gap: 10,
-    //           display: "flex",
-    //         }}
-    //       >
-    //         <div
-    //           style={{
-    //             color: "#424242",
-    //             fontSize: 14,
-    //             fontFamily: "Segoe UI",
-    //             fontWeight: "700",
-    //             wordWrap: "break-word",
-    //           }}
-    //         >
-    //           Document Type
-    //         </div>
-    //       </div>
-    //     </div>
-    //     <div
-    //       style={{
-    //         paddingLeft: 28,
-    //         paddingRight: 4,
-    //         justifyContent: "flex-start",
-    //         alignItems: "center",
-    //         gap: 20,
-    //         display: "inline-flex",
-    //         flexWrap: "wrap",
-    //       }}
-    //     >
-    //       {legislativeDocumentTypes.map((type) => (
-    //         <Checkbox key={type.key} label={type.text} id={type.key} onChange={onCheckboxChange} />
-    //       ))}
-    //     </div>
-    //   </div>
-
-    //   {/* States */}
-    //   <div
-    //     style={{
-    //       alignSelf: "stretch",
-    //       height: "auto",
-    //       flexDirection: "column",
-    //       justifyContent: "flex-start",
-    //       alignItems: "flex-start",
-    //       gap: 0,
-    //       display: "flex",
-    //     }}
-    //   >
-    //     <div
-    //       style={{
-    //         paddingLeft: 7,
-    //         paddingRight: 4,
-    //         justifyContent: "flex-start",
-    //         alignItems: "center",
-    //         gap: 0,
-    //         display: "inline-flex",
-    //       }}
-    //     >
-    //       <div
-    //         style={{
-    //           paddingLeft: 2,
-    //           paddingRight: 2,
-    //           justifyContent: "flex-start",
-    //           alignItems: "center",
-    //           gap: 0,
-    //           display: "flex",
-    //         }}
-    //       >
-    //         <h3
-    //           style={{
-    //             color: "#424242",
-    //             fontSize: 14,
-    //             fontFamily: "Segoe UI",
-    //             fontWeight: "700",
-    //             wordWrap: "break-word",
-    //           }}
-    //         >
-    //           State
-    //         </h3>
-    //       </div>
-    //     </div>
-    //     {/* Tick Boxes */}
-    //     <div
-    //       style={{
-    //         paddingLeft: 28,
-    //         height: "auto",
-    //         flexDirection: "column",
-    //         justifyContent: "flex-start",
-    //         alignItems: "flex-start",
-    //         display: "flex",
-    //       }}
-    //     >
-    //       <MultiselectWithTags
-    //         placeholder="Select a state"
-    //         options={usStates}
-    //         onChange={onDropdownChange}
-    //       ></MultiselectWithTags>
-    //     </div>
-    //   </div>
-      
-    //   {/* Effective Dates */}
-    //   <div
-    //     style={{
-    //       alignSelf: "stretch",
-    //       height: "auto",
-    //       flexDirection: "column",
-    //       justifyContent: "flex-start",
-    //       alignItems: "flex-start",
-    //       gap: 0,
-    //       display: "flex",
-    //     }}
-    //   >
-    //     <div
-    //       style={{
-    //         paddingLeft: 7,
-    //         paddingRight: 4,
-    //         justifyContent: "flex-start",
-    //         alignItems: "center",
-    //         gap: 0,
-    //         display: "inline-flex",
-    //       }}
-    //     >
-    //       <div
-    //         style={{
-    //           paddingLeft: 2,
-    //           paddingRight: 2,
-    //           justifyContent: "flex-start",
-    //           alignItems: "center",
-    //           gap: 0,
-    //           display: "flex",
-    //         }}
-    //       >
-    //         <h3
-    //           style={{
-    //             color: "#424242",
-    //             fontSize: 14,
-    //             fontFamily: "Segoe UI",
-    //             fontWeight: "700",
-    //             wordWrap: "break-word",
-    //           }}
-    //         >
-    //           Effective Date
-    //         </h3>
-    //       </div>
-    //     </div>
-    //     {/* Calendar */}
-    //     <div
-    //       style={{
-    //         paddingLeft: 28,
-    //         alignSelf: "stretch",
-    //         justifyContent: "center",
-    //         alignItems: "center",
-    //         gap: 0,
-    //         display: "inline-flex",
-    //       }}
-    //     >
-    //       <div style={{ justifyContent: "flex-start", alignItems: "flex-start", gap: 10, display: "flex" }}>
-    //         <Calendar onSelectDate={onDateSelect}
-    //           style={{
-    //             width: "auto",
-    //             boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.12)",
-    //             justifyContent: "flex-start",
-    //             alignItems: "flex-start",
-    //             gap: 12,
-    //             display: "flex",
-    //           }}
-    //         />
-    //       </div>
-    //     </div>
-    //   </div>
-
-    //   <div>
-    //   <p>{debug()}</p>
-    //   </div>
-    // </div>
   );
 };
 
