@@ -21,7 +21,7 @@ class TestStringMethods(unittest.TestCase):
         self.assertNotEqual(response.text, getComparisonText('dummyTest.txt'))
 
 
-    def testCitationJSON(self):
+    def testCitationStringBill(self):
         response = requests.get(test_url + "citationStringBill/1254828")
         self.assertEqual(response.status_code, 200)
         data = response.text
