@@ -53,6 +53,7 @@ const Summarize = () => {
         if (i === allWords.length) {
           clearInterval(interval);
         }
+        window.scrollTo(0, document.body.scrollHeight);
       }, 100); // Interval Duration
     } catch (error) {
       setSummarizedText("Invalid Summarize!");
