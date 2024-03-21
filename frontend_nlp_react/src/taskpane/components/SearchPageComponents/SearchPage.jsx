@@ -38,6 +38,24 @@ const SearchPage = () => {
   const [loading, setLoading] = useState(false);
   const [imageID, setImageID] = useState("../../assets/LoadingTwoColour.gif");
 
+
+  const getSearchResults = async (text) => {
+    // Grab the information from the input box. 
+    // Grab the values from the filters pills. 
+
+    try {
+      // getch("https://127.0.0.1:500/search?query=exampleQuery&....") add all the queries inside this search paramter
+      const response = await fetch("http://127.0.0.1:5000/search/" + );
+      if (!response.ok) {
+        setSummarizedText("Invalid Summarize!");
+      }
+      const data = await response.text();
+      setSummarizedText(data);
+    } catch (error) {
+      setSummarizedText("Invalid Summarize!");
+    }
+  };
+
   const handleClick = async () => {
     if (!searchText) {
       setSearchOutput("No text entered");
