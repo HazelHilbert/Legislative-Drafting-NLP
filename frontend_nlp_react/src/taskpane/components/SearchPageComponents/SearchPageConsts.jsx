@@ -1,4 +1,11 @@
 import { Input, Tab, TabList, makeStyles, tokens } from "@fluentui/react-components";
+import {
+    Checkbox,
+    Combobox,
+    ToggleButton,
+    useId,
+  } from "@fluentui/react-components";
+  import React, { useRef, useState } from "react";
 
 const useStyles = makeStyles({
     root: {
@@ -101,4 +108,84 @@ const legislativeDocumentTypes = [
     { key: "regulation", text: "Regulation" },
   ];
 
-export {useStyles, tabs, instructionPages, usStates, legislativeDocumentTypes};
+  // FluentUI dropdown menu with tags
+  const MultiselectWithTags = (props) => {
+    // generate ids for handling labelling
+    const comboId = useId("combo-multi");
+    const selectedListId = `${comboId}-selection`;
+
+    // refs for managing focus when removing tags
+    const selectedListRef = useRef(null);
+    const comboboxInputRef = useRef(null);
+
+    const options = usStates.map((state) => state.text);
+    const styles = useStyles();
+
+    // Handle selectedOptions both when an option is selected or deselected in the Combobox,
+    // and when an option is removed by clicking on a tag
+    const [selectedOptions, setSelectedOptions] = useState([]);
+
+    const onSelect = (event, data) => {
+      setSelectedOptions(data.selectedOptions);
+    };
+
+    const onTagClick = (option, index) => {
+      // remove selected option
+      setSelectedOptions(selectedOptions.filter((o) => o !== option));
+
+      // focus previous or next option, defaulting to focusing back to the combo input
+      const indexToFocus = index === 0 ? 1 : index - 1;
+      const optionToFocus = selectedListRef.current?.querySelector(`#${comboId}-remove-${indexToFocus}`);
+      if (optionToFocus) {
+        optionToFocus.focus();
+      } else {
+        comboboxInputRef.current?.focus();
+      }
+    };
+
+    const labelledBy = selectedOptions.length > 0 ? `${comboId} ${selectedListId}` : comboId;
+
+    return (
+      <div className={styles.root}>
+        {selectedOptions.length ? (
+          <ul id={selectedListId} className={styles.tagsList} ref={selectedListRef}>
+            {/* The "Remove" span is used for naming the buttons without affecting the Combobox name */}
+            <span id={`${comboId}-remove`} hidden>
+              Remove
+            </span>
+            {selectedOptions.map((option, i) => (
+              <li key={option}>
+                <Button
+                  size="small"
+                  shape="circular"
+                  appearance="primary"
+                  icon={<Dismiss12Regular />}
+                  iconPosition="after"
+                  onClick={() => onTagClick(option, i)}
+                  id={`${comboId}-remove-${i}`}
+                  aria-labelledby={`${comboId}-remove ${comboId}-remove-${i}`}
+                >
+                  {option}
+                </Button>
+              </li>
+            ))}
+          </ul>
+        ) : null}
+        <Combobox
+          aria-labelledby={labelledBy}
+          multiselect={true}
+          placeholder="Select States"
+          selectedOptions={selectedOptions}
+          onOptionSelect={onSelect}
+          ref={comboboxInputRef}
+          {...props}
+        >
+          {options.map((option) => (
+            <option key={option}>{option}</option>
+          ))}
+        </Combobox>
+      </div>
+    );
+  };
+
+export {useStyles, tabs, instructionPages, usStates, legislativeDocumentTypes, MultiselectWithTags};

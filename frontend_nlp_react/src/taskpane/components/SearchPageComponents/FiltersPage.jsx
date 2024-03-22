@@ -7,11 +7,10 @@ import {
   makeStyles,
   tokens,
   useId,
-  MultiselectWithTags,
 } from "@fluentui/react-components";
 import { Dismiss12Regular, Dismiss24Regular } from "@fluentui/react-icons";
 import React, { useRef, useState } from "react";
-import {useStyles, usStates, legislativeDocumentTypes} from "./SearchPageConsts"
+import {usStates, legislativeDocumentTypes, MultiselectWithTags} from "./SearchPageConsts"
 
 const useStyles = makeStyles({
   root: {
@@ -40,91 +39,12 @@ const useStyles = makeStyles({
 
 // Allows us to select filters for searching for different pieces of legislative documents
 const FiltersPage = () => {
-  // Filters:
+  // Filters to apply to search
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedFileTypes, setSelectedFileTypes] = useState([]);
   const [selectedState, setSelectedState] = useState(null);
 
-  const MultiselectWithTags = (props) => {
-    // generate ids for handling labelling
-    const comboId = useId("combo-multi");
-    const selectedListId = `${comboId}-selection`;
-
-    // refs for managing focus when removing tags
-    const selectedListRef = useRef(null);
-    const comboboxInputRef = useRef(null);
-
-    const options = usStates.map((state) => state.text);
-    const styles = useStyles();
-
-    // Handle selectedOptions both when an option is selected or deselected in the Combobox,
-    // and when an option is removed by clicking on a tag
-    const [selectedOptions, setSelectedOptions] = useState([]);
-
-    const onSelect = (event, data) => {
-      setSelectedOptions(data.selectedOptions);
-    };
-
-    const onTagClick = (option, index) => {
-      // remove selected option
-      setSelectedOptions(selectedOptions.filter((o) => o !== option));
-
-      // focus previous or next option, defaulting to focusing back to the combo input
-      const indexToFocus = index === 0 ? 1 : index - 1;
-      const optionToFocus = selectedListRef.current?.querySelector(`#${comboId}-remove-${indexToFocus}`);
-      if (optionToFocus) {
-        optionToFocus.focus();
-      } else {
-        comboboxInputRef.current?.focus();
-      }
-    };
-
-    const labelledBy = selectedOptions.length > 0 ? `${comboId} ${selectedListId}` : comboId;
-
-    return (
-      <div className={styles.root}>
-        {selectedOptions.length ? (
-          <ul id={selectedListId} className={styles.tagsList} ref={selectedListRef}>
-            {/* The "Remove" span is used for naming the buttons without affecting the Combobox name */}
-            <span id={`${comboId}-remove`} hidden>
-              Remove
-            </span>
-            {selectedOptions.map((option, i) => (
-              <li key={option}>
-                <Button
-                  size="small"
-                  shape="circular"
-                  appearance="primary"
-                  icon={<Dismiss12Regular />}
-                  iconPosition="after"
-                  onClick={() => onTagClick(option, i)}
-                  id={`${comboId}-remove-${i}`}
-                  aria-labelledby={`${comboId}-remove ${comboId}-remove-${i}`}
-                >
-                  {option}
-                </Button>
-              </li>
-            ))}
-          </ul>
-        ) : null}
-        <Combobox
-          aria-labelledby={labelledBy}
-          multiselect={true}
-          placeholder="Select States"
-          selectedOptions={selectedOptions}
-          onOptionSelect={onSelect}
-          ref={comboboxInputRef}
-          {...props}
-        >
-          {options.map((option) => (
-            <option key={option}>{option}</option>
-          ))}
-        </Combobox>
-      </div>
-    );
-  };
-
-  // Filter Tab Functions to handle interaction with filters.
+  // Handles changing file type filter
   const handleFileTypeChange = (fileType) => {
     setSelectedFileTypes((prevFileTypes) => {
       if (prevFileTypes.includes(fileType)) {
@@ -134,19 +54,13 @@ const FiltersPage = () => {
       }
     });
   };
+
+  // Handles changing state filter
   const handleStateChange = (event, option) => {
     setSelectedState(option.text);
   };
-  const onCheckboxChange = (ev, isChecked) => {
-    const fileType = ev.target.id;
-    handleFileTypeChange(fileType);
-  };
-  const onDropdownChange = (event, option, index) => {
-    handleStateChange(event, option);
-  };
-  const onDateSelect = (date) => {
-    setSelectedDate(date);
-  };
+
+  // Handles removing a 
   const handleRemoveFilter = (filterType) => {
     switch (filterType) {
       case "date":
@@ -162,6 +76,25 @@ const FiltersPage = () => {
         break;
     }
   };
+
+
+  // Change Text Box to Selected
+  const onCheckboxChange = (ev, isChecked) => {
+    const fileType = ev.target.id;
+    handleFileTypeChange(fileType);
+  };
+
+  // Change Select Box when item selected from dropdown
+  const onDropdownChange = (event, option, index) => {
+    handleStateChange(event, option);
+  };
+
+  // change selected Date
+  const onDateSelect = (date) => {
+    setSelectedDate(date);
+  };
+  
+  // Load Chips from Selected filters
   const renderChips = () => {
     const [hoverStates, setHoverStates] = React.useState({
       hover1: false,
@@ -169,6 +102,7 @@ const FiltersPage = () => {
       hover3: false,
     });
 
+    // Handle hover state for filters
     const handleHover = (buttonIndex, isHovering) => {
       setHoverStates((prevStates) => ({
         ...prevStates,
