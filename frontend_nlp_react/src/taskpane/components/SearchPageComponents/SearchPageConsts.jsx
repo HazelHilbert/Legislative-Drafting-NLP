@@ -63,7 +63,7 @@ import {
       alignItems: "flex-start",
       display: "flex",
     },
-    searchBarBoxInput: {
+    searchBarBoxSecondary: {
         alignSelf: "stretch",
         paddingLeft: 10,
         paddingRight: 10,
@@ -73,7 +73,7 @@ import {
         gap: 10,
         display: "inline-flex",
         backgroundColor: "pink",
-      },
+    },
     tagsList: {
       listStyleType: "none",
       marginBottom: tokens.spacingVerticalXXS,

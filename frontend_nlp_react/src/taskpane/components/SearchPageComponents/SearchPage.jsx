@@ -86,7 +86,7 @@ const SearchPage = () => {
         {/* Search Bar */}
         <div className={styles.searchBarContainer}>
           <div className={styles.searchBarBox}>
-            <div className={styles.searchBarBoxInput}>
+            <div className={styles.searchBarBoxSecondary}>
               <div
                 style={{
                   flex: "1 1 0",
