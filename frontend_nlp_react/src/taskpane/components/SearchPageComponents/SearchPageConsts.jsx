@@ -9,11 +9,29 @@ import {
 
 const useStyles = makeStyles({
     root: {
-      alignItems: "flex-start",
-      display: "flex",
-      flexDirection: "column",
-      justifyContent: "flex-start",
-      rowGap: "0px",
+        width: "100%",
+        height: "100%",
+        background: "white",
+        gap: 28,
+        display: "flex",  
+        flexDirection: "column",
+        justifyContent: "flex-start",
+        alignItems: "center",
+        rowGap: "0px",
+        alignSelf: "stretch",
+    },
+    topNavigation: {
+        alignSelf: "stretch",
+        height: 90,
+        paddingLeft: 14,
+        paddingRight: 14,
+        paddingTop: 14,
+        marginTop: "10px",
+        flexDirection: "column",
+        justifyContent: "flex-start",
+        alignItems: "center",
+        gap: 0,
+        display: "flex",
     },
     tabListContainer: {
       alignSelf: "stretch",
@@ -21,6 +39,30 @@ const useStyles = makeStyles({
       alignItems: "flex-start",
       display: "inline-flex",
       flexWrap: "wrap", // Allow flex items to wrap to the next line
+    },
+    Tab: {
+        width: "auto", 
+        height: 44, 
+        position: "relative" 
+    },
+    searchBarContainer: {
+        width: "100%",
+        height: "100%",
+        flexDirection: "column",
+        justifyContent: "flex-start",
+        alignItems: "center",
+        gap: 14,
+        display: "inline-flex",
+    },
+    searchBarBox: {
+        alignSelf: "stretch",
+        height: 32,
+        borderRadius: 4,
+        flexDirection: "column",
+        justifyContent: "flex-start",
+        alignItems: "flex-start",
+        display: "flex",
+        background: "blue",
     },
     tagsList: {
       listStyleType: "none",

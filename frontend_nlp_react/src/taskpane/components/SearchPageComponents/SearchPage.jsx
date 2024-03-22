@@ -67,60 +67,25 @@ const SearchPage = () => {
   
   return (
     <div className={styles.root}>
-      {/* Top Navigation */}
       <img src="../../assets/propylonFull.png" width={"50%"} style={{ marginTop: "10px" }} />
-      <div
-        style={{
-          alignSelf: "stretch",
-          height: 90,
-          paddingLeft: 14,
-          paddingRight: 14,
-          paddingTop: 14,
-          marginTop: "10px",
-          flexDirection: "column",
-          justifyContent: "flex-start",
-          alignItems: "center",
-          gap: 0,
-          display: "flex",
-        }}
-      >
-        {/* Top Navigation */}
+      {/* Top Navigation */}
+      <div className={styles.topNavigation}>
         <TabList
-          style={{ width: "auto" }}
-          className={styles.tabListContainer}
-          selectedValue={selectedTab}
-          onTabSelect={(event, data) => setSelectedTab(data.value)}
+                style={{ width: "auto" }}
+                className={styles.tabListContainer}
+                selectedValue={selectedTab}
+                onTabSelect={(event, data) => setSelectedTab(data.value)}
         >
           {tabs.map((tab) => (
-            <Tab style={{ width: "auto", height: 44, position: "relative" }} key={tab.value} value={tab.value}>
+            <Tab key={tab.value} value={tab.value}>
               {tab.label}
             </Tab>
           ))}
         </TabList>
 
         {/* Search Bar */}
-        <div
-          style={{
-            width: "100%",
-            height: "100%",
-            flexDirection: "column",
-            justifyContent: "flex-start",
-            alignItems: "center",
-            gap: 14,
-            display: "inline-flex",
-          }}
-        >
-          <div
-            style={{
-              alignSelf: "stretch",
-              height: 32,
-              borderRadius: 4,
-              flexDirection: "column",
-              justifyContent: "flex-start",
-              alignItems: "flex-start",
-              display: "flex",
-            }}
-          >
+        <div className={styles.searchBarContainer}>
+          <div className={styles.searchBarBox}>
             <div
               style={{
                 alignSelf: "stretch",
@@ -177,15 +142,12 @@ const SearchPage = () => {
       {selectedTab === "tab3" && 
         <FiltersPage
           chips={chips}
-          updateChips={updateChips}
           selectedDate={selectedDate}
           setSelectedDate={setSelectedDate}
           selectedFileTypes={selectedFileTypes}
           setSelectedFileTypes={setSelectedFileTypes}
           selectedState={selectedState}
           setSelectedState={setSelectedState}
-          onCheckboxChange={onCheckboxChange}
-          onDateSelect={onDateSelect}
         />
       }
       {selectedTab === "tab4" && <ResultsPage />}
