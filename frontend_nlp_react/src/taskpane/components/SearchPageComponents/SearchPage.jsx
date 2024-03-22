@@ -66,20 +66,7 @@ const SearchPage = () => {
   };
   
   return (
-    <div
-      className={styles.root}
-      style={{
-        alignSelf: "stretch",
-        width: "100%",
-        height: "100%",
-        background: "white",
-        flexDirection: "column",
-        justifyContent: "flex-start",
-        alignItems: "center",
-        gap: 28,
-        display: "inline-flex",
-      }}
-    >
+    <div className={styles.root}>
       {/* Top Navigation */}
       <img src="../../assets/propylonFull.png" width={"50%"} style={{ marginTop: "10px" }} />
       <div
