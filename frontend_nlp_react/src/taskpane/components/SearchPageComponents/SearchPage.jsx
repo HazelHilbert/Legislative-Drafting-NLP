@@ -86,18 +86,7 @@ const SearchPage = () => {
         {/* Search Bar */}
         <div className={styles.searchBarContainer}>
           <div className={styles.searchBarBox}>
-            <div
-              style={{
-                alignSelf: "stretch",
-                paddingLeft: 10,
-                paddingRight: 10,
-                background: "rgba(255, 255, 255, 0)",
-                justifyContent: "flex-start",
-                alignItems: "center",
-                gap: 10,
-                display: "inline-flex",
-              }}
-            >
+            <div className={styles.searchBarBoxInput}>
               <div
                 style={{
                   flex: "1 1 0",
