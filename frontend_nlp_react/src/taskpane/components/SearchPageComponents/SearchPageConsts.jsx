@@ -72,7 +72,6 @@ import {
         alignItems: "center",
         gap: 10,
         display: "inline-flex",
-        backgroundColor: "pink",
     },
     tagsList: {
       listStyleType: "none",
