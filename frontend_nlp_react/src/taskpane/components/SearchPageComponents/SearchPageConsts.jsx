@@ -73,6 +73,16 @@ import {
         gap: 10,
         display: "inline-flex",
     },
+    searchBarBoxSecondary: {
+        alignSelf: "stretch",
+        paddingLeft: 10,
+        paddingRight: 10,
+        background: "rgba(255, 255, 255, 0)",
+        justifyContent: "flex-start",
+        alignItems: "center",
+        gap: 10,
+        display: "inline-flex",
+    },
     tagsList: {
       listStyleType: "none",
       marginBottom: tokens.spacingVerticalXXS,

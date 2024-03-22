@@ -33,7 +33,6 @@ const SearchPage = () => {
       setLoading(true);
       
       const response = await fetch(`http://127.0.0.1:5000/search?query=${searchText}&state=${selectedState}&documentType=${selectedFileTypes.join(', ')}&effectiveDate=${selectedDate.toDateString()}`);
-
       // const response = await fetch("http://127.0.0.1:5000/billText/" + searchText);
       if (!response.ok) {
         setSearchOutput("Invalid Bill!");
@@ -87,15 +86,7 @@ const SearchPage = () => {
         <div className={styles.searchBarContainer}>
           <div className={styles.searchBarBox}>
             <div className={styles.searchBarBoxSecondary}>
-              <div
-                style={{
-                  flex: "1 1 0",
-                  height: 32,
-                  justifyContent: "flex-start",
-                  alignItems: "center",
-                  display: "flex",
-                }}
-              >
+              <div style={{ flex: "1 1 0", height: 32, justifyContent: "flex-start", alignItems: "center", display: "flex"}}>
                 <Input
                   appearance="underline"
                   style={{
@@ -130,7 +121,6 @@ const SearchPage = () => {
       {selectedTab === "tab2" && <ResultsPage />}
       {selectedTab === "tab3" && 
         <FiltersPage
-          chips={chips}
           selectedDate={selectedDate}
           setSelectedDate={setSelectedDate}
           selectedFileTypes={selectedFileTypes}
