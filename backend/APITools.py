@@ -145,4 +145,10 @@ def getSearch(query, state, documentType, effectiveDate):
             type_string += f" OR type:{type_mapping[doc_type]}"
 
 
-    
+    # Construct the final query
+    query += " AND " + type_string.lstrip(" OR")
+
+    # Construct the API URL
+    api_url = f"https://api.legiscan.com/?key={my_key}&op=getSearch&state={state}&query={query}"
+
+    response = requests.get(api_url)
