@@ -14,12 +14,30 @@ import {usStates, legislativeDocumentTypes, MultiselectWithTags} from "./SearchP
 
 const useStyles = makeStyles({
   root: {
-    alignItems: "flex-start",
-    display: "flex",
+    width: "100%",
+    height: "100%",
+    paddingBottom: 0,
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 14,
+    display: "inline-flex",
+  },
+  selectedFiltersRoot: {
+    alignSelf: "stretch",
+    height: "auto",
+    padding: 7,
+    background: "#F6F6F6",
+    borderRadius: 7,
     flexDirection: "column",
     justifyContent: "flex-start",
-    rowGap: "20px",
+    alignItems: "flex-start",
+    gap: 7,
+    display: "flex",
   },
+  selectedFiltersBody: {
+
+  }, 
   tabListContainer: {
     alignSelf: "stretch",
     justifyContent: "center",
@@ -39,9 +57,9 @@ const useStyles = makeStyles({
 
 // Allows us to select filters for searching for different pieces of legislative documents
 const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSelectedFileTypes, selectedState, setSelectedState }) => {
-  
+  // Filter Page Styles
   const searchFilterPageStyles = useStyles();
-  
+
   // Handles changing file type filter
   const handleFileTypeChange = (fileType) => {
     setSelectedFileTypes((prevFileTypes) => {
@@ -173,32 +191,8 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
   };
 
   return (
-    <div
-      style={{
-        width: "100%",
-        height: "100%",
-        paddingBottom: 0,
-        flexDirection: "column",
-        justifyContent: "center",
-        alignItems: "center",
-        gap: 14,
-        display: "inline-flex",
-      }}
-    >
-      <div
-        style={{
-          alignSelf: "stretch",
-          height: "auto",
-          padding: 7,
-          background: "#F6F6F6",
-          borderRadius: 7,
-          flexDirection: "column",
-          justifyContent: "flex-start",
-          alignItems: "flex-start",
-          gap: 7,
-          display: "flex",
-        }}
-      >
+    <div className={searchFilterPageStyles.root}>
+      <div className={searchFilterPageStyles.selectedFiltersRoot}>
         <div
           style={{
             paddingLeft: 6,
