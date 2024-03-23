@@ -135,4 +135,14 @@ def getSearch(query, state, documentType, effectiveDate):
      # Split the documentType variable into individual document types
     document_types = [doc.strip() for doc in documentType.split(",")]
     
+    # Initialize the type_string
+    type_string = ""
+
+    # Check if each document type is contained within the documentType variable
+    for doc_type in document_types:
+        if doc_type in type_mapping:
+            # If the document type is in the mapping, add the corresponding abbreviation to type_string
+            type_string += f" OR type:{type_mapping[doc_type]}"
+
+
     
