@@ -132,4 +132,7 @@ def getSearch(query, state, documentType, effectiveDate):
         "Constitutional Amendment": "CA"
     }
 
-     
+     # Split the documentType variable into individual document types
+    document_types = [doc.strip() for doc in documentType.split(",")]
+    
+    
