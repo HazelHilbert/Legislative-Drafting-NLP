@@ -4,6 +4,9 @@ import InstructionPage from "./InstructionPage";
 import ResultsPage from "./ResultsPage";
 import FiltersPage from "./FiltersPage";
 import {useStyles, tabs, instructionPages, usStates, legislativeDocumentTypes, MultiselectWithTags} from "./SearchPageConsts"
+import axios from 'axios';
+
+
 
 const SearchPage = () => {
   // Page styling:
@@ -23,32 +26,62 @@ const SearchPage = () => {
   const [chips, setChips] = useState([]);
 
   // Get Search Results
-  const handleClick = async () => {
+  // const handleClick = async () => {
+  //   if (!searchText) {
+  //     setSearchOutput("No text entered");
+  //     return;
+  //   }
+  //   try {
+  //     // loadingEasterEgg();
+  //     setLoading(true);
+  //
+  //     const response = await fetch(`http://127.0.0.1:5000/search?query=${searchText}&state=${selectedState}&doctype=${selectedFileTypes.join(', ')}&effectiveDate=${selectedDate.toDateString()}`);
+  //     // const response = await fetch("http://127.0.0.1:5000/billText/" + searchText);
+  //     if (!response.ok) {
+  //       setSearchOutput("Invalid Bill!");
+  //       return;
+  //     }
+  //     const data = await response.text();
+  //     console.log("response" + response);
+  //     console.log("data: " + data);
+  //
+  //     setSearchOutput(data);
+  //   } catch (error) {
+  //     setSearchOutput("Invalid Bill!");
+  //   } finally {
+  //     setLoading(false);
+  //   }
+  // };
+
+const handleClick = async () => {
     if (!searchText) {
-      setSearchOutput("No text entered");
-      return;
+        setSearchOutput("No text entered");
+        return;
     }
     try {
-      // loadingEasterEgg();
-      setLoading(true);
-      
-      const response = await fetch(`http://127.0.0.1:5000/search?query=${searchText}&state=${selectedState}&doctype=${selectedFileTypes.join(', ')}&effectiveDate=${selectedDate.toDateString()}`);
-      // const response = await fetch("http://127.0.0.1:5000/billText/" + searchText);
-      if (!response.ok) {
-        setSearchOutput("Invalid Bill!");
-        return;
-      }
-      const data = await response.text();
-      console.log("response" + response);
-      console.log("data: " + data);
+        setLoading(true);
 
-      setSearchOutput(data);
+        const response = await axios.get('http://127.0.0.1:5000/search', {
+            params: {
+                query: searchText,
+                state: selectedState,
+                doctype: selectedFileTypes.join(', '),
+                effectiveDate: selectedDate ? selectedDate.toDateString() : null
+            }
+        });
+
+        if (response.status === 200) {
+            setSearchOutput(response.data);
+        } else {
+            setSearchOutput("Invalid Bill!");
+        }
     } catch (error) {
-      setSearchOutput("Invalid Bill!");
+        setSearchOutput("Error fetching data from the server");
     } finally {
-      setLoading(false);
+        setLoading(false);
     }
-  };
+};
+
 
   const loadingEasterEgg = () => {
     if (Math.floor(Math.random() * 100 + 1) == 1) {
