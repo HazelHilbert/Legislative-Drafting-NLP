@@ -36,8 +36,21 @@ const useStyles = makeStyles({
     display: "flex",
   },
   selectedFiltersBody: {
-
+    paddingLeft: 6,
+    paddingRight: 4,
+    justifyContent: "flex-start",
+    alignItems: "center",
+    gap: 4,
+    display: "inline-flex",
   }, 
+  selectedFiltersChips: {
+    paddingLeft: 2,
+    paddingRight: 2,
+    justifyContent: "flex-start",
+    alignItems: "center",
+    gap: 10,
+    display: "flex",
+  },
   tabListContainer: {
     alignSelf: "stretch",
     justifyContent: "center",
@@ -192,27 +205,10 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
 
   return (
     <div className={searchFilterPageStyles.root}>
+      {/* Applied Filters */}
       <div className={searchFilterPageStyles.selectedFiltersRoot}>
-        <div
-          style={{
-            paddingLeft: 6,
-            paddingRight: 4,
-            justifyContent: "flex-start",
-            alignItems: "center",
-            gap: 4,
-            display: "inline-flex",
-          }}
-        >
-          <div
-            style={{
-              paddingLeft: 2,
-              paddingRight: 2,
-              justifyContent: "flex-start",
-              alignItems: "center",
-              gap: 10,
-              display: "flex",
-            }}
-          >
+        <div className={searchFilterPageStyles.selectedFiltersBody}>
+          <div className={searchFilterPageStyles.selectedFiltersChips}>
             <h3 style={{ color: "#424242", fontFamily: "Segoe UI", fontWeight: "400", wordWrap: "break-word" }}>
               Selected Filters {renderChips()}{" "}
             </h3>
