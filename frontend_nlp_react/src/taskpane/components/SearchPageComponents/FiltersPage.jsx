@@ -10,86 +10,12 @@ import {
 } from "@fluentui/react-components";
 import { Dismiss12Regular, Dismiss24Regular } from "@fluentui/react-icons";
 import React, { useRef, useState } from "react";
-import {usStates, legislativeDocumentTypes, MultiselectWithTags} from "./SearchPageConsts"
-
-const useStyles = makeStyles({
-  root: {
-    width: "100%",
-    height: "100%",
-    paddingBottom: 0,
-    flexDirection: "column",
-    justifyContent: "center",
-    alignItems: "center",
-    gap: 14,
-    display: "inline-flex",
-  },
-  selectedFiltersRoot: {
-    alignSelf: "stretch",
-    height: "auto",
-    padding: 7,
-    background: "#F6F6F6",
-    borderRadius: 7,
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    gap: 7,
-  },
-  selectedFiltersHeader: {
-    color: "#424242",
-    fontFamily: "Segoe UI",
-    fontWeight: 400,
-    wordWrap: "break-word",
-  },
-  documentTypeRoot: {
-    alignSelf: "stretch",
-    height: "auto",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    gap: 14,
-  }, 
-  documentTypeHeader: {
-    display: "flex",
-    justifyContent: "space-between",
-    paddingLeft: 7,
-    paddingRight: 4,
-    color: "#424242",
-    fontSize: 14,
-    fontFamily: "Segoe UI",
-    fontWeight: "700",
-    wordWrap: "break-word",
-  },
-  documentTypeChips: {
-    width: "100%",
-    display: "grid",
-    gridTemplateColumns: "repeat(2, 1fr)",
-    gap: "7px 28px",
-    paddingLeft: 28,
-    paddingRight: 28,
-  },
-  tabListContainer: {
-    alignSelf: "stretch",
-    justifyContent: "center",
-    alignItems: "flex-start",
-    display: "inline-flex",
-    flexWrap: "wrap", // Allow flex items to wrap to the next line
-  },
-  tagsList: {
-    listStyleType: "none",
-    marginBottom: tokens.spacingVerticalXXS,
-    marginTop: 0,
-    paddingLeft: 0,
-    display: "flex",
-    gridGap: tokens.spacingHorizontalXXS,
-  },
-});
+import {filterPageStyles, usStates, legislativeDocumentTypes, MultiselectWithTags} from "./SearchPageConsts"
 
 // Allows us to select filters for searching for different pieces of legislative documents
 const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSelectedFileTypes, selectedState, setSelectedState }) => {
   // Filter Page Styles
-  const searchFilterPageStyles = useStyles();
+  const searchFilterPageStyles = filterPageStyles();
 
   // Handles changing file type filter
   const handleFileTypeChange = (fileType) => {
@@ -244,141 +170,31 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
         </div>
       </div>
 
-
-
-
-
       {/* States */}
-      <div
-        style={{
-          alignSelf: "stretch",
-          height: "auto",
-          flexDirection: "column",
-          justifyContent: "flex-start",
-          alignItems: "flex-start",
-          gap: 0,
-          display: "flex",
-        }}
-      >
-        <div
-          style={{
-            paddingLeft: 7,
-            paddingRight: 4,
-            justifyContent: "flex-start",
-            alignItems: "center",
-            gap: 0,
-            display: "inline-flex",
-          }}
-        >
-          <div
-            style={{
-              paddingLeft: 2,
-              paddingRight: 2,
-              justifyContent: "flex-start",
-              alignItems: "center",
-              gap: 0,
-              display: "flex",
-            }}
-          >
-            <h3
-              style={{
-                color: "#424242",
-                fontSize: 14,
-                fontFamily: "Segoe UI",
-                fontWeight: "700",
-                wordWrap: "break-word",
-              }}
-            >
-              State
-            </h3>
-          </div>
+      <div className={searchFilterPageStyles.statesRoot}>
+        <div className={searchFilterPageStyles.statesHeader}>
+          <h3>State</h3>
         </div>
         {/* Tick Boxes */}
-        <div
-          style={{
-            paddingLeft: 28,
-            height: "auto",
-            flexDirection: "column",
-            justifyContent: "flex-start",
-            alignItems: "flex-start",
-            display: "flex",
-          }}
-        >
+        <div className={searchFilterPageStyles.checkboxesContainer}>
           <MultiselectWithTags
             placeholder="Select a state"
             options={usStates}
             onChange={onDropdownChange}
-          ></MultiselectWithTags>
+          />
         </div>
       </div>
+
       {/* Effective Dates */}
-      <div
-        style={{
-          alignSelf: "stretch",
-          height: "auto",
-          flexDirection: "column",
-          justifyContent: "flex-start",
-          alignItems: "flex-start",
-          gap: 0,
-          display: "flex",
-        }}
-      >
-        <div
-          style={{
-            paddingLeft: 7,
-            paddingRight: 4,
-            justifyContent: "flex-start",
-            alignItems: "center",
-            gap: 0,
-            display: "inline-flex",
-          }}
-        >
-          <div
-            style={{
-              paddingLeft: 2,
-              paddingRight: 2,
-              justifyContent: "flex-start",
-              alignItems: "center",
-              gap: 0,
-              display: "flex",
-            }}
-          >
-            <h3
-              style={{
-                color: "#424242",
-                fontSize: 14,
-                fontFamily: "Segoe UI",
-                fontWeight: "700",
-                wordWrap: "break-word",
-              }}
-            >
-              Effective Date
-            </h3>
-          </div>
+      <div className={searchFilterPageStyles.calendarRoot}>
+        <div className={searchFilterPageStyles.calendarHeader}>
+          <h3 className={searchFilterPageStyles.calendarText}>Effective Date</h3>
         </div>
+        
         {/* Calendar */}
-        <div
-          style={{
-            paddingLeft: 28,
-            alignSelf: "stretch",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: 0,
-            display: "inline-flex",
-          }}
-        >
-          <div style={{ justifyContent: "flex-start", alignItems: "flex-start", gap: 10, display: "flex" }}>
-            <Calendar
-              onSelectDate={onDateSelect}
-              style={{
-                width: "auto",
-                boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.12)",
-                justifyContent: "flex-start",
-                alignItems: "flex-start",
-                gap: 12,
-                display: "flex",
-              }}
-            />
+        <div className={searchFilterPageStyles.calendarContainer}>
+          <div className={searchFilterPageStyles.calendar}>
+            <Calendar onSelectDate={onDateSelect} />
           </div>
         </div>
       </div>

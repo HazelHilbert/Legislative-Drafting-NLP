@@ -170,83 +170,227 @@ const legislativeDocumentTypes = [
   ];
 
   // FluentUI dropdown menu with tags
-  const MultiselectWithTags = (props) => {
-    // generate ids for handling labelling
-    const comboId = useId("combo-multi");
-    const selectedListId = `${comboId}-selection`;
+const MultiselectWithTags = (props) => {
+// generate ids for handling labelling
+const comboId = useId("combo-multi");
+const selectedListId = `${comboId}-selection`;
 
-    // refs for managing focus when removing tags
-    const selectedListRef = useRef(null);
-    const comboboxInputRef = useRef(null);
+// refs for managing focus when removing tags
+const selectedListRef = useRef(null);
+const comboboxInputRef = useRef(null);
 
-    const options = usStates.map((state) => state.text);
-    const styles = useStyles();
+const options = usStates.map((state) => state.text);
+const styles = useStyles();
 
-    // Handle selectedOptions both when an option is selected or deselected in the Combobox,
-    // and when an option is removed by clicking on a tag
-    const [selectedOptions, setSelectedOptions] = useState([]);
+// Handle selectedOptions both when an option is selected or deselected in the Combobox,
+// and when an option is removed by clicking on a tag
+const [selectedOptions, setSelectedOptions] = useState([]);
 
-    const onSelect = (event, data) => {
-      setSelectedOptions(data.selectedOptions);
-    };
+const onSelect = (event, data) => {
+    setSelectedOptions(data.selectedOptions);
+};
 
-    const onTagClick = (option, index) => {
-      // remove selected option
-      setSelectedOptions(selectedOptions.filter((o) => o !== option));
+const onTagClick = (option, index) => {
+    // remove selected option
+    setSelectedOptions(selectedOptions.filter((o) => o !== option));
 
-      // focus previous or next option, defaulting to focusing back to the combo input
-      const indexToFocus = index === 0 ? 1 : index - 1;
-      const optionToFocus = selectedListRef.current?.querySelector(`#${comboId}-remove-${indexToFocus}`);
-      if (optionToFocus) {
-        optionToFocus.focus();
-      } else {
-        comboboxInputRef.current?.focus();
-      }
-    };
+    // focus previous or next option, defaulting to focusing back to the combo input
+    const indexToFocus = index === 0 ? 1 : index - 1;
+    const optionToFocus = selectedListRef.current?.querySelector(`#${comboId}-remove-${indexToFocus}`);
+    if (optionToFocus) {
+    optionToFocus.focus();
+    } else {
+    comboboxInputRef.current?.focus();
+    }
+};
 
-    const labelledBy = selectedOptions.length > 0 ? `${comboId} ${selectedListId}` : comboId;
+const labelledBy = selectedOptions.length > 0 ? `${comboId} ${selectedListId}` : comboId;
 
-    return (
-      <div className={styles.root}>
-        {selectedOptions.length ? (
-          <ul id={selectedListId} className={styles.tagsList} ref={selectedListRef}>
-            {/* The "Remove" span is used for naming the buttons without affecting the Combobox name */}
-            <span id={`${comboId}-remove`} hidden>
-              Remove
-            </span>
-            {selectedOptions.map((option, i) => (
-              <li key={option}>
-                <Button
-                  size="small"
-                  shape="circular"
-                  appearance="primary"
-                  icon={<Dismiss12Regular />}
-                  iconPosition="after"
-                  onClick={() => onTagClick(option, i)}
-                  id={`${comboId}-remove-${i}`}
-                  aria-labelledby={`${comboId}-remove ${comboId}-remove-${i}`}
-                >
-                  {option}
-                </Button>
-              </li>
-            ))}
-          </ul>
-        ) : null}
-        <Combobox
-          aria-labelledby={labelledBy}
-          multiselect={true}
-          placeholder="Select States"
-          selectedOptions={selectedOptions}
-          onOptionSelect={onSelect}
-          ref={comboboxInputRef}
-          {...props}
-        >
-          {options.map((option) => (
-            <option key={option}>{option}</option>
-          ))}
-        </Combobox>
-      </div>
-    );
-  };
+return (
+    <div className={styles.root}>
+    {selectedOptions.length ? (
+        <ul id={selectedListId} className={styles.tagsList} ref={selectedListRef}>
+        {/* The "Remove" span is used for naming the buttons without affecting the Combobox name */}
+        <span id={`${comboId}-remove`} hidden>
+            Remove
+        </span>
+        {selectedOptions.map((option, i) => (
+            <li key={option}>
+            <Button
+                size="small"
+                shape="circular"
+                appearance="primary"
+                icon={<Dismiss12Regular />}
+                iconPosition="after"
+                onClick={() => onTagClick(option, i)}
+                id={`${comboId}-remove-${i}`}
+                aria-labelledby={`${comboId}-remove ${comboId}-remove-${i}`}
+            >
+                {option}
+            </Button>
+            </li>
+        ))}
+        </ul>
+    ) : null}
+    <Combobox
+        aria-labelledby={labelledBy}
+        multiselect={true}
+        placeholder="Select States"
+        selectedOptions={selectedOptions}
+        onOptionSelect={onSelect}
+        ref={comboboxInputRef}
+        {...props}
+    >
+        {options.map((option) => (
+        <option key={option}>{option}</option>
+        ))}
+    </Combobox>
+    </div>
+);
+};
 
-export {useStyles, tabs, instructionPages, usStates, legislativeDocumentTypes, MultiselectWithTags};
+const filterPageStyles = makeStyles({
+root: {
+    width: "100%",
+    height: "100%",
+    paddingBottom: 0,
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 14,
+    display: "inline-flex",
+},
+selectedFiltersRoot: {
+    alignSelf: "stretch",
+    height: "auto",
+    padding: 7,
+    background: "#F6F6F6",
+    borderRadius: 7,
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+    gap: 7,
+},
+selectedFiltersHeader: {
+    color: "#424242",
+    fontFamily: "Segoe UI",
+    fontWeight: 400,
+    wordWrap: "break-word",
+},
+documentTypeRoot: {
+    alignSelf: "stretch",
+    height: "auto",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+    gap: 14,
+}, 
+documentTypeHeader: {
+    display: "flex",
+    justifyContent: "space-between",
+    paddingLeft: 7,
+    paddingRight: 4,
+    color: "#424242",
+    fontSize: 14,
+    fontFamily: "Segoe UI",
+    fontWeight: "700",
+    wordWrap: "break-word",
+},
+documentTypeChips: {
+    width: "100%",
+    display: "grid",
+    gridTemplateColumns: "repeat(2, 1fr)",
+    gap: "7px 28px",
+    paddingLeft: 28,
+    paddingRight: 28,
+},
+statesRoot: {
+    alignSelf: "stretch",
+    height: "auto",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+    gap: 0,
+},
+statesHeader: {
+    paddingLeft: 7,
+    paddingRight: 4,
+    display: "flex",
+    justifyContent: "flex-start",
+    alignItems: "center",
+}, 
+checkboxesContainer: {
+    paddingLeft: 28,
+    height: "auto",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+    color: "#424242",
+    fontSize: 14,
+    fontFamily: "Segoe UI",
+    fontWeight: "700",
+    wordWrap: "break-word",
+    margin: 0, 
+}, 
+calendarRoot: {
+    alignSelf: "stretch",
+    height: "auto",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+    gap: 0,
+}, 
+calendarHeader: {
+    paddingLeft: 7,
+    paddingRight: 4,
+    display: "flex",
+    justifyContent: "flex-start",
+    alignItems: "center",
+}, 
+calendarText: {
+    color: "#424242",
+    fontSize: 14,
+    fontFamily: "Segoe UI",
+    fontWeight: "700",
+    wordWrap: "break-word",
+    margin: 0,
+}, 
+calendarContainer: {
+    paddingLeft: 28,
+    alignSelf: "stretch",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    gap: 0,
+},
+calendar: {
+    width: "auto",
+    boxShadow: "0px 0px 2px rgba(0, 0, 0, 0.12)",
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+    gap: 12,
+    display: "flex",
+},
+tabListContainer: {
+    alignSelf: "stretch",
+    justifyContent: "center",
+    alignItems: "flex-start",
+    display: "inline-flex",
+    flexWrap: "wrap", // Allow flex items to wrap to the next line
+},
+tagsList: {
+    listStyleType: "none",
+    marginBottom: tokens.spacingVerticalXXS,
+    marginTop: 0,
+    paddingLeft: 0,
+    display: "flex",
+    gridGap: tokens.spacingHorizontalXXS,
+},
+});
+export {useStyles, tabs, instructionPages, usStates, legislativeDocumentTypes, 
+        MultiselectWithTags, filterPageStyles};
