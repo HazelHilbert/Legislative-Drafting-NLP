@@ -46,17 +46,6 @@ def create_word_doc(searchText,text):
     mydoc.save(searchText + ".docx")
     os.startfile(searchText + ".docx")
     return "Hello"
-    
-
-# @app.route('/search', methods=['GET'])
-# def search():
-#     query = request.args.get('query')
-#     state = request.args.get('state')
-#     documentType = request.args.get('doctype')
-#     effectiveDate = request.args.get("effectiveDate")
-#
-#     return jsonify(getSearch(query=query, state=state, documentType=documentType, effectiveDate=effectiveDate))
-#
 
 @app.route('/search', methods=['GET'])
 def search():

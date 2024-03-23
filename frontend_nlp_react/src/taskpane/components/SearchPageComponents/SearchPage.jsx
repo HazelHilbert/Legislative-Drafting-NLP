@@ -25,33 +25,8 @@ const SearchPage = () => {
   const [selectedState, setSelectedState] = useState(null);
   const [chips, setChips] = useState([]);
 
-  // Get Search Results
-  // const handleClick = async () => {
-  //   if (!searchText) {
-  //     setSearchOutput("No text entered");
-  //     return;
-  //   }
-  //   try {
-  //     // loadingEasterEgg();
-  //     setLoading(true);
-  //
-  //     const response = await fetch(`http://127.0.0.1:5000/search?query=${searchText}&state=${selectedState}&doctype=${selectedFileTypes.join(', ')}&effectiveDate=${selectedDate.toDateString()}`);
-  //     // const response = await fetch("http://127.0.0.1:5000/billText/" + searchText);
-  //     if (!response.ok) {
-  //       setSearchOutput("Invalid Bill!");
-  //       return;
-  //     }
-  //     const data = await response.text();
-  //     console.log("response" + response);
-  //     console.log("data: " + data);
-  //
-  //     setSearchOutput(data);
-  //   } catch (error) {
-  //     setSearchOutput("Invalid Bill!");
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
+  // Search Results
+  
 
 const handleClick = async () => {
     if (!searchText) {
@@ -60,11 +35,13 @@ const handleClick = async () => {
     }
     try {
         setLoading(true);
-
+        // Legacy Response Fetches
+        // const response = await fetch("http://127.0.0.1:5000/billText/" + searchText);
+        //     const response = await fetch(`http://127.0.0.1:5000/search?query=${searchText}&state=${selectedState}&doctype=${selectedFileTypes.join(', ')}&effectiveDate=${selectedDate.toDateString()}`);
         const response = await axios.get('http://127.0.0.1:5000/search', {
             params: {
                 query: searchText,
-                state: selectedState,
+                state: "TEXAS", 
                 doctype: selectedFileTypes.join(', '),
                 effectiveDate: selectedDate ? selectedDate.toDateString() : null
             }
@@ -90,7 +67,7 @@ const handleClick = async () => {
       setImageID("../../assets/LoadingTwoColour.gif");
     }
   };
-  
+
   // Handle search
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {
@@ -172,7 +149,7 @@ const handleClick = async () => {
           setSelectedState={setSelectedState}
         />
       }
-      {selectedTab === "tab4" && <ResultsPage />}
+      {selectedTab === "tab4" && <ResultsPage searchResults={}/>}
       {selectedTab === "tab5" && (
         // <AddPage/>
         <div>

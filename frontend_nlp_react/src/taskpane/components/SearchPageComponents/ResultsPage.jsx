@@ -3,11 +3,17 @@ import React from "react";
 import ResultItem from "./ResultItem";
 import "./ResultsPage.css"; // Import the CSS file
 
-const ResultsPage = () => (
+const ResultsPage = ({ searchResults }) => (
   <div className="resultsContainer">
-    <ResultItem title="Lorem Ipsum" state="TX" date="Jan 12, 2024" />
-    <ResultItem title="Second Result" state="TX" date="Jan 12, 2024" />
-    <Button appearance="primary">Insert 2</Button>
+    {searchResults.map((result, index) => (
+      <ResultItem
+        key={index}
+        title={result.title}
+        state={result.state}
+        date={result.last_action_date}
+        url={result.url}
+      />
+    ))}
   </div>
 );
 
