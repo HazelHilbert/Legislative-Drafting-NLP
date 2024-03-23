@@ -32,13 +32,16 @@ const SearchPage = () => {
       // loadingEasterEgg();
       setLoading(true);
       
-      const response = await fetch(`http://127.0.0.1:5000/search?query=${searchText}&state=${selectedState}&documentType=${selectedFileTypes.join(', ')}&effectiveDate=${selectedDate.toDateString()}`);
+      const response = await fetch(`http://127.0.0.1:5000/search?query=${searchText}&state=${selectedState}&doctype=${selectedFileTypes.join(', ')}&effectiveDate=${selectedDate.toDateString()}`);
       // const response = await fetch("http://127.0.0.1:5000/billText/" + searchText);
       if (!response.ok) {
         setSearchOutput("Invalid Bill!");
         return;
       }
       const data = await response.text();
+      console.log("response" + response);
+      console.log("data: " + data);
+
       setSearchOutput(data);
     } catch (error) {
       setSearchOutput("Invalid Bill!");
@@ -58,7 +61,6 @@ const SearchPage = () => {
     setSearchText(event.target.value);
   };
   
-
   // Debugging
   const debug = () => {
     return `Output: ${selectedFileTypes}`;

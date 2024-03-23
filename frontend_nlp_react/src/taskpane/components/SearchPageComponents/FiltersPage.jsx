@@ -38,7 +38,7 @@ const useStyles = makeStyles({
 });
 
 // Allows us to select filters for searching for different pieces of legislative documents
-const FilterComponent = ({ selectedDate, setSelectedDate, selectedFileTypes, setSelectedFileTypes, selectedState, setSelectedState }) => {
+const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSelectedFileTypes, selectedState, setSelectedState }) => {
   // Filters to apply to search
   // const [selectedDate, setSelectedDate] = useState(null);
   // const [selectedFileTypes, setSelectedFileTypes] = useState([]);
