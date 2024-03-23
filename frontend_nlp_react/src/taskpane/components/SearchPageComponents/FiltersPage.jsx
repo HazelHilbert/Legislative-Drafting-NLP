@@ -51,6 +51,16 @@ const useStyles = makeStyles({
     gap: 10,
     display: "flex",
   },
+  docTypeFiltersColumns: {
+    width: "100%",
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-evenly",
+    alignItems: "flex-start",
+    flexWrap: "wrap",
+    paddingLeft: 28,
+    paddingRight: 28,
+  },
   tabListContainer: {
     alignSelf: "stretch",
     justifyContent: "center",
@@ -251,18 +261,7 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
     </div>
   </div>
   
-  <div
-    style={{
-      width: "100%",
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "space-evenly",
-      alignItems: "flex-start",
-      flexWrap: "wrap",
-      paddingLeft: 28,
-      paddingRight: 28,
-    }}
-  >
+  <div className={docTypeFiltersColumns}>
     <div style={{display: "flex", flexDirection: "column", gap: 7, alignItems: "flex-start"}}>
       {legislativeDocumentTypes.slice(0, Math.ceil(legislativeDocumentTypes.length / 2)).map((type) => (
               <div key={type.key} style={{ marginBottom: 0 }}>
