@@ -160,13 +160,11 @@ const usStates = [
 
   // Document Type | US States | Date
 const legislativeDocumentTypes = [
-    { key: "bill", text: "Bill" },
-    { key: "resolution", text: "Resolution" },
-    { key: "law", text: "Law" },
-    { key: "amendment", text: "Amendment" },
-    { key: "report", text: "Report" },
-    { key: "minutes", text: "Minutes" },
-    { key: "regulation", text: "Regulation" },
+    { key: "Bill", text: "Bill" },
+    { key: "Resolution", text: "Resolution" },
+    { key: "Concurrent Resolution", text: "Concurrent Resolution" },
+    { key: "Constitutional Amendment", text: "Constitutional Amendment" },
+    { key: "Joint Resolution", text: "Joint Resolution" },
   ];
 
   // FluentUI dropdown menu with tags

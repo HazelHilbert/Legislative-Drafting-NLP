@@ -121,3 +121,15 @@ def run2():
 
 def merge():
     print()
+
+def getSearch(query, state, documentType, effectiveDate):
+    # Define a dictionary to map full names to abbreviations
+    type_mapping = {
+        "Bill": "B",
+        "Resolution": "R",
+        "Concurrent Resolution": "CR",
+        "Joint Resolution": "JR",
+        "Constitutional Amendment": "CA"
+    }
+
+     

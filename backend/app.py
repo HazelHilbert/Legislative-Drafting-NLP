@@ -55,6 +55,7 @@ def search():
     documentType = request.args.get('doctype')
     effectiveDate = request.args.get("effectiveDate")
 
+    
     response = {
         'query': query,
         'state': state,
