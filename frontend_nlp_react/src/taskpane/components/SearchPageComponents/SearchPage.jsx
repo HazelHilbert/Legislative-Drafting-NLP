@@ -50,6 +50,14 @@ const SearchPage = () => {
     }
   };
 
+  const loadingEasterEgg = () => {
+    if (Math.floor(Math.random() * 100 + 1) == 1) {
+      setImageID("../../assets/loading.gif");
+    } else {
+      setImageID("../../assets/LoadingTwoColour.gif");
+    }
+  };
+  
   // Handle search
   const handleKeyDown = (event) => {
     if (event.key === "Enter") {

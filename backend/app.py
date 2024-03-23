@@ -54,14 +54,6 @@ def search():
     state = request.args.get('state')
     documentType = request.args.get('doctype')
     effectiveDate = request.args.get("effectiveDate")
-
     
-    response = {
-        'query': query,
-        'state': state,
-        'document': documentType, 
-        'Effective Date' : effectiveDate,
-    }
-    
-    return jsonify(response)
+    return jsonify(APITools.getSearch(query=query, state=state, documentType=documentType, effectiveDate=effectiveDate))
     

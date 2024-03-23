@@ -152,3 +152,5 @@ def getSearch(query, state, documentType, effectiveDate):
     api_url = f"https://api.legiscan.com/?key={my_key}&op=getSearch&state={state}&query={query}"
 
     response = requests.get(api_url)
+
+    return response
