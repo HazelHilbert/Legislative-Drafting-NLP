@@ -216,67 +216,79 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
         </div>
       </div>
 
-      {/* Document Type */}
-      <div
-        style={{
-          alignSelf: "stretch",
-          height: "auto",
-          flexDirection: "column",
-          justifyContent: "flex-start",
-          alignItems: "flex-start",
-          gap: 14,
-          display: "flex",
-        }}
-      >
-        <div
-          style={{
-            paddingLeft: 7,
-            paddingRight: 4,
-            justifyContent: "flex-start",
-            alignItems: "center",
-            gap: 4,
-            display: "inline-flex",
-          }}
-        >
-          <div
-            style={{
-              paddingLeft: 2,
-              paddingRight: 2,
-              justifyContent: "flex-start",
-              alignItems: "center",
-              gap: 10,
-              display: "flex",
-            }}
-          >
-            <div
-              style={{
-                color: "#424242",
-                fontSize: 14,
-                fontFamily: "Segoe UI",
-                fontWeight: "700",
-                wordWrap: "break-word",
-              }}
-            >
-              Document Type
-            </div>
-          </div>
+{/* Document Type */}
+<div
+  style={{
+    alignSelf: "stretch",
+    height: "auto",
+    flexDirection: "column",
+    justifyContent: "flex-start",
+    alignItems: "flex-start",
+    gap: 14,
+    display: "flex",
+  }}
+>
+  <div
+    style={{
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "flex-start",
+      paddingLeft: 7,
+      paddingRight: 4,
+    }}
+  >
+    <div
+      style={{
+        color: "#424242",
+        fontSize: 14,
+        fontFamily: "Segoe UI",
+        fontWeight: "700",
+        wordWrap: "break-word",
+      }}
+    >
+      Document Type
+    </div>
+  </div>
+  
+  <div
+    style={{
+      width: "100%",
+      display: "flex",
+      flexDirection: "row",
+      justifyContent: "space-evenly",
+      alignItems: "flex-start",
+      flexWrap: "wrap",
+      paddingLeft: 28,
+      paddingRight: 28,
+    }}
+  >
+    <div style={{display: "flex", flexDirection: "column", gap: 7, alignItems: "flex-start"}}>
+      {legislativeDocumentTypes.slice(0, Math.ceil(legislativeDocumentTypes.length / 2)).map((type) => (
+              <div key={type.key} style={{ marginBottom: 0 }}>
+                <Checkbox label={type.text} id={type.key} onChange={onCheckboxChange} />
+              </div>
+      ))}
+    </div>
+    <div
+      style={{
+        display: "flex",
+        flexDirection: "column",
+        gap: 7,
+        alignItems: "flex-start",
+      }}
+    >
+      {legislativeDocumentTypes.slice(Math.ceil(legislativeDocumentTypes.length / 2)).map((type) => (
+        <div key={type.key} style={{ marginBottom: 10 }}>
+          <Checkbox label={type.text} id={type.key} onChange={onCheckboxChange} />
         </div>
-        <div
-          style={{
-            paddingLeft: 28,
-            paddingRight: 4,
-            justifyContent: "flex-start",
-            alignItems: "center",
-            gap: 20,
-            display: "inline-flex",
-            flexWrap: "wrap",
-          }}
-        >
-          {legislativeDocumentTypes.map((type) => (
-            <Checkbox key={type.key} label={type.text} id={type.key} onChange={onCheckboxChange} />
-          ))}
-        </div>
-      </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+
+
 
       {/* States */}
       <div
