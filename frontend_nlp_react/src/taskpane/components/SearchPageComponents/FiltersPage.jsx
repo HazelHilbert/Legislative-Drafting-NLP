@@ -29,35 +29,43 @@ const useStyles = makeStyles({
     padding: 7,
     background: "#F6F6F6",
     borderRadius: 7,
+    display: "flex",
     flexDirection: "column",
     justifyContent: "flex-start",
     alignItems: "flex-start",
     gap: 7,
-    display: "flex",
   },
-  selectedFiltersBody: {
-    paddingLeft: 6,
-    paddingRight: 4,
-    justifyContent: "flex-start",
-    alignItems: "center",
-    gap: 4,
-    display: "inline-flex",
-  }, 
-  selectedFiltersChips: {
-    paddingLeft: 2,
-    paddingRight: 2,
-    justifyContent: "flex-start",
-    alignItems: "center",
-    gap: 10,
-    display: "flex",
+  selectedFiltersHeader: {
+    color: "#424242",
+    fontFamily: "Segoe UI",
+    fontWeight: 400,
+    wordWrap: "break-word",
   },
-  docTypeFiltersColumns: {
-    width: "100%",
+  documentTypeRoot: {
+    alignSelf: "stretch",
+    height: "auto",
     display: "flex",
-    flexDirection: "row",
-    justifyContent: "space-evenly",
+    flexDirection: "column",
+    justifyContent: "flex-start",
     alignItems: "flex-start",
-    flexWrap: "wrap",
+    gap: 14,
+  }, 
+  documentTypeHeader: {
+    display: "flex",
+    justifyContent: "space-between",
+    paddingLeft: 7,
+    paddingRight: 4,
+    color: "#424242",
+    fontSize: 14,
+    fontFamily: "Segoe UI",
+    fontWeight: "700",
+    wordWrap: "break-word",
+  },
+  documentTypeChips: {
+    width: "100%",
+    display: "grid",
+    gridTemplateColumns: "repeat(2, 1fr)",
+    gap: "7px 28px",
     paddingLeft: 28,
     paddingRight: 28,
   },
@@ -217,74 +225,25 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
     <div className={searchFilterPageStyles.root}>
       {/* Applied Filters */}
       <div className={searchFilterPageStyles.selectedFiltersRoot}>
-        <div className={searchFilterPageStyles.selectedFiltersBody}>
-          <div className={searchFilterPageStyles.selectedFiltersChips}>
-            <h3 style={{ color: "#424242", fontFamily: "Segoe UI", fontWeight: "400", wordWrap: "break-word" }}>
-              Selected Filters {renderChips()}{" "}
-            </h3>
-          </div>
+        <h3 className={searchFilterPageStyles.selectedFiltersHeader}>
+          Selected Filters {renderChips()}{" "}
+        </h3>
+      </div>
+
+      {/* Document Type */}
+      <div className={searchFilterPageStyles.documentTypeRoot}>
+        <div className={searchFilterPageStyles.documentTypeHeader}>
+          Document Type
+        </div>
+        <div className={searchFilterPageStyles.documentTypeChips}>
+          {legislativeDocumentTypes.map((type, index) => 
+            (<div key={type.key} style={{ marginBottom: index % 2 === 0 ? 0 : 10 }}>
+              <Checkbox label={type.text} id={type.key} onChange={onCheckboxChange} />
+            </div>))
+          }
         </div>
       </div>
 
-{/* Document Type */}
-<div
-  style={{
-    alignSelf: "stretch",
-    height: "auto",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    alignItems: "flex-start",
-    gap: 14,
-    display: "flex",
-  }}
->
-  <div
-    style={{
-      display: "flex",
-      flexDirection: "row",
-      justifyContent: "space-between",
-      alignItems: "flex-start",
-      paddingLeft: 7,
-      paddingRight: 4,
-    }}
-  >
-    <div
-      style={{
-        color: "#424242",
-        fontSize: 14,
-        fontFamily: "Segoe UI",
-        fontWeight: "700",
-        wordWrap: "break-word",
-      }}
-    >
-      Document Type
-    </div>
-  </div>
-  
-  <div className={docTypeFiltersColumns}>
-    <div style={{display: "flex", flexDirection: "column", gap: 7, alignItems: "flex-start"}}>
-      {legislativeDocumentTypes.slice(0, Math.ceil(legislativeDocumentTypes.length / 2)).map((type) => (
-              <div key={type.key} style={{ marginBottom: 0 }}>
-                <Checkbox label={type.text} id={type.key} onChange={onCheckboxChange} />
-              </div>
-      ))}
-    </div>
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        gap: 7,
-        alignItems: "flex-start",
-      }}
-    >
-      {legislativeDocumentTypes.slice(Math.ceil(legislativeDocumentTypes.length / 2)).map((type) => (
-        <div key={type.key} style={{ marginBottom: 10 }}>
-          <Checkbox label={type.text} id={type.key} onChange={onCheckboxChange} />
-        </div>
-      ))}
-    </div>
-  </div>
-</div>
 
 
 
