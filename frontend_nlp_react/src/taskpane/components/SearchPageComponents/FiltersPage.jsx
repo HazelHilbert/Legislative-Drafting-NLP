@@ -39,11 +39,7 @@ const useStyles = makeStyles({
 
 // Allows us to select filters for searching for different pieces of legislative documents
 const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSelectedFileTypes, selectedState, setSelectedState }) => {
-  // Filters to apply to search
-  // const [selectedDate, setSelectedDate] = useState(null);
-  // const [selectedFileTypes, setSelectedFileTypes] = useState([]);
-  // const [selectedState, setSelectedState] = useState(null);
-
+  const searchFilterPageStyles = useStyles();
   // Handles changing file type filter
   const handleFileTypeChange = (fileType) => {
     setSelectedFileTypes((prevFileTypes) => {
@@ -60,7 +56,7 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
     setSelectedState(option.text);
   };
 
-  // Handles removing a 
+  // Handles removing Filters
   const handleRemoveFilter = (filterType) => {
     switch (filterType) {
       case "date":
@@ -76,8 +72,7 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
         break;
     }
   };
-
-
+  
   // Change Text Box to Selected
   const onCheckboxChange = (ev, isChecked) => {
     const fileType = ev.target.id;
