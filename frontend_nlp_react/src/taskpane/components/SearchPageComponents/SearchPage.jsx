@@ -35,7 +35,6 @@ const SearchPage = () => {
     }
     try {
       setLoading(true);
-
       // Search Bill
       if (selectedTab === "tab1") {
         const response = await fetch("http://127.0.0.1:5000/billText/" + searchText);
@@ -47,8 +46,9 @@ const SearchPage = () => {
         setSearchOutput(data);
       }
       // Search Query
-      else if (selectedTab === "tab2")
-      {
+      else
+      {        
+        setSelectedTab("tab2");
         // Legacy Response Fetch
         //     const response = await fetch(`http://127.0.0.1:5000/search?query=${searchText}&state=${selectedState}&doctype=${selectedFileTypes.join(', ')}&effectiveDate=${selectedDate.toDateString()}`);
         const response = await axios.get('http://127.0.0.1:5000/search', {
