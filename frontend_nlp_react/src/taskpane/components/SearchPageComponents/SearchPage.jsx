@@ -140,17 +140,22 @@ const SearchPage = () => {
       </div>
 
       {/* Search Tab */}
-      {selectedTab === "tab1" &&
-        <div>
-          {loading ? (
-            <div style={{ marginTop: 100 }}>
-              <img src={imageID} width={"100px"} />
-            </div>
-          ) : (
-            <p>{searchOutput}</p>
+      {selectedTab === "tab1" && (
+        <>
+          {!loading && !searchOutput && (
+            <InstructionPage title={instructionPages.tab1.title} />
           )}
-        </div>
-      } 
+          <div>
+            {loading ? (
+              <div style={{ marginTop: 100 }}>
+                <img src={imageID} width={"100px"} />
+              </div>
+            ) : (
+              <p>{searchOutput}</p>
+            )}
+          </div>
+        </>
+      )}
 
       {/* Results Tab */}
       {selectedTab === "tab2" && 
