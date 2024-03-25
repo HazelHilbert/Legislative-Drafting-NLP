@@ -26,40 +26,42 @@ const SearchPage = () => {
   const [chips, setChips] = useState([]);
 
   // Search Results
-  
+  const [searchResults, setSearchResults] = useState([]);
 
-const handleClick = async () => {
+  const handleClick = async () => {
     if (!searchText) {
-        setSearchOutput("No text entered");
-        return;
+      setSearchOutput("No text entered");
+      return;
     }
     try {
-        setLoading(true);
-        // Legacy Response Fetches
-        // const response = await fetch("http://127.0.0.1:5000/billText/" + searchText);
-        //     const response = await fetch(`http://127.0.0.1:5000/search?query=${searchText}&state=${selectedState}&doctype=${selectedFileTypes.join(', ')}&effectiveDate=${selectedDate.toDateString()}`);
-        const response = await axios.get('http://127.0.0.1:5000/search', {
-            params: {
-                query: searchText,
-                state: "TEXAS", 
-                doctype: selectedFileTypes.join(', '),
-                effectiveDate: selectedDate ? selectedDate.toDateString() : null
-            }
-        });
+      setLoading(true);
 
-        if (response.status === 200) {
-            setSearchOutput(response.data);
-        } else {
-            setSearchOutput("Invalid Bill!");
+      // Legacy Response Fetches
+      // const response = await fetch("http://127.0.0.1:5000/billText/" + searchText);
+      //     const response = await fetch(`http://127.0.0.1:5000/search?query=${searchText}&state=${selectedState}&doctype=${selectedFileTypes.join(', ')}&effectiveDate=${selectedDate.toDateString()}`);
+      const response = await axios.get('http://127.0.0.1:5000/search', {
+        params: {
+          query: searchText,
+          state: "TEXAS", 
+          doctype: selectedFileTypes.join(', '),
+          effectiveDate: selectedDate ? selectedDate.toDateString() : null
         }
+      });
+
+      if (response.status === 200) {
+        // setSearchResults(response.data.searchresult); // Update state with search results#// Set the content of the pre element with JSON string
+        // Convert JSON data to Array Object to Parse into search Results, 
+        const searchResultArray = Object.values(response.data.searchresult);
+        setSearchResults(searchResultArray);
+      } else {
+        setSearchResults([]); // Clear search results if invalid response
+      }
     } catch (error) {
-        setSearchOutput("Error fetching data from the server");
+      setSearchResults([]); // Clear search results on error
     } finally {
-        setLoading(false);
+      setLoading(false);
     }
-};
-
-
+  };
   const loadingEasterEgg = () => {
     if (Math.floor(Math.random() * 100 + 1) == 1) {
       setImageID("../../assets/loading.gif");
@@ -136,9 +138,9 @@ const handleClick = async () => {
           </div>
         </div>
       </div>
-
+      <pre id="jsonOutput"></pre>
       {selectedTab === "tab1"}
-      {selectedTab === "tab2" && <ResultsPage />}
+      {selectedTab === "tab2" && <ResultsPage searchResults={searchResults} />}
       {selectedTab === "tab3" && 
         <FiltersPage
           selectedDate={selectedDate}
@@ -149,7 +151,7 @@ const handleClick = async () => {
           setSelectedState={setSelectedState}
         />
       }
-      {selectedTab === "tab4" && <ResultsPage searchResults={}/>}
+      {selectedTab === "tab4" && <ResultsPage searchResults={searchResults}/>}
       {selectedTab === "tab5" && (
         // <AddPage/>
         <div>

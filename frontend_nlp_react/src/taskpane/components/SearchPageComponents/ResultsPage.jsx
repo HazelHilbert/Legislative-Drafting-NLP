@@ -3,9 +3,14 @@ import React from "react";
 import ResultItem from "./ResultItem";
 import "./ResultsPage.css"; // Import the CSS file
 
-const ResultsPage = ({ searchResults }) => (
+const ResultsPage = ({ searchResults }) => {
+  
+  console.log(searchResults);
+  return (
   <div className="resultsContainer">
-    {searchResults.map((result, index) => (
+    
+    {/* Check if searchResults is not null or undefined before mapping over it */}
+    {searchResults && searchResults.map((result, index) => (
       <ResultItem
         key={index}
         title={result.title}
@@ -15,6 +20,8 @@ const ResultsPage = ({ searchResults }) => (
       />
     ))}
   </div>
-);
+  );
+};
 
 export default ResultsPage;
+
