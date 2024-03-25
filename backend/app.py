@@ -10,6 +10,15 @@ CORS(app)
 
 my_key = "480c76cff050a40771e1190b3cab219d"
 
+def summarize_large_text(text, max_chunk_size=2500):
+    chunks = [text[i:i+max_chunk_size] for i in range(0, len(text), max_chunk_size)]
+    summary = ""
+    for chunk in chunks:
+        current_input = summary + chunk
+        response = llm.invoke(f"Summarize this: {current_input}")
+        summary = response['choices'][0]['message']['content']
+    return summary
+
 
 @app.route("/")
 def hello_world():
@@ -63,4 +72,5 @@ def create_word_doc(searchText,text):
     mydoc.save(searchText + ".docx")
     os.startfile(searchText + ".docx")
     return "Hello"
+    
     
