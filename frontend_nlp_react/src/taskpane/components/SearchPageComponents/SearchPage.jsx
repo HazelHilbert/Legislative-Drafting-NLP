@@ -88,8 +88,8 @@ const SearchPage = () => {
   
   return (
     <div className={styles.root}>
-      <img src="../../assets/propylonFull.png" width={"50%"} style={{ marginTop: "10px" }} />
       {/* Top Navigation */}
+      <img src="../../assets/propylonFull.png" width={"50%"} style={{ marginTop: "10px" }} />
       <div className={styles.topNavigation}>
         <TabList
                 style={{ width: "auto" }}
@@ -138,9 +138,25 @@ const SearchPage = () => {
           </div>
         </div>
       </div>
-      <pre id="jsonOutput"></pre>
-      {selectedTab === "tab1"}
-      {selectedTab === "tab2" && <ResultsPage searchResults={searchResults} />}
+
+      {/* Search Tab */}
+      {selectedTab === "tab1" &&
+        <div>
+          {loading ? (
+            <div style={{ marginTop: 100 }}>
+              <img src={imageID} width={"100px"} />
+            </div>
+          ) : (
+            <p>{searchOutput}</p>
+          )}
+        </div>
+      } 
+
+      {/* Results Tab */}
+      {selectedTab === "tab2" && 
+        <ResultsPage searchResults={searchResults} />}
+
+      {/* Search Filters Tab */}
       {selectedTab === "tab3" && 
         <FiltersPage
           selectedDate={selectedDate}
@@ -151,7 +167,11 @@ const SearchPage = () => {
           setSelectedState={setSelectedState}
         />
       }
+
+      {/* Add Tab */}
       {selectedTab === "tab4" && <ResultsPage searchResults={searchResults}/>}
+
+      {/* Settings Tab */}
       {selectedTab === "tab5" && (
         // <AddPage/>
         <div>
@@ -159,15 +179,6 @@ const SearchPage = () => {
           <InstructionPage title={instructionPages.tab1.title} />
         </div>
       )}
-      <div>
-        {loading ? (
-          <div style={{ marginTop: 100 }}>
-            <img src={imageID} width={"100px"} />
-          </div>
-        ) : (
-          <p>{searchOutput}</p>
-        )}
-      </div>
     </div>
   );
 };
