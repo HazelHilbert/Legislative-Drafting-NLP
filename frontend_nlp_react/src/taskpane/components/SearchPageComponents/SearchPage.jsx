@@ -36,30 +36,38 @@ const SearchPage = () => {
     try {
       setLoading(true);
 
+      // Search Bill
       if (selectedTab === "tab1") {
-
-        
-      }
-
-      // Legacy Response Fetches
-      // const response = await fetch("http://127.0.0.1:5000/billText/" + searchText);
-      //     const response = await fetch(`http://127.0.0.1:5000/search?query=${searchText}&state=${selectedState}&doctype=${selectedFileTypes.join(', ')}&effectiveDate=${selectedDate.toDateString()}`);
-      const response = await axios.get('http://127.0.0.1:5000/search', {
-        params: {
-          query: searchText,
-          state: "TEXAS", 
-          doctype: selectedFileTypes.join(', '),
-          effectiveDate: selectedDate ? selectedDate.toDateString() : null
+        const response = await fetch("http://127.0.0.1:5000/billText/" + searchText);
+        if (!response.ok) {
+          setSearchOutput("Invalid Bill!");
+          return;
         }
-      });
+        const data = await response.text();
+        setSearchOutput(data);
+      }
+      // Search Query
+      else if (selectedTab === "tab2")
+      {
+        // Legacy Response Fetch
+        //     const response = await fetch(`http://127.0.0.1:5000/search?query=${searchText}&state=${selectedState}&doctype=${selectedFileTypes.join(', ')}&effectiveDate=${selectedDate.toDateString()}`);
+        const response = await axios.get('http://127.0.0.1:5000/search', {
+          params: {
+            query: searchText,
+            state: "TEXAS", 
+            doctype: selectedFileTypes.join(', '),
+            effectiveDate: selectedDate ? selectedDate.toDateString() : null
+          }
+        });
 
-      if (response.status === 200) {
-        // setSearchResults(response.data.searchresult); // Update state with search results#// Set the content of the pre element with JSON string
-        // Convert JSON data to Array Object to Parse into search Results, 
-        const searchResultArray = Object.values(response.data.searchresult);
-        setSearchResults(searchResultArray);
-      } else {
-        setSearchResults([]); // Clear search results if invalid response
+        if (response.status === 200) {
+          // setSearchResults(response.data.searchresult); // Update state with search results#// Set the content of the pre element with JSON string
+          // Convert JSON data to Array Object to Parse into search Results, 
+          const searchResultArray = Object.values(response.data.searchresult);
+          setSearchResults(searchResultArray);
+        } else {
+          setSearchResults([]); // Clear search results if invalid response
+        }
       }
     } catch (error) {
       setSearchResults([]); // Clear search results on error
@@ -71,7 +79,7 @@ const SearchPage = () => {
   // Handle search
   const handleKeyDown = (event, selectedTab) => {
     if (event.key === "Enter") {
-      handleClick();
+      handleClick(selectedTab);
     }
   };
   // Change Search Result Input
@@ -135,7 +143,7 @@ const SearchPage = () => {
                   }}
                   value={searchText}
                   onChange={handleChange}
-                  onKeyPress={handleKeyDown}
+                  onKeyPress={(event) => handleKeyDown(event, selectedTab)}
                   placeholder="Search"
                 />
               </div>
