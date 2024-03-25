@@ -28,13 +28,18 @@ const SearchPage = () => {
   // Search Results
   const [searchResults, setSearchResults] = useState([]);
 
-  const handleClick = async () => {
+  const handleClick = async (selectedTab) => {
     if (!searchText) {
       setSearchOutput("No text entered");
       return;
     }
     try {
       setLoading(true);
+
+      if (selectedTab === "tab1") {
+
+        
+      }
 
       // Legacy Response Fetches
       // const response = await fetch("http://127.0.0.1:5000/billText/" + searchText);
@@ -62,16 +67,9 @@ const SearchPage = () => {
       setLoading(false);
     }
   };
-  const loadingEasterEgg = () => {
-    if (Math.floor(Math.random() * 100 + 1) == 1) {
-      setImageID("../../assets/loading.gif");
-    } else {
-      setImageID("../../assets/LoadingTwoColour.gif");
-    }
-  };
 
   // Handle search
-  const handleKeyDown = (event) => {
+  const handleKeyDown = (event, selectedTab) => {
     if (event.key === "Enter") {
       handleClick();
     }
@@ -81,6 +79,14 @@ const SearchPage = () => {
     setSearchText(event.target.value);
   };
   
+  const loadingEasterEgg = () => {
+    if (Math.floor(Math.random() * 100 + 1) == 1) {
+      setImageID("../../assets/loading.gif");
+    } else {
+      setImageID("../../assets/LoadingTwoColour.gif");
+    }
+  };
+
   // Debugging
   const debug = () => {
     return `Output: ${selectedFileTypes}`;
