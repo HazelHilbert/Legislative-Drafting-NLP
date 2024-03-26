@@ -24,6 +24,15 @@ def test_get_bill(mock_requests):
     assert response.text != get_comparison_text('dummyTest.txt')
 
 
+def test_get_bills_from_state(mock_requests):
+    stateName = "Illinois"
+    mock_requests.get(f"{test_url}billsFromState/{stateName}", text = get_comparison_text('test1.txt'))
+    response = requests.get(f"{test_url}billsFromState/{stateName}")
+    assert response.status_code == 200
+    assert response.text == get_comparison_text('test1.txt')
+
+
+
 def test_citation_string_bill(mock_requests):
     mock_requests.get(f"{test_url}citationStringBill/1254828", text="105 ILCS 5/10-22.6 and 105 ILCS 5/34-19")
     response = requests.get(f"{test_url}citationStringBill/1254828")
