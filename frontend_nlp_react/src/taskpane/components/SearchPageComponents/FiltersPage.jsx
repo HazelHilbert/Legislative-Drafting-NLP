@@ -21,25 +21,15 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
   // Filter Page Styles
   const searchFilterPageStyles = filterPageStyles();
 
-  // Handles changing file type filter
-  const handleFileTypeChange = (fileType) => {
-    setSelectedFileTypes((prevFileTypes) => {
-      if (prevFileTypes.includes(fileType)) {
-        return prevFileTypes.filter((type) => type !== fileType);
-      } else {
-        return [...prevFileTypes, fileType];
-      }
-    });
-  };
-
   // Modified FluentUI React V9 dropdown 
-  const Clearable = ({ placeholder, options, onChange }) => {
+  const Clearable = ({ placeholder, options, onChange}) => {
     const dropdownId = useId("");
     const styles = useStyles();
   
     const handleSelect = (event, option, index) => {
+      console.log("Entered Handle Selected", option.text);
       if (onChange) {
-        onChange(event, option, index); // Call the onChange handler
+        onChange(option.text); // Pass the selected option to the parent component
       }
     };
   
@@ -50,7 +40,7 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
           clearable
           aria-labelledby={dropdownId}
           placeholder={placeholder}
-          onSelectOption={handleSelect} // Call handleSelect when an option is selected
+          onOptionSelect={handleSelect} // Call handleSelect when an option is selected
         >
           {options.map((option) => (
             <Option key={option.key} value={option.text}>
@@ -78,7 +68,18 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
         break;
     }
   };
-  
+
+  // Handles changing file type filter
+  const handleFileTypeChange = (fileType) => {
+    setSelectedFileTypes((prevFileTypes) => {
+      if (prevFileTypes.includes(fileType)) {
+        return prevFileTypes.filter((type) => type !== fileType);
+      } else {
+        return [...prevFileTypes, fileType];
+      }
+    });
+  };
+
   // Change Text Box to Selected
   const onCheckboxChange = (ev, isChecked) => {
     const fileType = ev.target.id;
@@ -86,15 +87,14 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
   };
 
   // Handles changing state filter
-  const handleStateChange = (event, option) => {
-    setSelectedState(option.text);
-  };
+  const handleStateChange = (selectedOption) => {
+    setSelectedState(selectedOption); // Update selectedState with the selected option
+  }; 
 
   // Change Select Box when item selected from dropdown
   const onDropdownChange = (event, option, index) => {
-    handleStateChange(event, option);
+    handleStateChange(option);
   };
-
   
   // change selected Date
   const onDateSelect = (date) => {
@@ -164,7 +164,7 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
     if (selectedState) {
       chips.push(
         <ToggleButton
-          key="date"
+          key={selectedState}
           size="small"
           style={chipStyle}
           onMouseOver={() => handleHover(1, true)}
@@ -212,10 +212,12 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
         </div>
         {/* Tick Boxes */}
         <div className={searchFilterPageStyles.checkboxesContainer}>
-          <Clearable
-            placeholder="Select a state"
-            options={usStates}
-            onChange={onDropdownChange}/>
+        <Clearable
+          placeholder="Select a state"
+          options={usStates}
+          onChange={handleStateChange} // Pass handleStateChange as onChange callback
+        />
+
         </div>
       </div>
 
