@@ -1,14 +1,18 @@
+import sys
+sys.path.append('C:\\Users\\elizo\\Downloads\\legislative_nlp_langchain.py')
+
 import os
 from flask import Flask, request, render_template, send_file
 from flask_cors import CORS
 import APITools
 import docx
+from legislative_nlp_langchain import llm
 from free_nlp_api_on_example import call_open_ai
 
 app = Flask(__name__)
 CORS(app) 
 
-my_key = "480c76cff050a40771e1190b3cab219d"
+my_key = OPENAI_API_KEY
 
 def summarize_large_text(text, max_chunk_size=2500):
     chunks = [text[i:i+max_chunk_size] for i in range(0, len(text), max_chunk_size)]

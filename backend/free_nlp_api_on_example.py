@@ -3,9 +3,8 @@ from flask import Flask, request
 from openai import OpenAI
 from legislative_nlp_langchain import load_summarize_chain, getText
 from langchain_community.llms import OpenAI
-from langchain_community.llms import OpenAI
 from langchain_core.prompts import PromptTemplate
-from langchain.chains import LLMChain
+
 
 app = Flask(__name__)
 
@@ -41,7 +40,6 @@ def langchain_summarize_text():
     return load_summarize_chain(text, chain_type="refine")
 
 # Additional Flask routes here
-
 if __name__ == "__main__":
     app.run(debug=True)
 
