@@ -32,32 +32,34 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
     });
   };
 
-  const Clearable = () => {
+  // Modified FluentUI React V9 dropdown 
+  const Clearable = ({ placeholder, options, onChange }) => {
     const dropdownId = useId("");
     const styles = useStyles();
-
-    const options = usStates.map((state) => state.text);
-
+  
+    const handleSelect = (event, option, index) => {
+      if (onChange) {
+        onChange(event, option, index); // Call the onChange handler
+      }
+    };
+  
     return (
       <div className={styles.root}>
-        <Label id={dropdownId}>Pick a color</Label>
+        <Label id={dropdownId}>{placeholder}</Label>
         <Dropdown
           clearable
           aria-labelledby={dropdownId}
-          placeholder="Select a color"
+          placeholder={placeholder}
+          onSelectOption={handleSelect} // Call handleSelect when an option is selected
         >
-          {options.map((option) => ( // Map over options to render Option components
-            <Option key={option}>{option}</Option>
+          {options.map((option) => (
+            <Option key={option.key} value={option.text}>
+              {option.text}
+            </Option>
           ))}
         </Dropdown>
       </div>
     );
-  };
-
-  
-  // Handles changing state filter
-  const handleStateChange = (event, option) => {
-    setSelectedState(option.text);
   };
 
   // Handles removing Filters
@@ -83,11 +85,17 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
     handleFileTypeChange(fileType);
   };
 
+  // Handles changing state filter
+  const handleStateChange = (event, option) => {
+    setSelectedState(option.text);
+  };
+
   // Change Select Box when item selected from dropdown
   const onDropdownChange = (event, option, index) => {
     handleStateChange(event, option);
   };
 
+  
   // change selected Date
   const onDateSelect = (date) => {
     setSelectedDate(date);
@@ -204,12 +212,10 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
         </div>
         {/* Tick Boxes */}
         <div className={searchFilterPageStyles.checkboxesContainer}>
-          <MultiselectWithTags
+          <Clearable
             placeholder="Select a state"
             options={usStates}
-            onChange={onDropdownChange}
-          />
-          <Clearable/>
+            onChange={onDropdownChange}/>
         </div>
       </div>
 
