@@ -77,6 +77,33 @@ const SearchPage = () => {
         if(!userIsScrolling)
           window.scrollTo(0, document.body.scrollHeight);
       }, 10); // Interval Duration
+      // Search Query
+      else
+      {        
+        setSelectedTab("tab2");
+
+        const stateAbbreviation = getStateAbbreviation(selectedState);
+
+        // Legacy Response Fetch
+        //     const response = await fetch(`http://127.0.0.1:5000/search?query=${searchText}&state=${selectedState}&doctype=${selectedFileTypes.join(', ')}&effectiveDate=${selectedDate.toDateString()}`);
+        const response = await axios.get('http://127.0.0.1:5000/search', {
+          params: {
+            query: searchText,
+            state: stateAbbreviation, //Other TEXAS
+            doctype: selectedFileTypes.join(', '),
+            effectiveDate: selectedDate ? selectedDate.toDateString() : null
+          }
+        });
+
+        if (response.status === 200) {
+          // setSearchResults(response.data.searchresult); // Update state with search results#// Set the content of the pre element with JSON string
+          // Convert JSON data to Array Object to Parse into search Results, 
+          const searchResultArray = Object.values(response.data.searchresult);
+          setSearchResults(searchResultArray);
+        } else {
+          setSearchResults([]); // Clear search results if invalid response
+        }
+      }
     } catch (error) {
       setSearchOutput("Invalid Bill!");
     } finally {
@@ -115,6 +142,7 @@ const SearchPage = () => {
     tab1: { title: "Instructions" },
   };
 
+  
   return (
     <div
       className={styles.root}
