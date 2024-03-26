@@ -12,6 +12,5 @@ pyodbc
 pytest
 requests
 requests-mock
-langchain
 langchain-openai
-langchain-cli
+

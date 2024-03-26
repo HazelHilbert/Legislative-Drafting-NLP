@@ -1,21 +1,22 @@
-class Document:
-    def __init__(self, page_content):
-        self.page_content = page_content
-        
 import os
-from langchain import OpenAI, PromptTemplate, LLMChain
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.chains.mapreduce import MapReduceChain
 from langchain.prompts import PromptTemplate
+#from langchain_community.llms import OpenAI
+from langchain_openai import OpenAI
 import textwrap
+
+class Document:
+    def __init__(self, page_content):
+        self.page_content = page_content
       
 # Initialize the LLM with OpenAI
 llm = OpenAI(api_key=os.getenv('OPENAI_API_KEY'), temperature=0)
 
 # Function to split the text into smaller chunks
-def split_text(text, max_length=1000):
+def split_text(text):
     text_splitter = CharacterTextSplitter()
-    return text_splitter.split_text(text, max_length)
+    return text_splitter.split_text(text)
 
 # Function to load the summarization chain
 def load_summarize_chain(llm, chain_type="refine"):
@@ -31,24 +32,20 @@ def load_summarize_chain(llm, chain_type="refine"):
         "Given the new context, refine the original summary."
         "If the context isn't useful, return the original summary."
     )
-    refine_prompt = PromptTemplate(input_variables=["existing_answer", "text"], template=refine_template)
+    refine_prompt = PromptTemplate(template=refine_template, input_variables=["existing_answer", "text"])
 
-    return MapReduceChain(llm, PROMPT, refine_prompt, return_intermediate_steps=True)
-
-# Sample usage
-def getText():
-    # Dummy implementation - replace with actual text retrieval logic
-    return "Your large text to summarize goes here."
+    # Instantiate MapReduceChain with the correct parameters
+    return MapReduceChain(llm=llm, initial_prompt_template=PROMPT, refinement_prompt_template=refine_prompt, return_intermediate_steps=True)
 
 def summarize_large_text(text):
-    # Split the large text into manageable chunks
     texts = split_text(text)
-
     # Convert each chunk into a Document
     docs = [Document(page_content=t) for t in texts]
 
     # Run the summarization chain
-    chain = load_summarize_chain(llm, chain_type="refine")
+    chain = load_summarize_chain(llm, 
+                                 chain_type="refine")
+    
     output_summary = chain.run({"input_documents": docs}, return_only_outputs=True)
     
     # Format and print the summary
@@ -57,5 +54,4 @@ def summarize_large_text(text):
     return wrapped_text
 
 # Call the summarization function
-text = getText()
-summarized_text = summarize_large_text(text)
+summarized_text = summarize_large_text("hello")
