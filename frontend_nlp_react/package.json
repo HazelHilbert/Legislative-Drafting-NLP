@@ -29,7 +29,6 @@
     "@fluentui/react": "^8.115.6",
     "@fluentui/react-components": "^9.46.5",
     "@fluentui/react-icons": "^2.0.214",
-    "axios": "^1.6.8",
     "babel-preset-es2015": "^6.24.1",
     "core-js": "^3.9.1",
     "es6-promise": "^4.2.8",
