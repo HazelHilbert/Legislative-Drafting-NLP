@@ -7,10 +7,14 @@ import {
   makeStyles,
   tokens,
   useId,
+  Label,
+  Dropdown,
+  Option,
+  shorthands
 } from "@fluentui/react-components";
 import { Dismiss12Regular, Dismiss24Regular } from "@fluentui/react-icons";
 import React, { useRef, useState } from "react";
-import {filterPageStyles, usStates, legislativeDocumentTypes, MultiselectWithTags} from "./SearchPageConsts"
+import {filterPageStyles, usStates, legislativeDocumentTypes, useStyles} from "./SearchPageConsts"
 
 // Allows us to select filters for searching for different pieces of legislative documents
 const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSelectedFileTypes, selectedState, setSelectedState }) => {
@@ -28,6 +32,29 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
     });
   };
 
+  const Clearable = () => {
+    const dropdownId = useId("");
+    const styles = useStyles();
+
+    const options = usStates.map((state) => state.text);
+
+    return (
+      <div className={styles.root}>
+        <Label id={dropdownId}>Pick a color</Label>
+        <Dropdown
+          clearable
+          aria-labelledby={dropdownId}
+          placeholder="Select a color"
+        >
+          {options.map((option) => ( // Map over options to render Option components
+            <Option key={option}>{option}</Option>
+          ))}
+        </Dropdown>
+      </div>
+    );
+  };
+
+  
   // Handles changing state filter
   const handleStateChange = (event, option) => {
     setSelectedState(option.text);
@@ -182,6 +209,7 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
             options={usStates}
             onChange={onDropdownChange}
           />
+          <Clearable/>
         </div>
       </div>
 
