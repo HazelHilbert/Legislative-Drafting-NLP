@@ -28,6 +28,7 @@ const SearchPage = () => {
   // Search Results
   const [searchResults, setSearchResults] = useState([]);
 
+  // Handle Search Query
   const handleClick = async (selectedTab) => {
     if (!searchText) {
       setSearchOutput("No text entered");
@@ -76,7 +77,7 @@ const SearchPage = () => {
     }
   };
 
-  // Handle search
+  // Handle search from Key press
   const handleKeyDown = (event, selectedTab) => {
     if (event.key === "Enter") {
       handleClick(selectedTab);
