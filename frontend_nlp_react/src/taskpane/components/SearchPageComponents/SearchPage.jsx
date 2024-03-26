@@ -28,6 +28,7 @@ const SearchPage = () => {
   // Search Results
   const [searchResults, setSearchResults] = useState([]);
 
+  // Gets Abbreviations for States to For Search Query
   const getStateAbbreviation = (stateFullName) => {
     // Define a mapping between full state names and their abbreviations
     const stateAbbreviations = {
