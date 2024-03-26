@@ -34,13 +34,58 @@ const SearchPage = () => {
       "Alabama": "AL",
       "Alaska": "AK",
       "Arizona": "AZ",
-      // Add more states as needed
+      "Arkansas": "AR",
+      "California": "CA",
+      "Colorado": "CO",
+      "Connecticut": "CT",
+      "Delaware": "DE",
+      "Florida": "FL",
+      "Georgia": "GA",
+      "Hawaii": "HI",
+      "Idaho": "ID",
+      "Illinois": "IL",
+      "Indiana": "IN",
+      "Iowa": "IA",
+      "Kansas": "KS",
+      "Kentucky": "KY",
+      "Louisiana": "LA",
+      "Maine": "ME",
+      "Maryland": "MD",
+      "Massachusetts": "MA",
+      "Michigan": "MI",
+      "Minnesota": "MN",
+      "Mississippi": "MS",
+      "Missouri": "MO",
+      "Montana": "MT",
+      "Nebraska": "NE",
+      "Nevada": "NV",
+      "New Hampshire": "NH",
+      "New Jersey": "NJ",
+      "New Mexico": "NM",
+      "New York": "NY",
+      "North Carolina": "NC",
+      "North Dakota": "ND",
+      "Ohio": "OH",
+      "Oklahoma": "OK",
+      "Oregon": "OR",
+      "Pennsylvania": "PA",
+      "Rhode Island": "RI",
+      "South Carolina": "SC",
+      "South Dakota": "SD",
+      "Tennessee": "TN",
+      "Texas": "TX",
+      "Utah": "UT",
+      "Vermont": "VT",
+      "Virginia": "VA",
+      "Washington": "WA",
+      "West Virginia": "WV",
+      "Wisconsin": "WI",
+      "Wyoming": "WY"
     };
-  
+    
     // Return the abbreviation corresponding to the full state name
     return stateAbbreviations[stateFullName] || stateFullName; // Return full name if no abbreviation is found
   };
-
   
   // Handle Search Query
   const handleClick = async (selectedTab) => {
@@ -64,12 +109,15 @@ const SearchPage = () => {
       else
       {        
         setSelectedTab("tab2");
+
+        const stateAbbreviation = getStateAbbreviation(selectedState);
+
         // Legacy Response Fetch
         //     const response = await fetch(`http://127.0.0.1:5000/search?query=${searchText}&state=${selectedState}&doctype=${selectedFileTypes.join(', ')}&effectiveDate=${selectedDate.toDateString()}`);
         const response = await axios.get('http://127.0.0.1:5000/search', {
           params: {
             query: searchText,
-            state: "CA", //Other TEXAS
+            state: stateAbbreviation, //Other TEXAS
             doctype: selectedFileTypes.join(', '),
             effectiveDate: selectedDate ? selectedDate.toDateString() : null
           }
