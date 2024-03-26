@@ -75,7 +75,7 @@ const Citations = () => {
   };
 
   return (
-    <FluentProvider theme={webLightTheme}>
+     <FluentProvider theme={webLightTheme}>
       <div className="mainContainer globalStyles">
         {/* Propylon Logo */}
         <div className="image">
@@ -97,6 +97,7 @@ const Citations = () => {
             <div className="underline"></div>
           </div>
         </div>
+        
         {/* Citation */}
         <div className="line">
           {loading ? (
@@ -104,7 +105,11 @@ const Citations = () => {
               <img src={imageID} width={"100px"} />
             </div>
           ) : (
-            <p>{citationText}</p>
+            <div className="citationText">
+              {citationText.split("\n").map((line, index) => (
+                <p key={index}>{line}</p>
+              ))}
+            </div>
           )}
         </div>
       </div>
