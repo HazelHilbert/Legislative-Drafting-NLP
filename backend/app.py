@@ -3,24 +3,14 @@ from flask import Flask, request, render_template, send_file
 from flask_cors import CORS
 import APITools
 import docx
-from free_nlp_api_on_example import call_open_ai
-from dotenv import load_dotenv
-load_dotenv() 
 
-my_key = os.getenv('OPENAI_API_KEY')
-llm = os.getenv('OPENAI_API_KEY')
+from simple_chaining import summarize_large_text
+from free_nlp_api_on_example import call_open_ai
 
 app = Flask(__name__)
-CORS(app) 
+CORS(app)
 
-def summarize_large_text(text, max_chunk_size=2500):
-    chunks = [text[i:i+max_chunk_size] for i in range(0, len(text), max_chunk_size)]
-    summary = ""
-    for chunk in chunks:
-        current_input = summary + chunk
-        response = llm.invoke(f"Summarize this: {current_input}")
-        summary = response['choices'][0]['message']['content']
-    return summary
+my_key = "480c76cff050a40771e1190b3cab219d"
 
 
 @app.route("/")
@@ -38,42 +28,49 @@ def getState(stateName):
     APITools.pullState(stateName)
     return "Pull Complete"
 
+
 @app.route("/summariseText/<text>")
 def getSummariseText(text):
     return call_open_ai("summary", text)
 
 
+@app.route("/summariseLargeText/<text>")
+def getSummariseLargeText(text):
+    return summarize_large_text(text)
+
+
 @app.route("/citationJSON/<billText>")
-def getCitationJSON(billText) :
+def getCitationJSON(billText):
     return call_open_ai("citationJSON", billText)
 
+
 @app.route("/citationString/<billText>")
-def getCitationString(billText) :
+def getCitationString(billText):
     return call_open_ai("citationString", billText)
+
 
 @app.route("/summariseBill/<billID>")
 def getSummariseBill(billID):
     billText = getText(billID)
-    
-    return call_open_ai("summary", billText)
+    return summarize_large_text(billText)
 
 
 @app.route("/citationJSONBill/<billID>")
-def getCitationJSONBill(billID) :
+def getCitationJSONBill(billID):
     billText = getText(billID)
     return call_open_ai("citationJSON", billText)
 
+
 @app.route("/citationStringBill/<billID>")
-def getCitationStringBill(billID) :
+def getCitationStringBill(billID):
     billText = getText(billID)
     return call_open_ai("citationString", billText)
 
+
 @app.route('/generate_document/<searchText>/<text>')
-def create_word_doc(searchText,text):
-    mydoc = docx.Document()  
-    mydoc.add_paragraph(text)    
+def create_word_doc(searchText, text):
+    mydoc = docx.Document()
+    mydoc.add_paragraph(text)
     mydoc.save(searchText + ".docx")
     os.startfile(searchText + ".docx")
     return "Hello"
-    
-    
