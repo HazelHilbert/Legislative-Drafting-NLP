@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BookQuestionMark24Regular, ChevronRight24Filled, DocumentDismiss24Regular } from "@fluentui/react-icons";
 import "./ResultItem.css";
 
-const ResultItem = ({ title, state, date }) => {
+const ResultItem = ({ title, state, date, url }) => {
   const [showSummary, setShowSummary] = useState(false);
 
   const handleChevronClick = () => {
@@ -14,7 +14,7 @@ const ResultItem = ({ title, state, date }) => {
       <div className="header">
         <div className="titleSection">
           <div className="titleInner">
-            <div className="title">{title}</div>
+            <a href={url} target="_blank" rel="noopener noreferrer" className="title">{title}</a>
           </div>
         </div>
         <div className="stateDate">
