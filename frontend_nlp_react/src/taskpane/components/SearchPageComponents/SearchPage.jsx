@@ -82,7 +82,7 @@ const SearchPage = () => {
       "Wisconsin": "WI",
       "Wyoming": "WY"
     };
-    
+
     // Return the abbreviation corresponding to the full state name
     return stateAbbreviations[stateFullName] || stateFullName; // Return full name if no abbreviation is found
   };
@@ -236,7 +236,21 @@ const SearchPage = () => {
 
       {/* Results Tab */}
       {selectedTab === "tab2" && 
-        <ResultsPage searchResults={searchResults} />}
+        <>
+        {!loading && !searchOutput && (
+          <></>
+        )}
+        <div>
+          {loading ? (
+            <div style={{ marginTop: 100 }}>
+              <img src={imageID} width={"100px"} />
+            </div>
+          ) : (
+            <ResultsPage searchResults={searchResults} />
+          )}
+        </div>
+      </>
+      }
 
       {/* Search Filters Tab */}
       {selectedTab === "tab3" && 
