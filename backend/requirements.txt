@@ -14,7 +14,4 @@ requests
 requests-mock
 langchain
 langchain-openai
-langchain-community
-langchain-core
-langchain-experimental
 langchain-cli

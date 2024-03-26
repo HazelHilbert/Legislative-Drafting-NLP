@@ -1,12 +1,10 @@
 import os
 from flask import Flask, request
 from openai import OpenAI
-from legislative_nlp_langchain import load_summarize_chain, getText
+from legislative_nlp_langchain import load_summarize_chain
 from langchain_community.llms import OpenAI
 from langchain_core.prompts import PromptTemplate
-
-
-app = Flask(__name__)
+import app
 
 def call_open_ai(prompt_type, input_text):
     openai_api_key = os.getenv("OPENAI_API_KEY")
@@ -36,7 +34,7 @@ def summarize_text():
 
 @app.route("/langchain_summarize", methods=["POST"])
 def langchain_summarize_text():
-    text = getText()  # Replace with actual text retrieval logic
+    text = app.route("/")() 
     return load_summarize_chain(text, chain_type="refine")
 
 # Additional Flask routes here
