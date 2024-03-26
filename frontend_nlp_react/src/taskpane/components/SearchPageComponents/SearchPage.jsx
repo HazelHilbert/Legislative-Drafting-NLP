@@ -28,6 +28,20 @@ const SearchPage = () => {
   // Search Results
   const [searchResults, setSearchResults] = useState([]);
 
+  const getStateAbbreviation = (stateFullName) => {
+    // Define a mapping between full state names and their abbreviations
+    const stateAbbreviations = {
+      "Alabama": "AL",
+      "Alaska": "AK",
+      "Arizona": "AZ",
+      // Add more states as needed
+    };
+  
+    // Return the abbreviation corresponding to the full state name
+    return stateAbbreviations[stateFullName] || stateFullName; // Return full name if no abbreviation is found
+  };
+
+  
   // Handle Search Query
   const handleClick = async (selectedTab) => {
     if (!searchText) {
