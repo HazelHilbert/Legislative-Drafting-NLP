@@ -3,6 +3,8 @@ from flask import Flask, request
 from openai import OpenAI
 from legislative_nlp_langchain import load_summarize_chain, getText
 
+
+
 app = Flask(__name__)
 
 def call_open_ai(prompt_type, input_text):

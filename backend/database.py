@@ -6,6 +6,32 @@ username = 'CloudSAe1754641'
 password = 'Helloworld123'
 driver = 'ODBC Driver 18 for SQL Server'
 
+def create_db_connection():
+    server = 'sweng-propylon.database.windows.net'
+    database = 'Propylon'
+    username = 'CloudSAe1754641'
+    password = 'Helloworld123'
+    driver = 'ODBC Driver 18 for SQL Server'
+    conn_str = f'DRIVER={driver};SERVER={server};DATABASE={database};UID={username};PWD={password}'
+    try:
+        conn = pyodbc.connect(conn_str)
+        return conn
+    except pyodbc.Error as e:
+        print(f"Error connecting to SQL Server: {e}")
+        return None
+
+def fetch_text_from_db(conn, document_id):
+    try:
+        cursor = conn.cursor()
+        query = "SELECT FileData FROM databaseTest WHERE FileID = ?"
+        cursor.execute(query, (document_id,))
+        result = cursor.fetchone()
+        return result[0] if result else None
+    except pyodbc.Error as e:
+        print(f"Error fetching text from database: {e}")
+        return None
+
+
 # Create a connection string
 conn_str = f'DRIVER={driver};SERVER={server};DATABASE={database};UID={username};PWD={password}'
 
