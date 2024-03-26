@@ -1,5 +1,5 @@
 import os
-from flask import Flask, request, render_template, send_file, jsonify
+from flask import Flask, request, render_template, send_file
 from flask_cors import CORS
 import APITools
 import docx
@@ -46,22 +46,4 @@ def create_word_doc(searchText,text):
     mydoc.save(searchText + ".docx")
     os.startfile(searchText + ".docx")
     return "Hello"
-
-@app.route('/search', methods=['GET'])
-def search():
-    try:
-        query = request.args.get('query')
-        state = request.args.get('state')
-        documentType = request.args.get('doctype')
-        effectiveDate = request.args.get("effectiveDate")
-
-        # Call getSearch function with the necessary parameters
-        search_result = APITools.getSearch(query, state, documentType, effectiveDate)
-
-        # Handle the search result and return a response accordingly
-        if search_result is not None:
-            return jsonify(search_result)
-        else:
-            return jsonify({"error": "Failed to fetch data from the server"}), 500
-    except Exception as e:
-        return jsonify({"error": str(e)}), 500
+    

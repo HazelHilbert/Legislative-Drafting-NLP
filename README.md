@@ -29,7 +29,7 @@ For Windows:
 
 ```bash
 python -m venv venv
-.\venv\bin\activate.ps1
+.\venv\Scripts\activate.bat
 ```
 
 ### Install the Requirements:
