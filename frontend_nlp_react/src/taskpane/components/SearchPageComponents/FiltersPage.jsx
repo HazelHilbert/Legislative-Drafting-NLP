@@ -22,14 +22,13 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
   const searchFilterPageStyles = filterPageStyles();
 
   // Modified FluentUI React V9 dropdown 
-  const Clearable = ({ placeholder, options, onChange}) => {
+  const Clearable = ({ placeholder, options, onChange }) => {
     const dropdownId = useId("");
     const styles = useStyles();
   
     const handleSelect = (event, option, index) => {
-      console.log("Entered Handle Selected", option.text);
       if (onChange) {
-        onChange(option.text); // Pass the selected option to the parent component
+        onChange(option); // Pass the selected option to the parent component
       }
     };
   
@@ -51,6 +50,7 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
       </div>
     );
   };
+  
 
   // Handles removing Filters
   const handleRemoveFilter = (filterType) => {
@@ -88,8 +88,10 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
 
   // Handles changing state filter
   const handleStateChange = (selectedOption) => {
-    setSelectedState(selectedOption); // Update selectedState with the selected option
-  }; 
+    if (selectedOption && selectedOption.optionText) { // Check if selectedOption is not null and has the expected structure
+      setSelectedState(selectedOption.optionText); // Update selectedState with the selected option text
+    }
+  };
 
   // Change Select Box when item selected from dropdown
   const onDropdownChange = (event, option, index) => {
