@@ -133,6 +133,35 @@ const SearchPage = () => {
           setSearchResults([]); // Clear search results if invalid response
         }
       }
+<<<<<<< HEAD
+=======
+      const data = await response.text();
+      let userIsScrolling = false;
+      const allWords = data.split(" ");
+      let i = 0;
+      const interval = setInterval(() => {
+        setSearchOutput(prevText => prevText + allWords[i] + " ");
+        i++;
+        if (i === allWords.length) {
+          clearInterval(interval);
+        }
+        window.addEventListener("wheel", () => {
+          userIsScrolling = true;
+        });   
+        window.addEventListener("touchstart", () => {
+          userIsScrolling = true;
+        });
+        const scrollBar = document.documentElement;
+        scrollBar.addEventListener("mousedown", (event) => {
+          if (event.target === scrollBar) {
+            event.preventDefault();
+            userIsScrolling = true;
+          }
+        });
+        if(!userIsScrolling)
+          window.scrollTo(0, document.body.scrollHeight);
+      }, 10); // Interval Duration
+>>>>>>> dev-frontend
     } catch (error) {
       setSearchResults([]); // Clear search results on error
     } finally {
@@ -163,7 +192,30 @@ const SearchPage = () => {
   const debug = () => {
     return `Output: ${selectedFileTypes}`;
   };
+<<<<<<< HEAD
   
+=======
+
+  const handleKeyDown = (event) => {
+    if (event.key === "Enter") {
+      setSearchOutput("");
+      handleClick();
+    }
+  };
+
+  const tabs = [
+    { label: "Search", value: "tab1" },
+    { label: "Result", value: "tab2" },
+    { label: "Filter", value: "tab3" },
+    { label: "Add", value: "tab4" },
+    { label: "Settings", value: "tab5" },
+  ];
+
+  const instructionPages = {
+    tab1: { title: "Instructions" },
+  };
+
+>>>>>>> dev-frontend
   return (
     <div className={styles.root}>
       {/* Top Navigation */}

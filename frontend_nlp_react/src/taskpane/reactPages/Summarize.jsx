@@ -45,7 +45,31 @@ const Summarize = () => {
         setSummarizedText("Invalid Summarize!");
       }
       const data = await response.text();
-      setSummarizedText(data);
+      let userIsScrolling = false;
+      const allWords = data.split(" ");
+      let i = 0;
+      const interval = setInterval(() => {
+        setSummarizedText(prevText => prevText + allWords[i] + " ");
+        i++;
+        if (i === allWords.length) {
+          clearInterval(interval);
+        }
+        window.addEventListener("wheel", () => {
+          userIsScrolling = true;
+        });   
+        window.addEventListener("touchstart", () => {
+          userIsScrolling = true;
+        });
+        const scrollBar = document.documentElement;
+        scrollBar.addEventListener("mousedown", (event) => {
+          if (event.target === scrollBar) {
+            event.preventDefault();
+            userIsScrolling = true;
+          }
+        });
+        if(!userIsScrolling)
+          window.scrollTo(0, document.body.scrollHeight);
+      }, 100); // Interval Duration
     } catch (error) {
       setSummarizedText("Invalid Summarize!");
     }
@@ -63,6 +87,7 @@ const Summarize = () => {
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
+      setSummarizedText("");
       getBillText();
     }
   };
@@ -91,7 +116,7 @@ const Summarize = () => {
       const data = await response.text();
       getSummarizeText(data);
     } catch (error) {
-      setSummarizedText("Invalid Bill!");
+      setSummarizedText("Invalid Bill!"); 
     } finally {
       setLoading(false);
     }
