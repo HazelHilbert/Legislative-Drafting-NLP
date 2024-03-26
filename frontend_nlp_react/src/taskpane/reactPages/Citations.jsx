@@ -97,7 +97,7 @@ const Citations = () => {
             <div className="underline"></div>
           </div>
         </div>
-        
+        {/* <InstructionPage title={instructionPages.tab1.title} /> */}
         {/* Citation */}
         <div className="line">
           {loading ? (
