@@ -1,11 +1,16 @@
+class Document:
+    def __init__(self, page_content):
+        self.page_content = page_content
+        
+import os
 from langchain import OpenAI, PromptTemplate, LLMChain
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.chains.mapreduce import MapReduceChain
 from langchain.prompts import PromptTemplate
 import textwrap
-
+      
 # Initialize the LLM with OpenAI
-llm = OpenAI(temperature=0)
+llm = OpenAI(api_key=os.getenv('OPENAI_API_KEY'), temperature=0)
 
 # Function to split the text into smaller chunks
 def split_text(text, max_length=1000):
