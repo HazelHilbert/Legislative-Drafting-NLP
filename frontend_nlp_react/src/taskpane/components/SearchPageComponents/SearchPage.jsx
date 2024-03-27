@@ -102,38 +102,40 @@ const SearchPage = () => {
     try {
       // loadingEasterEgg();
       setLoading(true);
-      const response = await fetch("http://127.0.0.1:5000/billText/" + searchText);
-      if (!response.ok) {
-        setSearchOutput("Invalid Bill!");
-        return;
-      }
-      const data = await response.text();
-      let userIsScrolling = false;
-      const allWords = data.split(" ");
-      let i = 0;
-      const interval = setInterval(() => {
-        setSearchOutput(prevText => prevText + allWords[i] + " ");
-        i++;
-        if (i === allWords.length) {
-          clearInterval(interval);
+      if (selectedTab === "tab1") {
+        const response = await fetch("http://127.0.0.1:5000/billText/" + searchText);
+        if (!response.ok) {
+          setSearchOutput("Invalid Bill!");
+          return;
         }
-        window.addEventListener("wheel", () => {
-          userIsScrolling = true;
-        });   
-        window.addEventListener("touchstart", () => {
-          userIsScrolling = true;
-        });
-        const scrollBar = document.documentElement;
-        scrollBar.addEventListener("mousedown", (event) => {
-          if (event.target === scrollBar) {
-            event.preventDefault();
-            userIsScrolling = true;
+        const data = await response.text();
+        let userIsScrolling = false;
+        const allWords = data.split(" ");
+        let i = 0;
+        const interval = setInterval(() => {
+          setSearchOutput(prevText => prevText + allWords[i] + " ");
+          i++;
+          if (i === allWords.length) {
+            clearInterval(interval);
           }
-        });
-        if(!userIsScrolling)
-          window.scrollTo(0, document.body.scrollHeight);
-      }, 10); // Interval Duration
-      // Search Query
+          window.addEventListener("wheel", () => {
+            userIsScrolling = true;
+          });   
+          window.addEventListener("touchstart", () => {
+            userIsScrolling = true;
+          });
+          const scrollBar = document.documentElement;
+          scrollBar.addEventListener("mousedown", (event) => {
+            if (event.target === scrollBar) {
+              event.preventDefault();
+              userIsScrolling = true;
+            }
+          });
+          if(!userIsScrolling)
+            window.scrollTo(0, document.body.scrollHeight);
+        }, 10); // Interval Duration
+        // Search Query
+      }
       else {
         setSelectedTab("tab2");
 
