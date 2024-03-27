@@ -27,7 +27,6 @@ metric = evaluate.load("seqeval")
 print("Start")
 
 label_names = ["B-LC", "I-LC", "O"]
-output_model_dir = "./fine_tuned_model"
 
 model_name = "kavans25/SwEng25"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
@@ -101,12 +100,12 @@ def compute_metrics(eval_preds):
         "accuracy": all_metrics["overall_accuracy"],
     }
 
-def sampleTrain():
-    text =  "the provisions of 12 O.S. 1941 had an impact on 34 N.C. 1234"
-    test_citations = []
+sample_data = ["the provisions of 12 O.S. 1941 had an impact on 34 N.C. 1234", ["34 N.C. 1234","12 O.S. 1941"]]
+eval_data = ["the understanding of 43 N.C. 1957 helped improve the legislation of 67 N.Y. 3456", ["43 N.C. 1957","67 N.Y. 3456"]]
 
-    test_citations.append("34 N.C. 1234")
-    test_citations.append("12 O.S. 1941")
+def train(sample_data, eval_data):
+    text =  sample_data[0]
+    test_citations = sample_data[1]
 
     tokens = tokenize(text, test_citations)
     
@@ -130,11 +129,8 @@ def sampleTrain():
     predictions[2] = 'O'
     metric.compute(predictions=[predictions], references=[valArrS])
 
-    eval_text =  "the understanding of 43 N.C. 1957 helped improve the legislation of 67 N.Y. 3456"
-    eval_test_citations = []
-
-    eval_test_citations.append("43 N.C. 1957")
-    eval_test_citations.append("67 N.Y. 3456")
+    eval_text = eval_data[0]
+    eval_test_citations = eval_data[1]
 
     eval_tokens = tokenize(eval_text, eval_test_citations)
 
@@ -307,12 +303,5 @@ def tokenize(text, citations_list):
     print(tokens)
     return tokens
 
-def train(data):
-    return null
-
-sampleTrain()
-
-# Save the model and tokenizer to the specified directory
-model.save_pretrained(output_model_dir)
-tokenizer.save_pretrained(output_model_dir)
+train(sample_data, eval_data)
 
