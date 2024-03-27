@@ -3,31 +3,17 @@ import React, { useState } from "react";
 import InstructionPage from "./InstructionPage";
 import ResultsPage from "./ResultsPage";
 import FiltersPage from "./FiltersPage";
+import {
+  useStyles,
+  tabs,
+  instructionPages,
+  usStates,
+  legislativeDocumentTypes,
+  MultiselectWithTags,
+} from "./SearchPageConsts";
+import axios from "axios";
 
-const useStyles = makeStyles({
-  root: {
-    alignItems: "flex-start",
-    display: "flex",
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    rowGap: "0px",
-  },
-  tabListContainer: {
-    alignSelf: "stretch",
-    justifyContent: "center",
-    alignItems: "flex-start",
-    display: "inline-flex",
-    flexWrap: "wrap", // Allow flex items to wrap to the next line
-  },
-  tagsList: {
-    listStyleType: "none",
-    marginBottom: tokens.spacingVerticalXXS,
-    marginTop: 0,
-    paddingLeft: 0,
-    display: "flex",
-    gridGap: 0,
-  },
-});
+import "./SearchPage.css";
 
 const SearchPage = () => {
   const styles = useStyles();
@@ -38,7 +24,77 @@ const SearchPage = () => {
   const [loading, setLoading] = useState(false);
   const [imageID, setImageID] = useState("../../assets/LoadingTwoColour.gif");
 
-  const handleClick = async () => {
+  // Filter Page Filters
+  const [selectedDate, setSelectedDate] = useState(null);
+  const [selectedFileTypes, setSelectedFileTypes] = useState([]);
+  const [selectedState, setSelectedState] = useState(null);
+  const [chips, setChips] = useState([]);
+
+  // Search Results
+  const [searchResults, setSearchResults] = useState([]);
+
+  // Gets Abbreviations for States to For Search Query
+  const getStateAbbreviation = (stateFullName) => {
+    // Define a mapping between full state names and their abbreviations
+    const stateAbbreviations = {
+      Alabama: "AL",
+      Alaska: "AK",
+      Arizona: "AZ",
+      Arkansas: "AR",
+      California: "CA",
+      Colorado: "CO",
+      Connecticut: "CT",
+      Delaware: "DE",
+      Florida: "FL",
+      Georgia: "GA",
+      Hawaii: "HI",
+      Idaho: "ID",
+      Illinois: "IL",
+      Indiana: "IN",
+      Iowa: "IA",
+      Kansas: "KS",
+      Kentucky: "KY",
+      Louisiana: "LA",
+      Maine: "ME",
+      Maryland: "MD",
+      Massachusetts: "MA",
+      Michigan: "MI",
+      Minnesota: "MN",
+      Mississippi: "MS",
+      Missouri: "MO",
+      Montana: "MT",
+      Nebraska: "NE",
+      Nevada: "NV",
+      "New Hampshire": "NH",
+      "New Jersey": "NJ",
+      "New Mexico": "NM",
+      "New York": "NY",
+      "North Carolina": "NC",
+      "North Dakota": "ND",
+      Ohio: "OH",
+      Oklahoma: "OK",
+      Oregon: "OR",
+      Pennsylvania: "PA",
+      "Rhode Island": "RI",
+      "South Carolina": "SC",
+      "South Dakota": "SD",
+      Tennessee: "TN",
+      Texas: "TX",
+      Utah: "UT",
+      Vermont: "VT",
+      Virginia: "VA",
+      Washington: "WA",
+      "West Virginia": "WV",
+      Wisconsin: "WI",
+      Wyoming: "WY",
+    };
+
+    // Return the abbreviation corresponding to the full state name
+    return stateAbbreviations[stateFullName] || stateFullName; // Return full name if no abbreviation is found
+  };
+
+  // Handle Search Query
+  const handleClick = async (selectedTab) => {
     if (!searchText) {
       setSearchOutput("No text entered");
       return;
@@ -78,26 +134,25 @@ const SearchPage = () => {
           window.scrollTo(0, document.body.scrollHeight);
       }, 10); // Interval Duration
       // Search Query
-      else
-      {        
+      else {
         setSelectedTab("tab2");
 
         const stateAbbreviation = getStateAbbreviation(selectedState);
 
         // Legacy Response Fetch
         //     const response = await fetch(`http://127.0.0.1:5000/search?query=${searchText}&state=${selectedState}&doctype=${selectedFileTypes.join(', ')}&effectiveDate=${selectedDate.toDateString()}`);
-        const response = await axios.get('http://127.0.0.1:5000/search', {
+        const response = await axios.get("http://127.0.0.1:5000/search", {
           params: {
             query: searchText,
             state: stateAbbreviation, //Other TEXAS
-            doctype: selectedFileTypes.join(', '),
-            effectiveDate: selectedDate ? selectedDate.toDateString() : null
-          }
+            doctype: selectedFileTypes.join(", "),
+            effectiveDate: selectedDate ? selectedDate.toDateString() : null,
+          },
         });
 
         if (response.status === 200) {
           // setSearchResults(response.data.searchresult); // Update state with search results#// Set the content of the pre element with JSON string
-          // Convert JSON data to Array Object to Parse into search Results, 
+          // Convert JSON data to Array Object to Parse into search Results,
           const searchResultArray = Object.values(response.data.searchresult);
           setSearchResults(searchResultArray);
         } else {
@@ -111,6 +166,17 @@ const SearchPage = () => {
     }
   };
 
+  // Handle search from Key press
+  const handleKeyDown = (event, selectedTab) => {
+    if (event.key === "Enter") {
+      handleClick(selectedTab);
+    }
+  };
+  // Change Search Result Input
+  const handleChange = (event) => {
+    setSearchText(event.target.value);
+  };
+
   const loadingEasterEgg = () => {
     if (Math.floor(Math.random() * 100 + 1) == 1) {
       setImageID("../../assets/loading.gif");
@@ -119,30 +185,11 @@ const SearchPage = () => {
     }
   };
 
-  const handleChange = (event) => {
-    setSearchText(event.target.value);
+  // Debugging
+  const debug = () => {
+    return `Output: ${selectedFileTypes}`;
   };
 
-  const handleKeyDown = (event) => {
-    if (event.key === "Enter") {
-      setSearchOutput("");
-      handleClick();
-    }
-  };
-
-  const tabs = [
-    { label: "Search", value: "tab1" },
-    { label: "Result", value: "tab2" },
-    { label: "Filter", value: "tab3" },
-    { label: "Add", value: "tab4" },
-    { label: "Settings", value: "tab5" },
-  ];
-
-  const instructionPages = {
-    tab1: { title: "Instructions" },
-  };
-
-  
   return (
     <div
       className={styles.root}
@@ -159,71 +206,26 @@ const SearchPage = () => {
       }}
     >
       {/* Top Navigation */}
-      <img src="../../assets/propylonFull.png" width={"50%"} style={{ marginTop: "10px" }} />
-      <div
-        style={{
-          alignSelf: "stretch",
-          height: 90,
-          paddingLeft: 14,
-          paddingRight: 14,
-          paddingTop: 14,
-          marginTop: "10px",
-          flexDirection: "column",
-          justifyContent: "flex-start",
-          alignItems: "center",
-          gap: 0,
-          display: "flex",
-        }}
-      >
-        {/* Top Navigation */}
-        <TabList
-          style={{ width: "auto" }}
-          className={styles.tabListContainer}
-          selectedValue={selectedTab}
-          onTabSelect={(event, data) => setSelectedTab(data.value)}
-        >
-          {tabs.map((tab) => (
-            <Tab style={{ width: "auto", height: 44, position: "relative" }} key={tab.value} value={tab.value}>
-              {tab.label}
-            </Tab>
-          ))}
-        </TabList>
-
-        {/* Search Bar */}
-        <div
-          style={{
-            width: "100%",
-            height: "100%",
-            flexDirection: "column",
-            justifyContent: "flex-start",
-            alignItems: "center",
-            gap: 14,
-            display: "inline-flex",
-          }}
-        >
-          <div
-            style={{
-              alignSelf: "stretch",
-              height: 32,
-              borderRadius: 4,
-              flexDirection: "column",
-              justifyContent: "flex-start",
-              alignItems: "flex-start",
-              display: "flex",
-            }}
+      <img className="image" src="../../assets/propylonFull.png" width={"50%"} style={{ marginTop: "10px" }} />
+      <div className={styles.topNavigation}>
+        <div className="tablist">
+          <TabList
+            style={{ width: "auto" }}
+            className={styles.tabListContainer}
+            selectedValue={selectedTab}
+            onTabSelect={(event, data) => setSelectedTab(data.value)}
           >
-            <div
-              style={{
-                alignSelf: "stretch",
-                paddingLeft: 10,
-                paddingRight: 10,
-                background: "rgba(255, 255, 255, 0)",
-                justifyContent: "flex-start",
-                alignItems: "center",
-                gap: 10,
-                display: "inline-flex",
-              }}
-            >
+            {tabs.map((tab) => (
+              <Tab key={tab.value} value={tab.value}>
+                {tab.label}
+              </Tab>
+            ))}
+          </TabList>
+        </div>
+        {/* Search Bar */}
+        <div className={styles.searchBarContainer}>
+          <div className={styles.searchBarBox}>
+            <div className={styles.searchBarBoxSecondary}>
               <div
                 style={{
                   flex: "1 1 0",
@@ -235,6 +237,7 @@ const SearchPage = () => {
               >
                 <Input
                   appearance="underline"
+                  className="search"
                   style={{
                     flex: "1 1 0",
                     height: 32,
@@ -263,10 +266,54 @@ const SearchPage = () => {
         </div>
       </div>
 
-      {selectedTab === "tab1"}
-      {selectedTab === "tab2" && <ResultsPage />}
-      {selectedTab === "tab3" && <FiltersPage />}
-      {selectedTab === "tab4" && <ResultsPage />}
+      {/* Search Tab */}
+      {selectedTab === "tab1" && (
+        <>
+          {/* {!loading && !searchOutput && <InstructionPage title={instructionPages.tab1.title} />} */}
+          <div>
+            {loading ? (
+              <div style={{ marginTop: 100 }}>
+                <img src={imageID} width={"100px"} />
+              </div>
+            ) : (
+              <p>{searchOutput}</p>
+            )}
+          </div>
+        </>
+      )}
+
+      {/* Results Tab */}
+      {selectedTab === "tab2" && (
+        <>
+          {!loading && !searchOutput && <></>}
+          <div>
+            {loading ? (
+              <div style={{ marginTop: 100 }}>
+                <img src={imageID} width={"100px"} />
+              </div>
+            ) : (
+              <ResultsPage searchResults={searchResults} />
+            )}
+          </div>
+        </>
+      )}
+
+      {/* Search Filters Tab */}
+      {selectedTab === "tab3" && (
+        <FiltersPage
+          selectedDate={selectedDate}
+          setSelectedDate={setSelectedDate}
+          selectedFileTypes={selectedFileTypes}
+          setSelectedFileTypes={setSelectedFileTypes}
+          selectedState={selectedState}
+          setSelectedState={setSelectedState}
+        />
+      )}
+
+      {/* Add Tab */}
+      {selectedTab === "tab4" && <ResultsPage searchResults={searchResults} />}
+
+      {/* Settings Tab */}
       {selectedTab === "tab5" && (
         // <AddPage/>
         <div>
@@ -274,15 +321,6 @@ const SearchPage = () => {
           <InstructionPage title={instructionPages.tab1.title} />
         </div>
       )}
-      <div>
-        {loading ? (
-          <div style={{ marginTop: 100 }}>
-            <img src={imageID} width={"100px"} />
-          </div>
-        ) : (
-          <p>{searchOutput}</p>
-        )}
-      </div>
     </div>
   );
 };
