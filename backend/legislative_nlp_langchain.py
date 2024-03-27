@@ -1,5 +1,7 @@
 import os
-from langchain import OpenAI, PromptTemplate, LLMChain
+from langchain_community.llms import OpenAI
+from langchain import PromptTemplate
+from langchain.chains import LLMChain
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.chains.mapreduce import MapReduceChain
 import textwrap
