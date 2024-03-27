@@ -26,9 +26,21 @@
 }
 
 .document {
-  animation: animationRight 1s ease-out;
+  animation: animationRight 0.5s ease-out;
 }
 
-.selected-filters {
-  animation: animationLeft 1s ease-out;
+.filters {
+  animation: animationLeft 0.5s ease-out;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+.filtersTitle {
+  margin-top: 25px;
+  animation: animationLeft 0.5s ease-out;
+}
+
+.state {
+  animation: animationLeft 0.5s ease-out;
 }

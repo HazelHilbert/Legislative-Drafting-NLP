@@ -47,7 +47,7 @@
 }
 
 .image {
-  animation: animationTop 1s ease-out;
+  animation: animationTop 0.5s ease-out;
   text-align: center;
   width: 40%;
 }
@@ -65,7 +65,7 @@
   align-items: center;
   gap: 14px;
   display: inline-flex;
-  animation: animationLeft 1s ease-out;
+  animation: animationLeft 0.5s ease-out;
 }
 
 .searchInputContainer {
@@ -113,7 +113,7 @@
   align-items: center;
   padding-left: 0.5rem;
   display: inline-flex;
-  animation: animationRight 1s ease-out;
+  animation: animationRight 0.5s ease-out;
 }
 
 .summaryButton {

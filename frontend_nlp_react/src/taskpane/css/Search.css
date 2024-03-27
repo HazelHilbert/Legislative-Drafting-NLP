@@ -35,16 +35,16 @@ body {
 }
 
 .image {
-  animation: animationTop 1s ease-out;
+  animation: animationTop 0.5s ease-out;
 }
 
 .tabs {
-  animation: animationRight 1s ease-out;
+  animation: animationRight 0.5s ease-out;
 }
 
 .search-bar {
   margin-top: 25px;
-  animation: animationLeft 1s ease-out;
+  animation: animationLeft 0.5s ease-out;
 }
 
 .search-container {

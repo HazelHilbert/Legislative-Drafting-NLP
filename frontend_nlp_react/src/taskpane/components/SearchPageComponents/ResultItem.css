@@ -26,7 +26,7 @@
 }
 
 .resultItem {
-  animation: animationLeft 1s ease-out;
+  animation: animationLeft 0.5s ease-out;
   margin-top: 25px;
   width: 100%;
   height: 100%;
