@@ -1,5 +1,3 @@
-# This code is intended for the training of our AI model. However, at present it is unfinished, running it will cause errors.
-
 import nltk
 from nltk.tokenize import *
 import json
@@ -28,11 +26,11 @@ metric = evaluate.load("seqeval")
 
 print("Start")
 
-
+label_names = ["B-LC", "I-LC", "O"]
 output_model_dir = "./fine_tuned_model"
 
-model_name = "nlpaueb/legal-bert-base-uncased"
-tokenizer = AutoTokenizer.from_pretrained(output_model_dir)
+model_name = "kavans25/SwEng25"
+tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = BertForTokenClassification.from_pretrained(model_name, num_labels=3)  # Adjust num_labels as needed
 data_collator = DataCollatorForTokenClassification(tokenizer=tokenizer)
 
@@ -63,25 +61,24 @@ class CustomDataset(Dataset):
         return len(self.texts)
 
     def __getitem__(self, idx):
-        # Retrieve the text at the specified index
+        # Retrieve the text and labels at the specified index
         text = self.texts[idx]
-        # Tokenize the text using the tokenizer
-        tokenized_input = self.tokenizer(text, is_split_into_words=True)
-        # Retrieve the corresponding labels
         labels = self.labels[idx]
-        # You might need to adjust the labels here to match tokenized input
-        return {"input_ids": tokenized_input["input_ids"], "labels": labels}
+        
+        # Tokenize the text using the tokenizer
+        tokenized_input = self.tokenizer(text, padding=True, truncation=True, is_split_into_words=True)
+        
+        return {
+            "input_ids": tokenized_input["input_ids"],
+            "labels": labels
+        }
     
 def alignValArr(valArr):
+    label_map = {"B-LC": 1, "I-LC": 2, "O": 0}
     newArr = []
     newArr.append(-100)
-    for i in valArr:
-        if i == "B-LC":
-            newArr.append(1)
-        elif i == "I-LC":
-            newArr.append(2)
-        else:
-            newArr.append(0)
+    for label in valArr:
+        newArr.append(label_map.get(label, 0))  # Default to 0 if label not found
     newArr.append(-100)
     print(newArr)
     return newArr
@@ -112,6 +109,7 @@ def sampleTrain():
     test_citations.append("12 O.S. 1941")
 
     tokens = tokenize(text, test_citations)
+    
     valArrS = createValArr(tokens, test_citations)
     valArr = alignValArr(valArrS)
     tokens = tokenizer.tokenize(text)
@@ -123,6 +121,8 @@ def sampleTrain():
     dataset = CustomDataset(texts, labels, tokenizer)
     print(dataset)
 
+    
+
     batch = data_collator(dataset)
     print(batch["labels"])
 
@@ -130,16 +130,31 @@ def sampleTrain():
     predictions[2] = 'O'
     metric.compute(predictions=[predictions], references=[valArrS])
 
-    
-    
-    
-    
+    eval_text =  "the understanding of 43 N.C. 1957 helped improve the legislation of 67 N.Y. 3456"
+    eval_test_citations = []
+
+    eval_test_citations.append("43 N.C. 1957")
+    eval_test_citations.append("67 N.Y. 3456")
+
+    eval_tokens = tokenize(eval_text, eval_test_citations)
+
+    eval_valArrS = createValArr(eval_tokens, eval_test_citations)
+    eval_valArr = alignValArr(eval_valArrS)
+    eval_tokens = tokenizer.tokenize(eval_text)
+    print(eval_tokens)
+
+    eval_texts = [eval_tokens]  # Your texts
+    eval_labels = [eval_valArr]  # Your labels, aligned and adjusted as necessary
+    eval_dataset = CustomDataset(eval_texts, eval_labels, tokenizer)
+    print(eval_dataset)
+
+  
     # Then, create your Trainer with this dataset
     trainer = Trainer(
         model=model,
         args=args,
         train_dataset=dataset,
-        eval_dataset=dataset,
+        eval_dataset=eval_dataset,
         data_collator=data_collator,
         compute_metrics=compute_metrics,
         tokenizer=tokenizer,
