@@ -10,7 +10,7 @@
 .mainContainer {
   width: 100%;
   height: 100%;
-  min-height: 100vh; 
+  min-height: 100vh;
   background: white;
   flex-direction: column;
   justify-content: flex-start;
@@ -19,14 +19,42 @@
   display: inline-flex;
 }
 
+@keyframes animationRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes animationLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes animationTop {
+  from {
+    transform: translateY(-150%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 .image {
-  text-align: center; 
+  animation: animationTop 1s ease-out;
+  text-align: center;
   width: 40%;
 }
 
 .image img {
   padding-top: 15px;
-  max-width: 100%; 
+  max-width: 100%;
 }
 
 .searchBarContainer {
@@ -37,6 +65,7 @@
   align-items: center;
   gap: 14px;
   display: inline-flex;
+  animation: animationLeft 1s ease-out;
 }
 
 .searchInputContainer {
@@ -84,6 +113,7 @@
   align-items: center;
   padding-left: 0.5rem;
   display: inline-flex;
+  animation: animationRight 1s ease-out;
 }
 
 .summaryButton {
