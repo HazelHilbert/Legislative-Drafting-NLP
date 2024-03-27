@@ -4,6 +4,7 @@ from flask_cors import CORS
 import APITools
 import docx
 from free_nlp_api_on_example import call_open_ai
+from legislative_nlp_langchain import summarize_large_text
  
 
 app = Flask(__name__)
@@ -42,7 +43,7 @@ def getCitationString(billText) :
 def getSummariseBill(billID):
     billText = getText(billID)
     
-    return call_open_ai("summary", billText)
+    return summarize_large_text(billText)
 
 
 @app.route("/citationJSONBill/<billID>")
