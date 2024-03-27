@@ -1,0 +1,62 @@
+import requests
+import requests_mock
+import pytest
+import pytest_flask
+from backend import app
+test_url = "http://127.0.0.1:5000/"
+
+
+
+def client():
+    app.config['TESTING'] = True
+    with app.test_client() as client:
+        yield client
+
+
+
+def get_comparison_text(filename):
+    with open(f'tests/testFiles/{filename}', 'r') as file:
+        return file.read()
+
+
+@pytest.fixture
+def mock_requests():
+    with requests_mock.Mocker() as m:
+        yield m
+
+
+def test_get_bill(mock_requests):
+    mock_requests.get(f"{test_url}billText/1254828", text=get_comparison_text('test1.txt'))
+    response = requests.get(f"{test_url}billText/1254828")
+    assert str(response) == '<Response [200]>'
+    assert response.text == get_comparison_text('test1.txt')
+    assert response.text != get_comparison_text('dummyTest.txt')
+
+
+def test_get_bills_from_state(mock_requests):
+    stateName = "Illinois"
+    mock_requests.get(f"{test_url}billsFromState/{stateName}", text = get_comparison_text('test1.txt'))
+    response = requests.get(f"{test_url}billsFromState/{stateName}")
+    assert response.status_code == 200
+    assert response.text == get_comparison_text('test1.txt')
+
+
+
+def test_citation_string_bill(mock_requests):
+    mock_requests.get(f"{test_url}citationStringBill/1254828", text="105 ILCS 5/10-22.6 and 105 ILCS 5/34-19")
+    response = requests.get(f"{test_url}citationStringBill/1254828")
+    assert response.status_code == 200
+    data = response.text
+    assert "105 ILCS 5/10-22.6" in data
+    assert "105 ILCS 5/34-19" in data
+
+
+def test_citation_JSON_bill(mock_requests):
+    expected_data = {
+        "citations": ["105 ILCS 5/10-22.6", "105 ILCS 5/34-19"]
+    }
+    mock_requests.get(f"{test_url}citationJSONBill/1254828", json = expected_data)
+    response = requests.get(f"{test_url}citationJSONBill/1254828")
+    assert response.status_code == 200  
+    data = response.json()
+    assert data['citations'] == ["105 ILCS 5/10-22.6", "105 ILCS 5/34-19"]
