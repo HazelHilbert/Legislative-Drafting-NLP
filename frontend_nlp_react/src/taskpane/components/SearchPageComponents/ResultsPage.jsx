@@ -16,7 +16,7 @@ const ResultsPage = ({ searchResults }) => {
         title={result.title}
         state={result.state}
         date={result.last_action_date}
-        url={result.url}
+        url={result.text_url}
       />
     ))}
   </div>

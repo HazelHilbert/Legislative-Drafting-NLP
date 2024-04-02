@@ -15,7 +15,7 @@ const ResultItem = ({ title, state, date, url }) => {
     setShowEmbeddedPage(true); // Show embedded page
   };
 
-  
+
   const openTaskPaneWindow = () => {
     Office.context.ui.displayDialogAsync(url, { width: 600, height: 400 }, function (result) {
       var dialog = result.value;
@@ -24,53 +24,52 @@ const ResultItem = ({ title, state, date, url }) => {
       });
     });
   };
+
+  const openUrlInTaskPane = () => {
+    Office.context.ui.displayDialogAsync(url, { height: 60, width: 60 }, function () {
+      const dialog = asyncResult.value;
+      dialog.addEventHandler(Office.EventType.DialogMessageReceived, function (args) {
+        console.log("Message received from dialog:", args.message);
+      });
+    });
+  };
+
   return (
     <div className="resultItem">
-      {/* Check if embedded page should be shown */}
-      {showEmbeddedPage ? (
-        <iframe
-        src={url}
-        title={title}
-        className="embeddedPage"
-        style={{ width: "100%", height: "100%", border: "none" }} // Inline styles for full width and height
-      ></iframe>
-      ) : (
-        <div className="header">
-          <div className="titleSection">
-            <div className="titleInner">
-              {/* Attach onClick event handler to anchor tag */}
-              <a href={url} target="_blank" rel="noopener noreferrer" className="title" onClick={handleAnchorClick}>
-                {title}
-              </a>
-            </div>
+      <div className="header">
+        <div className="titleSection">
+          <div className="titleInner">
+            <a href="#" onClick={openUrlInTaskPane} className="title">
+              {title}
+            </a>
           </div>
-          <div className="stateDate">
-            <div className="stateDateText">{state}</div>
-            <div className="stateDateText">•</div>
-            <div className="stateDateText">{date}</div>
-            <div className="buttons">
-              <button className="button">
-                <DocumentDismiss24Regular />
-              </button>
-              <button onClick={handleChevronClick} className="button">
-                <BookQuestionMark24Regular />
-              </button>
-              <button className="button">
-                <ChevronRight24Filled />
-              </button>
-            </div>
-          </div>
-          {/* Show summary if it is toggled */}
-          {showSummary && (
-            <div className="summary">
-              <div className="summaryText">
-                Lorem ipsum dolor sit amet consectetur. Turpis eu mi quis nunc scelerisque non pulvinar sit lacus.
-                Pellentesque ultrices vel fusce laoreet purus blandit.
-              </div>
-            </div>
-          )}
         </div>
-      )}
+        <div className="stateDate">
+          <div className="stateDateText">{state}</div>
+          <div className="stateDateText">•</div>
+          <div className="stateDateText">{date}</div>
+          <div className="buttons">
+            <button className="button">
+              <DocumentDismiss24Regular />
+            </button>
+            <button onClick={handleChevronClick} className="button">
+              <BookQuestionMark24Regular />
+            </button>
+            <button className="button">
+              <ChevronRight24Filled />
+            </button>
+          </div>
+        </div>
+        {/* Show summary if it is toggled */}
+        {showSummary && (
+          <div className="summary">
+            <div className="summaryText">
+              Lorem ipsum dolor sit amet consectetur. Turpis eu mi quis nunc scelerisque non pulvinar sit lacus.
+              Pellentesque ultrices vel fusce laoreet purus blandit.
+            </div>
+          </div>
+        )}
+      </div>
     </div>
   );
 };
