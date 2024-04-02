@@ -1,5 +1,6 @@
 import os
 from openai import OpenAI
+from flask.cli import load_dotenv
 
 
 # calls openai api by cutting input to 2500 char
@@ -18,8 +19,9 @@ def call_open_ai(prompt_type, input_text):
 
 prompts = {
     "summary": "Summarize this text for me: ",
-    "citationJSON": "Return ONLY the citation(s) from this string as json: ",
-    "citationString": "Return ONLY the citation(s) from this string: "
+    "citationJSON": "Return ONLY the citation(s) from this piece of legislation as json: ",
+    "citationString": "Return ONLY the citation(s) from this piece of legislation: ",
+    "effectiveDates": "Return ONLY the effective date(s) from this piece of legislation: "
 }
 
 

@@ -1,4 +1,6 @@
 import os
+
+from simple_chaining import *
 from flask import Flask, request, render_template, send_file
 from flask_cors import CORS
 import APITools
@@ -42,19 +44,23 @@ def getCitationString(billText) :
 @app.route("/summariseBill/<billID>")
 def getSummariseBill(billID):
     billText = getText(billID)
-    
-    return summarize_large_text(billText)
+    return chain_text_simple("summary", billText)
 
 
 @app.route("/citationJSONBill/<billID>")
 def getCitationJSONBill(billID) :
     billText = getText(billID)
-    return call_open_ai("citationJSON", billText)
+    return chain_text_simple("citationJSON", billText)
 
 @app.route("/citationStringBill/<billID>")
 def getCitationStringBill(billID) :
     billText = getText(billID)
-    return call_open_ai("citationString", billText)
+    return chain_text_simple("citationString", billText)
+
+@app.route("/effectiveDatesBill/<billID>")
+def geteffectiveDatesBill(billID) :
+    billText = getText(billID)
+    return chain_text_simple("effectiveDates", billText)
 
 @app.route('/generate_document/<searchText>/<text>')
 def create_word_doc(searchText,text):
