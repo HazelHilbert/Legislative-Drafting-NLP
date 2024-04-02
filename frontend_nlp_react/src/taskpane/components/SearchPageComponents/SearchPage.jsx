@@ -18,8 +18,7 @@ const SearchPage = () => {
   const [selectedTab, setSelectedTab] = useState("tab1"); // Add state for the selected tab
   const [loading, setLoading] = useState(false);
   const [imageID, setImageID] = useState("../../assets/LoadingTwoColour.gif");
-  const [showResultsPage, setShowResultsPage] = useState(false);
-  
+
   // Filter Page Filters
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedFileTypes, setSelectedFileTypes] = useState([]);
