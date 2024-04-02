@@ -18,7 +18,8 @@ const SearchPage = () => {
   const [selectedTab, setSelectedTab] = useState("tab1"); // Add state for the selected tab
   const [loading, setLoading] = useState(false);
   const [imageID, setImageID] = useState("../../assets/LoadingTwoColour.gif");
-
+  const [showResultsPage, setShowResultsPage] = useState(false);
+  
   // Filter Page Filters
   const [selectedDate, setSelectedDate] = useState(null);
   const [selectedFileTypes, setSelectedFileTypes] = useState([]);
@@ -98,6 +99,7 @@ const SearchPage = () => {
       setLoading(true);
       // Search Bill
       if (selectedTab === "tab1") {
+        
         const response = await fetch("http://127.0.0.1:5000/billText/" + searchText);
         if (!response.ok) {
           setSearchOutput("Invalid Bill!");

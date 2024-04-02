@@ -14,7 +14,8 @@ const ResultItem = ({ title, state, date, url }) => {
       <div className="header">
         <div className="titleSection">
           <div className="titleInner">
-            <a href={url} target="_blank" rel="noopener noreferrer" className="title">{title}</a>
+            {/* <a href={url} target="_blank" rel="noopener noreferrer" className="title">{title}</a> */}
+            <iframe src={url} title={title} className="embeddedPage"></iframe>
           </div>
         </div>
         <div className="stateDate">
