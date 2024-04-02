@@ -34,7 +34,15 @@ const Citations = () => {
         setCitationText("Invalid Bill!");
       }
       const data = await response.text();
-      setCitationText(data);
+      const allWords = data.split(" ");
+      let i = 0;
+      const interval = setInterval(() => {
+        setCitationText(prevText => prevText + allWords[i] + " ");
+        i++;
+        if (i === allWords.length) {
+          clearInterval(interval);
+        }
+      }, 100); // Interval Duration
     } catch (error) {
       setCitationText("Invalid Bill!");
     } finally {
@@ -48,6 +56,7 @@ const Citations = () => {
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
+      setCitationText("");
       getBillText();
     }
   };
