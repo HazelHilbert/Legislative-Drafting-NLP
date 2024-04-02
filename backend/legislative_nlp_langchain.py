@@ -1,13 +1,9 @@
-import os
-from langchain_community.llms import OpenAI
-from langchain import PromptTemplate
-from langchain.chains import LLMChain
+import textwrap
+from simple_chaining import split_text
+from langchain_openai import OpenAI
+from langchain_core.prompts import PromptTemplate
 from langchain.text_splitter import CharacterTextSplitter
 from langchain.chains.mapreduce import MapReduceChain
-import textwrap
-
-# Utilize the call_open_ai function from your existing setup
-from free_nlp_api_on_example import call_open_ai
 
 
 class Document:
@@ -15,7 +11,7 @@ class Document:
         self.page_content = page_content
 
 
-def split_text(text, max_length=2500, lookback=100):
+def split_text1(text, max_length=2500, lookback=100):
     text_splitter = CharacterTextSplitter(max_length=max_length, lookback=lookback)
     return text_splitter.split_text(text)
 
