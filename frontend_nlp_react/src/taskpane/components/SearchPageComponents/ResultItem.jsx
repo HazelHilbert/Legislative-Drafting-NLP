@@ -9,23 +9,24 @@ const ResultItem = ({ title, state, date, url }) => {
 
   useEffect(() => {
     if (showEmbeddedPage) {
-      fetch(url)
-        .then(response => {
+      const newUrl = url.replace("https://legiscan.com", "/legiscan");
+      fetch(newUrl)
+        .then((response) => {
           console.log("Response Text: ", response.text());
           console.log("Response: ", response);
           if (!response.ok) {
-            throw new Error('Failed to fetch content');
+            throw new Error("Failed to fetch content");
           }
           return response.text();
         })
-        .then(html => {
+        .then((html) => {
           console.log("Entered html: ", htmls);
           const parser = new DOMParser();
           console.log("Parser: ", parser);
           const doc = parser.parseFromString(html, "text/html");
           console.log("Parser: ", doc);
           const contentDiv = doc.getElementById("content-area");
-          console.log("Content Div: ", contentDiv)
+          console.log("Content Div: ", contentDiv);
           if (contentDiv) {
             // Setting the innerHTML directly
             setEmbeddedContent(contentDiv.innerHTML);
@@ -33,13 +34,12 @@ const ResultItem = ({ title, state, date, url }) => {
             console.error("Content area not found in the fetched HTML.");
           }
         })
-        .catch(error => {
+        .catch((error) => {
           console.error("Error fetching embedded content:", error);
           console.log(url);
         });
     }
   }, [showEmbeddedPage, url]);
-  
 
   const handleChevronClick = () => {
     setShowSummary(!showSummary);
