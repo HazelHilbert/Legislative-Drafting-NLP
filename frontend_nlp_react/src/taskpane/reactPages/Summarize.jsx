@@ -45,7 +45,15 @@ const Summarize = () => {
         setSummarizedText("Invalid Summarize!");
       }
       const data = await response.text();
-      setSummarizedText(data);
+      const allWords = data.split(" ");
+      let i = 0;
+      const interval = setInterval(() => {
+        setSummarizedText(prevText => prevText + allWords[i] + " ");
+        i++;
+        if (i === allWords.length) {
+          clearInterval(interval);
+        }
+      }, 100); // Interval Duration    
     } catch (error) {
       setSummarizedText("Invalid Summarize!");
     }
@@ -63,6 +71,7 @@ const Summarize = () => {
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
+      setSummarizedText("");
       getBillText();
     }
   };
