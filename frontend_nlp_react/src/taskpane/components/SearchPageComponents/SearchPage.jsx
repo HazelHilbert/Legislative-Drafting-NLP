@@ -105,6 +105,16 @@ const SearchPage = () => {
           return;
         }
         const data = await response.text();
+        const allWords = data.split(" ");
+        let i = 0;
+        const interval = setInterval(() => {
+          setSearchOutput(prevText => prevText + allWords[i] + " ");
+          i++;
+          if (i === allWords.length) {
+            clearInterval(interval);
+          }
+          window.scrollTo(0, document.body.scrollHeight);
+        }, 10); // Interval Duration
         setSearchOutput(data);
       }
       // Search Query
@@ -144,6 +154,7 @@ const SearchPage = () => {
   // Handle search from Key press
   const handleKeyDown = (event, selectedTab) => {
     if (event.key === "Enter") {
+      setSearchOutput("");
       handleClick(selectedTab);
     }
   };
