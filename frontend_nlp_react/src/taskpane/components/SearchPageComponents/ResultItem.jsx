@@ -15,11 +15,25 @@ const ResultItem = ({ title, state, date, url }) => {
     setShowEmbeddedPage(true); // Show embedded page
   };
 
+  
+  const openTaskPaneWindow = () => {
+    Office.context.ui.displayDialogAsync(url, { width: 600, height: 400 }, function (result) {
+      var dialog = result.value;
+      dialog.addEventHandler(Office.EventType.DialogMessageReceived, function (arg) {
+        console.log("Dialog message received: " + arg.message);
+      });
+    });
+  };
   return (
     <div className="resultItem">
       {/* Check if embedded page should be shown */}
       {showEmbeddedPage ? (
-        <iframe src={url} title={title} className="embeddedPage"></iframe>
+        <iframe
+        src={url}
+        title={title}
+        className="embeddedPage"
+        style={{ width: "100%", height: "100%", border: "none" }} // Inline styles for full width and height
+      ></iframe>
       ) : (
         <div className="header">
           <div className="titleSection">
