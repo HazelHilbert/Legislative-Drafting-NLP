@@ -144,8 +144,10 @@ const SearchPage = () => {
             setTimeout(() => {
               button.style.opacity = '1'; 
             }, 400); 
-            scrollButton.style.display = 'none'; 
-            scrollButton.disabled = true;
+            if (scrollButton != null) {
+              scrollButton.style.display = 'none'; 
+              scrollButton.disabled = true;
+            }
           }
           window.addEventListener("wheel", () => {
             userIsScrolling = true;
