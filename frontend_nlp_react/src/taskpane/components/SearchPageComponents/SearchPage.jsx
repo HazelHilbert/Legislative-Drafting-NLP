@@ -14,6 +14,7 @@ function removeForwardSlash(string) {
 
 let userIsScrolling = false; 
 let scrollButton = null; 
+let textPastingFinished = false;
 
 const SearchPage = () => {
   // Page styling:
@@ -102,8 +103,8 @@ const SearchPage = () => {
       scrollButton.className = 'button scroll-button';
       scrollButton.onclick = () => {
         userIsScrolling = false; 
-        scrollButton.disabled = true;
         scrollButton.style.display = 'none'; 
+        scrollButton.disabled = true;
       };
       document.body.appendChild(scrollButton);
     } 
@@ -138,6 +139,7 @@ const SearchPage = () => {
           i++;
           if (i === allWords.length) {
             clearInterval(interval);
+            textPastingFinished = true;
             const button = document.querySelector('.button');
             setTimeout(() => {
               button.style.opacity = '1'; 
@@ -304,7 +306,7 @@ const SearchPage = () => {
                 <p style={{marginBottom: 5}}>{searchOutput}</p>
                 {searchOutput && (
                   <div>
-                    <button className="button doc-create-button" onClick={handleCreateDocument}>Create Document</button>
+                    <button className="button doc-create-button" onClick={handleCreateDocument} disabled={!textPastingFinished}>Create Document</button>
                   </div>
                 )}
               </>
