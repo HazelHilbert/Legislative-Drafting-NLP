@@ -7,7 +7,7 @@ import APITools
 import docx
 from free_nlp_api_on_example import call_open_ai
 from legislative_nlp_langchain import summarize_large_text
- 
+from legislative_nlp_langchain import call_langchain
 
 app = Flask(__name__)
 CORS(app) 
@@ -44,7 +44,7 @@ def getCitationString(billText) :
 @app.route("/summariseBill/<billID>")
 def getSummariseBill(billID):
     billText = getText(billID)
-    return chain_text_simple("summary", billText)
+    return call_langchain("summary", billText)
 
 
 @app.route("/citationJSONBill/<billID>")
@@ -55,12 +55,12 @@ def getCitationJSONBill(billID) :
 @app.route("/citationStringBill/<billID>")
 def getCitationStringBill(billID) :
     billText = getText(billID)
-    return chain_text_simple("citationString", billText)
+    return call_langchain("citationString", billText)
 
 @app.route("/effectiveDatesBill/<billID>")
 def geteffectiveDatesBill(billID) :
     billText = getText(billID)
-    return chain_text_simple("effectiveDates", billText)
+    return call_langchain("effectiveDates", billText)
 
 @app.route('/generate_document/<searchText>/<text>')
 def create_word_doc(searchText,text):

@@ -8,7 +8,7 @@ def split_text(text, max_length=2500, lookback=100):
     while chunk_end < len(text):
         new_chunk_end = chunk_end
         for i in range(lookback):
-            if text[chunk_end - i] in ('.', '\n'):
+            if text[chunk_end - i] in ('\n', ')'):
                 new_chunk_end = chunk_end - i
                 break
         chunks.append(text[chunk_start:new_chunk_end])

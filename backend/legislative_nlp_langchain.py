@@ -13,16 +13,18 @@ from langchain_community.document_loaders import TextLoader
 from dotenv import load_dotenv, dotenv_values 
 import os
 from langchain.chat_models import ChatOpenAI
+from simple_chaining import chain_text_simple
 
 # probably have a lot of redundant imports here ^
 
-OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+
 
 def summarise(text):
-    llm = ChatOpenAI(temperature=0, api_key=OPENAI_API_KEY, model="gpt-4")
+    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
+    llm = ChatOpenAI(temperature=0, api_key=OPENAI_API_KEY, model="gpt-3.5-turbo")
     # texts = CharacterTextSplitter().split_text(text)[:4]
     # docs = [Document(page_content=t) for t in texts]
-    loader = TextLoader("summ.txt", encoding = 'UTF-8')
+    loader = TextLoader(file, encoding = 'UTF-8')
     docs = loader.load()
 
     prompt_template = """Write a concise summary of the following:
@@ -38,7 +40,7 @@ def summarise(text):
         "------------\n"
         "{text}\n"
         "------------\n"
-        "Given the new context, refine the original summary in Italian"
+        "Given the new context, refine the original summary"
         "If the context isn't useful, return the original summary."
     )
     refine_prompt = PromptTemplate.from_template(refine_template)
@@ -55,4 +57,36 @@ def summarise(text):
     print(result["output_text"])
 
 # Summarises contents of txt file
-summarise("summ.txt")
+# summarise("summ.txt")
+
+
+def citations(text):
+    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY") # might not be needed
+    return chain_text_simple("citationString", text)
+
+def effective_dates(text):
+    OPENAI_API_KEY = os.getenv("OPENAI_API_KEY") # might not be needed
+    return chain_text_simple("effectiveDates", text)
+
+# print(citations("PER CURIAM. Petitioner Michael Lee by his attorney James Dunham has filed a motion for rule on the clerk. His attorney admits that the record was tendered late due to a mistake on his part. We find that such error admittedly made by the attorney for a criminal defendant is good cause to grant the motion. See Terry v. State 272 Ark. 243 613 S.W.2d 90 (1981); In Re: Belated Appeals in Criminal Cases 295 Ark. 964 (1979) (per curiam). A copy of this per curiam will be forwarded to the Committee on Professional Conduct. In Re: Belated Appeals in Criminal Cases 265 Ark. 964.,"))
+
+
+# summarisation
+# citations
+# effective dates
+
+def call_langchain( mode, text ):
+    if (mode == "summary"):
+        # overwrite text to file
+        file = 'summ.txt'
+        if (os.pathexists(file)):
+            os.remove(file)
+        with open(file, 'w') as filetowrite:
+            filetowrite.write(text)
+        return summarise("summ.txt")
+    if (mode == "citations"):
+        return citations(text)
+    if (mode == "effectiveDates"):
+        return effective_dates(text)
+    
+call_langchain("effectiveDates", "PER CURIAM. Petitioner Michael Lee by his attorney James Dunham has filed a motion for rule on the clerk. His attorney admits that the record was tendered late due to a mistake on his part. We find that such error admittedly made by the attorney for a criminal defendant is good cause to grant the motion. See Terry v. State 272 Ark. 243 613 S.W.2d 90 (1981); In Re: Belated Appeals in Criminal Cases 295 Ark. 964 (1979) (per curiam). A copy of this per curiam will be forwarded to the Committee on Professional Conduct. In Re: Belated Appeals in Criminal Cases 265 Ark. 964.,")
