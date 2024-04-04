@@ -12,6 +12,9 @@ function removeForwardSlash(string) {
   return string.replace(regex, "");
 }
 
+let userIsScrolling = false; 
+let scrollButton = null; 
+
 const SearchPage = () => {
   // Page styling:
   const styles = useStyles();
@@ -92,6 +95,24 @@ const SearchPage = () => {
     return stateAbbreviations[stateFullName] || stateFullName; // Return full name if no abbreviation is found
   };
   
+  const enableScrollButton = async () => {
+    if (!scrollButton) {
+      scrollButton = document.createElement('button');
+      scrollButton.textContent = 'Resume Scrolling';
+      scrollButton.className = 'button scroll-button';
+      scrollButton.onclick = () => {
+        userIsScrolling = false; 
+        scrollButton.disabled = true;
+        scrollButton.style.display = 'none'; 
+      };
+      document.body.appendChild(scrollButton);
+    } 
+    else {
+      scrollButton.style.display = 'block'; 
+      scrollButton.disabled = false;
+    } 
+  }
+
   // Handle Search Query
   const handleClick = async (selectedTab) => {
     if (!searchText) {
@@ -109,7 +130,7 @@ const SearchPage = () => {
           return;
         }
         const data = await response.text();
-        let userIsScrolling = false;
+        userIsScrolling = false;
         const allWords = data.split(" ");
         let i = 0;
         const interval = setInterval(() => {
@@ -121,6 +142,8 @@ const SearchPage = () => {
             setTimeout(() => {
               button.style.opacity = '1'; 
             }, 400); 
+            scrollButton.style.display = 'none'; 
+            scrollButton.disabled = true;
           }
           window.addEventListener("wheel", () => {
             userIsScrolling = true;
@@ -137,6 +160,9 @@ const SearchPage = () => {
           });
           if(!userIsScrolling)
             window.scrollTo(0, document.body.scrollHeight);
+          else if (i !== allWords.length)
+            enableScrollButton(); 
+
         }, 10); // Interval Duration
         setSearchOutput(data);
       }
@@ -278,7 +304,7 @@ const SearchPage = () => {
                 <p style={{marginBottom: 5}}>{searchOutput}</p>
                 {searchOutput && (
                   <div>
-                    <button className="button" onClick={handleCreateDocument}>Create Document</button>
+                    <button className="button doc-create-button" onClick={handleCreateDocument}>Create Document</button>
                   </div>
                 )}
               </>
