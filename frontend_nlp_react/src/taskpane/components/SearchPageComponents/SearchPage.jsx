@@ -117,6 +117,10 @@ const SearchPage = () => {
           i++;
           if (i === allWords.length) {
             clearInterval(interval);
+            const button = document.querySelector('.button');
+            setTimeout(() => {
+              button.style.opacity = '1'; 
+            }, 400); 
           }
           window.addEventListener("wheel", () => {
             userIsScrolling = true;
@@ -271,10 +275,12 @@ const SearchPage = () => {
               </div>
             ) : (
               <>
-                <p>{searchOutput}</p>
-                <div>
-                  <button className="button" onClick={handleCreateDocument}>Your Button Text</button>
-                </div>
+                <p style={{marginBottom: 5}}>{searchOutput}</p>
+                {searchOutput && (
+                  <div>
+                    <button className="button" onClick={handleCreateDocument}>Create Document</button>
+                  </div>
+                )}
               </>
             )}
           </div>
