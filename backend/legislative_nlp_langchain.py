@@ -12,16 +12,17 @@ from langchain.docstore.document import Document
 from langchain_community.document_loaders import TextLoader
 from dotenv import load_dotenv, dotenv_values 
 import os
+from langchain.chat_models import ChatOpenAI
 
 # probably have a lot of redundant imports here ^
 
 OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
 
 def summarise(text):
-    llm = OpenAI(temperature=0, api_key=OPENAI_API_KEY)
+    llm = ChatOpenAI(temperature=0, api_key=OPENAI_API_KEY, model="gpt-4")
     # texts = CharacterTextSplitter().split_text(text)[:4]
     # docs = [Document(page_content=t) for t in texts]
-    loader = TextLoader("summ.txt")
+    loader = TextLoader("summ.txt", encoding = 'UTF-8')
     docs = loader.load()
 
     prompt_template = """Write a concise summary of the following:
