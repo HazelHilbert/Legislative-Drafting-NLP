@@ -6,7 +6,10 @@ import FiltersPage from "./FiltersPage";
 import {useStyles, tabs, instructionPages, usStates, legislativeDocumentTypes, MultiselectWithTags} from "./SearchPageConsts"
 import axios from 'axios';
 
-
+function removeForwardSlash(string) {
+  const regex = new RegExp("/".replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g");
+  return string.replace(regex, "");
+}
 
 const SearchPage = () => {
   // Page styling:
@@ -186,6 +189,16 @@ const SearchPage = () => {
     }
   };
 
+  const handleCreateDocument = () => {
+    axios.get('http://127.0.0.1:5000/create_word_document/' + searchText + '/' + removeForwardSlash(searchOutput))
+      .then(response => {
+        console.log('Word document created and opened');
+      })
+      .catch(error => {
+        console.error('Error creating or opening Word document:', error);
+      });
+  };
+
   // Debugging
   const debug = () => {
     return `Output: ${selectedFileTypes}`;
@@ -256,7 +269,10 @@ const SearchPage = () => {
                 <img src={imageID} width={"100px"} />
               </div>
             ) : (
-              <p>{searchOutput}</p>
+              <>
+                <p>{searchOutput}</p>
+                <button onClick={handleCreateDocument}>Your Button Text</button>
+              </>
             )}
           </div>
         </>
