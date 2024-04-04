@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import InstructionPage from "./InstructionPage";
 import ResultsPage from "./ResultsPage";
 import FiltersPage from "./FiltersPage";
+import "./SearchPage.css"; 
 import {useStyles, tabs, instructionPages, usStates, legislativeDocumentTypes, MultiselectWithTags} from "./SearchPageConsts"
 import axios from 'axios';
 
@@ -271,7 +272,9 @@ const SearchPage = () => {
             ) : (
               <>
                 <p>{searchOutput}</p>
-                <button onClick={handleCreateDocument}>Your Button Text</button>
+                <div>
+                  <button className="button" onClick={handleCreateDocument}>Your Button Text</button>
+                </div>
               </>
             )}
           </div>
