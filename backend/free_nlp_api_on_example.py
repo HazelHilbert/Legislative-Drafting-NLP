@@ -21,7 +21,7 @@ prompts = {
     "summary": "Summarize this text for me: ",
     "citationJSON": "Return ONLY the citation(s) from this string as json: ",
     "citationString": "Return ONLY the citation(s) from this string: ",
-    "citationLong": "I want you return legal citations from the following string. Here's an example of a legal citation: '14 Ala. 32'. Here is the string: ",
+    "citationLong": "I want you return ONLY the legal citations from the following string. Nothing more, nothing less. Here's an example of a legal citation and the type of response wanted: '14 Ala. 32'. Here is the string: ",
     "citationShort": "Give me the citations here ",
     "citationMean": "hello ",
     "effectiveDates": "Return ONLY the effective date(s) from this string: "

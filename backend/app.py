@@ -30,12 +30,12 @@ def getState(stateName):
 
 @app.route("/summariseText/<text>")
 def getSummariseText(text):
-    return call_open_ai("summary", text)
+    return call_langchain("summary", text)
 
 
 @app.route("/citationJSON/<billText>")
 def getCitationJSON(billText) :
-    return call_open_ai("citationJSON", billText)
+    return call_langchain("citationJSON", billText)
 
 @app.route("/citationString/<billText>")
 def getCitationString(billText) :
