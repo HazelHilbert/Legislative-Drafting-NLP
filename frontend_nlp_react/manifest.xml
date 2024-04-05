@@ -146,23 +146,6 @@
                       </Action>
                     </Item>
 
-                    <Item id="DropdownUnlinkCitations">
-                      <Label resid="DropdownUnlinkCitationsLabel"/>
-                      <Supertip>
-                        <Title resid="DropdownUnlinkCitationsLabel" />
-                        <Description resid="DropdownUnlinkCitationsTooltip" />
-                      </Supertip>
-                      <Icon>
-                        <bt:Image size="16" resid="Circle.16x16" />
-                        <bt:Image size="32" resid="Circle.32x32" />
-                        <bt:Image size="80" resid="Circle.80x80" />
-                      </Icon>
-                      <Action xsi:type="ShowTaskpane">
-                        <TaskpaneId>Button6</TaskpaneId>
-                        <SourceLocation resid="UnlinkCitations.Url" />
-                      </Action>
-                    </Item>
-
                   </Items>
                 </Control>           
               </Group>
@@ -236,7 +219,6 @@
         <bt:Url id="Citations.Url" DefaultValue="https://localhost:3000/citations.html"/>
         <bt:Url id="DocPref.Url" DefaultValue="https://localhost:3000/docPref.html"/>
         <bt:Url id="Refresh.Url" DefaultValue="https://localhost:3000/refresh.html"/>
-        <bt:Url id="UnlinkCitations.Url" DefaultValue="https://localhost:3000/unlinkCitations.html"/>
         <bt:Url id="WebsiteButton.Url" DefaultValue="https://propylon.com"/>
         
 
@@ -248,7 +230,6 @@
         <bt:String id="Dropdown1" DefaultValue="Dropdown" />
         <bt:String id="DropdownDocPrefLabel" DefaultValue="Document Preferences" />
         <bt:String id="DropdownRefreshLabel" DefaultValue="Refresh" />
-        <bt:String id="DropdownUnlinkCitationsLabel" DefaultValue="Unlink Citations" />
         
         <bt:String id="WebsiteGroupLabel" DefaultValue="Info" />
         <bt:String id="WebsiteButtonLabel" DefaultValue="Open Website" />
@@ -269,7 +250,6 @@
         <bt:String id="DropdownTooltip" DefaultValue="Click to Show Options on this Menu" />
         <bt:String id="DropdownDocPrefTooltip" DefaultValue="Click to Show Taskpane" />
         <bt:String id="DropdownRefreshTooltip" DefaultValue="Click to Show Taskpane" />
-        <bt:String id="DropdownUnlinkCitationsTooltip" DefaultValue="Click to Show Taskpane" />
         <bt:String id="WebsiteButtonTooltip" DefaultValue="Click to See Website" />
           <bt:String id="GetStartedDescription" DefaultValue="Click here to open the Add-In's features">
           <bt:Override Locale="ja-jp" Value="JA-JP Get Started Title" />

@@ -27,7 +27,6 @@ module.exports = async (env, options) => {
       refresh: "./src/taskpane/reactPages/Refresh.jsx",
       search: "./src/taskpane/reactPages/Search.jsx",
       summarize: "./src/taskpane/reactPages/Summarize.jsx",
-      unlinkCitations: "./src/taskpane/reactPages/UnlinkCitations.jsx",
     },
     output: {
       clean: true,
@@ -130,11 +129,6 @@ module.exports = async (env, options) => {
         filename: "summarize.html",
         template: "./src/taskpane/pages/summarize.html",
         chunks: ["summarize"],
-      }),
-      new HtmlWebpackPlugin({
-        filename: "unlinkCitations.html",
-        template: "./src/taskpane/pages/unlinkCitations.html",
-        chunks: ["unlinkCitations"],
       }),
 
       new webpack.ProvidePlugin({
