@@ -23,8 +23,11 @@ module.exports = async (env, options) => {
       taskpane: ["./src/taskpane/index.jsx", "./src/taskpane/taskpane.html"],
       commands: "./src/commands/commands.js",
       citations: "./src/taskpane/reactPages/Citations.jsx",
+      docPref: "./src/taskpane/reactPages/DocPref.jsx",
+      refresh: "./src/taskpane/reactPages/Refresh.jsx",
       search: "./src/taskpane/reactPages/Search.jsx",
       summarize: "./src/taskpane/reactPages/Summarize.jsx",
+      unlinkCitations: "./src/taskpane/reactPages/UnlinkCitations.jsx",
     },
     output: {
       clean: true,
@@ -109,6 +112,16 @@ module.exports = async (env, options) => {
         chunks: ["citations"],
       }),
       new HtmlWebpackPlugin({
+        filename: "docPref.html",
+        template: "./src/taskpane/pages/docPref.html",
+        chunks: ["docPref"],
+      }),
+      new HtmlWebpackPlugin({
+        filename: "refresh.html",
+        template: "./src/taskpane/pages/refresh.html",
+        chunks: ["refresh"],
+      }),
+      new HtmlWebpackPlugin({
         filename: "search.html",
         template: "./src/taskpane/pages/search.html",
         chunks: ["search"],
@@ -117,6 +130,11 @@ module.exports = async (env, options) => {
         filename: "summarize.html",
         template: "./src/taskpane/pages/summarize.html",
         chunks: ["summarize"],
+      }),
+      new HtmlWebpackPlugin({
+        filename: "unlinkCitations.html",
+        template: "./src/taskpane/pages/unlinkCitations.html",
+        chunks: ["unlinkCitations"],
       }),
 
       new webpack.ProvidePlugin({
