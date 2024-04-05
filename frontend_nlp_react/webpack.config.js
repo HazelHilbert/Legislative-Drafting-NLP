@@ -23,7 +23,6 @@ module.exports = async (env, options) => {
       taskpane: ["./src/taskpane/index.jsx", "./src/taskpane/taskpane.html"],
       commands: "./src/commands/commands.js",
       citations: "./src/taskpane/reactPages/Citations.jsx",
-      detectChanges: "./src/taskpane/reactPages/DetectChanges.jsx",
       docPref: "./src/taskpane/reactPages/DocPref.jsx",
       refresh: "./src/taskpane/reactPages/Refresh.jsx",
       search: "./src/taskpane/reactPages/Search.jsx",
@@ -111,11 +110,6 @@ module.exports = async (env, options) => {
         filename: "citations.html",
         template: "./src/taskpane/pages/citations.html",
         chunks: ["citations"],
-      }),
-      new HtmlWebpackPlugin({
-        filename: "detectChanges.html",
-        template: "./src/taskpane/pages/detectChanges.html",
-        chunks: ["detectChanges"],
       }),
       new HtmlWebpackPlugin({
         filename: "docPref.html",
