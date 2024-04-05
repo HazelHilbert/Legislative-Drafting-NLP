@@ -38,23 +38,6 @@
                   <bt:Image size="80" resid="Circle.80x80" />
                 </Icon>
 
-                <Control xsi:type="Button" id="SummarizeButton">
-                  <Label resid="SummarizeButtonLabel" />
-                  <Supertip>
-                    <Title resid="SummarizeButtonLabel" />
-                    <Description resid="SummarizeButtonTooltip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="summary.16x16" />
-                    <bt:Image size="32" resid="summary.32x32" />
-                    <bt:Image size="80" resid="summary.64x64" />
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <TaskpaneId>Button1</TaskpaneId>
-                    <SourceLocation resid="Summarize.Url" />
-                  </Action>
-                </Control>
-
                 <Control xsi:type="Button" id="SearchButton">
                   <Label resid="SearchButtonLabel" />
                   <Supertip>
@@ -72,15 +55,22 @@
                   </Action>
                 </Control>
 
-              </Group>
-
-              <Group id="PropylonGroup2">
-                <Label resid="PropylonGroup2Label" />
-                <Icon>
-                  <bt:Image size="16" resid="Circle.16x16" />
-                  <bt:Image size="32" resid="Circle.32x32" />
-                  <bt:Image size="80" resid="Circle.80x80" />
-                </Icon>
+                <Control xsi:type="Button" id="SummarizeButton">
+                  <Label resid="SummarizeButtonLabel" />
+                  <Supertip>
+                    <Title resid="SummarizeButtonLabel" />
+                    <Description resid="SummarizeButtonTooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="summary.16x16" />
+                    <bt:Image size="32" resid="summary.32x32" />
+                    <bt:Image size="80" resid="summary.64x64" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>Button1</TaskpaneId>
+                    <SourceLocation resid="Summarize.Url" />
+                  </Action>
+                </Control>
 
                 <Control xsi:type="Button" id="CitationsButton">
                   <Label resid="CitationsButtonLabel" />
@@ -98,8 +88,7 @@
                     <SourceLocation resid="Citations.Url" />
                   </Action>
                 </Control>
-
-              </Group>
+              </Group>             
 
               <Group id="WebsiteGroup">
                 <Label resid="WebsiteGroupLabel" />
@@ -181,11 +170,10 @@
         <bt:String id="WebsiteButtonLabel" DefaultValue="Open Website" />
         <bt:String id="WebsiteButtonTooltip" DefaultValue="Click to open the website" />
 
-        <bt:String id="PropylonGroup1Label" DefaultValue="NLP Group" />
-        <bt:String id="PropylonGroup2Label" DefaultValue="NLP Group 2" />
+        <bt:String id="PropylonGroup1Label" DefaultValue="Propylon" />
         <bt:String id="MoreInfoGroupLabel" DefaultValue="More Info" />
          <bt:String id="PropylonLabel" DefaultValue="Propylon" />
-         <bt:String id="GetStartedTitle" DefaultValue="Propylon Add In Loaded">
+         <bt:String id="GetStartedTitle" DefaultValue="Propylon Add-In Loaded">
           <bt:Override Locale="ja-jp" Value="JA-JP Get Started Title" />
         </bt:String>      
       </bt:ShortStrings>
@@ -194,7 +182,7 @@
         <bt:String id="SearchButtonTooltip" DefaultValue="Click to Execute Function" />
         <bt:String id="CitationsButtonTooltip" DefaultValue="Click to Execute Function" />
         <bt:String id="WebsiteButtonTooltip" DefaultValue="Click to See Website" />
-          <bt:String id="GetStartedDescription" DefaultValue="Click here to open the Add-In's features">
+          <bt:String id="GetStartedDescription" DefaultValue="Click here to open">
           <bt:Override Locale="ja-jp" Value="JA-JP Get Started Title" />
         </bt:String>  
       </bt:LongStrings>
