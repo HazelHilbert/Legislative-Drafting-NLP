@@ -23,7 +23,7 @@ cursor = conn.cursor()
 # cursor.execute(create_table_query)
 #
 # # Commit the table creation
-# conn.commit()
+# conn.commit()t ceh
 
 # Read the file as binary data
 file_path = r'C:\Users\jason\Desktop\Notes.txt'
