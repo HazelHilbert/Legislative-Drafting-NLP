@@ -55,23 +55,6 @@
                   </Action>
                 </Control>
 
-                <Control xsi:type="Button" id="AnalyzeButton">
-                  <Label resid="AnalyzeButtonLabel" />
-                  <Supertip>
-                    <Title resid="AnalyzeButtonLabel" />
-                    <Description resid="AnalyzeButtonTooltip" />
-                  </Supertip>
-                  <Icon>
-                    <bt:Image size="16" resid="Circle.16x16" />
-                    <bt:Image size="32" resid="Circle.32x32" />
-                    <bt:Image size="80" resid="Circle.80x80" />
-                  </Icon>
-                  <Action xsi:type="ShowTaskpane">
-                    <TaskpaneId>Button4</TaskpaneId>
-                    <SourceLocation resid="Analyze.Url" />
-                  </Action>
-                </Control>
-
                 <Control xsi:type="Button" id="SearchButton">
                   <Label resid="SearchButtonLabel" />
                   <Supertip>
@@ -266,7 +249,6 @@
         <bt:Url id="Commands.Url" DefaultValue="https://localhost:3000/commands.html" />
         <bt:Url id="Taskpane.Url" DefaultValue="https://localhost:3000/taskpane.html"/>
         <bt:Url id="Summarize.Url" DefaultValue="https://localhost:3000/summarize.html"/>
-        <bt:Url id="Analyze.Url" DefaultValue="https://localhost:3000/analyze.html"/>
         <bt:Url id="Search.Url" DefaultValue="https://localhost:3000/search.html"/>
         <bt:Url id="Citations.Url" DefaultValue="https://localhost:3000/citations.html"/>
         <bt:Url id="DetectChanges.Url" DefaultValue="https://localhost:3000/detectChanges.html"/>
@@ -279,7 +261,6 @@
       </bt:Urls>
       <bt:ShortStrings>
         <bt:String id="SummarizeButtonLabel" DefaultValue="Summarize" />
-        <bt:String id="AnalyzeButtonLabel" DefaultValue="Analyze" />  
         <bt:String id="SearchButtonLabel" DefaultValue="Search" />
         <bt:String id="CitationsButtonLabel" DefaultValue="Citations" />
         <bt:String id="DetectButtonLabel" DefaultValue="Detect Changes" />      
@@ -302,7 +283,6 @@
       </bt:ShortStrings>
       <bt:LongStrings>
         <bt:String id="SummarizeButtonTooltip" DefaultValue="Click to Execute Function" />
-        <bt:String id="AnalyzeButtonTooltip" DefaultValue="Click to Show a Taskpane" />
         <bt:String id="SearchButtonTooltip" DefaultValue="Click to Execute Function" />
         <bt:String id="CitationsButtonTooltip" DefaultValue="Click to Execute Function" />
         <bt:String id="DetectButtonTooltip" DefaultValue="Click to Execute Function" />

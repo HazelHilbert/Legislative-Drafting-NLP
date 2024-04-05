@@ -22,7 +22,6 @@ module.exports = async (env, options) => {
       vendor: ["react", "react-dom", "core-js", "@fluentui/react-components", "@fluentui/react-icons"],
       taskpane: ["./src/taskpane/index.jsx", "./src/taskpane/taskpane.html"],
       commands: "./src/commands/commands.js",
-      analyze: "./src/taskpane/reactPages/Analyze.jsx",
       citations: "./src/taskpane/reactPages/Citations.jsx",
       detectChanges: "./src/taskpane/reactPages/DetectChanges.jsx",
       docPref: "./src/taskpane/reactPages/DocPref.jsx",
@@ -108,11 +107,6 @@ module.exports = async (env, options) => {
         chunks: ["commands"],
       }),
 
-      new HtmlWebpackPlugin({
-        filename: "analyze.html",
-        template: "./src/taskpane/pages/analyze.html",
-        chunks: ["analyze"],
-      }),
       new HtmlWebpackPlugin({
         filename: "citations.html",
         template: "./src/taskpane/pages/citations.html",
