@@ -1,5 +1,5 @@
 import requests
-import requests_mock
+import requests_mock 
 import pytest
 
 test_url = "http://127.0.0.1:5000/"
@@ -22,6 +22,15 @@ def test_get_bill(mock_requests):
     assert str(response) == '<Response [200]>'
     assert response.text == get_comparison_text('test1.txt')
     assert response.text != get_comparison_text('dummyTest.txt')
+
+
+def test_get_bills_from_state(mock_requests):
+    stateName = "Illinois"
+    mock_requests.get(f"{test_url}billsFromState/{stateName}", text = get_comparison_text('test1.txt'))
+    response = requests.get(f"{test_url}billsFromState/{stateName}")
+    assert response.status_code == 200
+    assert response.text == get_comparison_text('test1.txt')
+
 
 
 def test_citation_string_bill(mock_requests):
