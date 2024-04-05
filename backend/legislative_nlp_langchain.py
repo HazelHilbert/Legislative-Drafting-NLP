@@ -24,7 +24,7 @@ def summarise(text):
     llm = ChatOpenAI(temperature=0, api_key=OPENAI_API_KEY, model="gpt-3.5-turbo")
     # texts = CharacterTextSplitter().split_text(text)[:4]
     # docs = [Document(page_content=t) for t in texts]
-    loader = TextLoader('summ.txt', encoding = 'UTF-8')
+    loader = TextLoader('summ.txt', encoding = 'iso-8859-1')
     docs = loader.load()
 
     prompt_template = """Write a concise summary of the following:

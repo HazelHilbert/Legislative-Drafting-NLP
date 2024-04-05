@@ -6,7 +6,7 @@ from flask_cors import CORS
 import APITools
 import docx
 from free_nlp_api_on_example import call_open_ai
-from legislative_nlp_langchain import summarize_large_text
+# from legislative_nlp_langchain import summarize_large_text
 from legislative_nlp_langchain import call_langchain
 
 app = Flask(__name__)
