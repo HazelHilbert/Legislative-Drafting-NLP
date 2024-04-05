@@ -34,7 +34,7 @@ const Summarize = () => {
     }
   };
 
-  console.log(loading);
+  // console.log(loading);
 
   const handleSummarize = async () => {
     try {
