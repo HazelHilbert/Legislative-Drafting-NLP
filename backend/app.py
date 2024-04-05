@@ -81,8 +81,8 @@ def getCitationJSON(billText) :
 def getCitationString(billText) :
     return call_open_ai("citationString", billText)
 
-@app.route("/summariseBill/<billID>")
-def getSummariseBill(billID):
+@app.route("/summariseBill2/<billID>")
+def getSummariseBill2(billID):
     billText = getText(billID)
     return call_langchain("summary", billText)
 

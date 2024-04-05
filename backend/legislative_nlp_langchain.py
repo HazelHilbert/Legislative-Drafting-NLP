@@ -1,19 +1,9 @@
-import textwrap
-from simple_chaining import split_text
-from langchain_openai import OpenAI
-from langchain_core.prompts import PromptTemplate
-from langchain.text_splitter import CharacterTextSplitter
-from langchain.chains.mapreduce import MapReduceChain
-from langchain.chains.summarize import load_summarize_chain
-from langchain import PromptTemplate, LLMChain, OpenAI
-from langchain.chat_models import ChatOpenAI
-import openai
-from langchain.docstore.document import Document
-from langchain_community.document_loaders import TextLoader
-from dotenv import load_dotenv, dotenv_values 
 import os
-from langchain.chat_models import ChatOpenAI
+from langchain_community.chat_models import ChatOpenAI
+from langchain_community.document_loaders import TextLoader
+from langchain_core.prompts import PromptTemplate
 from simple_chaining import chain_text_simple
+from langchain.chains.summarize import load_summarize_chain
 
 # probably have a lot of redundant imports here ^
 
