@@ -1,7 +1,7 @@
 import os
-
+import pyodbc
+from flask import Flask, jsonify, request, render_template, send_file
 from simple_chaining import *
-from flask import Flask, request, render_template, send_file
 from flask_cors import CORS
 import APITools
 import docx
@@ -12,6 +12,22 @@ from legislative_nlp_langchain import call_langchain
 app = Flask(__name__)
 CORS(app) 
 
+
+my_key = "480c76cff050a40771e1190b3cab219d"
+
+def db_connect():
+    server = 'sweng-propylon.database.windows.net'
+    database = 'Propylon'
+    username = 'CloudSAe1754641'
+    password = 'Helloworld123'
+    driver = 'ODBC Driver 18 for SQL Server'
+
+
+    conn_str = f'DRIVER={driver};SERVER={server};DATABASE={database};UID={username};PWD={password}'
+
+    conn = pyodbc.connect(conn_str)
+    cursor = conn.cursor()
+    return conn
 
 @app.route("/")
 def hello_world():
@@ -31,6 +47,30 @@ def getState(stateName):
 @app.route("/summariseText/<text>")
 def getSummariseText(text):
     return call_langchain("summary", text)
+
+@app.route("/summariseBill/<billID>")
+def getSummariseBill(billID):
+    billText = getText(billID)  
+    conn = db_connect()
+    cursor = conn.cursor()
+
+    cursor.execute("SELECT summary FROM BillSummaries WHERE billID = ?", (billID,))
+    row = cursor.fetchone()
+
+    if row :
+        summary = row[0]
+        conn.close()
+        return jsonify({"summary", summary})
+
+    else: 
+        summary = call_open_ai("summary", billText) 
+        
+        # Insert the new summary into the database
+        cursor.execute("INSERT INTO BillSummaries (billID, summary) VALUES (?, ?)", (billID, summary))
+        conn.commit()
+        conn.close()
+        return jsonify({"summary": summary})
+
 
 
 @app.route("/citationJSON/<billText>")
