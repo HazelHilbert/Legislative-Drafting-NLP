@@ -19,14 +19,24 @@ const Summarize = () => {
   const getText = async () => {
     try {
       await Word.run(async (context) => {
-        const documentBody = context.document.body;
-        context.load(documentBody);
+        
+        const range = context.document.getSelection();
+        range.load('text');
         await context.sync();
-        if (!documentBody.text.trim()) {
-          setSummarizedText("No text highlighted!");
-          return; 
+        if (range.text.length > 0) {
+          console.log("There is highlighted text:", range.text);
+        } 
+        else {
+          console.log("No text is highlighted.");
+          const documentBody = context.document.body;
+          context.load(documentBody);
+          await context.sync();
+          if (!documentBody.text.trim()) {
+            setSummarizedText("No text highlighted!");
+            return; 
+          }
+          getSummarizeText(documentBody.text);
         }
-        getSummarizeText(documentBody.text);
       });
     } catch (error) {
       setSummarizedText("Error!");
