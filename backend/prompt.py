@@ -49,6 +49,8 @@ for k in range(2): # for each prompt we're checking
         scores[k][i] /= len(current_citations)
         scores[k][i] *=100
 
+# 20 different bills
+# testing-langchain
 
     print("Scores as %:")
     print(scores)

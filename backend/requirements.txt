@@ -13,3 +13,4 @@ pytest
 requests-mock
 langchain-openai
 langchain-community
+langchain

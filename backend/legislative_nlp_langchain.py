@@ -4,50 +4,21 @@ from langchain_community.document_loaders import TextLoader
 from langchain_core.prompts import PromptTemplate
 from simple_chaining import chain_text_simple
 from langchain.chains.summarize import load_summarize_chain
+from langchain.chains import AnalyzeDocumentChain
+from langchain_text_splitters import CharacterTextSplitter
+from langchain import OpenAI
 
 # probably have a lot of redundant imports here ^
 
 
-
 def summarise(text):
     OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
-    llm = ChatOpenAI(temperature=0, api_key=OPENAI_API_KEY, model="gpt-3.5-turbo")
-    # texts = CharacterTextSplitter().split_text(text)[:4]
-    # docs = [Document(page_content=t) for t in texts]
-    loader = TextLoader('summ.txt', encoding = 'iso-8859-1')
-    docs = loader.load()
+    llm = OpenAI(temperature=0, api_key=OPENAI_API_KEY, model="gpt-3.5-turbo-instruct")
+    summary_chain = load_summarize_chain(llm, chain_type="map_reduce")
 
-    prompt_template = """Write a concise summary of the following:
-    {text}
-    CONCISE SUMMARY:"""
-    prompt = PromptTemplate.from_template(prompt_template)
+    summarize_document_chain = AnalyzeDocumentChain(combine_docs_chain=summary_chain)
 
-    refine_template = (
-        "Your job is to produce a final summary\n"
-        "We have provided an existing summary up to a certain point: {existing_answer}\n"
-        "We have the opportunity to refine the existing summary"
-        "(only if needed) with some more context below.\n"
-        "------------\n"
-        "{text}\n"
-        "------------\n"
-        "Given the new context, refine the original summary"
-        "If the context isn't useful, return the original summary."
-    )
-    refine_prompt = PromptTemplate.from_template(refine_template)
-    chain = load_summarize_chain(
-        llm=llm,
-        chain_type="refine",
-        question_prompt=prompt,
-        refine_prompt=refine_prompt,
-        return_intermediate_steps=True,
-        input_key="input_documents",
-        output_key="output_text",
-    )
-    result = chain({"input_documents": docs}, return_only_outputs=True)
-    return (result["output_text"])
-
-# Summarises contents of txt file
-# summarise("summ.txt")
+    return summarize_document_chain.run(text)
 
 
 def citations(text):
@@ -67,19 +38,13 @@ def effective_dates(text):
 
 def call_langchain( mode, text ):
     if (mode == "summary"):
-        # overwrite text to file
-        file = 'summ.txt'
-        if (os.path.isfile(file)):
-            os.remove(file)
-        with open(file, 'w') as filetowrite:
-            filetowrite.write(text)
-        return summarise("summ.txt")
+        return summarise(text)
     if (mode == "citations"):
         return citations(text)
     if (mode == "effectiveDates"):
         return effective_dates(text)
     if (mode == "citationJSON"):
-        OPENAI_API_KEY = os.getenv("OPENAI_API_KEY") # might not be needed
+        OPENAI_API_KEY = os.getenv("OPENAI_API_KEY")
         return chain_text_simple("citationJSON", text)
 
 # tests
