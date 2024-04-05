@@ -54,7 +54,7 @@ def summarise(text):
         output_key="output_text",
     )
     result = chain({"input_documents": docs}, return_only_outputs=True)
-    print(result["output_text"])
+    return (result["output_text"])
 
 # Summarises contents of txt file
 # summarise("summ.txt")
