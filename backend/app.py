@@ -1,14 +1,16 @@
 import os
+
+from simple_chaining import *
 from flask import Flask, request, render_template, send_file
 from flask_cors import CORS
 import APITools
 import docx
 from free_nlp_api_on_example import call_open_ai
+# from legislative_nlp_langchain import summarize_large_text
+from legislative_nlp_langchain import call_langchain
 
 app = Flask(__name__)
 CORS(app) 
-
-my_key = "480c76cff050a40771e1190b3cab219d"
 
 
 @app.route("/")
@@ -28,12 +30,12 @@ def getState(stateName):
 
 @app.route("/summariseText/<text>")
 def getSummariseText(text):
-    return call_open_ai("summary", text)
+    return call_langchain("summary", text)
 
 
 @app.route("/citationJSON/<billText>")
 def getCitationJSON(billText) :
-    return call_open_ai("citationJSON", billText)
+    return call_langchain("citationJSON", billText)
 
 @app.route("/citationString/<billText>")
 def getCitationString(billText) :
@@ -42,19 +44,23 @@ def getCitationString(billText) :
 @app.route("/summariseBill/<billID>")
 def getSummariseBill(billID):
     billText = getText(billID)
-    
-    return call_open_ai("summary", billText)
+    return call_langchain("summary", billText)
 
 
 @app.route("/citationJSONBill/<billID>")
 def getCitationJSONBill(billID) :
     billText = getText(billID)
-    return call_open_ai("citationJSON", billText)
+    return chain_text_simple("citationJSON", billText)
 
 @app.route("/citationStringBill/<billID>")
 def getCitationStringBill(billID) :
     billText = getText(billID)
-    return call_open_ai("citationString", billText)
+    return call_langchain("citationString", billText)
+
+@app.route("/effectiveDatesBill/<billID>")
+def geteffectiveDatesBill(billID) :
+    billText = getText(billID)
+    return call_langchain("effectiveDates", billText)
 
 @app.route('/generate_document/<searchText>/<text>')
 def create_word_doc(searchText,text):
@@ -63,4 +69,3 @@ def create_word_doc(searchText,text):
     mydoc.save(searchText + ".docx")
     os.startfile(searchText + ".docx")
     return "Hello"
-    
