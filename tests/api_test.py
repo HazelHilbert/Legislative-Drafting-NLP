@@ -1,16 +1,8 @@
 import requests
 import requests_mock
 import pytest
-import pytest_flask
-from backend import app
+
 test_url = "http://127.0.0.1:5000/"
-
-
-
-def client():
-    app.config['TESTING'] = True
-    with app.test_client() as client:
-        yield client
 
 
 

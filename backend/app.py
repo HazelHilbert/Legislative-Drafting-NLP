@@ -25,6 +25,9 @@ def db_connect():
     cursor = conn.cursor()
     return conn
 
+ 
+
+
 
 @app.route("/")
 def hello_world():
