@@ -3,7 +3,7 @@ from langchain_community.chat_models import ChatOpenAI
 from langchain_community.document_loaders import TextLoader
 from langchain_core.prompts import PromptTemplate
 from simple_chaining import chain_text_simple
-from langchain.chains.summarize import load_summarize_chain
+from langchain.chains.summarize import load_summarize_chain 
 
 # probably have a lot of redundant imports here ^
 

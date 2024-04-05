@@ -11,5 +11,6 @@ python-docx
 pyodbc
 pytest
 requests-mock
+langchain==0.1.14
 langchain-openai
 langchain-community
