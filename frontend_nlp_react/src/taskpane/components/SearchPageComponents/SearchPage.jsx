@@ -1,5 +1,5 @@
 import { Input, Tab, TabList, makeStyles, tokens } from "@fluentui/react-components";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import InstructionPage from "./InstructionPage";
 import ResultsPage from "./ResultsPage";
 import FiltersPage from "./FiltersPage";
@@ -15,6 +15,7 @@ function removeForwardSlash(string) {
 let userIsScrolling = false; 
 let scrollButton = null; 
 let textPastingFinished = false;
+let isTabOne = true;
 
 const SearchPage = () => {
   // Page styling:
@@ -164,7 +165,7 @@ const SearchPage = () => {
           });
           if(!userIsScrolling)
             window.scrollTo(0, document.body.scrollHeight);
-          else if (i !== allWords.length)
+          else if (i !== allWords.length && isTabOne == true)
             enableScrollButton(); 
 
         }, 10); // Interval Duration
@@ -238,6 +239,23 @@ const SearchPage = () => {
   const debug = () => {
     return `Output: ${selectedFileTypes}`;
   };
+
+  useEffect(() => {
+    // Perform any side effects here, based on the selectedTab value
+    // For example, fetching data when the tab changes
+    console.log(selectedTab);
+    if (scrollButton != null) {
+      if (selectedTab !== "tab1") {
+        scrollButton.style.display = 'none'; 
+        scrollButton.disabled = true;
+        userIsScrolling = false;
+        isTabOne = false;
+      } else {
+        enableScrollButton(); 
+        isTabOne = true;
+      }
+    }
+  }, [selectedTab]);
   
   return (
     <div className={styles.root}>

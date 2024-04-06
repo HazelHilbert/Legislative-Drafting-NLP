@@ -5,7 +5,6 @@ import "./ResultsPage.css"; // Import the CSS file
 
 const ResultsPage = ({ searchResults }) => {
   
-  console.log(searchResults);
   return (
   <div className="resultsContainer">
     
