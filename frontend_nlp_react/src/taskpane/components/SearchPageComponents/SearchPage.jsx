@@ -115,6 +115,8 @@ const SearchPage = () => {
     } 
   }
 
+  let interval;
+
   // Handle Search Query
   const handleClick = async (selectedTab) => {
     if (!searchText) {
@@ -125,6 +127,10 @@ const SearchPage = () => {
       setLoading(true);
       // Search Bill
       if (selectedTab === "tab1") {
+        if (interval) {
+          clearInterval(interval); // Clear any ongoing interval
+          setSearchOutput(""); // Clear the output
+        }
         
         const response = await fetch("http://127.0.0.1:5000/billText/" + searchText);
         if (!response.ok) {
@@ -135,7 +141,7 @@ const SearchPage = () => {
         userIsScrolling = false;
         const allWords = data.split(" ");
         let i = 0;
-        const interval = setInterval(() => {
+        interval = setInterval(() => {
           setSearchOutput(prevText => prevText + allWords[i] + " ");
           i++;
           if (i === allWords.length) {
@@ -169,7 +175,6 @@ const SearchPage = () => {
             enableScrollButton(); 
 
         }, 10); // Interval Duration
-        setSearchOutput(data);
       }
       // Search Query
       else
@@ -248,7 +253,6 @@ const SearchPage = () => {
       if (selectedTab !== "tab1") {
         scrollButton.style.display = 'none'; 
         scrollButton.disabled = true;
-        userIsScrolling = false;
         isTabOne = false;
       } else {
         enableScrollButton(); 
