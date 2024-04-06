@@ -39,6 +39,8 @@ function openWebsite(event) {
   event.completed();
 }
 
+
+
 // Register the function with Office.
 Office.actions.associate("action", action);
 Office.actions.associate("openWebsite", openWebsite);

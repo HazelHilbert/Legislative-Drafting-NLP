@@ -225,9 +225,6 @@
                     <FunctionName>openWebsite</FunctionName>
                   </Action>
                 </Control>
-                
-                
-
               </Group>
               <Label resid="PropylonLabel" />
             </CustomTab>
@@ -247,15 +244,11 @@
                     <bt:Image size="80" resid="Circle.80x80" />
                   </Icon>
                   <Action xsi:type="ExecuteFunction">
-                    <FunctionName>openWebsite</FunctionName>
+                    <FunctionName>summarizeText</FunctionName>
                   </Action>
                 </Control>
             </OfficeMenu>
           </ExtensionPoint>
-
-
-          
-
         </DesktopFormFactor>
       </Host>
     </Hosts>
