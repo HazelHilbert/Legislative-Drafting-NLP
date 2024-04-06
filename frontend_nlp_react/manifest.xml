@@ -19,17 +19,20 @@
   <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">   
     <Hosts>
       <Host xsi:type="Document">
+        <Runtimes>
+          <Runtime resid="Taskpane.Url" lifetime="long" />
+        </Runtimes>
+
         <DesktopFormFactor>
           <GetStarted>
             <Title resid="GetStartedTitle"/>
             <Description resid="GetStartedDescription"/>
             <LearnMoreUrl resid="GetStartedLearnMoreUrl"/>
           </GetStarted>
-          <FunctionFile resid="Commands.Url" />
+          <FunctionFile resid="Taskpane.Url" />
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
             
             <CustomTab id="NLPTab">
-
               <Group id="PropylonGroup1">
                 <Label resid="PropylonGroup1Label" />
                 <Icon>
@@ -231,6 +234,7 @@
         </DesktopFormFactor>
       </Host>
     </Hosts>
+    
     <Resources>
       <bt:Images>
         <bt:Image id="Propylon.16x16" DefaultValue="https://localhost:3000/assets/propylon-16.png"/>
