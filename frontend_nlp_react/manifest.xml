@@ -16,7 +16,7 @@
     <SourceLocation DefaultValue="https://commandsimple.azurewebsites.net/Taskpane.html" />
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
-  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">   
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Hosts>
       <Host xsi:type="Document">
         <Runtimes>
@@ -225,6 +225,9 @@
                     <FunctionName>openWebsite</FunctionName>
                   </Action>
                 </Control>
+                
+                
+
               </Group>
               <Label resid="PropylonLabel" />
             </CustomTab>
@@ -232,23 +235,27 @@
 
           <ExtensionPoint xsi:type="ContextMenu">
            <OfficeMenu id="ContextMenuText">
-              <Control xsi:type="Button" id="WebsiteButton">
-                <Label resid="PropylonGroup1Label" />
-                <Supertip>
-                  <Title resid="residLabel" />
-                  <Description resid="residToolTip" />
-                </Supertip>
-                <Icon>
-                  <bt:Image size="16" resid="Circle.16x16" />
-                  <bt:Image size="32" resid="Circle.32x32" />
-                  <bt:Image size="80" resid="Circle.80x80" />
-                </Icon>
-                <Action xsi:type="ExecuteFunction">
-                <FunctionName>openWebsite</FunctionName>
-                </Action>
-              </Control>
+              <Control xsi:type="Button" id="WebsiteButton2">
+                  <Label resid="WebsiteButtonLabel" />
+                  <Supertip>
+                    <Title resid="WebsiteButtonLabel" />
+                    <Description resid="WebsiteButtonTooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Circle.16x16" />
+                    <bt:Image size="32" resid="Circle.32x32" />
+                    <bt:Image size="80" resid="Circle.80x80" />
+                  </Icon>
+                  <Action xsi:type="ExecuteFunction">
+                    <FunctionName>openWebsite</FunctionName>
+                  </Action>
+                </Control>
             </OfficeMenu>
           </ExtensionPoint>
+
+
+          
+
         </DesktopFormFactor>
       </Host>
     </Hosts>
