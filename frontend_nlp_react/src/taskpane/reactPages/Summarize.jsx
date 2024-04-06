@@ -16,7 +16,22 @@ const Summarize = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(false);
 
-
+  const getText = async () => {
+    try {
+      await Word.run(async (context) => {
+        const documentBody = context.document.body;
+        context.load(documentBody);
+        await context.sync();
+        if (!documentBody.text.trim()) {
+          setSummarizedText("No text highlighted!");
+          return; 
+        }
+        getSummarizeText(documentBody.text);
+      });
+    } catch (error) {
+      setSummarizedText("Error!");
+    }
+  };
 
   const getSummarizeText = async (text) => {
     setLoading(true);
@@ -34,44 +49,10 @@ const Summarize = () => {
     }
   };
 
-  // console.log(loading);
+  console.log(loading);
 
   const handleSummarize = async () => {
-    try {
-      await Word.run(async (context) => {
-        const range = context.document.getSelection();
-        range.load('text');
-        await context.sync();
-
-        if (range.text.trim().length > 0) {
-          getSummarizeText(removeSpecialCharacters(range.text.trim()));
-        } else if (searchQuery.trim().length > 0) {
-          getSummarizeBill(searchQuery.trim());
-        } else {
-          setSummarizedText("No text highlighted or bill ID entered!");
-        }
-        
-        // const range = context.document.getSelection();
-        // range.load('text');
-        // await context.sync();
-        // if (range.text.length > 0) {
-        //   console.log("There is highlighted text:", range.text);
-        // } 
-        // else {
-        //   console.log("No text is highlighted.");
-        //   const documentBody = context.document.body;
-        //   context.load(documentBody);
-        //   await context.sync();
-        //   if (!documentBody.text.trim()) {
-        //     setSummarizedText("No text highlighted!");
-        //     return; 
-        //   }
-        //   getSummarizeText(documentBody.text);
-        // }
-      });
-    } catch (error) {
-      setSummarizedText("Error!");
-    }
+    await getText();
   };
 
   const handleSearchInputChange = (event) => {
@@ -109,7 +90,6 @@ const Summarize = () => {
         <div className="image">
           <img src="../../assets/propylonFull.png" alt="Propylon Logo" />
         </div>
-        
         {/* Search Bar */}
         <div className="searchBarContainer">
           <div className="searchInputContainer">
@@ -126,7 +106,6 @@ const Summarize = () => {
             <div className="underline"></div>
           </div>
         </div>
-        
         {/* Summary */}
         <div className="summaryContainer">
           <div>
