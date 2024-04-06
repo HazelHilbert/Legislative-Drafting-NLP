@@ -11,8 +11,8 @@ function removeForwardSlash(string) {
   return string.replace(regex, '');
 }
 
-const Summarize = () => {
-  const [summarizedText, setSummarizedText] = useState("");
+const Summarize = ({ summarizedText: propSummarizedText }) => {
+  const [summarizedText, setSummarizedText] = useState(propSummarizedText || "");
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(false);
 
