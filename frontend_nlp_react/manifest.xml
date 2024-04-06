@@ -29,9 +29,8 @@
             <Description resid="GetStartedDescription"/>
             <LearnMoreUrl resid="GetStartedLearnMoreUrl"/>
           </GetStarted>
-          <FunctionFile resid="Taskpane.Url" />
+          <FunctionFile resid="Taskpane.Url" />     
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
-            
             <CustomTab id="NLPTab">
               <Group id="PropylonGroup1">
                 <Label resid="PropylonGroup1Label" />
@@ -227,9 +226,28 @@
                   </Action>
                 </Control>
               </Group>
-
               <Label resid="PropylonLabel" />
             </CustomTab>
+          </ExtensionPoint>
+
+          <ExtensionPoint xsi:type="ContextMenu">
+           <OfficeMenu id="ContextMenuText">
+              <Control xsi:type="Button" id="WebsiteButton">
+                <Label resid="PropylonGroup1Label" />
+                <Supertip>
+                  <Title resid="residLabel" />
+                  <Description resid="residToolTip" />
+                </Supertip>
+                <Icon>
+                  <bt:Image size="16" resid="Circle.16x16" />
+                  <bt:Image size="32" resid="Circle.32x32" />
+                  <bt:Image size="80" resid="Circle.80x80" />
+                </Icon>
+                <Action xsi:type="ExecuteFunction">
+                <FunctionName>openWebsite</FunctionName>
+                </Action>
+              </Control>
+            </OfficeMenu>
           </ExtensionPoint>
         </DesktopFormFactor>
       </Host>
@@ -287,11 +305,11 @@
         <bt:String id="PropylonGroup1Label" DefaultValue="NLP Group" />
         <bt:String id="PropylonGroup2Label" DefaultValue="NLP Group 2" />
         <bt:String id="MoreInfoGroupLabel" DefaultValue="More Info" />
-         <bt:String id="PropylonLabel" DefaultValue="Propylon" />
+        <bt:String id="PropylonLabel" DefaultValue="Propylon" />
         <bt:String id="residLabel" DefaultValue="My Custom Menu"/>
         <bt:String id="residLabel3" DefaultValue="My Menu Item"/>
-         <bt:String id="GetStartedTitle" DefaultValue="Propylon Add In Loaded">
-          <bt:Override Locale="ja-jp" Value="JA-JP Get Started Title" />
+        <bt:String id="GetStartedTitle" DefaultValue="Propylon Add In Loaded">
+        <bt:Override Locale="ja-jp" Value="JA-JP Get Started Title" />
         </bt:String>      
       </bt:ShortStrings>
       <bt:LongStrings>
@@ -306,8 +324,8 @@
         <bt:String id="DropdownRefreshTooltip" DefaultValue="Click to Show Taskpane" />
         <bt:String id="DropdownUnlinkCitationsTooltip" DefaultValue="Click to Show Taskpane" />
         <bt:String id="WebsiteButtonTooltip" DefaultValue="Click to See Website" />
-          <bt:String id="GetStartedDescription" DefaultValue="Click here to open the Add-In's features">
-          <bt:Override Locale="ja-jp" Value="JA-JP Get Started Title" />
+        <bt:String id="GetStartedDescription" DefaultValue="Click here to open the Add-In's features">
+        <bt:Override Locale="ja-jp" Value="JA-JP Get Started Title" />
         </bt:String>  
       </bt:LongStrings>
     </Resources>
