@@ -233,9 +233,9 @@
           <ExtensionPoint xsi:type="ContextMenu">
            <OfficeMenu id="ContextMenuText">
               <Control xsi:type="Button" id="WebsiteButton2">
-                  <Label resid="WebsiteButtonLabel" />
+                  <Label resid="SelectSummaryButtonLabel" />
                   <Supertip>
-                    <Title resid="WebsiteButtonLabel" />
+                    <Title resid="SelectSummaryButtonLabel" />
                     <Description resid="WebsiteButtonTooltip" />
                   </Supertip>
                   <Icon>
@@ -246,10 +246,6 @@
                   <Action xsi:type="ExecuteFunction">
                     <FunctionName>summarizeText</FunctionName>
                   </Action>
-                  <Action xsi:type="ShowTaskpane">
-                <TaskpaneId>Button1</TaskpaneId>
-                <SourceLocation resid="Summarize.Url" />
-            </Action>
                 </Control>
             </OfficeMenu>
           </ExtensionPoint>
@@ -304,6 +300,8 @@
         
         <bt:String id="WebsiteGroupLabel" DefaultValue="Info" />
         <bt:String id="WebsiteButtonLabel" DefaultValue="Open Website" />
+        <bt:String id="SelectSummaryButtonLabel" DefaultValue="Summarize Text" />
+
         <bt:String id="WebsiteButtonTooltip" DefaultValue="Click to open the website" />
 
         <bt:String id="PropylonGroup1Label" DefaultValue="NLP Group" />

@@ -46,12 +46,12 @@ function summarizeText(event) {
     await context.sync();
 
     if (!range.text.trim()) {
-      console.log("No text selected!"); // Diagnostic log
+      console.log("No text selected!"); 
       event.completed();
       return;
     }
 
-    console.log("Selected text:", range.text); // Diagnostic log
+    console.log("Selected text:", range.text);
 
     fetch(`http://127.0.0.1:5000/summariseText/${encodeURIComponent(range.text)}`)
       .then(response => {
@@ -61,7 +61,7 @@ function summarizeText(event) {
         return response.text();
       })
       .then(summarizedText => {
-        console.log("Summarized text:", summarizedText); // Diagnostic log
+        console.log("Summarized text:", summarizedText); 
         ReactDOM.render(<Summarize summarizedText={summarizedText} />, document.getElementById("summarize-root"));
       })
       .catch(error => {
@@ -74,8 +74,6 @@ function summarizeText(event) {
     event.completed();
   });
 }
-
-
 
 
 // Register the function with Office.
