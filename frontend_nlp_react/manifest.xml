@@ -243,12 +243,14 @@
                     <bt:Image size="32" resid="Circle.32x32" />
                     <bt:Image size="80" resid="Circle.80x80" />
                   </Icon>
-                  <Action xsi:type="ExecuteFunction">
-                    <FunctionName>summarizeText</FunctionName>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>Button7</TaskpaneId>
+                    <SourceLocation resid="Summarize.Url" />
                   </Action>
                 </Control>
             </OfficeMenu>
           </ExtensionPoint>
+          
         </DesktopFormFactor>
       </Host>
     </Hosts>
