@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Input } from "@fluentui/react-components";
 import { FluentProvider, webLightTheme } from "@fluentui/react-components";
 import { EditArrowBack24Regular, DocumentOnePageMultiple24Regular } from "@fluentui/react-icons";
@@ -11,11 +11,32 @@ function removeForwardSlash(string) {
   return string.replace(regex, "");
 }
 
-const Summarize = () => {
-  const [summarizedText, setSummarizedText] = useState("");
+const Summarize = ({ summarizedText: propSummarizedText }) => {
+  const [summarizedText, setSummarizedText] = useState(propSummarizedText || "");
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(false);
   const [imageID, setImageID] = useState("../../assets/LoadingTwoColour.gif");
+
+  useEffect(() => {
+    checkHighlightedText(); // Check for highlighted text when component mounts
+  }, []);
+
+  const checkHighlightedText = async () => {
+    try {
+      await Word.run(async (context) => {
+        const selectedRange = context.document.getSelection();
+        context.load(selectedRange, 'text');
+        await context.sync();
+        if (selectedRange.text.trim()) {
+          getSummarizeText(selectedRange.text);
+        } else {
+          setSummarizedText("");
+        }
+      });
+    } catch (error) {
+      setSummarizedText("");
+    }
+  };
 
   const getText = async () => {
     try {
