@@ -1,0 +1,2 @@
+Office.onReady((function(e){e.host,Office.HostType.Document})),Office.actions.associate("action",(function(e){var o={type:Office.MailboxEnums.ItemNotificationMessageType.InformationalMessage,message:"Performed action.",icon:"Icon.80x80",persistent:!0};Office.context.mailbox.item.notificationMessages.replaceAsync("action",o),e.completed()})),Office.actions.associate("openWebsite",(function(e){Office.context.ui.openBrowserWindow("https://propylon.com"),e.completed()}));
+//# sourceMappingURL=commands.js.map
