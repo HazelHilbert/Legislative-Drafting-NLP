@@ -89,8 +89,8 @@ const Summarize = ({ summarizedText: propSummarizedText }) => {
           }
         });
         if(!userIsScrolling)
-          window.scrollTo(0, document.body.scrollHeight);
-      }, 100); // Interval Duration
+          window.scrollTo(0, document.body.scrollHeight);      
+      }, 100); // Interval Duration    
     } catch (error) {
       setSummarizedText("Invalid Summarize!");
     }

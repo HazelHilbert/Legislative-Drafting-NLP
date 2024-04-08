@@ -1,19 +1,22 @@
 import { Input, Tab, TabList, makeStyles, tokens } from "@fluentui/react-components";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import InstructionPage from "./InstructionPage";
 import ResultsPage from "./ResultsPage";
 import FiltersPage from "./FiltersPage";
-import {
-  useStyles,
-  tabs,
-  instructionPages,
-  usStates,
-  legislativeDocumentTypes,
-  MultiselectWithTags,
-} from "./SearchPageConsts";
-import axios from "axios";
 
-import "./SearchPage.css";
+import "./SearchPage.css"; 
+import {useStyles, tabs, instructionPages, usStates, legislativeDocumentTypes, MultiselectWithTags} from "./SearchPageConsts"
+import axios from 'axios';
+
+function removeForwardSlash(string) {
+  const regex = new RegExp("/".replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g");
+  return string.replace(regex, "");
+}
+
+let userIsScrolling = false; 
+let scrollButton = null; 
+let textPastingFinished = false;
+let isTabOne = true;
 
 const SearchPage = () => {
   const styles = useStyles();
@@ -92,6 +95,26 @@ const SearchPage = () => {
     // Return the abbreviation corresponding to the full state name
     return stateAbbreviations[stateFullName] || stateFullName; // Return full name if no abbreviation is found
   };
+  
+  const enableScrollButton = async () => {
+    if (!scrollButton) {
+      scrollButton = document.createElement('button');
+      scrollButton.textContent = 'Resume Scrolling';
+      scrollButton.className = 'button scroll-button';
+      scrollButton.onclick = () => {
+        userIsScrolling = false; 
+        scrollButton.style.display = 'none'; 
+        scrollButton.disabled = true;
+      };
+      document.body.appendChild(scrollButton);
+    } 
+    else {
+      scrollButton.style.display = 'block'; 
+      scrollButton.disabled = false;
+    } 
+  }
+
+  let interval;
 
   // Handle Search Query
   const handleClick = async (selectedTab) => {
@@ -103,20 +126,34 @@ const SearchPage = () => {
       // loadingEasterEgg();
       setLoading(true);
       if (selectedTab === "tab1") {
+        if (interval) {
+          clearInterval(interval); // Clear any ongoing interval
+          setSearchOutput(""); // Clear the output
+        }
+        
         const response = await fetch("http://127.0.0.1:5000/billText/" + searchText);
         if (!response.ok) {
           setSearchOutput("Invalid Bill!");
           return;
         }
         const data = await response.text();
-        let userIsScrolling = false;
+        userIsScrolling = false;
         const allWords = data.split(" ");
         let i = 0;
-        const interval = setInterval(() => {
+        interval = setInterval(() => {
           setSearchOutput(prevText => prevText + allWords[i] + " ");
           i++;
           if (i === allWords.length) {
             clearInterval(interval);
+            textPastingFinished = true;
+            const button = document.querySelector('.button');
+            setTimeout(() => {
+              button.style.opacity = '1'; 
+            }, 400); 
+            if (scrollButton != null) {
+              scrollButton.style.display = 'none'; 
+              scrollButton.disabled = true;
+            }
           }
           window.addEventListener("wheel", () => {
             userIsScrolling = true;
@@ -133,8 +170,9 @@ const SearchPage = () => {
           });
           if(!userIsScrolling)
             window.scrollTo(0, document.body.scrollHeight);
+          else if (i !== allWords.length && isTabOne == true)
+            enableScrollButton(); 
         }, 10); // Interval Duration
-        // Search Query
       }
       else {
         setSelectedTab("tab2");
@@ -171,6 +209,7 @@ const SearchPage = () => {
   // Handle search from Key press
   const handleKeyDown = (event, selectedTab) => {
     if (event.key === "Enter") {
+      setSearchOutput("");
       handleClick(selectedTab);
     }
   };
@@ -187,11 +226,36 @@ const SearchPage = () => {
     }
   };
 
+  const handleCreateDocument = () => {
+    axios.get('http://127.0.0.1:5000/create_word_document/' + searchText + '/' + removeForwardSlash(searchOutput))
+      .then(response => {
+        console.log('Word document created and opened');
+      })
+      .catch(error => {
+        console.error('Error creating or opening Word document:', error);
+      });
+  };
+
   // Debugging
   const debug = () => {
     return `Output: ${selectedFileTypes}`;
   };
 
+  useEffect(() => {
+    // Perform any side effects here, based on the selectedTab value
+    // For example, fetching data when the tab changes
+    console.log(selectedTab);
+    if (scrollButton != null) {
+      if (selectedTab !== "tab1") {
+        scrollButton.style.display = 'none'; 
+        scrollButton.disabled = true;
+        isTabOne = false;
+      } else {
+        enableScrollButton(); 
+        isTabOne = true;
+      }
+    }
+  }, [selectedTab]);
   return (
     <div
       className={styles.root}
@@ -278,7 +342,14 @@ const SearchPage = () => {
                 <img src={imageID} width={"100px"} />
               </div>
             ) : (
-              <p>{searchOutput}</p>
+              <>
+                <p style={{marginBottom: 5}}>{searchOutput}</p>
+                {searchOutput && (
+                  <div>
+                    <button className="button doc-create-button" onClick={handleCreateDocument} disabled={!textPastingFinished}>Create Document</button>
+                  </div>
+                )}
+              </>
             )}
           </div>
         </>

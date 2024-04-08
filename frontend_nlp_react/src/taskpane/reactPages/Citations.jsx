@@ -57,7 +57,7 @@ const Citations = () => {
           }
         });
         if(!userIsScrolling)
-          window.scrollTo(0, document.body.scrollHeight);
+          window.scrollTo(0, document.body.scrollHeight);      
       }, 100); // Interval Duration
     } catch (error) {
       setCitationText("Invalid Bill!");
