@@ -9,3 +9,9 @@ python-dotenv
 flask-cors    
 python-docx
 pyodbc
+pytest
+requests
+requests-mock
+langchain-openai
+langchain
+langchain-community
