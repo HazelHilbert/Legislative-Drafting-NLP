@@ -10,8 +10,8 @@ flask-cors
 python-docx
 pyodbc
 pytest
-requests
 requests-mock
+langchain==0.1.14
 langchain-openai
-langchain
 langchain-community
+langchain
