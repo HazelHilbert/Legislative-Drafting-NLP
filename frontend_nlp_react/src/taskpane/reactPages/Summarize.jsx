@@ -1,51 +1,98 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Input } from "@fluentui/react-components";
 import { FluentProvider, webLightTheme } from "@fluentui/react-components";
 import { EditArrowBack24Regular, DocumentOnePageMultiple24Regular } from "@fluentui/react-icons";
 import "../css/Summarize.css";
 
 function removeForwardSlash(string) {
-  const regex = new RegExp('/'.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
-  return string.replace(regex, '');
+  const regex = new RegExp("/".replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g");
+  return string.replace(regex, "");
 }
 
-const Summarize = () => {
-  const [summarizedText, setSummarizedText] = useState("");
+const Summarize = ({ summarizedText: propSummarizedText }) => {
+  const [summarizedText, setSummarizedText] = useState(propSummarizedText || "");
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(false);
+  const [imageID, setImageID] = useState("../../assets/LoadingTwoColour.gif");
+
+  useEffect(() => {
+    checkHighlightedText(); // Check for highlighted text when component mounts
+  }, []);
+
+  const checkHighlightedText = async () => {
+    try {
+      await Word.run(async (context) => {
+        const selectedRange = context.document.getSelection();
+        context.load(selectedRange, 'text');
+        await context.sync();
+        if (selectedRange.text.trim()) {
+          getSummarizeText(selectedRange.text);
+        } else {
+          setSummarizedText("");
+        }
+      });
+    } catch (error) {
+      setSummarizedText("");
+    }
+  };
 
   const getText = async () => {
     try {
+      // loadingEasterEgg();
+      setLoading(true);
       await Word.run(async (context) => {
         const documentBody = context.document.body;
         context.load(documentBody);
         await context.sync();
         if (!documentBody.text.trim()) {
           setSummarizedText("No text highlighted!");
-          return; 
+          return;
         }
         getSummarizeText(documentBody.text);
       });
     } catch (error) {
       setSummarizedText("Error!");
+    } finally {
+      setLoading(false);
     }
   };
 
   const getSummarizeText = async (text) => {
-    setLoading(true);
     try {
       const response = await fetch("http://127.0.0.1:5000/summariseText/" + removeForwardSlash(text));
       if (!response.ok) {
         setSummarizedText("Invalid Summarize!");
       }
       const data = await response.text();
-      setSummarizedText(data);
+      let userIsScrolling = false;
+      const allWords = data.split(" ");
+      let i = 0;
+      const interval = setInterval(() => {
+        setSummarizedText(prevText => prevText + allWords[i] + " ");
+        i++;
+        if (i === allWords.length) {
+          clearInterval(interval);
+        }
+        window.addEventListener("wheel", () => {
+          userIsScrolling = true;
+        });   
+        window.addEventListener("touchstart", () => {
+          userIsScrolling = true;
+        });
+        const scrollBar = document.documentElement;
+        scrollBar.addEventListener("mousedown", (event) => {
+          if (event.target === scrollBar) {
+            event.preventDefault();
+            userIsScrolling = true;
+          }
+        });
+        if(!userIsScrolling)
+          window.scrollTo(0, document.body.scrollHeight);      
+      }, 100); // Interval Duration    
     } catch (error) {
       setSummarizedText("Invalid Summarize!");
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -61,7 +108,16 @@ const Summarize = () => {
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
+      setSummarizedText("");
       getBillText();
+    }
+  };
+
+  const loadingEasterEgg = () => {
+    if (Math.floor(Math.random() * 100 + 1) == 1) {
+      setImageID("../../assets/loading.gif");
+    } else {
+      setImageID("../../assets/LoadingTwoColour.gif");
     }
   };
 
@@ -71,15 +127,19 @@ const Summarize = () => {
       return;
     }
     try {
+      // loadingEasterEgg();
+      setLoading(true);
       const response = await fetch("http://127.0.0.1:5000/billText/" + searchQuery);
       if (!response.ok) {
         setSummarizedText("Invalid Bill!");
-        return; 
+        return;
       }
       const data = await response.text();
       getSummarizeText(data);
     } catch (error) {
-      setSummarizedText("Invalid Bill!");
+      setSummarizedText("Invalid Bill!"); 
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -124,8 +184,8 @@ const Summarize = () => {
         </div>
         <div className="line">
           {loading ? (
-            <div>
-              <img src="../../assets/loading.gif" />
+            <div style={{ marginTop: 100 }}>
+              <img src={imageID} width={"100px"} />
             </div>
           ) : (
             <p>{summarizedText}</p>
