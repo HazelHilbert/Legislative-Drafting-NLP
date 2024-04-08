@@ -7,7 +7,7 @@ pennsylvania_string = "The Pennsylvania Supreme Court, in the case of Diehl v. R
 pennsylvania_cases = re.compile(r"(([1-9][0-9][0-9]|[1-9][0-9]|[1-9]) (Pa\.? ?(Super\.?|Superior)( ?Ct\.?)?|Pa\.? ?(Commw\.?|Commonwealth)( ?Ct\.?)?|Pa\.?) [0-9]+)", re.IGNORECASE)
 
 pennsylvania_matches = pennsylvania_cases.findall(pennsylvania_string)
-#print(pennsylvania_matches)
+print(pennsylvania_matches)
 # [('169 Pa. 316', '169', 'Pa.', '', '', '', '')]
 
 

@@ -61,14 +61,14 @@ def getTextFromID(bill_ID):
                 text = ""
                 for page in reader.pages:
                     text += page.extract_text() + "\n"
-                print(text[:100])
+                print(text)
                 return text
         elif file_type == 'text/html':
             with open("./bills/" + file_name + '.html', 'wb') as file:
                 file.write(decoded_content)
                 soup = BeautifulSoup(decoded_content, features="html.parser")
                 text = soup.get_text()
-                print(text[:100])
+                print(text)
                 return text
 
                 
