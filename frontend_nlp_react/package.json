@@ -33,6 +33,7 @@
     "babel-preset-es2015": "^6.24.1",
     "core-js": "^3.9.1",
     "es6-promise": "^4.2.8",
+    "file-saver": "^2.0.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.1",

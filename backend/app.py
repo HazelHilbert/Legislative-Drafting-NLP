@@ -68,6 +68,15 @@ def create_word_doc(searchText,text):
     os.startfile(searchText + ".docx")
     return "Hello"
 
+@app.route('/create_word_document/<searchText>/<text>', methods=['GET'])
+def create_word_document(searchText,text):
+    doc = docx.Document()
+    doc.add_paragraph(text)
+    file_path = os.path.join('wordDocs', searchText + '.docx')
+    doc.save(file_path)
+    os.system(file_path)
+    return 'Document created and opened successfully!'
+
 @app.route('/search', methods=['GET'])
 def search():
     try:
