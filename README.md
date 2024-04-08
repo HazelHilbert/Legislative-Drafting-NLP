@@ -5,7 +5,7 @@
 # 📜 NLP for Legislative Drafting
 The NLP for Legislative Drafting application is a full stack Microsoft Word Add-in that simplifies the process of legislative drafting. It allows users to search for, summarize, and extract legal citations and effective dates from a vast repository of American laws. It accomplishes this through the use of several advanced Natural Language Processing (NLP) models, including the OpenAI API, as well as a specifically trained Hugging Face NLP model. This project is a collaboration between Trinity College Dublin's School of Computer Science and Statistics and Propylon, a Dublin-based company specializing in software solutions for the legal sector. Watch our promo video:
 <div align="left">
-      <a href="https://www.youtube.com/watch?v=5yLzZikS15k">
+      <a href="https://youtu.be/EDPA96esfSY">
          <img src="https://github.com/HazelHilbert/Legislative-Drafting-NLP/assets/98608198/d1584dc6-809b-451e-9110-1c342289a40a" style="width:300px;">
       </a>
 </div>
@@ -51,7 +51,8 @@ Nicky Gray for their help and guidance.
 
 # 👥 Find Out More
 
-Take a look at our [Digital Brochure](https://discord.com/channels/@me/1200470945563934832/1226921809048375338) or [Project Poster](https://github.com/HazelHilbert/Legislative-Drafting-NLP/files/14909503/group25.pdf) to find out more about our team. You can also follow our social media pages:
+Take a look at our [Digital Brochure](https://simplebooklet.com/swenggroup25) or [Project Poster](https://github.com/HazelHilbert/Legislative-Drafting-NLP/files/14909503/group25.pdf) to find out more about our team. You can also follow our social media pages:
+
 [![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/nlp_legislative_drafting_/)
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sweng-group-twenty-five-b7a3b72b5/)
 
