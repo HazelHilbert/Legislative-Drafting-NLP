@@ -3,11 +3,15 @@
 </div>
 
 # 📜 NLP for Legislative Drafting
-The NLP for Legislative Drafting application is a full stack Microsoft Word Add-in that simplifies the process of legislative drafting. It allows users to search for, summarize, and extract legal citations and effective dated from a vast repository of American laws. It accomplishes this through the use of several advanced Natural Language Processing (NLP) models including the OpenAI API as well as a specifically trained Hugging Face NLP model. This project is a collaboration between Trinity College Dublin's School of Computer Science and Statistics and Propylon, a Dublin based company specializing in software solutions for the legal sector.
-<iframe width="560" height="315" src="https://youtu.be/EDPA96esfSY" frameborder="0" allowfullscreen></iframe>
+The NLP for Legislative Drafting application is a full stack Microsoft Word Add-in that simplifies the process of legislative drafting. It allows users to search for, summarize, and extract legal citations and effective dates from a vast repository of American laws. It accomplishes this through the use of several advanced Natural Language Processing (NLP) models, including the OpenAI API, as well as a specifically trained Hugging Face NLP model. This project is a collaboration between Trinity College Dublin's School of Computer Science and Statistics and Propylon, a Dublin-based company specializing in software solutions for the legal sector. Watch our promo video:
+<div align="left">
+      <a href="https://www.youtube.com/watch?v=5yLzZikS15k">
+         <img src="https://github.com/HazelHilbert/Legislative-Drafting-NLP/assets/98608198/d1584dc6-809b-451e-9110-1c342289a40a" style="width:300px;">
+      </a>
+</div>
 
 # 👩‍💻 The Team 👨‍💻
-Our team is made up of a mix of second and third year students studying computer science at Trinity College Dublin. The third year students were in charge of project management while second year students focused on development.
+Our team is made up of a mix of second and third-year students studying computer science at Trinity College Dublin. The third-year students were in charge of project management, while second-year students focused on development.
 ### The 3rd Years
 [Hazel Hilbert](https://github.com/HazelHilbert) - Team Leader
 
@@ -42,27 +46,15 @@ Our team is made up of a mix of second and third year students studying computer
 
 
 ### The Mentors
-Special thanks to our clients from Propylon: Brendan Salmond, Akshay Sayar, Johan du Plessis, and Paul Higgins; along with our demonstrator
+Special thanks to our clients from Propylon: Brendan Salmond, Akshay Sayar, Johan du Plessis, and Paul Higgins, along with our demonstrator
 Nicky Gray for their help and guidance.
 
 # 👥 Find Out More
 
 Take a look at our [Digital Brochure](https://discord.com/channels/@me/1200470945563934832/1226921809048375338) or [Project Poster](https://github.com/HazelHilbert/Legislative-Drafting-NLP/files/14909503/group25.pdf) to find out more about our team. You can also follow our social media pages:
-<div style="text-align:left;">
+[![Instagram](https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white)](https://www.instagram.com/nlp_legislative_drafting_/)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/sweng-group-twenty-five-b7a3b72b5/)
 
-<a href="https://www.instagram.com/nlp_legislative_drafting_/">
-    <div style="width:150px; display:inline-block; text-align:center;">
-        <img src="https://github.com/HazelHilbert/Legislative-Drafting-NLP/assets/98608198/d2337f9c-66b7-40d6-ac8a-ad0c4b8de8ab" alt="drawing" style="max-width:100%; height:auto;"/>
-    </div>
-</a>
-
-<a href="https://www.linkedin.com/in/sweng-group-twenty-five-b7a3b72b5/">
-    <div style="width: 150px; display:inline-block; text-align:center;">
-        <img src="https://github.com/HazelHilbert/Legislative-Drafting-NLP/assets/98608198/fd5772bc-a978-4a82-913f-f749893faf5d" alt="drawing" style="max-width:100%; height:auto;"/>
-    </div>
-</a>
-
-</div>
 
 # 💻 Running the Application
 
@@ -113,7 +105,7 @@ flask --app app run
 ```
 
 ### Run React
-Make sure that you have installed npm. You can use the following comand to do so:
+Make sure that you have installed npm. You can use the following command to do so:
 ```bash
 cd frontend_nlp_react
 npm install
