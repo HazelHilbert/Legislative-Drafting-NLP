@@ -16,11 +16,9 @@ CORS(app)
 def hello_world():
     return "Hello World"
 
-
 @app.route("/billText/<bill_id>")
 def getText(bill_id):
     return APITools.getTextFromID(str(bill_id))
-
 
 @app.route("/billsFromState/<stateName>")
 def getState(stateName):
@@ -30,7 +28,6 @@ def getState(stateName):
 @app.route("/summariseText/<text>")
 def getSummariseText(text):
     return call_langchain("summary", text)
-
 
 @app.route("/citationJSON/<billText>")
 def getCitationJSON(billText) :
@@ -87,3 +84,4 @@ def search():
             return jsonify({"error": "Failed to fetch data from the server"}), 500
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+

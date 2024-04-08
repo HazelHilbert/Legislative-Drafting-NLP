@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { BookQuestionMark24Regular, ChevronRight24Filled, DocumentDismiss24Regular } from "@fluentui/react-icons";
 import "./ResultItem.css";
 
-const ResultItem = ({ title, state, date, url }) => {
+const ResultItem = ({ title, state, date }) => {
   const [showSummary, setShowSummary] = useState(false);
   const [showEmbeddedPage, setShowEmbeddedPage] = useState(false);
   const [embeddedContent, setEmbeddedContent] = useState(""); // State to hold embedded content

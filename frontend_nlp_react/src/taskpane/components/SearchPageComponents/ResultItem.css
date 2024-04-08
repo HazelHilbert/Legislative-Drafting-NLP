@@ -1,4 +1,33 @@
+@keyframes animationRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes animationLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes animationTop {
+  from {
+    transform: translateY(-150%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 .resultItem {
+  animation: animationLeft 0.5s ease-out;
+  margin-top: 25px;
   width: 100%;
   height: 100%;
   background: white;
@@ -56,7 +85,6 @@
 }
 
 .stateDateText {
-  width:max-content;
   text-align: right;
   color: #616161;
   font-size: 14px;
