@@ -87,7 +87,7 @@ For Windows:
 
 ```bash
 python -m venv venv
-.\venv\Scripts\activate.bat
+.\venv\bin\activate.ps1
 ```
 
 ### Install the Requirements:

@@ -145,3 +145,31 @@ def create_word_doc(searchText,text):
     mydoc.save(searchText + ".docx")
     os.startfile(searchText + ".docx")
     return "Hello"
+
+@app.route('/create_word_document/<searchText>/<text>', methods=['GET'])
+def create_word_document(searchText,text):
+    doc = docx.Document()
+    doc.add_paragraph(text)
+    file_path = os.path.join('wordDocs', searchText + '.docx')
+    doc.save(file_path)
+    os.system(file_path)
+    return 'Document created and opened successfully!'
+
+@app.route('/search', methods=['GET'])
+def search():
+    try:
+        query = request.args.get('query')
+        state = request.args.get('state')
+        documentType = request.args.get('doctype')
+        effectiveDate = request.args.get("effectiveDate")
+
+        # Call getSearch function with the necessary parameters
+        search_result = APITools.getSearch(query, state, documentType, effectiveDate)
+
+        # Handle the search result and return a response accordingly
+        if search_result is not None:
+            return jsonify(search_result)
+        else:
+            return jsonify({"error": "Failed to fetch data from the server"}), 500
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500

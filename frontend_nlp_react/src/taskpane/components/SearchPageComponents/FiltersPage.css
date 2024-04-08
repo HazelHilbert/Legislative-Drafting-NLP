@@ -25,24 +25,14 @@
   }
 }
 
-.left {
+.selected-filters {
   animation: animationLeft 0.5s ease-out;
 }
 
-.right {
+.document {
   animation: animationRight 0.5s ease-out;
 }
 
-.resultsContainer {
+.states {
   animation: animationLeft 0.5s ease-out;
-
-  width: 100%;
-  height: 100%;
-  background: white;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  gap: 7px;
 }
