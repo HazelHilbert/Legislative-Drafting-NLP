@@ -1,6 +1,6 @@
 import os
 from simple_chaining import *
-from flask import Flask, request, render_template, send_file
+from flask import Flask, request, jsonify, render_template, send_file
 from flask_cors import CORS
 import APITools
 import docx
