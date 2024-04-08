@@ -8,26 +8,12 @@ import docx
 from free_nlp_api_on_example import call_open_ai
 # from legislative_nlp_langchain import summarize_large_text
 from legislative_nlp_langchain import call_langchain
-
+import databaseMethods
 app = Flask(__name__)
 CORS(app) 
 
 
 my_key = "480c76cff050a40771e1190b3cab219d"
-
-def db_connect():
-    server = 'sweng-propylon.database.windows.net'
-    database = 'Propylon'
-    username = 'CloudSAe1754641'
-    password = 'Helloworld123'
-    driver = 'ODBC Driver 18 for SQL Server'
-
-
-    conn_str = f'DRIVER={driver};SERVER={server};DATABASE={database};UID={username};PWD={password}'
-
-    conn = pyodbc.connect(conn_str)
-    cursor = conn.cursor()
-    return conn
 
 @app.route("/")
 def hello_world():
@@ -50,26 +36,61 @@ def getSummariseText(text):
 
 @app.route("/summariseBill/<billID>")
 def getSummariseBill(billID):
-    billText = getText(billID)  
-    conn = db_connect()
+    conn = databaseMethods.db_connect()
     cursor = conn.cursor()
 
-    cursor.execute("SELECT summary FROM BillSummaries WHERE billID = ?", (billID,))
-    row = cursor.fetchone()
+    row = databaseMethods.chooseTable("summary", billID)
 
-    if row :
+    if row:
         summary = row[0]
-        conn.close()
-        return jsonify({"summary", summary})
-
-    else: 
-        summary = call_open_ai("summary", billText) 
+    else:
+        billText = getText(billID)  # Now using the shared module
+        summary = call_open_ai("summary", billText)
         
         # Insert the new summary into the database
         cursor.execute("INSERT INTO BillSummaries (billID, summary) VALUES (?, ?)", (billID, summary))
         conn.commit()
+
+    conn.close()
+    return summary
+
+
+from flask import jsonify
+
+@app.route("/removeSummary/<billID>")
+def removeSummary(billID):
+    conn = databaseMethods.db_connect()
+    cursor = conn.cursor()
+
+    try:
+        # Check if the entry exists
+        row = databaseMethods.chooseTable("summary", billID)
+        if row:
+            # If the entry exists, delete it
+            delete_query = "DELETE FROM BillSummaries WHERE billID = ?"
+            cursor.execute(delete_query, (billID,))
+            conn.commit()
+
+            getSummariseBill(billID)
+
+            # Return a response indicating success
+            return jsonify({'message': f'Summary for billID {billID} successfully removed.'}), 200
+        else:
+            # Return a response indicating the summary was not found
+            getSummariseBill(billID)
+            return jsonify({'message': f'No summary found for billID {billID} to remove.'}), 404
+
+    except Exception as e:
+        conn.rollback()  # Rollback in case of error
+        # Return a response indicating an error occurred
+        return jsonify({'error': f'An error occurred: {str(e)}'}), 500
+    
+    finally:
         conn.close()
-        return jsonify({"summary": summary})
+
+      
+
+
 
 
 
@@ -94,11 +115,26 @@ def getCitationJSONBill(billID) :
 
 @app.route("/citationStringBill/<billID>")
 def getCitationStringBill(billID) :
+    conn = databaseMethods.db_connect()
+    cursor = conn.cursor()
+    citations = databaseMethods.chooseTable("citations", billID)
     billText = getText(billID)
-    return call_langchain("citationString", billText)
+    if citations:
+        return citations
+    
+    else:
+        citations = call_langchain("citationString", billText)
+        cursor.execute("INSERT INTO citations (billID, citations) VALUES (?, ?)", (billID, citations))
+        conn.commit()
+        return citations
+    
+
+
+
 
 @app.route("/effectiveDatesBill/<billID>")
 def geteffectiveDatesBill(billID) :
+    
     billText = getText(billID)
     return call_langchain("effectiveDates", billText)
 
