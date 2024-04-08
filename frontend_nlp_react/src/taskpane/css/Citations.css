@@ -1,3 +1,30 @@
+@keyframes animationRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes animationLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes animationTop {
+  from {
+    transform: translateY(-150%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
 .globalStyles {
   color: #707070;
   font-size: 14px;
@@ -27,6 +54,7 @@
 .image img {
   padding-top: 15px;
   max-width: 100%; 
+  animation: animationTop 0.5s ease-out;
 }
 
 .searchBarContainer {
@@ -37,6 +65,8 @@
   align-items: center;
   gap: 14px;
   display: inline-flex;
+  animation: animationLeft 0.5s ease-out;
+
 }
 
 .searchInputContainer {
