@@ -7,14 +7,15 @@ import { EditArrowBack24Regular, DocumentOnePageMultiple24Regular } from "@fluen
 import "../css/Summarize.css";
 
 function removeForwardSlash(string) {
-  const regex = new RegExp('/'.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
-  return string.replace(regex, '');
+  const regex = new RegExp("/".replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g");
+  return string.replace(regex, "");
 }
 
 const Summarize = ({ summarizedText: propSummarizedText }) => {
   const [summarizedText, setSummarizedText] = useState(propSummarizedText || "");
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(false);
+  const [imageID, setImageID] = useState("../../assets/LoadingTwoColour.gif");
 
   useEffect(() => {
     checkHighlightedText(); // Check for highlighted text when component mounts
@@ -39,23 +40,26 @@ const Summarize = ({ summarizedText: propSummarizedText }) => {
 
   const getText = async () => {
     try {
+      // loadingEasterEgg();
+      setLoading(true);
       await Word.run(async (context) => {
         const documentBody = context.document.body;
         context.load(documentBody);
         await context.sync();
         if (!documentBody.text.trim()) {
           setSummarizedText("No text highlighted!");
-          return; 
+          return;
         }
         getSummarizeText(documentBody.text);
       });
     } catch (error) {
       setSummarizedText("Error!");
+    } finally {
+      setLoading(false);
     }
   };
 
   const getSummarizeText = async (text) => {
-    setLoading(true);
     try {
       const response = await fetch("http://127.0.0.1:5000/summariseText/" + removeForwardSlash(text));
       if (!response.ok) {
@@ -65,8 +69,6 @@ const Summarize = ({ summarizedText: propSummarizedText }) => {
       setSummarizedText(data);
     } catch (error) {
       setSummarizedText("Invalid Summarize!");
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -86,21 +88,33 @@ const Summarize = ({ summarizedText: propSummarizedText }) => {
     }
   };
 
+  const loadingEasterEgg = () => {
+    if (Math.floor(Math.random() * 100 + 1) == 1) {
+      setImageID("../../assets/loading.gif");
+    } else {
+      setImageID("../../assets/LoadingTwoColour.gif");
+    }
+  };
+
   const getBillText = async () => {
     if (!searchQuery) {
       setSummarizedText("No text entered");
       return;
     }
     try {
+      // loadingEasterEgg();
+      setLoading(true);
       const response = await fetch("http://127.0.0.1:5000/billText/" + searchQuery);
       if (!response.ok) {
         setSummarizedText("Invalid Bill!");
-        return; 
+        return;
       }
       const data = await response.text();
       getSummarizeText(data);
     } catch (error) {
       setSummarizedText("Invalid Bill!");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -145,8 +159,8 @@ const Summarize = ({ summarizedText: propSummarizedText }) => {
         </div>
         <div className="line">
           {loading ? (
-            <div>
-              <img src="../../assets/loading.gif" />
+            <div style={{ marginTop: 100 }}>
+              <img src={imageID} width={"100px"} />
             </div>
           ) : (
             <p>{summarizedText}</p>

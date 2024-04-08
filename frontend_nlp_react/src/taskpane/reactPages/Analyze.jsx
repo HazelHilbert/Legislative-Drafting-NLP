@@ -6,3 +6,4 @@ const Analyze = () => {
 };
 
 ReactDOM.render(<Analyze />, document.getElementById("analyze-root"));
+

@@ -56,6 +56,7 @@
 }
 
 .stateDateText {
+  width:max-content;
   text-align: right;
   color: #616161;
   font-size: 14px;
