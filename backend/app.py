@@ -1,6 +1,7 @@
 import os
+
 from simple_chaining import *
-from flask import Flask, request, jsonify, render_template, send_file
+from flask import Flask, request, render_template, send_file
 from flask_cors import CORS
 import APITools
 import docx
@@ -16,9 +17,11 @@ my_key = "480c76cff050a40771e1190b3cab219d"
 def hello_world():
     return "Hello World"
 
+
 @app.route("/billText/<bill_id>")
 def getText(bill_id):
     return APITools.getTextFromID(str(bill_id))
+
 
 @app.route("/billsFromState/<stateName>")
 def getState(stateName):
@@ -54,6 +57,11 @@ def getCitationStringBill(billID) :
     billText = getText(billID)
     return call_open_ai("citationString", billText)
 
+@app.route("/effectiveDatesBill/<billID>")
+def geteffectiveDatesBill(billID) :
+    billText = getText(billID)
+    return call_langchain("effectiveDates", billText)
+
 @app.route('/generate_document/<searchText>/<text>')
 def create_word_doc(searchText,text):
     mydoc = docx.Document()  
@@ -61,4 +69,3 @@ def create_word_doc(searchText,text):
     mydoc.save(searchText + ".docx")
     os.startfile(searchText + ".docx")
     return "Hello"
-    

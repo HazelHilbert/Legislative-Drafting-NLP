@@ -6,59 +6,24 @@ import { EditArrowBack24Regular, DocumentOnePageMultiple24Regular } from "@fluen
 import "../css/Citations.css";
 
 function removeForwardSlash(string) {
-  const regex = new RegExp("/".replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g");
-  return string.replace(regex, "");
+  const regex = new RegExp('/'.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+  return string.replace(regex, '');
 }
 
 const Citations = () => {
   const [citationText, setCitationText] = useState("");
   const [searchQuery, setSearchQuery] = useState("");
-  const [imageID, setImageID] = useState("../../assets/LoadingTwoColour.gif");
   const [loading, setLoading] = useState(false);
 
-  const loadingEasterEgg = () => {
-    if (Math.floor(Math.random() * 100 + 1) == 1) {
-      setImageID("../../assets/loading.gif");
-    } else {
-      setImageID("../../assets/LoadingTwoColour.gif");
-    }
-  };
-
   const getCitationText = async (text) => {
+    setLoading(true);
     try {
-      // loadingEasterEgg();
-      setLoading(true);
-
       const response = await fetch("http://127.0.0.1:5000/citationString/" + removeForwardSlash(text));
       if (!response.ok) {
         setCitationText("Invalid Bill!");
       }
       const data = await response.text();
-      let userIsScrolling = false;
-      const allWords = data.split(" ");
-      let i = 0;
-      const interval = setInterval(() => {
-        setCitationText(prevText => prevText + allWords[i] + " ");
-        i++;
-        if (i === allWords.length) {
-          clearInterval(interval);
-        }
-        window.addEventListener("wheel", () => {
-          userIsScrolling = true;
-        });   
-        window.addEventListener("touchstart", () => {
-          userIsScrolling = true;
-        });
-        const scrollBar = document.documentElement;
-        scrollBar.addEventListener("mousedown", (event) => {
-          if (event.target === scrollBar) {
-            event.preventDefault();
-            userIsScrolling = true;
-          }
-        });
-        if(!userIsScrolling)
-          window.scrollTo(0, document.body.scrollHeight);      
-      }, 100); // Interval Duration
+      setCitationText(data);
     } catch (error) {
       setCitationText("Invalid Bill!");
     } finally {
@@ -67,12 +32,11 @@ const Citations = () => {
   };
 
   const handleSearchInputChange = (event) => {
-    setSearchQuery(event.target.value);
+    setSearchQuery(event.target.value); 
   };
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
-      setCitationText("");
       getBillText();
     }
   };
@@ -83,24 +47,20 @@ const Citations = () => {
       return;
     }
     try {
-      // loadingEasterEgg();
-      setLoading(true);
       const response = await fetch("http://127.0.0.1:5000/billText/" + searchQuery);
       if (!response.ok) {
         setCitationText("Invalid Bill!");
-        return;
+        return; 
       }
       const data = await response.text();
       getCitationText(data);
     } catch (error) {
       setCitationText("Invalid Bill!");
-    } finally {
-      setLoading(false);
     }
   };
 
   return (
-     <FluentProvider theme={webLightTheme}>
+    <FluentProvider theme={webLightTheme}>
       <div className="mainContainer globalStyles">
         {/* Propylon Logo */}
         <div className="image">
@@ -111,30 +71,24 @@ const Citations = () => {
           <div className="searchInputContainer">
             <div className="searchInputWrapper">
               <Input
-                appearance="underline"
-                className="searchInput globalStyles"
-                placeholder="Enter Bill ID"
-                value={searchQuery}
-                onChange={handleSearchInputChange}
-                onKeyPress={handleKeyPress}
-              />
-            </div>
+                  appearance="underline"
+                  className="searchInput globalStyles"
+                  placeholder="Enter Bill ID"
+                  value={searchQuery}
+                  onChange={handleSearchInputChange}
+                  onKeyPress={handleKeyPress}/>
+              </div>
             <div className="underline"></div>
-          </div>
+          </div>       
         </div>
-        {/* <InstructionPage title={instructionPages.tab1.title} /> */}
         {/* Citation */}
         <div className="line">
-          {loading ? (
-            <div style={{ marginTop: 100 }}>
-              <img src={imageID} width={"100px"} />
+        {loading ? (
+            <div>
+              <img src="../../assets/loading.gif" />
             </div>
           ) : (
-            <div className="citationText">
-              {citationText.split("\n").map((line, index) => (
-                <p key={index}>{line}</p>
-              ))}
-            </div>
+            <p>{citationText}</p>
           )}
         </div>
       </div>
