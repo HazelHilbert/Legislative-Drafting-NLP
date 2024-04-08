@@ -19,6 +19,7 @@ const ResultsPage = ({ searchResults }) => {
       />
     ))}
   </div>
-);
+  );
+};
 
 export default ResultsPage;
