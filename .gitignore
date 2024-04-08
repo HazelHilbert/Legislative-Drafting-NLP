@@ -1,6 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 backend/bills/
+backend/wordDocs/
 
 # dependencies
 node_modules/
@@ -37,4 +38,3 @@ ENV/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-

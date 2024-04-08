@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Input } from "@fluentui/react-components";
 import { FluentProvider, webLightTheme } from "@fluentui/react-components";
 import { EditArrowBack24Regular, DocumentOnePageMultiple24Regular } from "@fluentui/react-icons";
@@ -11,11 +11,32 @@ function removeForwardSlash(string) {
   return string.replace(regex, "");
 }
 
-const Summarize = () => {
-  const [summarizedText, setSummarizedText] = useState("");
+const Summarize = ({ summarizedText: propSummarizedText }) => {
+  const [summarizedText, setSummarizedText] = useState(propSummarizedText || "");
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(false);
   const [imageID, setImageID] = useState("../../assets/LoadingTwoColour.gif");
+
+  useEffect(() => {
+    checkHighlightedText(); // Check for highlighted text when component mounts
+  }, []);
+
+  const checkHighlightedText = async () => {
+    try {
+      await Word.run(async (context) => {
+        const selectedRange = context.document.getSelection();
+        context.load(selectedRange, 'text');
+        await context.sync();
+        if (selectedRange.text.trim()) {
+          getSummarizeText(selectedRange.text);
+        } else {
+          setSummarizedText("");
+        }
+      });
+    } catch (error) {
+      setSummarizedText("");
+    }
+  };
 
   const getText = async () => {
     try {
@@ -45,7 +66,31 @@ const Summarize = () => {
         setSummarizedText("Invalid Summarize!");
       }
       const data = await response.text();
-      setSummarizedText(data);
+      let userIsScrolling = false;
+      const allWords = data.split(" ");
+      let i = 0;
+      const interval = setInterval(() => {
+        setSummarizedText(prevText => prevText + allWords[i] + " ");
+        i++;
+        if (i === allWords.length) {
+          clearInterval(interval);
+        }
+        window.addEventListener("wheel", () => {
+          userIsScrolling = true;
+        });   
+        window.addEventListener("touchstart", () => {
+          userIsScrolling = true;
+        });
+        const scrollBar = document.documentElement;
+        scrollBar.addEventListener("mousedown", (event) => {
+          if (event.target === scrollBar) {
+            event.preventDefault();
+            userIsScrolling = true;
+          }
+        });
+        if(!userIsScrolling)
+          window.scrollTo(0, document.body.scrollHeight);      
+      }, 100); // Interval Duration    
     } catch (error) {
       setSummarizedText("Invalid Summarize!");
     }
@@ -63,6 +108,7 @@ const Summarize = () => {
 
   const handleKeyPress = (event) => {
     if (event.key === "Enter") {
+      setSummarizedText("");
       getBillText();
     }
   };
@@ -91,7 +137,7 @@ const Summarize = () => {
       const data = await response.text();
       getSummarizeText(data);
     } catch (error) {
-      setSummarizedText("Invalid Bill!");
+      setSummarizedText("Invalid Bill!"); 
     } finally {
       setLoading(false);
     }

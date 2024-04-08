@@ -10,47 +10,79 @@ import {
   Label,
   Dropdown,
   Option,
-  shorthands
+  shorthands,
 } from "@fluentui/react-components";
 import { Dismiss12Regular, Dismiss24Regular } from "@fluentui/react-icons";
 import React, { useRef, useState } from "react";
-import {filterPageStyles, usStates, legislativeDocumentTypes, useStyles} from "./SearchPageConsts"
+import { filterPageStyles, usStates, legislativeDocumentTypes, useStyles } from "./SearchPageConsts";
+
+import "./FiltersPage.css";
 
 // Allows us to select filters for searching for different pieces of legislative documents
-const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSelectedFileTypes, selectedState, setSelectedState }) => {
+const FiltersPage = ({
+  selectedDate,
+  setSelectedDate,
+  selectedFileTypes,
+  setSelectedFileTypes,
+  selectedState,
+  setSelectedState,
+}) => {
   // Filter Page Styles
   const searchFilterPageStyles = filterPageStyles();
 
-  // Modified FluentUI React V9 dropdown 
+  // Modified FluentUI React V9 dropdown
   const Clearable = ({ placeholder, options, onChange }) => {
     const dropdownId = useId("");
     const styles = useStyles();
-  
+
     const handleSelect = (event, option, index) => {
       if (onChange) {
         onChange(option); // Pass the selected option to the parent component
       }
     };
-  
+
     return (
       <div className={styles.root}>
-        <Label id={dropdownId}>{placeholder}</Label>
-        <Dropdown
-          clearable
-          aria-labelledby={dropdownId}
-          placeholder={placeholder}
-          onOptionSelect={handleSelect} // Call handleSelect when an option is selected
+        {selectedOptions.length ? (
+          <ul id={selectedListId} className={styles.tagsList} ref={selectedListRef}>
+            {/* The "Remove" span is used for naming the buttons without affecting the Combobox name */}
+            <span id={`${comboId}-remove`} hidden>
+              Remove
+            </span>
+            {selectedOptions.map((option, i) => (
+              <li key={option}>
+                <Button
+                  size="small"
+                  shape="circular"
+                  appearance="primary"
+                  icon={<Dismiss12Regular />}
+                  iconPosition="after"
+                  onClick={() => onTagClick(option, i)}
+                  id={`${comboId}-remove-${i}`}
+                  aria-labelledby={`${comboId}-remove ${comboId}-remove-${i}`}
+                >
+                  {option}
+                </Button>
+              </li>
+            ))}
+          </ul>
+        ) : null}
+        <Combobox
+          aria-labelledby={labelledBy}
+          multiselect={true}
+          placeholder="Select States"
+          selectedOptions={selectedOptions}
+          onOptionSelect={onSelect}
+          ref={comboboxInputRef}
+          {...props}
         >
           {options.map((option) => (
-            <Option key={option.key} value={option.text}>
-              {option.text}
-            </Option>
+            <option key={option}>{option}</option>
           ))}
-        </Dropdown>
+        </Combobox>
       </div>
     );
   };
-  
 
   // Handles removing Filters
   const handleRemoveFilter = (filterType) => {
@@ -88,7 +120,8 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
 
   // Handles changing state filter
   const handleStateChange = (selectedOption) => {
-    if (selectedOption && selectedOption.optionText) { // Check if selectedOption is not null and has the expected structure
+    if (selectedOption && selectedOption.optionText) {
+      // Check if selectedOption is not null and has the expected structure
       setSelectedState(selectedOption.optionText); // Update selectedState with the selected option text
     }
   };
@@ -97,12 +130,12 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
   const onDropdownChange = (event, option, index) => {
     handleStateChange(option);
   };
-  
+
   // change selected Date
   const onDateSelect = (date) => {
     setSelectedDate(date);
   };
-  
+
   // Load Chips from Selected filters
   const renderChips = () => {
     const [hoverStates, setHoverStates] = React.useState({
@@ -111,7 +144,6 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
       hover3: false,
     });
 
-    // Handle hover state for filters
     const handleHover = (buttonIndex, isHovering) => {
       setHoverStates((prevStates) => ({
         ...prevStates,
@@ -166,7 +198,7 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
     if (selectedState) {
       chips.push(
         <ToggleButton
-          key={selectedState}
+          key="date"
           size="small"
           style={chipStyle}
           onMouseOver={() => handleHover(1, true)}
@@ -187,52 +219,54 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
   return (
     <div className={searchFilterPageStyles.root}>
       {/* Applied Filters */}
-      <div className={searchFilterPageStyles.selectedFiltersRoot}>
-        <h3 className={searchFilterPageStyles.selectedFiltersHeader}>
-          Selected Filters {renderChips()}{" "}
-        </h3>
+      <div className="filtersTitle">
+        <div className={searchFilterPageStyles.selectedFiltersRoot}>
+          <h3 className={searchFilterPageStyles.selectedFiltersHeader}>Selected Filters {renderChips()} </h3>
+        </div>
       </div>
 
       {/* Document Type */}
-      <div className={searchFilterPageStyles.documentTypeRoot}>
-        <div className={searchFilterPageStyles.documentTypeHeader}>
-          Document Type
-        </div>
-        <div className={searchFilterPageStyles.documentTypeChips}>
-          {legislativeDocumentTypes.map((type, index) => 
-            (<div key={type.key} style={{ marginBottom: index % 2 === 0 ? 0 : 10 }}>
-              <Checkbox label={type.text} id={type.key} onChange={onCheckboxChange} />
-            </div>))
-          }
+      <div className="document">
+        <div className={searchFilterPageStyles.documentTypeRoot}>
+          <div className={searchFilterPageStyles.documentTypeHeader}>Document Type</div>
+          <div className={searchFilterPageStyles.documentTypeChips}>
+            {legislativeDocumentTypes.map((type, index) => (
+              <div key={type.key} style={{ marginBottom: index % 2 === 0 ? 0 : 10 }}>
+                <Checkbox label={type.text} id={type.key} onChange={onCheckboxChange} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 
       {/* States */}
       <div className={searchFilterPageStyles.statesRoot}>
         <div className={searchFilterPageStyles.statesHeader}>
-          <h3>State</h3>
+          <h3 className="state">State</h3>
         </div>
         {/* Tick Boxes */}
-        <div className={searchFilterPageStyles.checkboxesContainer}>
-        <Clearable
-          placeholder="Select a state"
-          options={usStates}
-          onChange={handleStateChange} // Pass handleStateChange as onChange callback
-        />
-
+        <div className="filters">
+          <div className={searchFilterPageStyles.checkboxesContainer}>
+            <Clearable
+              placeholder="Select a state"
+              options={usStates}
+              onChange={handleStateChange} // Pass handleStateChange as onChange callback
+            />
+          </div>
         </div>
       </div>
-
       {/* Effective Dates */}
-      <div className={searchFilterPageStyles.calendarRoot}>
-        <div className={searchFilterPageStyles.calendarHeader}>
-          <h3 className={searchFilterPageStyles.calendarText}>Effective Date</h3>
-        </div>
-        
-        {/* Calendar */}
-        <div className={searchFilterPageStyles.calendarContainer}>
-          <div className={searchFilterPageStyles.calendar}>
-            <Calendar onSelectDate={onDateSelect} />
+      <div className="document">
+        <div className={searchFilterPageStyles.calendarRoot}>
+          <div className={searchFilterPageStyles.calendarHeader}>
+            <h3 className={searchFilterPageStyles.calendarText}>Effective Date</h3>
+          </div>
+
+          {/* Calendar */}
+          <div className={searchFilterPageStyles.calendarContainer}>
+            <div className={searchFilterPageStyles.calendar}>
+              <Calendar onSelectDate={onDateSelect} />
+            </div>
           </div>
         </div>
       </div>
