@@ -16,20 +16,22 @@
     <SourceLocation DefaultValue="https://commandsimple.azurewebsites.net/Taskpane.html" />
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
-  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">   
+  <VersionOverrides xmlns="http://schemas.microsoft.com/office/taskpaneappversionoverrides" xsi:type="VersionOverridesV1_0">
     <Hosts>
       <Host xsi:type="Document">
+        <Runtimes>
+          <Runtime resid="Taskpane.Url" lifetime="long" />
+        </Runtimes>
+
         <DesktopFormFactor>
           <GetStarted>
             <Title resid="GetStartedTitle"/>
             <Description resid="GetStartedDescription"/>
             <LearnMoreUrl resid="GetStartedLearnMoreUrl"/>
           </GetStarted>
-          <FunctionFile resid="Commands.Url" />
+          <FunctionFile resid="Taskpane.Url" />     
           <ExtensionPoint xsi:type="PrimaryCommandSurface">
-            
             <CustomTab id="NLPTab">
-
               <Group id="PropylonGroup1">
                 <Label resid="PropylonGroup1Label" />
                 <Icon>
@@ -224,13 +226,35 @@
                   </Action>
                 </Control>
               </Group>
-
               <Label resid="PropylonLabel" />
             </CustomTab>
           </ExtensionPoint>
+
+          <ExtensionPoint xsi:type="ContextMenu">
+           <OfficeMenu id="ContextMenuText">
+              <Control xsi:type="Button" id="WebsiteButton2">
+                  <Label resid="SelectSummaryButtonLabel" />
+                  <Supertip>
+                    <Title resid="SelectSummaryButtonLabel" />
+                    <Description resid="WebsiteButtonTooltip" />
+                  </Supertip>
+                  <Icon>
+                    <bt:Image size="16" resid="Circle.16x16" />
+                    <bt:Image size="32" resid="Circle.32x32" />
+                    <bt:Image size="80" resid="Circle.80x80" />
+                  </Icon>
+                  <Action xsi:type="ShowTaskpane">
+                    <TaskpaneId>Button7</TaskpaneId>
+                    <SourceLocation resid="Summarize.Url" />
+                  </Action>
+                </Control>
+            </OfficeMenu>
+          </ExtensionPoint>
+          
         </DesktopFormFactor>
       </Host>
     </Hosts>
+    
     <Resources>
       <bt:Images>
         <bt:Image id="Propylon.16x16" DefaultValue="https://localhost:3000/assets/propylon-16.png"/>
@@ -278,17 +302,22 @@
         
         <bt:String id="WebsiteGroupLabel" DefaultValue="Info" />
         <bt:String id="WebsiteButtonLabel" DefaultValue="Open Website" />
+        <bt:String id="SelectSummaryButtonLabel" DefaultValue="Summarize Text" />
+
         <bt:String id="WebsiteButtonTooltip" DefaultValue="Click to open the website" />
 
         <bt:String id="PropylonGroup1Label" DefaultValue="NLP Group" />
         <bt:String id="PropylonGroup2Label" DefaultValue="NLP Group 2" />
         <bt:String id="MoreInfoGroupLabel" DefaultValue="More Info" />
-         <bt:String id="PropylonLabel" DefaultValue="Propylon" />
-         <bt:String id="GetStartedTitle" DefaultValue="Propylon Add In Loaded">
-          <bt:Override Locale="ja-jp" Value="JA-JP Get Started Title" />
+        <bt:String id="PropylonLabel" DefaultValue="Propylon" />
+        <bt:String id="residLabel" DefaultValue="My Custom Menu"/>
+        <bt:String id="residLabel3" DefaultValue="My Menu Item"/>
+        <bt:String id="GetStartedTitle" DefaultValue="Propylon Add In Loaded">
+        <bt:Override Locale="ja-jp" Value="JA-JP Get Started Title" />
         </bt:String>      
       </bt:ShortStrings>
       <bt:LongStrings>
+        <bt:String id="residToolTip" DefaultValue="Use this menu item to open the task pane."/>
         <bt:String id="SummarizeButtonTooltip" DefaultValue="Click to Execute Function" />
         <bt:String id="AnalyzeButtonTooltip" DefaultValue="Click to Show a Taskpane" />
         <bt:String id="SearchButtonTooltip" DefaultValue="Click to Execute Function" />
@@ -299,8 +328,8 @@
         <bt:String id="DropdownRefreshTooltip" DefaultValue="Click to Show Taskpane" />
         <bt:String id="DropdownUnlinkCitationsTooltip" DefaultValue="Click to Show Taskpane" />
         <bt:String id="WebsiteButtonTooltip" DefaultValue="Click to See Website" />
-          <bt:String id="GetStartedDescription" DefaultValue="Click here to open the Add-In's features">
-          <bt:Override Locale="ja-jp" Value="JA-JP Get Started Title" />
+        <bt:String id="GetStartedDescription" DefaultValue="Click here to open the Add-In's features">
+        <bt:Override Locale="ja-jp" Value="JA-JP Get Started Title" />
         </bt:String>  
       </bt:LongStrings>
     </Resources>
