@@ -28,7 +28,9 @@ const InstructionPage = ({ title }) => {
           </div>
         </div>
       </div>
+      <div className="right">
       <Button appearance="primary">Documentation</Button>
+      </div>
     </div>
   );
 };

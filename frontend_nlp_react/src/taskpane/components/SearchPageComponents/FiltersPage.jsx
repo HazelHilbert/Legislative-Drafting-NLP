@@ -16,6 +16,8 @@ import { Dismiss12Regular, Dismiss24Regular } from "@fluentui/react-icons";
 import React, { useRef, useState } from "react";
 import {filterPageStyles, usStates, legislativeDocumentTypes, useStyles} from "./SearchPageConsts"
 
+import "./FiltersPage.css"
+
 // Allows us to select filters for searching for different pieces of legislative documents
 const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSelectedFileTypes, selectedState, setSelectedState }) => {
   // Filter Page Styles
@@ -189,29 +191,34 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
       {/* Applied Filters */}
       <div className={searchFilterPageStyles.selectedFiltersRoot}>
         <h3 className={searchFilterPageStyles.selectedFiltersHeader}>
+          <div className="selected-filters">
           Selected Filters {renderChips()}{" "}
+          </div>
         </h3>
       </div>
 
       {/* Document Type */}
-      <div className={searchFilterPageStyles.documentTypeRoot}>
-        <div className={searchFilterPageStyles.documentTypeHeader}>
-          Document Type
-        </div>
-        <div className={searchFilterPageStyles.documentTypeChips}>
-          {legislativeDocumentTypes.map((type, index) => 
-            (<div key={type.key} style={{ marginBottom: index % 2 === 0 ? 0 : 10 }}>
-              <Checkbox label={type.text} id={type.key} onChange={onCheckboxChange} />
-            </div>))
-          }
+      <div className="document">
+        <div className={searchFilterPageStyles.documentTypeRoot}>
+          <div className={searchFilterPageStyles.documentTypeHeader}>
+            Document Type
+          </div>
+          <div className={searchFilterPageStyles.documentTypeChips}>
+            {legislativeDocumentTypes.map((type, index) => 
+              (<div key={type.key} style={{ marginBottom: index % 2 === 0 ? 0 : 10 }}>
+                <Checkbox label={type.text} id={type.key} onChange={onCheckboxChange} />
+              </div>))
+            }
+          </div>
         </div>
       </div>
 
       {/* States */}
       <div className={searchFilterPageStyles.statesRoot}>
         <div className={searchFilterPageStyles.statesHeader}>
-          <h3>State</h3>
+          <h3 className="states">State</h3>
         </div>
+        <div className="states">
         {/* Tick Boxes */}
         <div className={searchFilterPageStyles.checkboxesContainer}>
         <Clearable
@@ -219,11 +226,12 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
           options={usStates}
           onChange={handleStateChange} // Pass handleStateChange as onChange callback
         />
-
+        </div>
         </div>
       </div>
 
       {/* Effective Dates */}
+      <div className="document">
       <div className={searchFilterPageStyles.calendarRoot}>
         <div className={searchFilterPageStyles.calendarHeader}>
           <h3 className={searchFilterPageStyles.calendarText}>Effective Date</h3>
@@ -235,6 +243,7 @@ const FiltersPage = ({ selectedDate, setSelectedDate, selectedFileTypes, setSele
             <Calendar onSelectDate={onDateSelect} />
           </div>
         </div>
+      </div>
       </div>
     </div>
   );

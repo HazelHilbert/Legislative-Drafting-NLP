@@ -1,3 +1,42 @@
+@keyframes animationRight {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes animationLeft {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes animationTop {
+  from {
+    transform: translateY(-150%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.image {
+  animation: animationTop 0.5s ease-out;
+}
+
+.tablist {
+  animation: animationLeft 0.5s ease-out;
+}
+
+.search {
+  animation: animationRight 0.5s ease-out;
+}
+
 .button {
   background-color: #0f6cbd;
   color: white;
@@ -19,17 +58,17 @@
 }
 
 .doc-create-button {
-  margin: 0px auto 5px;  
+  margin: 0px auto 5px;
   display: block;
   opacity: 0;
-  transition: opacity 0.25s ease; 
+  transition: opacity 0.25s ease;
 }
 
 .scroll-button {
   position: fixed;
-  top: 90%; 
-  left: 50%; 
-  transform: translate(-50%); 
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%);
   z-index: 9999;
   display: block;
 }
