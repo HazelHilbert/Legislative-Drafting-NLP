@@ -97,8 +97,8 @@ const tabs = [
     { label: "Search", value: "tab1" },
     { label: "Result", value: "tab2" },
     { label: "Filter", value: "tab3" },
-    { label: "Add", value: "tab4" },
-    { label: "Settings", value: "tab5" },
+    // { label: "Add", value: "tab4" },
+    // { label: "Settings", value: "tab5" },
   ];
 
 const instructionPages = {

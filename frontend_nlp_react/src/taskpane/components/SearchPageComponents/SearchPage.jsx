@@ -388,16 +388,16 @@ const SearchPage = () => {
       )}
 
       {/* Add Tab */}
-      {selectedTab === "tab4" && <ResultsPage searchResults={searchResults} />}
+      {/* {selectedTab === "tab4" && <ResultsPage searchResults={searchResults} />} */}
 
       {/* Settings Tab */}
-      {selectedTab === "tab5" && (
+      {/* {selectedTab === "tab5" && (
         // <AddPage/>
         <div className="search">
           <h1 style={{ textAlign: "center" }}>Settings</h1>
           <InstructionPage title={instructionPages.tab1.title} />
         </div>
-      )}
+      )} */}
     </div>
   );
 };
