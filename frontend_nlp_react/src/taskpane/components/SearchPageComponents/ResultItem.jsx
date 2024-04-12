@@ -50,6 +50,15 @@ const ResultItem = ({ title, state, date, url }) => {
     setShowEmbeddedPage(true); // Show embedded page
   };
 
+  const openTaskPaneWindow = () => {
+    Office.context.ui.displayDialogAsync(url, { width: 600, height: 400 }, function (result) {
+      var dialog = result.value;
+      dialog.addEventHandler(Office.EventType.DialogMessageReceived, function (arg) {
+        console.log("Dialog message received: " + arg.message);
+      });
+    });
+  };
+
   return (
     <div className="resultItem">
       {showEmbeddedPage ? (
@@ -64,7 +73,7 @@ const ResultItem = ({ title, state, date, url }) => {
         <div className="header">
           <div className="titleSection">
             <div className="titleInner">
-              <a href={url} target="_blank" rel="noopener noreferrer" className="title" onClick={handleAnchorClick}>
+              <a href={url} target="_blank" rel="noopener noreferrer" className="title" onClick={openTaskPaneWindow}>
                 {title}
               </a>
             </div>
@@ -73,7 +82,7 @@ const ResultItem = ({ title, state, date, url }) => {
             <div className="stateDateText">{state}</div>
             <div className="stateDateText">•</div>
             <div className="stateDateText">{date}</div>
-            <div className="buttons">
+            {/* <div className="buttons">
               <button className="button">
                 <DocumentDismiss24Regular />
               </button>
@@ -83,7 +92,7 @@ const ResultItem = ({ title, state, date, url }) => {
               <button className="button">
                 <ChevronRight24Filled />
               </button>
-            </div>
+            </div> */}
           </div>
           {showSummary && (
             <div className="summary">

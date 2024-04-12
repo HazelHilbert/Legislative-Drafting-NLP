@@ -162,7 +162,11 @@ def search():
         state = request.args.get('state')
         documentType = request.args.get('doctype')
         effectiveDate = request.args.get("effectiveDate")
-
+        if(not state or state == ""):
+            state = "CA"
+        
+        if (not documentType):
+                documentType = "B"
         # Call getSearch function with the necessary parameters
         search_result = APITools.getSearch(query, state, documentType, effectiveDate)
 

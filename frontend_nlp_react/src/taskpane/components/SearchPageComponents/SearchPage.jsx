@@ -123,6 +123,43 @@ const SearchPage = () => {
 
   let interval;
 
+  async function pasteTextGradually(text) {
+    // If pasting is already in progress, stop it
+    if (isPasting) {
+        clearTimeout(currentTimeout);
+        isPasting = false;
+    }
+
+    // Split the text into an array of words
+    const words = text.split(/\s+/);
+
+    // Initialize the index to 0
+    let i = 0;
+
+    // Define the function to paste the next word
+    async function pasteNextWord() {
+        // If all words have been pasted, exit
+        if (i >= words.length) {
+            isPasting = false;
+            return;
+        }
+
+        // Add the current word to the screen
+        setSearchOutput(words.slice(0, i + 1).join(' '));
+
+        // Increment the index for the next word
+        i++;
+
+        // Call pasteNextWord recursively with a delay
+        currentTimeout = setTimeout(pasteNextWord, 500); // Delay in milliseconds
+    }
+
+    // Start pasting the words
+    isPasting = true;
+    await pasteNextWord();
+}
+
+
   // Handle Search Query
   const handleClick = async (selectedTab) => {
     if (!searchText) {
@@ -177,7 +214,7 @@ const SearchPage = () => {
           });
           if (!userIsScrolling) window.scrollTo(0, document.body.scrollHeight);
           else if (i !== allWords.length && isTabOne == true) enableScrollButton();
-        }, 10); // Interval Duration
+        }, 1); // Interval Duration
       }
       // Search Query
       else {
@@ -388,16 +425,16 @@ const SearchPage = () => {
       )}
 
       {/* Add Tab */}
-      {selectedTab === "tab4" && <ResultsPage searchResults={searchResults} />}
+      {/* {selectedTab === "tab4" && <ResultsPage searchResults={searchResults} />} */}
 
       {/* Settings Tab */}
-      {selectedTab === "tab5" && (
+      {/* {selectedTab === "tab5" && (
         // <AddPage/>
         <div className="search">
           <h1 style={{ textAlign: "center" }}>Settings</h1>
           <InstructionPage title={instructionPages.tab1.title} />
         </div>
-      )}
+      )} */}
     </div>
   );
 };
